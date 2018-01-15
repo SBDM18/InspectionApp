@@ -41,6 +41,7 @@ function listAlbums() {
             var message = albums.length ?
                 getHtml(['<p>Click the Album Icon to view it.</p>']) :
                    // '<p>Click on the &#x2613; to delete the album or...</p>']) :
+              
                 '<p>You do not have any albums. Please Create album.';
             var albumTemplate = [
                 getHtml(albums),
@@ -85,11 +86,10 @@ function viewAlbum(albumName) {
             console.log('photo url ' + photoUrl);
 
             return getHtml([
-                '<div class="myImg" >',
+                '<div class="myImg" id="'+ photoUrl +'">',
                 '<img style="width:124px;height:124px;" src="' + photoUrl + '"/>',
                 '<div>',
-              //  '<img id="' + photoUrl + '" style="width:46px;height:46px;" src="./assets/images/SButton.png"/>',
-               // '<img onclick="deletePhoto(\'' + albumName + "','" + photoKey + '\')" style="width:46px;height:46px;" src="./assets/images/XButton.png"/>',
+                '<img onclick="deletePhoto(\'' + albumName + "','" + photoKey + '\')" style="width:46px;height:46px;" src="./assets/images/XButton.png"/>',
                 '</div>',
                 '</div>',
             ]);
@@ -227,9 +227,9 @@ function deleteAlbum(albumName) {
 $(document).on('click', '.myImg', function (e) {
     var id = e.target.id;
     console.log(id);
-    var modelID = {
-        "id": 'Kitchen'
-    }
+    // var modelID = {
+    //     "id": 'Kitchen'
+    // }
 
 
     function drawPercentBar(width, percent, color, background) {
@@ -255,6 +255,7 @@ $(document).on('click', '.myImg', function (e) {
     //hide all photos except the one you chose and enlarge it, fit to center
 
     //var model = Clarifai.GENERAL_MODEL;
+    //var model = "Objects",[{ "id": "kitchen" }],
 
     app.models.predict(Clarifai.GENERAL_MODEL, [id]).then(
         function (response) {
@@ -313,7 +314,9 @@ $(document).on('click', '.myImg', function (e) {
 
 $("#listAlbums").on("click", function(){
     listAlbums();
-})
+});
+
+
 $(document).ready(function(){
 
 	$('.main-content').hide();

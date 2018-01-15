@@ -13,9 +13,9 @@
     <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.1.min.js"></script>
 	<!-- Link to Google Fonts -->
 	<link href="https://fonts.googleapis.com/css?family=Damion|Lato" rel="stylesheet">
-  <!-- Link to API's -->
-  <!-- Clarifai  -->
-			<script type="text/javascript" src="https://sdk.clarifai.com/js/clarifai-latest.js"></script>
+	<!-- Link to API's -->
+	<!-- Clarifai -->
+	<script type="text/javascript" src="https://sdk.clarifai.com/js/clarifai-latest.js"></script>
 	<!-- AWS -->
 	<script src="https://sdk.amazonaws.com/js/aws-sdk-2.171.0.min.js"></script>
 	<!-- Link to DB's -->
@@ -25,7 +25,9 @@
 	<link rel="stylesheet" type="text/css" href="./assets/css/style.css">
 	<!-- Link to JS files -->
 	<script type="text/javascript" src="./assets/javascript/app.js"></script>
-		<script>
+
+	<!-- getHtml load -->
+	<script>
 			// Initialize the Amazon Cognito credentials provider
 			// AWS.config.region = 'us-east-1'; // Region
 			// AWS.config.credentials = new AWS.CognitoIdentityCredentials({
@@ -33,10 +35,10 @@
 			// });
 
 			//
-			function getHtml(template) {
-				return template.join('\n');
-			}
-		</script>
+		function getHtml(template) {
+			return template.join('\n');
+		}
+	</script>
 
 </head>
 <body>
