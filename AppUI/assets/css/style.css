@@ -9,6 +9,41 @@ body {
 	background-image: url('../images/grey_wash_wall.png');
 }
 
+
+.login-page {
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.login-page div {
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+#login {
+	font-size: 32px;
+	font-weight: bold;
+	font-family: 'Lato', sans-serif;
+}
+
+#login-btn:hover {
+	border-radius: 35px;	
+	box-shadow: 3px 3px 3px black;
+}
+
+/*TITLE CSS - login-page, appTitle*/
+.title {
+	font-family: 'Damion', cursive;
+	font-size: 55px;
+	color: white;
+	text-align: center;
+    text-shadow: 0 3px 3px black;
+}
+
+
 /*Main wrapper for all page content*/
 .container-fluid {
 	height: 100%;
@@ -35,17 +70,6 @@ body {
     padding-right: 0px;
 /*	box-shadow: 2px 2px 2px grey;*/
 }
-
-/*Title header for app-content*/
-.appTitle h1{
-	opacity: 1;
-	font-family: 'Damion', cursive;
-	font-size: 55px;
-	color: white;
-	text-align: center;
-    text-shadow: 0 3px 3px black;
-}
-
 
 /*Nav CSS styling*/
 .nav-content {
