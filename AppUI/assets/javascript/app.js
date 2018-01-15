@@ -32,15 +32,15 @@ function listAlbums() {
                     '<div id="albumName" onclick="viewAlbum(\'' + albumName + '\')">',
                     albumName.toUpperCase(),
                     '</div>',
-                    '<img onclick="viewAlbum(\'' + albumName + '\')" style="width:46px;height:46px;" src="./assets/images/SButton.png"/>',
-                    '<img onclick="deleteAlbum(\'' + albumName + '\')" style="width:46px;height:46px;" src="./assets/images/XButton.png"/>',
+                //    '<img onclick="viewAlbum(\'' + albumName + '\')" style="width:46px;height:46px;" src="./assets/images/SButton.png"/>',
+                  //  '<img onclick="deleteAlbum(\'' + albumName + '\')" style="width:46px;height:46px;" src="./assets/images/XButton.png"/>',
                     '</div>'
                 ]);
             });
 
             var message = albums.length ?
-                getHtml(['<p>Click &#9898; or the Album Icon to view it.</p>',
-                    '<p>Click on the &#x2613; to delete the album or...</p>']) :
+                getHtml(['<p>Click the Album Icon to view it.</p>']) :
+                   // '<p>Click on the &#x2613; to delete the album or...</p>']) :
                 '<p>You do not have any albums. Please Create album.';
             var albumTemplate = [
                 getHtml(albums),
@@ -88,8 +88,8 @@ function viewAlbum(albumName) {
                 '<div class="myImg" >',
                 '<img style="width:124px;height:124px;" src="' + photoUrl + '"/>',
                 '<div>',
-                '<img id="' + photoUrl + '" style="width:46px;height:46px;" src="./assets/images/SButton.png"/>',
-                '<img onclick="deletePhoto(\'' + albumName + "','" + photoKey + '\')" style="width:46px;height:46px;" src="./assets/images/XButton.png"/>',
+              //  '<img id="' + photoUrl + '" style="width:46px;height:46px;" src="./assets/images/SButton.png"/>',
+               // '<img onclick="deletePhoto(\'' + albumName + "','" + photoKey + '\')" style="width:46px;height:46px;" src="./assets/images/XButton.png"/>',
                 '</div>',
                 '</div>',
             ]);
@@ -224,7 +224,7 @@ function deleteAlbum(albumName) {
 // // predict the contents of an image by passing in a url
 
 
-$(document).on('click', 'img', function (e) {
+$(document).on('click', '.myImg', function (e) {
     var id = e.target.id;
     console.log(id);
     var modelID = {
