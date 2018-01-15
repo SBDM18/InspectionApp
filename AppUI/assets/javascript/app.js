@@ -327,3 +327,35 @@ $(document).ready(function(){
 
 
 });
+//Google geolocate api called when search location is clicked
+$("#locationSearch").on("click", function(){
+    geoFindMe();
+    console.log("working");
+});
+//Geolocate function 
+function geoFindMe() {
+
+    var output = document.getElementById("out");
+
+    if (!navigator.geolocation) {
+        output.innerHTML = "<p>Geolocation is not supported by your browser</p>";
+        return;
+    }
+    //Option to get data out of geoFindMe function is to take function success out of the nest.
+    function success(position) {
+        var latitude = position.coords.latitude;
+        var longitude = position.coords.longitude;
+        console.log(latitude);
+        console.log(longitude);
+
+        return {
+            latitude: latitude,
+            longitude: longitude
+        };
+    }
+
+    function error() {
+        output.innerHTML = "Unable to retrieve your location";
+    }
+    return navigator.geolocation.getCurrentPosition(success, error);
+}
