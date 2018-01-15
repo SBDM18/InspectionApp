@@ -257,7 +257,7 @@ $(document).on('click', 'img', function(e){
 
   //var model = Clarifai.GENERAL_MODEL;
 
-  app.models.predict(Clarifai.GENERAL_MODEL, [id]).then(
+  app.models.predict("Objects",[{ "id": "kitchen" }], [id]).then(
     function(response) {
       var data = response.outputs[0].data;
       // console.log(data);
