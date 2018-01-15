@@ -14,14 +14,31 @@
 	<!-- Link to Google Fonts -->
 	<link href="https://fonts.googleapis.com/css?family=Damion|Lato" rel="stylesheet">
 	<!-- Link to API's -->
-	<!--  -->
+	<!-- AWS -->
+	<script src="https://sdk.amazonaws.com/js/aws-sdk-2.171.0.min.js"></script>
 	<!-- Link to DB's -->
 	<!--  -->
 	<!-- Link to CSS files -->
 	<link rel="stylesheet" type="text/css" href="./assets/css/reset.css">
 	<link rel="stylesheet" type="text/css" href="./assets/css/style.css">
 	<!-- Link to JS files -->
+<<<<<<< HEAD
+	<script type="text/javascript" src="./assets/javascript/app.js"></script>
+		<script>
+			// Initialize the Amazon Cognito credentials provider
+			// AWS.config.region = 'us-east-1'; // Region
+			// AWS.config.credentials = new AWS.CognitoIdentityCredentials({
+			//     IdentityPoolId: 'us-east-1:b3340e4d-5685-4f15-98e4-35481c5e28f7',
+			// });
+
+			//
+			function getHtml(template) {
+				return template.join('\n');
+			}
+		</script>
+=======
 	<script src="./assets/javascript/app.js"></script>
+>>>>>>> master
 
 </head>
 <body>
@@ -55,12 +72,12 @@
 								
 								<div id="locationSearch">Search Locations</div>
 
-								<div id="viewAlbums">View Albums</div>
+								<div id="viewAlbums" onclick="listAlbums()">View Albums</div>
 
 								<div id="viewPDFs">View PDF's</div>
 
 								<div id="manageAccount">Manage Account</div>
-
+																
 						    </span>
 					    </div>
 					  </div>
@@ -83,7 +100,23 @@
 				
 				<!-- Where all the info/functionality will be displayed -->
 				<div class="col-sm-12">
+					<div class="row main-body">
+						<!--         <div class="col-md-1 col-sm-0 emptySide">
+					        </div> -->
+						<!--         <div class="col-lg-12 col-md-12"> -->
+						<!-- <div class="row main-content"> -->
+						<div class="col-lg-6 col-md-12 appSide">
+							<div class="col-lg-12 col-md-12" id="uploadOptions">
 					
+							</div>
+							<div class="col-lg-12 col-md-12" id="directions">
+					
+							</div>
+							<div class="col-lg-12 col-md-12" id="app">
+					
+							</div>
+						</div>
+					</div>
 				</div>
 	
 

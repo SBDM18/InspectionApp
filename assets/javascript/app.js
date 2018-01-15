@@ -255,7 +255,7 @@ $(document).on('click', 'img', function(e){
 
   //hide all photos except the one you chose and enlarge it, fit to center
 
-  // var model = Clarifai.GENERAL_MODEL;
+  //var model = Clarifai.GENERAL_MODEL;
 
   app.models.predict(Clarifai.GENERAL_MODEL, [id]).then(
     function(response) {
