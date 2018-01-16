@@ -225,7 +225,7 @@ function deleteAlbum(albumName) {
 
 $(document).on('click', '.myImg', function (e) {
     var id = e.target.id;
-    console.log(id);
+    console.log('This is the id: ' + id);
     // var modelID = {
     //     "id": 'Kitchen'
     // }
@@ -264,7 +264,10 @@ $(document).on('click', '.myImg', function (e) {
     app.models.list().then(
           function(response) {
             // do something with response
+            // console.log(response);
             console.log(response);
+            console.log('this' + JSON.stringify(response[0].appId));
+
           },
           function(err) {
             // there was an error
@@ -272,7 +275,17 @@ $(document).on('click', '.myImg', function (e) {
           }
     );
 
-    app.models.predict(model, [id]).then(
+    app.models.get('Kitchen').then(
+      function(response) {
+        // do something with response
+        // console.log(response);
+      },
+      function(err) {
+        // there was an error
+      }
+    );
+
+    app.models.predict(Clarifai.GENERAL_MODEL, [id]).then(
         function (response) {
             var data = response.outputs[0].data;
             // console.log(data);
@@ -298,7 +311,7 @@ $(document).on('click', '.myImg', function (e) {
 
             var img = ([
                 '<div>',
-                '<img src=' + id + ' style="width:264px;height:264px;"/>',
+                '<img src=' + myid + ' style="width:264px;height:264px;"/>',
                 '</div>'
             ])
 
