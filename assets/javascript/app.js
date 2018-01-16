@@ -372,7 +372,7 @@ function geoFindMe() {
         var longitude = position.coords.longitude;
         console.log(latitude);
         console.log(longitude);
-        findAddress(latitude,longitude);
+       // findAddress(latitude,longitude);
        
         //pass in the html element to populate the breweries
         return {
@@ -387,15 +387,30 @@ function geoFindMe() {
     return navigator.geolocation.getCurrentPosition(success, error);
 }
 //create Function to findAddress
-
-function findAddress(latitude,longitude){
-    var queryURL = "https://maps.googleapis.com/maps/api/geocode/json?"
-    queryURL += 'latlng=' + latitude + ',' + longitude + '&key=AIzaSyCcAYnI-_MBF2VMrCCyCbWiCxbiY1_wu3Q'
+// google locate API : AIzaSyDAW5qMvtF_zpIc0iA_agcJCts3P0RaYFs
+function findAddress(){
+    var queryURLLOC = "https://www.googleapis.com/geolocation/v1/geolocate?key=AIzaSyDAW5qMvtF_zpIc0iA_agcJCts3P0RaYFs"
     $.ajax({
-        url: queryURL,
-        method: "GET"
+        
+        url: queryURLLOC,
+        method:"POST"
     }).done(function(response){
-        console.log(response);
-    });
+        //console.log(response);
+        let lat = response.location.lat;
+        let lon = response.location.lng;
+        console.log(lat);
+        console.log(lon);
+    
+        var queryURL = "https://maps.googleapis.com/maps/api/geocode/json?"
+        queryURL += 'latlng=' + lat + ',' + lon + '&key=AIzaSyCcAYnI-_MBF2VMrCCyCbWiCxbiY1_wu3Q'
+        $.ajax({
+            url: queryURL,
+            method: "GET"
+        }).done(function(response){
+            console.log(response);
+            let localAdd = response.results[0].formatted_address;
+            console.log(localAdd);
+        });
+    })
 }
 
