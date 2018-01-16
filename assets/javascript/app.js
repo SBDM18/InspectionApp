@@ -255,8 +255,23 @@ $(document).on('click', '.myImg', function (e) {
 
     //var model = Clarifai.GENERAL_MODEL;
     //var model = "Objects",[{ "id": "kitchen" }],
+    const app = new Clarifai.App({
+        apiKey: 'ec0428bd8841427da7d196f666b6c265'
+    });
 
-    app.models.predict(Clarifai.GENERAL_MODEL, [id]).then(
+
+    app.models.list().then(
+        function (response) {
+            // do something with response
+            console.log(response);
+        },
+        function (err) {
+            // there was an error
+            console.log(error);
+        }
+    );
+
+    app.models.predict(model, [id]).then(    
         function (response) {
             var data = response.outputs[0].data;
             // console.log(data);
