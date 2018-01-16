@@ -255,14 +255,13 @@ $(document).on('click', '.myImg', function (e) {
 
     //var model = Clarifai.GENERAL_MODEL;
     //var model = "Objects",[{ "id": "kitchen" }],
-
     const app = new Clarifai.App({
-     apiKey: 'ec0428bd8841427da7d196f666b6c265'
+        apiKey: 'ec0428bd8841427da7d196f666b6c265'
     });
 
 
     app.models.list().then(
-          function(response) {
+        function (response) {
             // do something with response
             // console.log(response);
             console.log(response);
@@ -272,7 +271,7 @@ $(document).on('click', '.myImg', function (e) {
           function(err) {
             // there was an error
             console.log(error);
-          }
+        }
     );
 
     app.models.get('Kitchen').then(
@@ -354,22 +353,50 @@ $(document).ready(function(){
 		$('.main-content').show()
 	})
 
-
-        $('.pos-f-t').hover(function(){
-            if($(window).width() >= 1024){
-                // $('#navbarToggleExternalContent').css('display', 'none');
-                $('.navbar-toggler-icon').removeClass('hamburger-hover-off-icon'); 
-                $('#navbarToggleExternalContent').removeClass('hamburger-hover-off-menu');
-                $('.navbar-toggler-icon').addClass('hamburger-hover-on-icon');
-                $('#navbarToggleExternalContent').addClass('hamburger-hover-on-menu');
-            };
-        }, function() {
-            if($(window).width() >= 1024){
-                $('.navbar-toggler-icon').removeClass('hamburger-hover-on-icon'); 
-                $('#navbarToggleExternalContent').removeClass('hamburger-hover-on-menu');
-                $('.navbar-toggler-icon').addClass('hamburger-hover-off-icon'); 
-                $('#navbarToggleExternalContent').addClass('hamburger-hover-off-menu');
-            };          
-        });
-
 });
+//Geocoding google api key AIzaSyCcAYnI-_MBF2VMrCCyCbWiCxbiY1_wu3Q
+//geocoding google ajax call link https://maps.googleapis.com/maps/api/geocode/json?latlng=40.714224,-73.961452&key=YOUR_API_KEY
+//Function for search location
+function geoFindMe() {
+
+    var output = document.getE
+    
+    lementById("out");
+
+    if (!navigator.geolocation) {
+        output.innerHTML = "<p>Geolocation is not supported by your browser</p>";
+        return;
+    }
+    //Option to get data out of geoFindMe function is to take function success out of the nest.
+    function success(position) {
+        var latitude = position.coords.latitude;
+        var longitude = position.coords.longitude;
+        console.log(latitude);
+        console.log(longitude);
+        findAddress(latitude,longitude);
+       
+        //pass in the html element to populate the breweries
+        return {
+            latitude: latitude,
+            longitude: longitude
+        };
+    }
+
+    function error() {
+        output.innerHTML = "Unable to retrieve your location";
+    }
+    return navigator.geolocation.getCurrentPosition(success, error);
+}
+//create Function to findAddress
+
+function findAddress(latitude,longitude){
+    var queryURL = "https://maps.googleapis.com/maps/api/geocode/json?"
+    queryURL += 'latlng=' + latitude + ',' + longitude + '&key=AIzaSyCcAYnI-_MBF2VMrCCyCbWiCxbiY1_wu3Q'
+    $.ajax({
+        url: queryURL,
+        method: "GET"
+    }).done(function(response){
+        console.log(response);
+    });
+}
+
