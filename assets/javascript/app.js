@@ -359,7 +359,7 @@ $(document).ready(function(){
 //Function for search location
 function geoFindMe() {
 
-    var output = document.getE
+    var output = document.getElementById("out");
     
     lementById("out");
 
