@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- Title of the App -->
+	<title>Insightful Inspection</title>
+	<!-- Link to Bootstrap -->
+		<!-- JS BUNDLE from BOOTSTRAP -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4" crossorigin="anonymous"></script>
+	<!-- Link to JQuery -->
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.1.min.js"></script>
+	<!-- Link to Google Fonts -->
+	<link href="https://fonts.googleapis.com/css?family=Damion|Lato" rel="stylesheet">
+	<!-- Link to API's -->
+	<!-- Clarifai -->
+	<script type="text/javascript" src="https://sdk.clarifai.com/js/clarifai-latest.js"></script>
+	<!-- AWS -->
+	<script src="https://sdk.amazonaws.com/js/aws-sdk-2.171.0.min.js"></script>
+	<!-- Link to DB's -->
+	<!--  -->
+	<!-- Link to CSS files -->
+	<link rel="stylesheet" type="text/css" href="./assets/css/reset.css">
+	<link rel="stylesheet" type="text/css" href="./assets/css/style.css">
+	<!-- Link to JS files -->
+	<script type="text/javascript" src="./assets/javascript/app.js"></script>
+
+	<!-- getHtml load -->
+	<script>
+			// Initialize the Amazon Cognito credentials provider
+			// AWS.config.region = 'us-east-1'; // Region
+			// AWS.config.credentials = new AWS.CognitoIdentityCredentials({
+			//     IdentityPoolId: 'us-east-1:b3340e4d-5685-4f15-98e4-35481c5e28f7',
+			// });
+
+			//
+		function getHtml(template) {
+			return template.join('\n');
+		}
+	</script>
+
+</head>
+<body>
+
+	<div class="container-fluid">
+
+		<div class="row login-page">
+			<div class="title">Welcome to</div>
+			<div class="title">Insightful Inspection</div>
+			<div id="login">Login</div>
+			<img id="login-btn" src="./assets/images/gplus.png" style="height: 50px; width: 50px;">
+		</div>
+
+		
+		<div class="row main-content">
+			
+			<!-- app nav side -->
+			<div class="nav-content">
+	
+					<!-- nav button -->
+					<div class="pos-f-t">
+					  <nav class="navbar navbar-inverse bg-dark">
+					    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+					      <span class="navbar-toggler-icon"></span>
+					    </button>
+					  </nav>
+					  <div class="collapse" id="navbarToggleExternalContent">
+					    <div class="menu bg-dark p-4">
+						    <h4 class="text-white">Menu</h4>
+						    <span class="text-muted">
+								
+								<div id="locationSearch">Search Locations</div>
+
+								<div id="viewAlbums" onclick="listAlbums()">View Albums</div>
+
+								<div id="viewPDFs">View PDF's</div>
+
+								<div id="manageAccount">Manage Account</div>
+																
+						    </span>
+					    </div>
+					  </div>
+					</div>
+	
+				<!-- contact -->
+				<div class="contact">
+					
+				</div>
+
+			</div>
+
+			<!-- main app side -->
+			<div class="app-content col-sm">
+				
+				<!-- Title of the app dispayed in a nice, relaxing font -->
+				<div class="appTitle col-sm-12">
+					<div class="title">Insightful Inspection</div>
+				</div>
+				
+				<!-- Where all the info/functionality will be displayed -->
+				<div class="col-sm-12">
+					<div class="row main-body">
+						<!--         <div class="col-md-1 col-sm-0 emptySide">
+					        </div> -->
+						<!--         <div class="col-lg-12 col-md-12"> -->
+						<!-- <div class="row main-content"> -->
+						<div class="col-lg-6 col-md-12 appSide">
+							<div class="col-lg-12 col-md-12" id="uploadOptions">
+					
+							</div>
+							<div class="col-lg-12 col-md-12" id="directions">
+					
+							</div>
+							<div class="col-lg-12 col-md-12" id="app">
+					
+							</div>
+						</div>
+					</div>
+				</div>
+	
+
+			</div>
+
+		</div>
+
+	</div>
+
+
+
+</body>
+</html>

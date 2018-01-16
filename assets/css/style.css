@@ -1,0 +1,129 @@
+html {
+	height: 100%;
+	width: 100%;
+}
+
+body {
+	height: 100%;
+	width: 100%;
+	background-image: url('../images/grey_wash_wall.png');
+}
+
+
+.login-page {
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.login-page div {
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+#login {
+	font-size: 32px;
+	font-weight: bold;
+	font-family: 'Lato', sans-serif;
+}
+
+#login-btn:hover {
+	border-radius: 35px;	
+	box-shadow: 3px 3px 3px black;
+}
+
+/*TITLE CSS - login-page, appTitle*/
+.title {
+	font-family: 'Damion', cursive;
+	font-size: 55px;
+	color: white;
+	text-align: center;
+    text-shadow: 0 3px 3px black;
+}
+
+
+/*Main wrapper for all page content*/
+.container-fluid {
+	height: 100%;
+}
+
+.main-content {
+	height: 100%;
+}
+
+/*app-content - contains the functionality*/
+.app-content {
+	height: 100%;
+	width: 100%;
+	padding-left: 0px;
+	padding-right: 0px;
+}
+
+/*App title divider*/
+.appTitle {
+	width: 100%;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    padding-left: 0px;
+    padding-right: 0px;
+/*	box-shadow: 2px 2px 2px grey;*/
+}
+
+/*Nav CSS styling*/
+.nav-content {
+	height: 100%;
+	width: auto;
+	padding-top: 2%;
+	padding-bottom: 2%;
+	padding-left: 10px;
+	padding-right: 10px;
+	background-color: rgba(0,0,0,0.7);
+	box-shadow: 2px 2px 2px grey;
+}
+
+.text-muted div:hover {
+	color: white;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.myAlbum {
+	display: flex;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
