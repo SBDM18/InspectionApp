@@ -390,8 +390,7 @@ function geoFindMe() {
 // google locate API : AIzaSyDAW5qMvtF_zpIc0iA_agcJCts3P0RaYFs
 function findAddress(){
     var queryURLLOC = "https://www.googleapis.com/geolocation/v1/geolocate?key=AIzaSyDAW5qMvtF_zpIc0iA_agcJCts3P0RaYFs"
-    $.ajax({
-        
+    $.ajax({        
         url: queryURLLOC,
         method:"POST"
     }).done(function(response){
@@ -399,8 +398,7 @@ function findAddress(){
         let lat = response.location.lat;
         let lon = response.location.lng;
         console.log(lat);
-        console.log(lon);
-    
+        console.log(lon);    
         var queryURL = "https://maps.googleapis.com/maps/api/geocode/json?"
         queryURL += 'latlng=' + lat + ',' + lon + '&key=AIzaSyCcAYnI-_MBF2VMrCCyCbWiCxbiY1_wu3Q'
         $.ajax({
@@ -409,6 +407,7 @@ function findAddress(){
         }).done(function(response){
             console.log(response);
             let localAdd = response.results[0].formatted_address;
+            $("#addDisplay").append(localAdd);
             console.log(localAdd);
         });
     })
