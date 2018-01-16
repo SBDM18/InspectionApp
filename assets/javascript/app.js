@@ -253,10 +253,41 @@ $(document).on('click', '.myImg', function (e) {
 
     //hide all photos except the one you chose and enlarge it, fit to center
 
+    const app = new Clarifai.App({
+     apiKey: 'ec0428bd8841427da7d196f666b6c265'
+    });
+
+    app.models.list().then(
+      function(response) {
+        // do something with response
+        console.log(response);
+      },
+      function(err) {
+        // there was an error
+        console.log(err);
+      }
+    );
+
     //var model = Clarifai.GENERAL_MODEL;
     //var model = "Objects",[{ "id": "kitchen" }],
 
-    app.models.predict(Clarifai.GENERAL_MODEL, [id]).then(
+    const app = new Clarifai.App({
+     apiKey: 'ec0428bd8841427da7d196f666b6c265'
+    });
+
+
+    app.models.list().then(
+          function(response) {
+            // do something with response
+            console.log(response);
+          },
+          function(err) {
+            // there was an error
+            console.log(error);
+          }
+    );
+
+    app.models.predict(model, [id]).then(
         function (response) {
             var data = response.outputs[0].data;
             // console.log(data);
@@ -326,6 +357,21 @@ $(document).ready(function(){
 	})
 
 
-
+        $('.pos-f-t').hover(function(){
+            if($(window).width() >= 1024){
+                // $('#navbarToggleExternalContent').css('display', 'none');
+                $('.navbar-toggler-icon').removeClass('hamburger-hover-off-icon'); 
+                $('#navbarToggleExternalContent').removeClass('hamburger-hover-off-menu');
+                $('.navbar-toggler-icon').addClass('hamburger-hover-on-icon');
+                $('#navbarToggleExternalContent').addClass('hamburger-hover-on-menu');
+            };
+        }, function() {
+            if($(window).width() >= 1024){
+                $('.navbar-toggler-icon').removeClass('hamburger-hover-on-icon'); 
+                $('#navbarToggleExternalContent').removeClass('hamburger-hover-on-menu');
+                $('.navbar-toggler-icon').addClass('hamburger-hover-off-icon'); 
+                $('#navbarToggleExternalContent').addClass('hamburger-hover-off-menu');
+            };          
+        });
 
 });
