@@ -37,10 +37,14 @@ body {
 /*TITLE CSS - login-page, appTitle*/
 .title {
 	font-family: 'Damion', cursive;
-	font-size: 55px;
+	font-size: 75px;
 	color: white;
 	text-align: center;
     text-shadow: 0 3px 3px black;
+}
+
+.app-content .title {
+	font-size: 55px;
 }
 
 
@@ -77,18 +81,35 @@ body {
 	width: auto;
 	padding-top: 2%;
 	padding-bottom: 2%;
-	padding-left: 10px;
-	padding-right: 10px;
+	padding-right: 2px;
 	background-color: rgba(0,0,0,0.7);
 	box-shadow: 2px 2px 2px grey;
 }
 
 .text-muted div:hover {
 	color: white;
-
 }
 
 
+.hamburger-hover-on-icon {
+	transform: rotate(90deg);
+/*	transition-duration: 0.5s;*/
+}
+
+.hamburger-hover-on-menu {
+	display: block;
+/*	transition-duration: 0.5s;*/
+}
+
+.hamburger-hover-off-icon {
+	transform: rotate(180deg);
+/*	transition-duration: 0.5s;*/
+}
+
+.hamburger-hover-off-menu {
+	display: none;
+/*	transition-duration: 0.5s;*/
+}
 
 
 

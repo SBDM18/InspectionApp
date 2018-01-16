@@ -326,7 +326,6 @@ $(document).ready(function(){
 	})
 
 });
-//Button click for search location
-$("#locationSearch").on("click", function(){
-    console.log("working");
-})
+//Function for search location
+
+
