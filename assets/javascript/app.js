@@ -253,25 +253,10 @@ $(document).on('click', '.myImg', function (e) {
 
     //hide all photos except the one you chose and enlarge it, fit to center
 
-    const app = new Clarifai.App({
-     apiKey: 'ec0428bd8841427da7d196f666b6c265'
-    });
-
-    app.models.list().then(
-      function(response) {
-        // do something with response
-        console.log(response);
-      },
-      function(err) {
-        // there was an error
-        console.log(err);
-      }
-    );
-
     //var model = Clarifai.GENERAL_MODEL;
     //var model = "Objects",[{ "id": "kitchen" }],
 
-    const app = new Clarifai.App({
+    const apps = new Clarifai.App({
      apiKey: 'ec0428bd8841427da7d196f666b6c265'
     });
 
