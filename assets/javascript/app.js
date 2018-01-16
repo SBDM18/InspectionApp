@@ -325,7 +325,8 @@ $(document).ready(function(){
 		$('.main-content').show()
 	})
 
-
-
-
 });
+//Button click for search location
+$("#locationSearch").on("click", function(){
+    console.log("working");
+})
