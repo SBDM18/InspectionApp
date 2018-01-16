@@ -256,7 +256,7 @@ $(document).on('click', '.myImg', function (e) {
     //var model = Clarifai.GENERAL_MODEL;
     //var model = "Objects",[{ "id": "kitchen" }],
 
-    const apps = new Clarifai.App({
+    const app = new Clarifai.App({
      apiKey: 'ec0428bd8841427da7d196f666b6c265'
     });
 
