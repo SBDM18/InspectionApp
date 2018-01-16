@@ -341,6 +341,47 @@ $(document).ready(function(){
 	})
 
 });
+//Geocoding google api key AIzaSyCcAYnI-_MBF2VMrCCyCbWiCxbiY1_wu3Q
+//geocoding google ajax call link https://maps.googleapis.com/maps/api/geocode/json?latlng=40.714224,-73.961452&key=YOUR_API_KEY
 //Function for search location
+function geoFindMe() {
 
+    var output = document.getElementById("out");
+
+    if (!navigator.geolocation) {
+        output.innerHTML = "<p>Geolocation is not supported by your browser</p>";
+        return;
+    }
+    //Option to get data out of geoFindMe function is to take function success out of the nest.
+    function success(position) {
+        var latitude = position.coords.latitude;
+        var longitude = position.coords.longitude;
+        console.log(latitude);
+        console.log(longitude);
+        findAddress(latitude,longitude);
+       
+        //pass in the html element to populate the breweries
+        return {
+            latitude: latitude,
+            longitude: longitude
+        };
+    }
+
+    function error() {
+        output.innerHTML = "Unable to retrieve your location";
+    }
+    return navigator.geolocation.getCurrentPosition(success, error);
+}
+//create Function to findAddress
+
+function findAddress(latitude,longitude){
+    var queryURL = "https://maps.googleapis.com/maps/api/geocode/json?"
+    queryURL += 'latlng=' + latitude + ',' + longitude + '&key=AIzaSyCcAYnI-_MBF2VMrCCyCbWiCxbiY1_wu3Q'
+    $.ajax({
+        url: queryURL,
+        method: "GET"
+    }).done(function(response){
+        console.log(response);
+    });
+}
 
