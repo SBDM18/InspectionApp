@@ -326,6 +326,16 @@ $(document).ready(function(){
 	})
 
 
+// modal js here
+$("#searchlocationmodalBtn").leanModal(
+{
+   top: 100,
+   overlay: 0.6,
+   closeButton: ".closeModal"
+});
+
+
+
 
 
 });

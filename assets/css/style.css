@@ -88,21 +88,6 @@ body {
 
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 .myAlbum {
 	display: flex;
 }
@@ -112,18 +97,55 @@ body {
 
 
 
+/****************Modal CSS here**************/
+#lean_overlay
+{
+	position: fixed;
+	z-index: 100;
+	top: 0px;
+	left: 0px;
+	height: 100%;
+	width: 100%;
+	background: #000;
+	display: none;
+}
 
+#searchlocationTitle
+{
+	color: white;
+	size: 24px;
+	font-weight: bold;
 
+}
 
+.modalContainer
+{
+	background-color: white;
+	padding: 10%;
+	padding-top: 10px;
+	padding-bottom: 10px;
 
+}
 
+#searchlocationTitle
+{
+	text-align: 
+}
 
+.closeModal
+{
+	color: #aaa;
+	line-height: 50px;
+	font-size: 80%;
+	position: absolute;
+	right: 0;
+	text-align: center;
+	top: 0;
+	width: 70px;
+	text-decoration: none;
+}
 
-
-
-
-
-
-
-
-
+.closeModal:hover
+{
+	color: #faa;
+}
