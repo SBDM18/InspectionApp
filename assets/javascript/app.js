@@ -16,6 +16,11 @@ var s3 = new AWS.S3({
 
 console.log('s3  ', s3);
 
+ s3.listObjects(s3.params, function(err, data) {
+   if (err) console.log(err, err.stack); // an error occurred
+   else     console.log(data);           // successful response
+});
+
 function listAlbums() {
     $('#dataDisplay').empty();
     $('#dataImg').empty();
@@ -37,6 +42,15 @@ function listAlbums() {
                     '</div>'
                 ]);
             });
+
+            //Search function beginning!!!
+            var listofAlbums = data.CommonPrefixes.map(function (commonPrefix) {
+                var prefix = commonPrefix.Prefix;
+                var albumName = decodeURIComponent(prefix.replace('/', ''));
+                return albumName;
+            });
+
+            console.log(listofAlbums);
 
             var message = albums.length ?
                 getHtml(['<p>Click the Album Icon to view it.</p>'
@@ -88,7 +102,7 @@ function viewAlbum(albumName) {
                 '<div class="myImg" id="'+ photoUrl +'">',
                 '<img style="width:124px;height:124px;" src="' + photoUrl + '"/>',
                 '<div>',
-                '<img onclick="deletePhoto(\'' + albumName + "','" + photoKey + '\')" style="width:46px;height:46px;" src="./assets/images/XButton.png"/>',
+                // '<img onclick="deletePhoto(\'' + albumName + "','" + photoKey + '\')" style="width:46px;height:46px;" src="./assets/images/XButton.png"/>',
                 '</div>',
                 '</div>',
             ]);
@@ -225,7 +239,7 @@ function deleteAlbum(albumName) {
 
 $(document).on('click', '.myImg', function (e) {
     var id = e.target.id;
-    console.log('This is the id: ' + id);
+    console.log('This is the id: ' + JSON.stringify(id));
     // var modelID = {
     //     "id": 'Kitchen'
     // }
@@ -256,22 +270,40 @@ $(document).on('click', '.myImg', function (e) {
     //var model = Clarifai.GENERAL_MODEL;
     //var model = "Objects",[{ "id": "kitchen" }],
 
+    var objectmodel = {
+        name: '',
+        id: ''
+    };
+    var locationmodel = {
+        name: '',
+        id: ''
+    };
+    var conditionsmodel = {
+        name: '',
+        id: ''
+    };
+
+
     const app = new Clarifai.App({
      apiKey: 'ec0428bd8841427da7d196f666b6c265'
     });
 
 
+    //List the apps in the console 
     app.models.list().then(
           function(response) {
             // do something with response
             // console.log(response);
-            console.log(response);
-            console.log('this' + JSON.stringify(response[0].appId));
-
+            locationmodel.id = JSON.stringify(response[0].id);
+            locationmodel.name = JSON.stringify(response[0].name);
+            conditionsmodel.id = JSON.stringify(response[1].id);
+            conditionsmodel.name = JSON.stringify(response[1].name);
+            objectmodel.id = JSON.stringify(response[2].id);
+            objectmodel.name = JSON.stringify(response[2].name);
           },
           function(err) {
             // there was an error
-            console.log(error);
+            console.log(err);
           }
     );
 
@@ -356,7 +388,7 @@ $(document).ready(function(){
 
 
         $('.pos-f-t').hover(function(){
-            if($(window).width() >= 1024){
+            if($(window).width() >= 1025){
                 // $('#navbarToggleExternalContent').css('display', 'none');
                 $('.navbar-toggler-icon').removeClass('hamburger-hover-off-icon'); 
                 $('#navbarToggleExternalContent').removeClass('hamburger-hover-off-menu');
@@ -364,7 +396,7 @@ $(document).ready(function(){
                 $('#navbarToggleExternalContent').addClass('hamburger-hover-on-menu');
             };
         }, function() {
-            if($(window).width() >= 1024){
+            if($(window).width() >= 1025){
                 $('.navbar-toggler-icon').removeClass('hamburger-hover-on-icon'); 
                 $('#navbarToggleExternalContent').removeClass('hamburger-hover-on-menu');
                 $('.navbar-toggler-icon').addClass('hamburger-hover-off-icon'); 
