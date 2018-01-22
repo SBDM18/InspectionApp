@@ -405,7 +405,7 @@ $("#listAlbums").on("click", function(){
     {
        top: 100,
        overlay: 0.6,
-       closeButton: ".closeModal"
+       closeButton: ".closeModal"       
     });
 
 //Geocoding google api key AIzaSyCcAYnI-_MBF2VMrCCyCbWiCxbiY1_wu3Q
