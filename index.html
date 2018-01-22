@@ -23,6 +23,8 @@
 	<!-- Link to CSS files -->
 	<link rel="stylesheet" type="text/css" href="./assets/css/reset.css">
 	<link rel="stylesheet" type="text/css" href="./assets/css/style.css">
+	<!-- leanModal.js -->
+	<script type="text/javascript" src="./assets/javascript/jquery.leanModal.min.js"></script>
 	<!-- Link to JS files -->
 	<script type="text/javascript" src="./assets/javascript/app.js"></script>
 
@@ -70,8 +72,12 @@
 					    <div class="menu bg-dark p-4">
 						    <h4 class="text-white">Menu</h4>
 						    <span class="text-muted">
-								
-								<div id="locationSearch">Search Locations</div>
+
+								<!-- Search Locations Modal Trigger -->
+								<div id="locationSearch">
+									<a id="searchlocationmodalBtn" class="button" href="#searchlocationModal"> Search Locations
+									</a>
+								</div>
 
 								<div id="viewAlbums" onclick="listAlbums()">View Albums</div>
 
@@ -98,7 +104,30 @@
 				<div class="appTitle col-sm-12">
 					<div class="title">Insightful Inspection</div>
 				</div>
-				
+
+
+								<!-- Adding Modal for search locations -->
+
+				<div id="searchlocationModal" class="modalContainer" style="display:none;">
+	           		<header class="modalHeader">
+		               	<span><h4 id="#searchlocationTitle">Search Location</h4></span>
+		               	<span class="closeModal">&times;</span>
+	               	</header>
+	               	<h6>Name:</h6>
+	               	<input type="text" name="Name">
+	               	<h6>Address:</h6>
+	               	<input type="text" name="Address">
+	               	<h6>City:</h6>
+	               	<input type="text" name="City">
+	               	<h6>State:</h6>
+	               	<input type="text" name="State">
+	               	<h6>Zip:</h6>
+	               	<input type="text" name="Zip">
+           		</div>
+
+
+				<div id="out"></div>
+				<div id ="addDisplay"></div>
 				<!-- Where all the info/functionality will be displayed -->
 				<div class="col-sm-12">
 					<div class="row main-body">

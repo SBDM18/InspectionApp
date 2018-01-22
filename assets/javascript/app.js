@@ -285,13 +285,13 @@ $(document).on('click', '.myImg', function (e) {
 
 
     const app = new Clarifai.App({
-     apiKey: 'ec0428bd8841427da7d196f666b6c265'
+        apiKey: 'ec0428bd8841427da7d196f666b6c265'
     });
 
 
     //List the apps in the console 
     app.models.list().then(
-          function(response) {
+        function (response) {
             // do something with response
             // console.log(response);
             locationmodel.id = JSON.stringify(response[0].id);
@@ -305,6 +305,10 @@ $(document).on('click', '.myImg', function (e) {
             // there was an error
             console.log(err);
           }
+
+            console.log(error);
+        }
+
     );
 
     app.models.get('Kitchen').then(
@@ -386,6 +390,13 @@ $(document).ready(function(){
 		$('.main-content').show()
 	})
 
+    // search location modal js here
+    $("#searchlocationmodalBtn").leanModal(
+    {
+       top: 100,
+       overlay: 0.6,
+       closeButton: ".closeModal"
+    });
 
         $('.pos-f-t').hover(function(){
             if($(window).width() >= 1025){
@@ -402,6 +413,64 @@ $(document).ready(function(){
                 $('.navbar-toggler-icon').addClass('hamburger-hover-off-icon'); 
                 $('#navbarToggleExternalContent').addClass('hamburger-hover-off-menu');
             };          
-        });
 
 });
+//Geocoding google api key AIzaSyCcAYnI-_MBF2VMrCCyCbWiCxbiY1_wu3Q
+//geocoding google ajax call link https://maps.googleapis.com/maps/api/geocode/json?latlng=40.714224,-73.961452&key=YOUR_API_KEY
+//Function for search location
+function geoFindMe() {
+
+    var output = document.getElementById("out");
+    
+
+    if (!navigator.geolocation) {
+        output.innerHTML = "<p>Geolocation is not supported by your browser</p>";
+        return;
+    }
+    //Option to get data out of geoFindMe function is to take function success out of the nest.
+    function success(position) {
+        var latitude = position.coords.latitude;
+        var longitude = position.coords.longitude;
+        console.log(latitude);
+        console.log(longitude);
+       // findAddress(latitude,longitude);
+       
+        //pass in the html element to populate the breweries
+        return {
+            latitude: latitude,
+            longitude: longitude
+        };
+    }
+
+    function error() {
+        output.innerHTML = "Unable to retrieve your location";
+    }
+    return navigator.geolocation.getCurrentPosition(success, error);
+}
+//create Function to findAddress
+// google locate API : AIzaSyDAW5qMvtF_zpIc0iA_agcJCts3P0RaYFs
+function findAddress(){
+    var queryURLLOC = "https://www.googleapis.com/geolocation/v1/geolocate?key=AIzaSyDAW5qMvtF_zpIc0iA_agcJCts3P0RaYFs"
+    $.ajax({        
+        url: queryURLLOC,
+        method:"POST"
+    }).done(function(response){
+        //console.log(response);
+        let lat = response.location.lat;
+        let lon = response.location.lng;
+        console.log(lat);
+        console.log(lon);    
+        var queryURL = "https://maps.googleapis.com/maps/api/geocode/json?"
+        queryURL += 'latlng=' + lat + ',' + lon + '&key=AIzaSyCcAYnI-_MBF2VMrCCyCbWiCxbiY1_wu3Q'
+        $.ajax({
+            url: queryURL,
+            method: "GET"
+        }).done(function(response){
+            console.log(response);
+            let localAdd = response.results[0].formatted_address;
+            $("#addDisplay").append(localAdd);
+            console.log(localAdd);
+        });
+    })
+}
+
