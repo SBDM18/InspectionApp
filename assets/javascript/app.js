@@ -358,7 +358,7 @@ $(document).ready(function(){
     {
        top: 100,
        overlay: 0.6,
-       closeButton: ".closeModal"
+       closeButton: ".closeModal"       
     });
 
 });
@@ -380,7 +380,7 @@ function geoFindMe() {
         var longitude = position.coords.longitude;
         console.log(latitude);
         console.log(longitude);
-       // findAddress(latitude,longitude);
+        findAddress(latitude,longitude);
        
         //pass in the html element to populate the breweries
         return {
