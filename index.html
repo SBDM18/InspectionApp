@@ -75,7 +75,7 @@
 
 								<!-- Search Locations Modal Trigger -->
 								<div id="locationSearch">
-									<a id="searchlocationmodalBtn" class="button" href="#searchlocationModal"> Search Locations
+									<a id="searchlocationmodalBtn" class="button" href="#searchlocationModal" onclick="geoFindMe()">Search Locations
 									</a>
 								</div>
 
@@ -112,7 +112,9 @@
 	           		<header class="modalHeader">
 		               	<span><h4 id="#searchlocationTitle">Search Location</h4></span>
 		               	<span class="closeModal">&times;</span>
-	               	</header>
+					   </header>
+									<div id="addDisplay"></div>
+
 	               	<h6>Name:</h6>
 	               	<input type="text" name="Name">
 	               	<h6>Address:</h6>
@@ -127,7 +129,6 @@
 
 
 				<div id="out"></div>
-				<div id ="addDisplay"></div>
 				<!-- Where all the info/functionality will be displayed -->
 				<div class="col-sm-12">
 					<div class="row main-body">
