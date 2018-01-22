@@ -353,6 +353,14 @@ $(document).ready(function(){
 		$('.main-content').show()
 	})
 
+    // search location modal js here
+    $("#searchlocationmodalBtn").leanModal(
+    {
+       top: 100,
+       overlay: 0.6,
+       closeButton: ".closeModal"
+    });
+
 });
 //Geocoding google api key AIzaSyCcAYnI-_MBF2VMrCCyCbWiCxbiY1_wu3Q
 //geocoding google ajax call link https://maps.googleapis.com/maps/api/geocode/json?latlng=40.714224,-73.961452&key=YOUR_API_KEY
