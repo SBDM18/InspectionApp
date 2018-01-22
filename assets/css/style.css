@@ -114,20 +114,47 @@ body {
 
 
 
-
-
-
-
-
-
-
-
-
-
 .myAlbum {
 	display: flex;
 }
 
+
+
+
+/****************Modal CSS here**************/
+#lean_overlay
+{
+	position: fixed;
+	z-index: 100;
+	top: 0px;
+	left: 0px;
+	height: 100%;
+	width: 100%;
+	background: #000;
+	display: none;
+}
+
+#searchlocationTitle
+{
+	color: white;
+	size: 24px;
+	font-weight: bold;
+
+}
+
+.modalContainer
+{
+	background-color: white;
+	padding: 10%;
+	padding-top: 10px;
+	padding-bottom: 10px;
+
+}
+
+#searchlocationTitle
+{
+	text-align: center;
+}
 
 @media only screen and (max-width: 1024px) and (min-width: 400px)  and (orientation: portrait){
 /*	    if($(window).width() <= 1024){
@@ -153,7 +180,10 @@ body {
 
 
 
-
+.closeModal:hover
+{
+	color: #faa;
+}
 
 
 
