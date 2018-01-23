@@ -491,6 +491,8 @@ $(document).ready(function(){
                         console.log(response);
                         let localAdd = response.results[0].formatted_address;
                         $("#addDisplay").append(localAdd);
+                        $("#newAlbumBtn").show();
+
                         // console.log(localAdd);
                         return localAdd;
                         //note call in aws album search check
@@ -500,14 +502,17 @@ $(document).ready(function(){
 
             function inputModal() {
                 let inputDisplay = ` 
-	               	<label>Address:</label>
-	               	<input type="text" id="address" name="Address">
-	               	<label>City:</label>
-	               	<input type="text" id="city" name="City">
-	               	<label>State:</label>
-	               	<input type="text" id="state" name="State">
-	               	<label>Zip:</label>
-	               	<input type="text" id="zip" name="Zip">
+                <div id="inputForm">
+	               	<label>Address</label><br>
+	               	<input type="text" id="address" name="Address"><br>
+	               	<label>City</label><br>
+	               	<input type="text" id="city" name="City"><br>
+	               	<label>State</label><br>
+	               	<input type="text" id="state" name="State"><br>
+	               	<label>Zip</label><br>
+                    <input type="text" id="zip" name="Zip"><br>
+                </div>
+                <button class="btn btn-default " id="newInputBtn">Create New Album</button>
     `
                 $(".modalInfo").html(inputDisplay);
             }
@@ -518,13 +523,21 @@ $(document).ready(function(){
                 $("#askAlbum").hide();
             });
             $(document).on("click", "#locBtn", function () {
+                let newAlbum = `<button id="newAlbumBtn" class="btn btn-default ">Create New Album</button>`;
+                $(".modalInfo").append(newAlbum);
+                $("#newAlbumBtn").hide();
                 $("#locBtn").hide();
                 $("#inputBtn").hide();
                 $("#addDisplay").show();
-                geoFindMe();
+                geoFindMe(newAlbum);
+               
             });
             $(document).on("click", "#inputBtn", function () {
                 $("#locBtn").hide();
+                $("#inputBtn").hide();
+                $("#modalTitle").empty();
+                let newTitle = 'Enter address to create a new Album'
+                $("#modalTitle").append(newTitle);
                 inputModal();
             });
 
