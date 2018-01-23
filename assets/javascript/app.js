@@ -14,6 +14,8 @@ var s3 = new AWS.S3({
     params: { Bucket: albumBucketName }
 });
 
+let albumArr = [];
+
 console.log('s3  ', s3);
 
  s3.listObjects(s3.params, function(err, data) {
@@ -50,7 +52,8 @@ function listAlbums() {
                 return albumName;
             });
 
-            console.log(listofAlbums);
+            albumArr = listofAlbums;
+            console.log(albumArr);
 
             var message = albums.length ?
                 getHtml(['<p>Click the Album Icon to view it.</p>'
@@ -439,6 +442,15 @@ function geoFindMe() {
     }
     return navigator.geolocation.getCurrentPosition(success, error);
 }
+
+function awsSearch(address){
+    if (albumArr.indexOf(address) != -1){
+        return viewAlbum(address);
+    } else {
+        return createAlbum(address);
+    }
+}
+
 //create Function to findAddress
 // google locate API : AIzaSyDAW5qMvtF_zpIc0iA_agcJCts3P0RaYFs
 function findAddress(){
@@ -462,6 +474,7 @@ function findAddress(){
             let localAdd = response.results[0].formatted_address;
             $("#addDisplay").append(localAdd);
             console.log(localAdd);
+            awsSearch(localAdd);
         });
     })
 }
