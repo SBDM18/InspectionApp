@@ -122,6 +122,7 @@ body {
 
 
 /****************Modal CSS here**************/
+
 #lean_overlay
 {
 	position: fixed;
@@ -134,20 +135,98 @@ body {
 	display: none;
 }
 
-#searchlocationTitle
+#modalTitle
 {
 	color: white;
-	size: 36px;
+	font-size: 35px; 
 	font-weight: bold;
 	text-align: center;
+	font-family: 'Damion', cursive;
+	margin: 10px 0px 20px 0px;
+    text-shadow: 0 3px 3px black;
+}
+#addDisplay{
+	color: white;
+	font-size: 24px;
+	font-weight: bold;
+	font-family: 'Damion', cursive;
+	text-shadow: 0 3px 3px black;
+	text-align: center;
+	margin: 10px 0px 20px 0px;
+}
+#locBtn{
+	margin: 5% 15% 5% 25%;
+}
+#inputBtn{
+	margin: 5% 15% 5% 28%;
 
 }
+#newAlbumBtn{
+	margin: 5% 0% 10% 30%;
+}
+#newInputBtn{
+	margin: 5% 0% 5% 30%;
+}
+/* Button hover */
+.btn {
+	position: relative;
+	display: inline-block;
+	background-color: #aaa;
+	color: white;
+	font-size: 24px;
+	font-weight: 600;
+	font-family: 'Crimson Text',
+	serif;
+	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+	border-radius: 7px;
+	-webkit-transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+	transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
 
+.btn::after {
+	content: "";
+	border-radius: 5px;
+	position: absolute;
+	z-index: -1;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+	opacity: 0;
+	-webkit-transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+	transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.btn:hover {
+	-webkit-transform: scale(1.25, 1.25);
+	transform: scale(1.25, 1.25);
+}
+
+.btn:hover::after {
+	opacity: 1;
+}
+
+/* .btn{
+	background-color: #aaa;
+	color: white;
+	border: solid 2px black;
+	border-radius: 7px;	
+} */
+#inputForm{
+	margin-left: 30%;
+}
+label{
+	color: white;
+	font-size: 22px;
+	font-family: "Damion", cursive;
+}
 .modalContainer
 {
 	background-image: url('../images/grey_wash_wall.png');
 	/* background-color: rgb(154, 148, 148); */
 	border-radius: 10px;
+	position: absolute;
 	padding: 10%;
 	padding-top: 10px;
 	padding-bottom: 10px;
@@ -155,9 +234,24 @@ body {
 	 0 15px 12px rgba(0, 0, 0, 0.22);
 
 }
+.closeModal {
+	color: #aaa;
+	line-height: 50px;
+	font-size: 80%;
+	position: absolute;
+	right: 0;
+	text-align: center;
+	top: 0;
+	width: 70px;
+	text-decoration: none;
+}
+
+.closeModal:hover {
+	color: #faa;
+}
 
 
-
+/* Media Query CSS */
 
 @media only screen and (max-width: 1024px) and (min-width: 400px)  and (orientation: portrait){
 /*	    if($(window).width() <= 1024){
@@ -184,23 +278,6 @@ body {
 
 
 
-.closeModal
-{
-	color: #aaa;
-	line-height: 50px;
-	font-size: 80%;
-	position: absolute;
-	right: 0;
-	text-align: center;
-	top: 0;
-	width: 70px;
-	text-decoration: none;
-}
-
-.closeModal:hover
-{
-	color: #faa;
-}
 
 
 
