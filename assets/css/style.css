@@ -137,24 +137,27 @@ body {
 #searchlocationTitle
 {
 	color: white;
-	size: 24px;
+	size: 36px;
 	font-weight: bold;
+	text-align: center;
 
 }
 
 .modalContainer
 {
-	background-color: white;
+	background-image: url('../images/grey_wash_wall.png');
+	/* background-color: rgb(154, 148, 148); */
+	border-radius: 10px;
 	padding: 10%;
 	padding-top: 10px;
 	padding-bottom: 10px;
+	box-shadow: 0 19px 38px rgba(0, 0, 0, 0.30),
+	 0 15px 12px rgba(0, 0, 0, 0.22);
 
 }
 
-#searchlocationTitle
-{
-	text-align: center;
-}
+
+
 
 @media only screen and (max-width: 1024px) and (min-width: 400px)  and (orientation: portrait){
 /*	    if($(window).width() <= 1024){
@@ -179,6 +182,20 @@ body {
 }
 
 
+
+
+.closeModal
+{
+	color: #aaa;
+	line-height: 50px;
+	font-size: 80%;
+	position: absolute;
+	right: 0;
+	text-align: center;
+	top: 0;
+	width: 70px;
+	text-decoration: none;
+}
 
 .closeModal:hover
 {

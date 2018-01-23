@@ -52,7 +52,7 @@
 			<div class="title">Welcome to</div>
 			<div class="title">Insightful Inspection</div>
 			<div id="login">Login</div>
-			<img id="login-btn" src="./assets/images/gplus.png" style="height: 64px; width: 64px;">
+			<img id="login-btn" onload="codeHide()" src="./assets/images/gplus.png" style="height: 64px; width: 64px;">
 		</div>
 
 		
@@ -114,15 +114,23 @@
 		               	<span class="closeModal">&times;</span>
 	               	</header>
 					   </header>
-									<div id="addDisplay"></div>
-
-	               	<h6>Name:</h6>
+					<div id="addDisplay"></div>
+					<div id="askAlbum">Do you want to create a new album?</div>
+					<div class="modalInfo"></div>
+					<button class="btn btn-default" id="locBtn"> Create Album From current location</button>
+					<button class="btn btn-default" id="inputBtn"> Create Album from new location</button>
+					<button class="btn btn-default" id="createAlbum">Create Album</button>   
+					
+					<!-- <h6>Name:</h6>
 	               	<input type="text" name="Name">
 	               	<h6>Address:</h6>
 	               	<input type="text" name="Address">
 	               	<h6>City:</h6>
-					<input type="text" name="City">
-					<div id ="addDisplay"></div>
+	               	<input type="text" name="City">
+	               	<h6>State:</h6>
+	               	<input type="text" name="State">
+	               	<h6>Zip:</h6>
+	               	<input type="text" name="Zip"> -->
            		</div>
 
 
