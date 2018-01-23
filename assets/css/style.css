@@ -156,6 +156,34 @@ body {
 
 }
 
+
+
+
+@media only screen and (max-width: 1024px) and (min-width: 400px)  and (orientation: portrait){
+/*	    if($(window).width() <= 1024){
+        $('.pos-f-t').css('height', '20%;');
+        $('.pos-f-t').css('width', '100%');
+        $('.pos-f-t').css('display', 'flex');
+        $('.pos-f-t').css('flex-direction', 'row');*/
+    .nav-content{
+    	height: 8%;
+    	width: 100%;
+    }
+
+    .pos-f-t{
+        display: flex;
+    	flex-direction: row;
+    }
+
+    .text-muted{
+        display: flex;
+    	flex-direction: row;
+    }
+}
+
+
+
+
 .closeModal
 {
 	color: #aaa;
