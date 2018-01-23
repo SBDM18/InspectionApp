@@ -90,6 +90,19 @@ body {
 	color: white;
 }
 
+.text-white {
+	font-size: 18px;
+	border-bottom-style: solid;
+	border-width: 2px;
+	border-color: #aaa;
+}
+
+/* a {color: #636c72 !important;text-decoration: none;}
+a:link{color: #636c72; text-decoration: none;}
+a:visited{color: #636c72; text-decoration: none;}
+a:hover{color: #aaa; text-decoration: none;} */
+
+
 
 .hamburger-hover-on-icon {
 	transform: rotate(90deg);
@@ -111,7 +124,24 @@ body {
 /*	transition-duration: 0.5s;*/
 }
 
+.pos-f-t{
+	height: auto;
+}
 
+#navbarToggleExternalContent {
+	height: 275px;
+}
+
+.menu{
+	height: 100%;
+}
+
+.text-muted{
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+}
 
 
 .myAlbum {
@@ -134,6 +164,7 @@ body {
 	background: #000;
 	display: none;
 }
+
 
 #modalTitle
 {
@@ -227,7 +258,7 @@ label{
 	/* background-color: rgb(154, 148, 148); */
 	border-radius: 10px;
 	position: absolute;
-	padding: 10%;
+	padding: 5%;
 	padding-top: 10px;
 	padding-bottom: 10px;
 	box-shadow: 0 19px 38px rgba(0, 0, 0, 0.30),
