@@ -416,8 +416,39 @@ function findAddress(){
             console.log(response);
             let localAdd = response.results[0].formatted_address;
             $("#addDisplay").append(localAdd);
-            console.log(localAdd);
+           // console.log(localAdd);
+            return localAdd;
+            //note call in aws album search check
         });
     })
 }
+function inputModal(){
+    let inputDisplay = ` 
+	               	<label>Address:</label>
+	               	<input type="text" id="address" name="Address">
+	               	<label>City:</label>
+	               	<input type="text" id="city" name="City">
+	               	<label>State:</label>
+	               	<input type="text" id="state" name="State">
+	               	<label>Zip:</label>
+	               	<input type="text" id="zip" name="Zip">
+    `
+    $(".modalInfo").html(inputDisplay);
+}
+
+$(document).on("click", "#searchlocationmodalBtn", function(){
+    $("#createAlbum").hide();
+    $("#addDisplay").hide();
+    $("#askAlbum").hide();
+});
+$(document).on("click", "#locBtn", function(){
+    $("#locBtn").hide();
+    $("#inputBtn").hide();
+    $("#addDisplay").show();
+    geoFindMe();
+});
+$(document).on("click","#inputBtn", function(){
+    $("#locBtn").hide();
+    inputModal();
+});
 
