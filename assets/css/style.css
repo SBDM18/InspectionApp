@@ -122,6 +122,7 @@ body {
 
 
 /****************Modal CSS here**************/
+
 #lean_overlay
 {
 	position: fixed;
@@ -134,15 +135,47 @@ body {
 	display: none;
 }
 
-#searchlocationTitle
+#modalTitle
 {
 	color: white;
-	size: 36px;
+	font-size: 35px; 
 	font-weight: bold;
 	text-align: center;
+	font-family: 'Damion', cursive;
+	margin: 10px 0px 20px 0px;
+    text-shadow: 0 3px 3px black;
+}
+#addDisplay{
+	color: white;
+	font-size: 24px;
+	font-weight: bold;
+	font-family: 'Damion', cursive;
+	text-shadow: 0 3px 3px black;
+	text-align: center;
+	margin: 10px 0px 20px 0px;
+}
+#locBtn{
+	margin: 5% 15% 5% 25%;
+}
+#inputBtn{
+	margin: 5% 15% 5% 25%;
 
 }
+#newAlbumBtn{
+	margin-left: 30%;
+}
+#newInputBtn{
+	margin: 5% 0% 5% 30%;
 
+}
+#inputForm{
+	margin-left: 30%;
+}
+label{
+	color: white;
+	font-size: 22px;
+	font-family: "Damion", cursive;
+}
 .modalContainer
 {
 	background-image: url('../images/grey_wash_wall.png');
@@ -155,9 +188,24 @@ body {
 	 0 15px 12px rgba(0, 0, 0, 0.22);
 
 }
+.closeModal {
+	color: #aaa;
+	line-height: 50px;
+	font-size: 80%;
+	position: absolute;
+	right: 0;
+	text-align: center;
+	top: 0;
+	width: 70px;
+	text-decoration: none;
+}
+
+.closeModal:hover {
+	color: #faa;
+}
 
 
-
+/* Media Query CSS */
 
 @media only screen and (max-width: 1024px) and (min-width: 400px)  and (orientation: portrait){
 /*	    if($(window).width() <= 1024){
@@ -184,23 +232,6 @@ body {
 
 
 
-.closeModal
-{
-	color: #aaa;
-	line-height: 50px;
-	font-size: 80%;
-	position: absolute;
-	right: 0;
-	text-align: center;
-	top: 0;
-	width: 70px;
-	text-decoration: none;
-}
-
-.closeModal:hover
-{
-	color: #faa;
-}
 
 
 
