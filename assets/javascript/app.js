@@ -16,6 +16,8 @@ var s3 = new AWS.S3({
     }
 });
 
+let albumArr = [];
+
 console.log('s3  ', s3);
 
 s3.listObjects(s3.params, function (err, data) {
@@ -54,7 +56,8 @@ function listAlbums() {
                 return albumName;
             });
 
-            console.log(listofAlbums);
+            albumArr = listofAlbums;
+            console.log(albumArr);
 
             var message = albums.length ?
                 getHtml(['<p>Click the Album Icon to view it.</p>'
@@ -107,7 +110,7 @@ function viewAlbum(albumName) {
 
             return getHtml([
                 '<div class="myImg" id="' + photoUrl + '">',
-                '<img style="width:124px;height:124px;" src="' + photoUrl + '"/>',
+                '<img  id="' + photoUrl + '" style="width:124px;height:124px;" src="' + photoUrl + '"/>',
                 '<div>',
                 // '<img onclick="deletePhoto(\'' + albumName + "','" + photoKey + '\')" style="width:46px;height:46px;" src="./assets/images/XButton.png"/>',
                 '</div>',
@@ -252,7 +255,24 @@ function deleteAlbum(albumName) {
 // 
 // 
 // instantiate a new Clarifai app passing in your api key.
-// 
+// Making the model objects...
+var objectmodel = {
+    name: '',
+    id: '',
+    appId: ''
+};
+var locationmodel = {
+    name: '',
+    id: '',
+    appId: ''
+};
+var conditionsmodel = {
+    name: '',
+    id: '',
+    appId: ''
+};
+
+var resp;
 
 // // predict the contents of an image by passing in a url
 
@@ -292,20 +312,6 @@ $(document).on('click', '.myImg', function (e) {
     //var model = Clarifai.GENERAL_MODEL;
     //var model = "Objects",[{ "id": "kitchen" }],
 
-    var objectmodel = {
-        name: '',
-        id: ''
-    };
-    var locationmodel = {
-        name: '',
-        id: ''
-    };
-    var conditionsmodel = {
-        name: '',
-        id: ''
-    };
-
-
     const app = new Clarifai.App({
         apiKey: 'ec0428bd8841427da7d196f666b6c265'
     });
@@ -314,14 +320,74 @@ $(document).on('click', '.myImg', function (e) {
     //List the apps in the console 
     app.models.list().then(
         function (response) {
+            resp = response;
             // do something with response
             // console.log(response);
             locationmodel.id = JSON.stringify(response[0].id);
             locationmodel.name = JSON.stringify(response[0].name);
+            locationmodel.appId = response[0].appId;
             conditionsmodel.id = JSON.stringify(response[1].id);
             conditionsmodel.name = JSON.stringify(response[1].name);
+            conditionsmodel.appId = JSON.stringify(response[1].appId);
             objectmodel.id = JSON.stringify(response[2].id);
             objectmodel.name = JSON.stringify(response[2].name);
+            objectmodel.appId = JSON.stringify(response[2].appId);
+
+            app.models.predict(objectmodel.id, [id]).then(
+                function (response) {
+                    //simple console.log to see if the clarifai model is working
+                    console.log(response);
+                    var data = response.outputs[0].data;
+                    // console.log(data);
+                    // console.log(data.concepts[0].name);
+                    // console.log(data.concepts[0].value);
+                    // console.log(data.concepts[1].name);
+                    // console.log(data.concepts[1].value);
+                    // console.log(data.concepts[2].name);
+                    // console.log(data.concepts[2].value);
+            
+            
+            
+                    var outputTemplate = ([
+                        '<div>',
+                        '<p id=respValue0></p><h2 id="percentId0"></h2>',
+                        '<p id=respValue1></p><h2 id="percentId1"></h2>',
+                        '<p id=respValue2></p><h2 id="percentId2"></h2>',
+                        '<p id=respValue3></p><h2 id="percentId3"></h2>',
+                        '<p id=respValue4></p><h2 id="percentId4"></h2>',
+                        '<p id=respValue5></p><h2 id="percentId5"></h2>',
+                        '</div>'
+                    ])
+            
+                    var img = ([
+                        '<div>',
+                        '<img src=' + myid + ' style="width:264px;height:264px;"/>',
+                        '</div>'
+                    ])
+            
+                    document.getElementById('dataImg').innerHTML = getHtml(img);
+                    document.getElementById('dataDisplay').innerHTML = getHtml(outputTemplate);
+                    $('#respValue0').html(data.concepts[0].name);
+                    $('#respValue1').html(data.concepts[1].name);
+                    $('#respValue2').html(data.concepts[2].name);
+                    $('#respValue3').html(data.concepts[3].name);
+                    $('#respValue4').html(data.concepts[4].name);
+                    $('#respValue5').html(data.concepts[5].name);
+                    $('#percentId0').append(drawPercentBar(100, Math.round(data.concepts[0].value * 100), 'rgba(222, 224, 226, 0.6)', 'rgba(86, 125, 188, 0.6)'));
+                    $('#percentId1').append(drawPercentBar(100, Math.round(data.concepts[1].value * 100), 'rgba(222, 224, 226, 0.6)', 'rgba(86, 125, 188, 0.6)'));
+                    $('#percentId2').append(drawPercentBar(100, Math.round(data.concepts[2].value * 100), 'rgba(222, 224, 226, 0.6)', 'rgba(86, 125, 188, 0.6)'));
+                    $('#percentId3').append(drawPercentBar(100, Math.round(data.concepts[3].value * 100), 'rgba(222, 224, 226, 0.6)', 'rgba(86, 125, 188, 0.6)'));
+                    $('#percentId4').append(drawPercentBar(100, Math.round(data.concepts[4].value * 100), 'rgba(222, 224, 226, 0.6)', 'rgba(86, 125, 188, 0.6)'));
+                    $('#percentId5').append(drawPercentBar(100, Math.round(data.concepts[5].value * 100), 'rgba(222, 224, 226, 0.6)', 'rgba(86, 125, 188, 0.6)'));
+                    // $('#percentId6').append(drawPercentBar(100, Math.round(data.concepts[1].value * 100), 'rgba(222, 224, 226, 0.6)', 'none'));
+                    // $('#percentId0').append(Math.round(data.concepts[0].value * 100) + '%');
+                    // $('#percentId1').append(Math.round(data.concepts[1].value * 100) + '%');
+                    // $('#percentId2').append(Math.round(data.concepts[2].value * 100) + '%');
+                }
+                // function (err) {
+                //     console.error(err);
+                // }
+            );
         },
         function (err) {
             // there was an error
@@ -333,69 +399,10 @@ $(document).on('click', '.myImg', function (e) {
 
 );
 
-app.models.get('Kitchen').then(
-    function (response) {
-        // do something with response
-        // console.log(response);
-    },
-    function (err) {
-        // there was an error
-    }
-);
+//seeing what Clarifai.GENERAL_MODEL console.logs
+console.log("Clarifai gen model: " + JSON.stringify(Clarifai.GENERAL_MODEL));
+console.log("Our gen model " + JSON.stringify(objectmodel.appId));
 
-app.models.predict(Clarifai.GENERAL_MODEL, [id]).then(
-    function (response) {
-        var data = response.outputs[0].data;
-        // console.log(data);
-        // console.log(data.concepts[0].name);
-        // console.log(data.concepts[0].value);
-        // console.log(data.concepts[1].name);
-        // console.log(data.concepts[1].value);
-        // console.log(data.concepts[2].name);
-        // console.log(data.concepts[2].value);
-
-
-
-        var outputTemplate = ([
-            '<div>',
-            '<p id=respValue0></p><h2 id="percentId0"></h2>',
-            '<p id=respValue1></p><h2 id="percentId1"></h2>',
-            '<p id=respValue2></p><h2 id="percentId2"></h2>',
-            '<p id=respValue3></p><h2 id="percentId3"></h2>',
-            '<p id=respValue4></p><h2 id="percentId4"></h2>',
-            '<p id=respValue5></p><h2 id="percentId5"></h2>',
-            '</div>'
-        ])
-
-        var img = ([
-            '<div>',
-            '<img src=' + myid + ' style="width:264px;height:264px;"/>',
-            '</div>'
-        ])
-
-        document.getElementById('dataImg').innerHTML = getHtml(img);
-        document.getElementById('dataDisplay').innerHTML = getHtml(outputTemplate);
-        $('#respValue0').html(data.concepts[0].name);
-        $('#respValue1').html(data.concepts[1].name);
-        $('#respValue2').html(data.concepts[2].name);
-        $('#respValue3').html(data.concepts[3].name);
-        $('#respValue4').html(data.concepts[4].name);
-        $('#respValue5').html(data.concepts[5].name);
-        $('#percentId0').append(drawPercentBar(100, Math.round(data.concepts[0].value * 100), 'rgba(222, 224, 226, 0.6)', 'rgba(86, 125, 188, 0.6)'));
-        $('#percentId1').append(drawPercentBar(100, Math.round(data.concepts[1].value * 100), 'rgba(222, 224, 226, 0.6)', 'rgba(86, 125, 188, 0.6)'));
-        $('#percentId2').append(drawPercentBar(100, Math.round(data.concepts[2].value * 100), 'rgba(222, 224, 226, 0.6)', 'rgba(86, 125, 188, 0.6)'));
-        $('#percentId3').append(drawPercentBar(100, Math.round(data.concepts[3].value * 100), 'rgba(222, 224, 226, 0.6)', 'rgba(86, 125, 188, 0.6)'));
-        $('#percentId4').append(drawPercentBar(100, Math.round(data.concepts[4].value * 100), 'rgba(222, 224, 226, 0.6)', 'rgba(86, 125, 188, 0.6)'));
-        $('#percentId5').append(drawPercentBar(100, Math.round(data.concepts[5].value * 100), 'rgba(222, 224, 226, 0.6)', 'rgba(86, 125, 188, 0.6)'));
-        // $('#percentId6').append(drawPercentBar(100, Math.round(data.concepts[1].value * 100), 'rgba(222, 224, 226, 0.6)', 'none'));
-        // $('#percentId0').append(Math.round(data.concepts[0].value * 100) + '%');
-        // $('#percentId1').append(Math.round(data.concepts[1].value * 100) + '%');
-        // $('#percentId2').append(Math.round(data.concepts[2].value * 100) + '%');
-    },
-    function (err) {
-        console.error(err);
-    }
-);
 });
 
 $("#listAlbums").on("click", function () {
@@ -455,8 +462,7 @@ $(document).ready(function(){
                     var longitude = position.coords.longitude;
                     console.log(latitude);
                     console.log(longitude);
-                    findAddress(latitude, longitude);
-
+                    let localAdd = findAddress(latitude, longitude);
                     //pass in the html element to populate the breweries
                     return {
                         latitude: latitude,
@@ -470,50 +476,56 @@ $(document).ready(function(){
                 return navigator.geolocation.getCurrentPosition(success, error);
             }
             //create Function to findAddress
+            //NOTE: need global variable to hold address...
+            let localAdd;
+            //NOTE: need global variable for if the location has already been searched...
+            let searched = false;
             // google locate API : AIzaSyDAW5qMvtF_zpIc0iA_agcJCts3P0RaYFs
             function findAddress() {
-                var queryURLLOC = "https://www.googleapis.com/geolocation/v1/geolocate?key=AIzaSyDAW5qMvtF_zpIc0iA_agcJCts3P0RaYFs"
-                $.ajax({
-                    url: queryURLLOC,
-                    method: "POST"
-                }).done(function (response) {
-                    //console.log(response);
-                    let lat = response.location.lat;
-                    let lon = response.location.lng;
-                    console.log(lat);
-                    console.log(lon);
-                    var queryURL = "https://maps.googleapis.com/maps/api/geocode/json?"
-                    queryURL += 'latlng=' + lat + ',' + lon + '&key=AIzaSyCcAYnI-_MBF2VMrCCyCbWiCxbiY1_wu3Q'
-                    $.ajax({
-                        url: queryURL,
-                        method: "GET"
-                    }).done(function (response) {
-                        console.log(response);
-                        let localAdd = response.results[0].formatted_address;
-                        $("#addDisplay").append(localAdd);
-                        $("#newAlbumBtn").show();
 
-                        // console.log(localAdd);
-                        return localAdd;
-                        //note call in aws album search check
-                    });
-                })
+                var queryURLLOC = "https://www.googleapis.com/geolocation/v1/geolocate?key=AIzaSyDAW5qMvtF_zpIc0iA_agcJCts3P0RaYFs"
+
+                searched ? console.log("Current location has already been instantiated...") : 
+                [
+                    $.ajax({
+                        url: queryURLLOC,
+                        method: "POST"
+                    }).done(function (response) {
+                        //console.log(response);
+                        let lat = response.location.lat;
+                        let lon = response.location.lng;
+                        console.log(lat);
+                        console.log(lon);
+                        var queryURL = "https://maps.googleapis.com/maps/api/geocode/json?"
+                        queryURL += 'latlng=' + lat + ',' + lon + '&key=AIzaSyCcAYnI-_MBF2VMrCCyCbWiCxbiY1_wu3Q'
+                        $.ajax({
+                            url: queryURL,
+                            method: "GET"
+                        }).done(function (response) {
+                            console.log(response);
+                            localAdd = response.results[0].formatted_address;
+                            $("#addDisplay").append(localAdd);
+                            $("#newAlbumBtn").show();
+                            searched = true;
+                            // console.log(localAdd);
+                            return localAdd;
+                            //note call in aws album search check
+                        });
+                    })
+                ]
+
             }
 
             function inputModal() {
-                let inputDisplay = ` 
-                <div id="inputForm">
+                let inputDisplay = 
+                `<div id="inputForm">
 	               	<label>Address</label><br>
 	               	<input type="text" id="address" name="Address"><br>
 	               	<label>City</label><br>
 	               	<input type="text" id="city" name="City"><br>
 	               	<label>State</label><br>
-	               	<input type="text" id="state" name="State"><br>
-	               	<label>Zip</label><br>
-                    <input type="text" id="zip" name="Zip"><br>
                 </div>
-                <button class="btn btn-default " id="newInputBtn">Create New Album</button>
-    `
+                <button class="btn btn-default " id="newInputBtn">Create New Album</button>`
                 $(".modalInfo").html(inputDisplay);
             }
 
@@ -521,7 +533,9 @@ $(document).ready(function(){
                 $("#createAlbum").hide();
                 $("#addDisplay").hide();
                 $("#askAlbum").hide();
+                $("#addDisplay").show();
             });
+
             $(document).on("click", "#locBtn", function () {
                 let newAlbum = `<button id="newAlbumBtn" class="btn btn-default ">Create New Album</button>`;
                 $(".modalInfo").append(newAlbum);
@@ -529,7 +543,8 @@ $(document).ready(function(){
                 $("#locBtn").hide();
                 $("#inputBtn").hide();
                 $("#addDisplay").show();
-                geoFindMe(newAlbum);
+                // geoFindMe(newAlbum);
+                $('#createAlbum').show();
                
             });
             $(document).on("click", "#inputBtn", function () {
@@ -540,4 +555,5 @@ $(document).ready(function(){
                 $("#modalTitle").append(newTitle);
                 inputModal();
             });
+
 
