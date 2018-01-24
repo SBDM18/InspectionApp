@@ -328,12 +328,18 @@ p{
     .nav-content{
     	height: 8%;
     	width: 100%;
-    }
+	}
+	.menu{
+		width: 600px;
+	}
 
     .pos-f-t{
         display: flex;
     	flex-direction: row;
-    }
+	}
+	.nav{
+		margin-left: 5%;
+	}
 
     .text-muted{
         display: flex;
