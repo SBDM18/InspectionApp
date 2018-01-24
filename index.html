@@ -104,16 +104,36 @@
 
 				<div id="searchlocationModal" class="modalContainer" style="display:none;">
 	           		<header class="modalHeader">
-		               	<p id="modalTitle">Search Location</p>
+		               	<p id="modalTitle"></p>
 		               	<span class="closeModal">&times;</span>
-	               	</header>
-					   </header>
-					<div id="addDisplay"></div>
-					<div id="askAlbum">Do you want to create a new album?</div>
-					<div class="modalInfo"></div>
-					<button class="btn btn-default " id="locBtn"> Create Album From current location</button>
-					<button class="btn btn-default " id="inputBtn"> Create Album from new location</button>
-					<button class="btn btn-default " id="createAlbum">Create Album</button>   
+					</header>
+					<section class="popupBody">
+						<!-- Start modal buttons -->
+						<div class="start_modal">
+							<button class="btn btn-default " id="locBtn"> Create Album From current location</button>
+							<button class="btn btn-default " id="inputBtn"> Create Album from new location</button>
+						</div>
+						<div class="current_loc">
+							<div id="addDisplay"></div>
+							<button class="btn btn-default" id="newAlbumBtn">Create New Album</button>;
+						</div>
+						<div class="input_address">
+							<div id="inputForm">
+								<label>Address</label><br>
+								<input type="text" id="address" name="Address"><br>
+								<label>City</label><br>
+								<input type="text" id="city" name="City"><br>							
+							</div>
+							<button class="btn btn-default " id="newInputBtn">Create New Album</button>
+						</div>
+
+
+
+
+					</section>										
+					<!-- <div class="modalInfo"></div> -->
+					
+					<!-- <button class="btn btn-default " id="createAlbum">Create Album</button>    -->
 					
 				</div>
 				   

@@ -311,9 +311,11 @@ $(document).on('click', '.myImg', function (e) {
 
     //var model = Clarifai.GENERAL_MODEL;
     //var model = "Objects",[{ "id": "kitchen" }],
-
+//actual appId in clarifai fc2e8f8ba26f492ab5d45f7b1f8833b4
+//new key made for app2 apikey bc775f10706a49a7bde920b477054058
+//previous key made for InspectionApp apikey ec0428bd8841427da7d196f666b6c265
     const app = new Clarifai.App({
-        apiKey: 'ec0428bd8841427da7d196f666b6c265'
+        apiKey: 'bc775f10706a49a7bde920b477054058'
     });
 
 
@@ -322,7 +324,7 @@ $(document).on('click', '.myImg', function (e) {
         function (response) {
             resp = response;
             // do something with response
-            // console.log(response);
+             console.log(response);
             locationmodel.id = JSON.stringify(response[0].id);
             locationmodel.name = JSON.stringify(response[0].name);
             locationmodel.appId = response[0].appId;
@@ -401,6 +403,8 @@ $(document).on('click', '.myImg', function (e) {
 
 //seeing what Clarifai.GENERAL_MODEL console.logs
 console.log("Clarifai gen model: " + JSON.stringify(Clarifai.GENERAL_MODEL));
+    console.log("conditions mode " + JSON.stringify(conditionsmodel.appId));
+    console.log("locations model " + JSON.stringify(locationmodel.appId))
 console.log("Our gen model " + JSON.stringify(objectmodel.appId));
 
 });
@@ -516,45 +520,31 @@ $(document).ready(function(){
 
             }
 
-            function inputModal() {
-                let inputDisplay = 
-                `<div id="inputForm">
-	               	<label>Address</label><br>
-	               	<input type="text" id="address" name="Address"><br>
-	               	<label>City</label><br>
-	               	<input type="text" id="city" name="City"><br>
-	               	
-                </div>
-                <button class="btn btn-default " id="newInputBtn">Create New Album</button>`
-                $(".modalInfo").html(inputDisplay);
-            }
-
             $(document).on("click", "#searchlocationmodalBtn", function () {
-               // geoFindMe();
-                $("#createAlbum").hide();
-                $("#addDisplay").hide();
-                $("#askAlbum").hide();
-                $("#addDisplay").show();
+               $("#modalTitle").empty();
+                let newTitle = 'Search Location'
+                $("#modalTitle").append(newTitle)
+               $(".start_modal").show();
+               $(".current_loc").hide();
+               $(".input_address").hide();
             });
 
             $(document).on("click", "#locBtn", function () {
-                geoFindMe();
-                let newAlbum = `<button id="newAlbumBtn" class="btn btn-default ">Create New Album</button>`;
-                $(".modalInfo").append(newAlbum);
-                $("#newAlbumBtn").hide();
-                $("#locBtn").hide();
-                $("#inputBtn").hide();
-                $("#addDisplay").show();
+                $("#modalTitle").empty();
+                let newTitle = 'Current Location Album Creation'
+                $("#modalTitle").append(newTitle);
+                geoFindMe();  
+                $(".start_modal").hide();
+                $(".current_loc").show();              
                // $('#createAlbum').show();
                
             });
             $(document).on("click", "#inputBtn", function () {
-                $("#locBtn").hide();
-                $("#inputBtn").hide();
+               $(".start_modal").hide();
+               $(".input_address").show();
                 $("#modalTitle").empty();
                 let newTitle = 'Enter address to create a new Album'
                 $("#modalTitle").append(newTitle);
-                inputModal();
             });
 
 
