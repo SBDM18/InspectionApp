@@ -108,6 +108,8 @@ function viewAlbum(albumName) {
             var photoUrl = bucketUrl + encodeURIComponent(photoKey);
             console.log('photo url ' + photoUrl);
 
+            deletePhoto(albumName, photoKey);
+
             return getHtml([
                 '<div class="myImg" id="' + photoUrl + '">',
                 '<img  id="' + photoUrl + '" style="width:124px;height:124px;" src="' + photoUrl + '"/>',
@@ -119,7 +121,7 @@ function viewAlbum(albumName) {
 
         });
         var message = photos.length ?
-            '<p>&#9898; to Clarifai! and &#x2613; to Delete</p>' :
+            '<p>Click a photo to run an analysis</p>' :
             '<p>You do not have any photos in this album. Please add photos.</p>';
         var htmlTemplate = [
             '<h2>',
@@ -131,11 +133,11 @@ function viewAlbum(albumName) {
             getHtml(photos),
         ]
         var htmlTemplate2 = [
-            '<input class="btn-primary" id="photoupload" type="file" accept="image/*">',
-            '<button class="btn-primary" id="addphoto" onclick="addPhoto(\'' + albumName + '\')">',
+            '<input id="photoupload" type="file" accept="image/*">',
+            '<button class="button" id="addphoto" onclick="addPhoto(\'' + albumName + '\')">',
             'Add Photo',
             '</button>',
-            '<button class="btn-primary" onclick="listAlbums()">',
+            '<button class="button" onclick="listAlbums()">',
             'Back To Albums',
             '</button>',
         ]
@@ -166,7 +168,7 @@ function deletePhoto(albumName, photoKey) {
 
 //Creating an album within aws
 function createAlbum(albumName) {
-    albumName = albumName.trim();
+    // albumName = albumName.trim();
     if (!albumName) {
         return alert('Album names must contain at least one non-space character.');
     }
@@ -178,10 +180,16 @@ function createAlbum(albumName) {
         Key: albumKey
     }, function (err, data) {
         if (!err) {
-            return alert('Album already exists.');
+            //views existing album if the album already exists...
+            $('#searchlocationModal').hide();
+            $('#lean_overlay').hide();
+            viewAlbum(albumName);
+            // return alert('Album already exists.');
         }
-        if (err.code !== 'NotFound') {
-            return alert('There was an error creating your album: ' + err.message);
+        if (err !== 'NotFound') {
+            // return alert('There was an error creating your album: ' + err);
+            $('#searchlocationModal').hide();
+            $('#lean_overlay').hide();
         }
         s3.putObject({
             Key: albumKey
@@ -189,7 +197,8 @@ function createAlbum(albumName) {
             if (err) {
                 return alert('There was an error creating your album: ' + err.message);
             }
-            alert('Successfully created album.');
+            // alert('Successfully created album.');
+            $('#searchlocationModal').hide();
             viewAlbum(albumName);
         });
     });
@@ -272,7 +281,6 @@ var conditionsmodel = {
     appId: ''
 };
 
-var resp;
 
 // // predict the contents of an image by passing in a url
 
@@ -322,20 +330,19 @@ $(document).on('click', '.myImg', function (e) {
     //List the apps in the console 
     app.models.list().then(
         function (response) {
-            resp = response;
             // do something with response
-             console.log(response);
-            locationmodel.id = JSON.stringify(response[0].id);
-            locationmodel.name = JSON.stringify(response[0].name);
-            locationmodel.appId = response[0].appId;
-            conditionsmodel.id = JSON.stringify(response[1].id);
-            conditionsmodel.name = JSON.stringify(response[1].name);
-            conditionsmodel.appId = JSON.stringify(response[1].appId);
-            objectmodel.id = JSON.stringify(response[2].id);
-            objectmodel.name = JSON.stringify(response[2].name);
-            objectmodel.appId = JSON.stringify(response[2].appId);
+            //  console.log(response);
 
-            app.models.predict(objectmodel.id, [id]).then(
+            //Saving an instance of the JSON response within the @locationmodel, @conditionsmodel, @objectmodel
+            //
+            locationmodel.name = JSON.stringify(response[0].name);
+            conditionsmodel.name = JSON.stringify(response[1].name);
+            objectmodel.name = JSON.stringify(response[2].name);
+            console.log("Objects model: " + objectmodel.name);
+            console.log("Condition model: " + conditionsmodel.name);
+            console.log("Location model: " + locationmodel.name);
+
+            app.models.predict("Kitchen", [id]).then(
                 function (response) {
                     //simple console.log to see if the clarifai model is working
                     console.log(response);
@@ -401,12 +408,6 @@ $(document).on('click', '.myImg', function (e) {
 
 );
 
-//seeing what Clarifai.GENERAL_MODEL console.logs
-console.log("Clarifai gen model: " + JSON.stringify(Clarifai.GENERAL_MODEL));
-    console.log("conditions mode " + JSON.stringify(conditionsmodel.appId));
-    console.log("locations model " + JSON.stringify(locationmodel.appId))
-console.log("Our gen model " + JSON.stringify(objectmodel.appId));
-
 });
 
 $("#listAlbums").on("click", function () {
@@ -467,6 +468,7 @@ $(document).ready(function(){
                     console.log(latitude);
                     console.log(longitude);
                     let localAdd = findAddress(latitude, longitude);
+                    // $('#current_loc').show();
                     //pass in the html element to populate the breweries
                     return {
                         latitude: latitude,
