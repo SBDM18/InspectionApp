@@ -110,7 +110,6 @@ function viewAlbum(albumName) {
             var photoUrl = bucketUrl + encodeURIComponent(photoKey);
             console.log('photo url ' + photoUrl);
 
-            
 
             return getHtml([
                 '<div class="myImg" id="' + photoUrl + '">',
@@ -515,11 +514,16 @@ $(document).ready(function(){
                             method: "GET"
                         }).done(function (response) {
                             console.log(response);
-                            localAdd = response.results[0].formatted_address;
+                            var houseNum = response.results[0].address_components[0].long_name;
+                            var street = response.results[0].address_components[1].short_name;
+                            var city = response.results[0].address_components[3].long_name;
+                            var state = response.results[0].address_components[5].short_name;
+                            var zip = response.results[0].address_components[7].long_name;
+                            localAdd = houseNum + "  " + street + "  " + city + " , " + state + " , " + zip ;
                             $("#addDisplay").append(localAdd);
                             $("#newAlbumBtn").show();
                             searched = true;
-                            // console.log(localAdd);
+                             console.log(localAdd);
                             return localAdd;
                             //note call in aws album search check
                         });
