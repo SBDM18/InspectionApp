@@ -70,7 +70,7 @@ function listAlbums() {
                 //createAlbum(prompt(\'Enter Album Name:\')) goes within the on click part of the button create id
             ]
             var btnTemplate = [
-                '<button class="btn-primary" onclick="createAlbum(prompt(\'Enter Album Name:\'))" >Create New Album</button>',
+                '<button class="btn album" onclick="createAlbum(prompt(\'Enter Album Name:\'))" >Create New Album</button>',
             ]
             var titleTemplate = [
                 '<h2>VIEWING ALBUMS</h2>',
@@ -123,7 +123,7 @@ function viewAlbum(albumName) {
             '<p>You do not have any photos in this album. Please add photos.</p>';
         var htmlTemplate = [
             '<h2>',
-            'ALBUM: ' + albumName.toUpperCase(),
+            'ALBUM : ' + albumName.toUpperCase(),
             '</h2>',
             message,
         ]
@@ -523,13 +523,14 @@ $(document).ready(function(){
 	               	<input type="text" id="address" name="Address"><br>
 	               	<label>City</label><br>
 	               	<input type="text" id="city" name="City"><br>
-	               	<label>State</label><br>
+	               	
                 </div>
                 <button class="btn btn-default " id="newInputBtn">Create New Album</button>`
                 $(".modalInfo").html(inputDisplay);
             }
 
             $(document).on("click", "#searchlocationmodalBtn", function () {
+               // geoFindMe();
                 $("#createAlbum").hide();
                 $("#addDisplay").hide();
                 $("#askAlbum").hide();
@@ -537,14 +538,14 @@ $(document).ready(function(){
             });
 
             $(document).on("click", "#locBtn", function () {
+                geoFindMe();
                 let newAlbum = `<button id="newAlbumBtn" class="btn btn-default ">Create New Album</button>`;
                 $(".modalInfo").append(newAlbum);
                 $("#newAlbumBtn").hide();
                 $("#locBtn").hide();
                 $("#inputBtn").hide();
                 $("#addDisplay").show();
-                // geoFindMe(newAlbum);
-                $('#createAlbum').show();
+               // $('#createAlbum').show();
                
             });
             $(document).on("click", "#inputBtn", function () {
