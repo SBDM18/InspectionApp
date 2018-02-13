@@ -312,8 +312,14 @@ p{
 	flex-direction: row;
 }
 
+<<<<<<< HEAD
 .myImg {
 	width: 15%;
+=======
+.img {
+	width: auto;
+	margin: 10px;
+>>>>>>> 286990a42d70445556623b80d4f72e61be633f15
 }
 
 
