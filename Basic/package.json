@@ -1,0 +1,22 @@
+{
+  "name": "basic",
+  "version": "1.0.0",
+  "description": "Real Estate Inspection App, basic model.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SBDM18/InspectionApp.git"
+  },
+  "author": "Daniel Ward, Matt Groe",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/SBDM18/InspectionApp/issues"
+  },
+  "homepage": "https://github.com/SBDM18/InspectionApp#readme",
+  "dependencies": {
+    "modal-js": "^3.0.1"
+  }
+}

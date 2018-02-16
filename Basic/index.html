@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Insightful Inspection</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Link to JQuery -->
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.1.min.js"></script>
+    <!-- Link to Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Crimson+Text" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Damion|Lato" rel="stylesheet">
+    <!-- Link to CSS pages -->
+    <link rel="stylesheet" type="text/css" media="screen" href="assets/css/style.css" /> 
+
+    <!-- Link to jquery -->
+   
+    <!-- Javascript links and jquery -->
+    <script src="./assets/javascript/basicApp.js"></script>
+</head>
+<body>
+    
+        <div class="containerFront">
+            <div class="title top">Welcome to</div>
+            <div class="title">Insightful Inspection</div>
+            <div class="frontBtn">
+                <button id="login" href="#myModal" class=" grid-item btn">Login</button>
+                <button id="register" href="#myRegModal" class="grid-item btn">Register</button>
+            </div>
+        </div>
+        <!-- html for modal (login and register) -->
+       <div id="myModal" class="modal">
+           <div class="modal-content">
+               <div class="modal-header">
+                   <span class="close">&times;</span>
+                   <h1>Login</h1>
+               </div>
+               <div class="modal-body">
+                   <label for="username">Username</label>
+                   <input id="username" type="text" placeholder="Username">
+                   <label for="password">Password</label>
+                   <input id="password" type="password" placeholder="Password">                   
+               </div>
+               <div class="modal-footer">
+                   <button id="loginBtn" type="button" class="btn">Login</button>
+               </div>
+           </div>
+        </div>
+
+        
+        <div id="myRegModal" class="modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <span class="close-button">&times;</span>
+                    <h1>Registration</h1>
+                </div>
+                <div class="modal-body">
+                    <label for="username">Username</label>
+                    <input type="text" id="user" placeholder="Username">
+                    <label for="password">Password</label>
+                    <input type="password" id="pass" placeholder="Password">
+                    <label for="company">Company Name</label>
+                    <input type="text" id="company" placeholder="Company Name">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" placeholder="Email">
+                    <label for="phone">Phone number</label>
+                    <input type="phone" id="phone" placeholder="Phone #">
+                </div>
+                <div class="modal-footer">
+                    <button id="regBtn" type="button" class="btn">Register</button>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+</body>
+   
+
+</html>
