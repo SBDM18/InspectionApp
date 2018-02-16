@@ -143,3 +143,123 @@ body {
     background-color: #5cb85c;
     color: white;
 } 
+html{
+    height: 100vh;
+    width: 100vw;
+}
+
+body{
+    height: 100vh;
+    width: 100vw;
+    /* min-height: 100%;
+    min-width: 100%; */
+
+    /* background-image: url('../images/grey_wash_wall.png');
+} */
+
+.wrapper{
+    height: 100vh;
+    width: 100vw;
+    
+
+    display: grid;
+    grid-template-columns: 12.5% 87.5%;
+    grid-auto-rows: 100%;
+    /* grid-column-gap: 10px; */
+}
+
+.styling{
+    color: white;
+    font-size: 1vw;
+}
+
+
+/* TITLE OF THE APP */
+/* ADDED STYLING CSS */
+.title {
+    margin-top: 10px;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    font-family: 'Damion', cursive;
+    font-size: 3vw;
+    color: white;
+    text-align: center;
+    text-shadow: 0 10px 10px rgba(122, 122, 122);
+    
+    border-bottom-style: solid;
+    border-bottom-width: 2.5px;
+    border-bottom-color: rgba(102, 102, 102, 0.45);
+
+}
+
+.one{
+    height: auto;
+    width: auto;
+
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 15% 70% 15%;
+    /* grid-column-gap: 10px; */
+
+    background-color: rgba(0,0,0,1);
+
+    border-right-style: solid;
+    border-color: rgba(102, 102, 102, 0.45);
+    border-right-width: 2.5px;
+    box-shadow: 2px 10px 10px black;
+}
+
+.one-side{
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.two-side {
+    grid-column: 1;
+    grid-row: 2;
+}
+
+.three-side {
+    grid-column: 1;
+    grid-row: 3;
+}
+
+.two {
+    height: auto;
+    width: auto;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 10% 5% 85%;
+}
+
+.two-welcome{
+    height: auto;
+    width: auto;
+
+    margin-top: 10px;
+    padding-bottom: 20px;
+    font-family: 'Damion', cursive;
+    font-size: 4vh;
+    color: white;
+    text-align: center;
+    text-shadow: 0 3px 3px #FF6663;
+
+    border-bottom-style: solid;
+    border-color: rgba(0, 0, 0, 0.45);
+    border-bottom-width: 2.5px;
+    /* box-shadow: 2px 10px 10px black; */
+}
+
+
+.two-title {
+    height: auto;
+    width: auto;
+
+    margin-left: 30px;
+    margin-top: 10px;
+    padding-bottom: 20px;
+    font-family: 'Damion', cursive;
+    font-size: 4vh;
+    color: white;
+    text-shadow: 0 3px 3px #FF6663;
+}

@@ -89,9 +89,11 @@ function listAlbums() {
 //View album
 function viewAlbum(albumName) {
     var albumPhotosKey = encodeURIComponent(albumName) + '/';
+    
     s3.listObjects({
-        Prefix: albumPhotosKey
+        Prefix: albumPhotosKey,
     }, function (err, data) {
+        console.log("Album Photos Key: " + albumPhotosKey);
         if (err) {
             return alert('There was an error viewing your album: ' + err.message);
         }
@@ -108,7 +110,6 @@ function viewAlbum(albumName) {
             var photoUrl = bucketUrl + encodeURIComponent(photoKey);
             console.log('photo url ' + photoUrl);
 
-            //deletePhoto(albumName, photoKey);
 
             return getHtml([
                 '<div class="myImg" id="' + photoUrl + '">',
@@ -142,6 +143,7 @@ function viewAlbum(albumName) {
             '</button>',
         ]
 
+
         document.getElementById('uploadOptions').innerHTML = getHtml(htmlTemplate);
         document.getElementById('directions').innerHTML = getHtml(htmlTemplate2);
         document.getElementById('app').innerHTML = getHtml(photoTemplate);
@@ -159,7 +161,6 @@ function deletePhoto(albumName, photoKey) {
         if (err) {
             return alert('There was an error deleting your photo: ', err.message);
         }
-        alert('Successfully deleted photo.');
         viewAlbum(albumName);
     });
 }
@@ -200,6 +201,7 @@ function createAlbum(albumName) {
             // alert('Successfully created album.');
             $('#searchlocationModal').hide();
             viewAlbum(albumName);
+            // deletePhoto(albumName, albumKey);
         });
     });
 }
@@ -224,7 +226,7 @@ function addPhoto(albumName) {
         if (err) {
             return alert('There was an error uploading your photo: ', err.message);
         }
-        alert('Successfully uploaded photo.');
+        // alert('Successfully uploaded photo.');
         viewAlbum(albumName);
     });
 }
@@ -236,7 +238,7 @@ function deleteAlbum(albumName) {
         Prefix: albumKey
     }, function (err, data) {
         if (err) {
-            return alert('There was an error deleting your album: ', err.message);
+            // return alert('There was an error deleting your album: ', err.message);
         }
         var objects = data.Contents.map(function (object) {
             return {
@@ -250,13 +252,14 @@ function deleteAlbum(albumName) {
             }
         }, function (err, data) {
             if (err) {
-                return alert('There was an error deleting your album: ', err.message);
+                // return alert('There was an error deleting your album: ', err.message);
             }
-            alert('Successfully deleted album.');
+            // alert('Successfully deleted album.');
             listAlbums();
         });
     });
 }
+
 
 
 // 
@@ -341,12 +344,19 @@ $(document).on('click', '.myImg', function (e) {
             console.log("Objects model: " + objectmodel.name);
             console.log("Condition model: " + conditionsmodel.name);
             console.log("Location model: " + locationmodel.name);
+        },
+        function (err) {
+            // there was an error
+            console.log(err);
+        });
 
+       // console.log(error);
             app.models.predict("Kitchen", [id]).then(
                 function (response) {
                     //simple console.log to see if the clarifai model is working
-                    console.log(response);
+                    $('#app').hide();
                     var data = response.outputs[0].data;
+                
                     // console.log(data);
                     // console.log(data.concepts[0].name);
                     // console.log(data.concepts[0].value);
@@ -354,9 +364,9 @@ $(document).on('click', '.myImg', function (e) {
                     // console.log(data.concepts[1].value);
                     // console.log(data.concepts[2].name);
                     // console.log(data.concepts[2].value);
-            
-            
-            
+
+
+
                     var outputTemplate = ([
                         '<div>',
                         '<p id=respValue0></p><h2 id="percentId0"></h2>',
@@ -366,16 +376,21 @@ $(document).on('click', '.myImg', function (e) {
                         '<p id=respValue4></p><h2 id="percentId4"></h2>',
                         '<p id=respValue5></p><h2 id="percentId5"></h2>',
                         '</div>'
-                    ])
-            
+                    ]);
+
                     var img = ([
                         '<div>',
                         '<img src=' + myid + ' style="width:264px;height:264px;"/>',
                         '</div>'
-                    ])
-            
-                    document.getElementById('dataImg').innerHTML = getHtml(img);
-                    document.getElementById('dataDisplay').innerHTML = getHtml(outputTemplate);
+                    ]);
+
+                    $('#appDisp').show();
+
+                    $('#appDisp').html(img);
+                    $('#appDisp').append(outputTemplate);
+                    console.log("appended");
+
+                    // document.getElementById('app').innerHTML = getHtml(img);
                     $('#respValue0').html(data.concepts[0].name);
                     $('#respValue1').html(data.concepts[1].name);
                     $('#respValue2').html(data.concepts[2].name);
@@ -392,21 +407,11 @@ $(document).on('click', '.myImg', function (e) {
                     // $('#percentId0').append(Math.round(data.concepts[0].value * 100) + '%');
                     // $('#percentId1').append(Math.round(data.concepts[1].value * 100) + '%');
                     // $('#percentId2').append(Math.round(data.concepts[2].value * 100) + '%');
+                },
+                function (err) {
+                    console.error(err);
                 }
-                // function (err) {
-                //     console.error(err);
-                // }
-            );
-        },
-        function (err) {
-            // there was an error
-            console.log(err);
-        }
-
-       // console.log(error);
-    
-
-);
+            )
 
 });
 
