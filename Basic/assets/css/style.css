@@ -1,7 +1,13 @@
 body {
-    height: 100%;
-    width: 100%;
+    /* height: 100%;
+    width: 100%; */
+    height: 100vh;
+    width: 100vw;
     background-image: url('../images/grey_wash_wall.png');
+}
+html {
+    height: 100vh;
+    width: 100vw;
 }
 
 /* front page css */
@@ -38,129 +44,63 @@ body {
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2),
     0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
+.btn:hover{
+    background-color: #FF6663;
+}
 .btn:nth-child(2){
     grid-column: 3/4;
 }
 /*modal css front page (login and register)*/
-	 .modal {
-	    position: fixed;
-	    left: 0;
-	    top: 0;
-	    width: 100%;
-	    height: 100%;
-	    background-color: rgba(0, 0, 0, 0.5);
-	    opacity: 0;
-	    visibility: hidden;
-	    transform: scaleX(1.1) scaleY(1.1);
-	    transition: visibility 0s linear 0.25s, opacity 0.25s 0s, transform 0.25s;
-	}
-	.modal-content {
-	    position: absolute;
-	    top: 50%;
-	    left: 50%;
-	    transform: translate(-50%, -50%);
-	    background-color: white;
-	    padding: 1rem 1.5rem;
-	    width: 24rem;
-	    border-radius: 0.5rem;
-	}
-	.close {
-	    float: right;
-	    width: 1.5rem;
-	    line-height: 1.5rem;
-	    text-align: center;
-	    cursor: pointer;
-	    border-radius: 0.25rem;
-	    background-color: lightgray;
-	}
-	.close:hover {
-	    background-color: darkgray;
-	}
-	.show-modal {
-	    opacity: 1;
-	    visibility: visible;
-	    transform: scaleX(1.0) scaleY(1.0);
-	    transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
-	} */
+#lean_overlay{
+    position: fixed;
+    z-index: 100;
+    top: 0px;
+    left: 0px;
+    height: 100%;
+    width: 100%;
+    background: #000;
+    display: none;
+}
+.popupContainer{
+    position: absolute;
+    width: 330px;
+    height: auto;
+    left: 45%;
+    top: 60px;
+    background: #fff;
+}
+.modal-header {
+    font-size: 16px;
+    text-transform: uppercase;
+}
 
-/* .modal{  The Modal (background)
-    display: none; /* Hidden by default 
-    position: fixed; /* stay in place 
-    z-index: 1; /* sit on top 
-    padding-top: 100px; /* location of the box 
-    left: 0;
-    top: 0; 
-    width: 100%; /*Width full 
-    height: 100%; /* Height full 
-    overflow: auto; /* Enable scroll if needed 
-    background-color: rgb(0, 0, 0); /* Fallback color 
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity 
-}
-.modal-content{  Modal Content
+.modal-header {
+    background: #F4F4F2;
     position: relative;
-    background-color: #fefefe;
-    margin: auto;
-    padding: 0;
-    border: 1px solid #888;
-    width: 80%;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
-    -webkit-animation-name: animatetop;
-    -webkit-animation-duration: 0.4s;
-    animation-name: animatetop;
-    animation-duration: 0.4s;
-}
-@-webkit-keyframes animatetop{  Add Animation
-    from {top:-300px; opacity: 0}
-    to {top: 0; opacity: 1}
-}
-@keyframes animatetop {
-    from { top: -300px; opacity: 0}
-    to { top:0; opacity: 1;}
-}
-    Close button
-.close{
-    color: white;
-    float: right;
-    font-size: 28px;
+    padding: 10px 20px;
+    border-bottom: 1px solid #DDD;
     font-weight: bold;
 }
-.close:hover, 
-.close:focus{
-    color: #000;
-    text-decoration: none;
+.modal-header .close {
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 10px 15px;
+    background: #E4E4E2;
     cursor: pointer;
+    color: #aaa;
+    font-size: 16px;
 }
-.modal-header{
-    padding: 2px 16px;
-    background-color: #5cb85c;
-    color: white;
+.modal-body {
+   padding: 20px;
 }
-.modal-body{
-    padding: 2px 16px;
+	
+.close:hover {
+    background-color: darkgray;
 }
-.modal-footer{
-    padding: 2px 16px;
-    background-color: #5cb85c;
-    color: white;
-} 
-html{
-    height: 100vh;
-    width: 100vw;
-}
-
-body{
-    height: 100vh;
-    width: 100vw;
-    /* min-height: 100%;
-    min-width: 100%; */
-
-    /* background-image: url('../images/grey_wash_wall.png');
-} */
-
 .wrapper{
     height: 100vh;
     width: 100vw;
-    
 
     display: grid;
     grid-template-columns: 12.5% 87.5%;
@@ -249,7 +189,6 @@ body{
     border-bottom-width: 2.5px;
     /* box-shadow: 2px 10px 10px black; */
 }
-
 
 .two-title {
     height: auto;

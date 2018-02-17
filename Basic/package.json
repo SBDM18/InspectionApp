@@ -16,7 +16,5 @@
     "url": "https://github.com/SBDM18/InspectionApp/issues"
   },
   "homepage": "https://github.com/SBDM18/InspectionApp#readme",
-  "dependencies": {
-    "modal-js": "^3.0.1"
-  }
+  "dependencies": {}
 }
