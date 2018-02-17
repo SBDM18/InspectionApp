@@ -1,3 +1,108 @@
+
+body {
+    /* height: 100%;
+    width: 100%; */
+    height: 100vh;
+    width: 100vw;
+    background-image: url('../images/grey_wash_wall.png');
+}
+html {
+    height: 100vh;
+    width: 100vw;
+}
+
+/* front page css */
+.containerFront{
+    display: grid;    
+}
+.title {
+    font-family: 'Damion', cursive;
+    font-size: 40px;
+    color: white;
+    text-align: center;
+    text-shadow: 0 3px 3px black;
+}
+.top{
+    margin-top: 200px;
+}
+.frontBtn{
+    display: grid;
+    grid-template-columns: 18% 25% 25% 18%;
+    grid-gap: 5%;
+    margin-top: 30px;
+}
+.btn{
+    grid-column: 2/3;
+    border-radius: 15px;
+    border: solid 2px black;
+    color: black;
+    width: 140px;
+    font-size: 16px;
+    font-family: 'Damion', cursive; 
+    margin: 20% ;  
+    padding: 10px;
+    cursor: pointer;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2),
+    0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.btn:hover{
+    background-color: #FF6663;
+}
+.btn:nth-child(2){
+    grid-column: 3/4;
+}
+/*modal css front page (login and register)*/
+#lean_overlay{
+    position: fixed;
+    z-index: 100;
+    top: 0px;
+    left: 0px;
+    height: 100%;
+    width: 100%;
+    background: #000;
+    display: none;
+}
+.popupContainer{
+    position: absolute;
+    width: 330px;
+    height: auto;
+    left: 45%;
+    top: 60px;
+    background: #fff;
+}
+.modal-header {
+    font-size: 16px;
+    text-transform: uppercase;
+}
+
+.modal-header {
+    background: #F4F4F2;
+    position: relative;
+    padding: 10px 20px;
+    border-bottom: 1px solid #DDD;
+    font-weight: bold;
+}
+.modal-header .close {
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 10px 15px;
+    background: #E4E4E2;
+    cursor: pointer;
+    color: #aaa;
+    font-size: 16px;
+}
+.modal-body {
+   padding: 20px;
+}
+	
+.close:hover {
+    background-color: darkgray;
+}
+.wrapper{
+    height: 100vh;
+    width: 100vw;
+=======
 html{
     height: 100vh;
     width: 100vw;
@@ -15,8 +120,6 @@ body{
 .wrapper{
     height: 100vh;
     width: 100vw;
-    
-
     display: grid;
     grid-template-columns: 12.5% 87.5%;
     grid-auto-rows: 100%;
@@ -118,3 +221,5 @@ body{
     color: white;
     text-shadow: 0 3px 3px #FF6663;
 }
+
+

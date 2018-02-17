@@ -6,17 +6,27 @@
     <title>Insightful Inspection</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Link to Google Fonts -->
+
+    <link href="https://fonts.googleapis.com/css?family=Crimson+Text" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Crimson+Text" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Damion|Lato" rel="stylesheet">
     <!-- Link to local css files -->
     <link rel="stylesheet" type="text/css" media="screen" href="./assets/css/reset.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="./assets/css/style.css" />
-    <!-- Link to JQuery -->
-    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.1.min.js"></script>
-    <script src="./assets/javascript/basicApp.js"></script>
+       
 </head>
 <body>
-    <div class="wrapper">
+    
+        <div class="containerFront">
+            <div class="title top">Welcome to</div>
+            <div class="title">Insightful Inspection</div>
+            <div class="frontBtn">
+                <button id="login" href="#myModal"class="btn">Login</button>
+                <button id="register" href="#myRegModal" class=" btn">Register</button>
+            </div>
+        </div>  
+
+  <div class="wrapper">
         <div class="one styling">
             <div class="one-side">
                 <div class="logo title">Logo</div>
@@ -29,5 +39,53 @@
             <div class="two-title">Dashboard</div>
         </div>
     </div>
+
+    <!-- Html for the front page modals -->
+    <div id="myModal" class="popupContainer" style="display:none;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="close">&times;</span>
+                <h1>Login</h1>
+            </div>
+            <div class="modal-body">
+                <label for="username">Username</label>
+                <input id="username" type="text" placeholder="Username">
+                <label for="password">Password</label>
+                <input id="password" type="password" placeholder="Password">
+            </div>
+            <div class="modal-footer">
+                <button id="loginBtn" type="button" class="btn">Login</button>
+            </div>
+        </div>
+    </div>
+    <div id="myRegModal" class="popupContainer">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="close">&times;</span>
+                <h1>Registration</h1>
+            </div>
+            <div class="modal-body">
+                <label for="username">Username</label><br>
+                <input type="text" id="user" placeholder="Username"><br>
+                <label for="password">Password</label><br>
+                <input type="password" id="pass" placeholder="Password"><br>
+                <label for="company">Company Name</label><br>
+                <input type="text" id="company" placeholder="Company Name"><br>
+                <label for="email">Email</label><br>
+                <input type="email" id="email" placeholder="Email"><br>
+                <label for="phone">Phone number</label><br>
+                <input type="phone" id="phone" placeholder="Phone #"><br>
+            </div>
+            <div class="modal-footer">
+                <button id="regBtn" type="button" class="btn">Register</button>
+            </div>
+        </div>
+    </div>
+    <!-- Link to JQuery -->
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.1.min.js"></script>
+    <!-- leanModal.js -->
+    <script type="text/javascript" src="./assets/javascript/jquery.leanModal.min.js"></script>
+    <!-- Link to javascript file -->
+    <script src="./assets/javascript/basicApp.js"></script>
 </body>
 </html>
