@@ -21,7 +21,7 @@
             <div class="frontTitle top">Welcome to</div>
             <div class="frontTitle">Insightful Inspection</div>
             <div class="frontBtn">
-                <button id="login" href="#myModal"class="btn">Login</button>
+                <button id="login" href="#loginModal"class="btn">Login</button>
                 <button id="register" href="#myRegModal" class=" btn">Register</button>
             </div>
         </div>  
@@ -37,24 +37,28 @@
         <div class="two">
             <div class="two-welcome">Hello "Blank", Welcome to Insightful Inspection.</div>
             <div class="two-title">Dashboard</div>
+            <div>
+                <button class="btn close addUnit" href="#addUnitModal">Add a Unit</button>
+            </div>
         </div>
     </div>
 
     <!-- Html for the front page modals -->
-    <div id="myModal" class="popupContainer" style="display:none;">
+    <div id="loginModal" class="popupContainer" style="display:none;">
         <div class="modal-content">
             <div class="modal-header">
                 <span class="close">&times;</span>
                 <h1>Login</h1>
             </div>
             <div class="modal-body">
+                <form action="post">
                 <label for="username">Username</label>
                 <input id="username" type="text" placeholder="Username" required>
                 <label for="password">Password</label>
                 <input id="password" type="password" placeholder="Password" required>
-            </div>
-            <div class="modal-footer">
-                <button id="loginBtn" type="button" class="btn">Login</button>
+                <br>
+                <button id="loginBtn" type="button" class="btn close">Login</button>
+                </form>
             </div>
         </div>
     </div>
@@ -65,6 +69,7 @@
                 <h1>Registration</h1>
             </div>
             <div class="modal-body">
+                <form action="post">
                 <label for="username">Username</label><br>
                 <input type="text" id="user" placeholder="Username" required><br>
                 <label for="password">Password</label><br>
@@ -75,12 +80,51 @@
                 <input type="email" id="email" placeholder="Email" required><br>
                 <label for="phone">Phone number</label><br>
                 <input type="phone" id="phone" placeholder="Phone #" required><br>
+                <br>
+                <button id="regBtn" type="button" class="btn close">Register</button>
+                </form>
+            </div>            
+        </div>
+    </div>
+    <!-- HTML for the add a unit modal -->
+    <div id="addUnitModal" class="popupContainer" style="display:none;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="close">&times;</span>
+                <h1>Add a Unit</h1>
             </div>
-            <div class="modal-footer">
-                <button id="regBtn" type="button" class="btn">Register</button>
+            <div class="modal-body">
+                <form action="post">
+                <h3>Address</h3><br>
+                    <input type="text" id="street" placeholder="Street" required><br>
+                    <input type="text" id="city" placeholder="City" required><br>
+                    <input type="text" id="zipCode" placeholder="Zip Code" required><br>
+                    <input type="text" id="state" placeholder="State"><br><br>
+                <h3>Details</h3><br>
+                    <div>
+                        <!-- Need to add bed and both plus and minus buttons                     -->
+                    </div>
+                    <div class="yardSection">
+                        <h4><strong>Yard</strong></h4><br>
+                        <input type="checkbox" id="frontYard" name="yard" value="frontYard">
+                        <input type="checkbox" id="sideYard" name="yard" value="sideYard">
+                        <input type="checkbox" id="backYard" name="yard" value="backYard"><br>
+                        <label for="frontYard">Front Yard</label>                       
+                        <label for="sideYard">Side Yard</label>                        
+                        <label for="backYard">Back Yard</label>
+                    </div>
+                    <div class="garageSection">
+                        <h4><strong>Garage</strong></h4>
+                        <input type="radio" id="yes" name="garage">
+                        <input type="radio" id="no" name="garage"><br>
+                        <label for="yes">Yes</label><label for="no">No</label>
+                    </div>
+                <button id="addUnit1" type="button" class="btn close">Create Unit</button>
+            </form>
             </div>
         </div>
     </div>
+
     <!-- Link to JQuery -->
     <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.1.min.js"></script>
     <!-- leanModal.js -->
