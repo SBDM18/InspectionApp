@@ -1,0 +1,48 @@
+.dashboard{
+    display: flex;
+    flex-direction: column;
+
+    height: 100vh;
+    width: 100vw;
+}
+
+.nav-side{
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(34,30,34,0.75);
+}
+
+.letter-color{
+    color: #BFC1D2;
+    font-size: auto;
+    font-weight: bold;
+}
+
+.letter-color-select{
+    color: #A24936;
+    font-size: 35px;
+}
+
+.nav-icon{
+    height: 100px;
+    width: 100px;
+}
+
+.shrink-icon{
+    height: 40px;
+    width: 40px;
+}
+
+.nav-links{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-links:active{
+    color: #A24936;
+    transform: scale(1.1,1.1);
+}
+
+
