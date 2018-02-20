@@ -46,7 +46,7 @@ $("#regBtn").on("click", function(){
     $("#myRegModal").hide();
 });
 $("#addUnit1").on("click", function(){
-
+    
 
 
     alert("You successfully added a unit");

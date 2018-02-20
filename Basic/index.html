@@ -5,14 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Insightful Inspection</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- Link to Google Fonts -->
 
-    <link href="https://fonts.googleapis.com/css?family=Crimson+Text" rel="stylesheet">
+    <!-- Link to Google Fonts -->
 	<link href="https://fonts.googleapis.com/css?family=Crimson+Text" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Damion|Lato" rel="stylesheet">
     <!-- Link to local css files -->
     <link rel="stylesheet" type="text/css" media="screen" href="./assets/css/reset.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="./assets/css/style.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="./assets/css/modal.css"/>
+    
        
 </head>
 <body>
@@ -46,18 +47,17 @@
     <!-- Html for the front page modals -->
     <div id="loginModal" class="popupContainer" style="display:none;">
         <div class="modal-content">
-            <div class="modal-header">
+             <div class="modal-header"> 
                 <span class="close">&times;</span>
                 <h1>Login</h1>
-            </div>
+             </div> 
             <div class="modal-body">
-                <form action="post">
-                <label for="username">Username</label>
-                <input id="username" type="text" placeholder="Username" required>
-                <label for="password">Password</label>
-                <input id="password" type="password" placeholder="Password" required>
-                <br>
-                <button id="loginBtn" type="button" class="btn close">Login</button>
+                <form action="post" class="loginForm">
+                    <label for="username" style="font-size: 12px ">Username</label>
+                    <input id="username" type="text" placeholder="Username" required><br>
+                    <label for="password" style="font-size: 12px">Password</label> 
+                    <input id="password" type="password" placeholder="Password" required><br>
+                    <button id="loginBtn" type="button" class="btn close">Login</button>
                 </form>
             </div>
         </div>
@@ -69,19 +69,19 @@
                 <h1>Registration</h1>
             </div>
             <div class="modal-body">
-                <form action="post">
-                <label for="username">Username</label><br>
-                <input type="text" id="user" placeholder="Username" required><br>
-                <label for="password">Password</label><br>
-                <input type="password" id="pass" placeholder="Password" required><br>
-                <label for="company">Company Name</label><br>
-                <input type="text" id="company" placeholder="Company Name"><br>
-                <label for="email">Email</label><br>
-                <input type="email" id="email" placeholder="Email" required><br>
-                <label for="phone">Phone number</label><br>
-                <input type="phone" id="phone" placeholder="Phone #" required><br>
-                <br>
-                <button id="regBtn" type="button" class="btn close">Register</button>
+                <form action="post" class="regForm">
+                    <label for="username">Username</label><br>
+                    <input type="text" id="user" placeholder="Username" required><br>
+                    <label for="password">Password</label><br>
+                    <input type="password" id="pass" placeholder="Password" required><br>
+                    <label for="company">Company Name</label><br>
+                    <input type="text" id="company" placeholder="Company Name"><br>
+                    <label for="email">Email</label><br>
+                    <input type="email" id="email" placeholder="Email" required><br>
+                    <label for="phone">Phone number</label><br>
+                    <input type="phone" id="phone" placeholder="Phone #" required><br>
+                    <br>
+                    <button id="regBtn" type="button" class="btn close">Register</button>
                 </form>
             </div>            
         </div>
@@ -94,32 +94,32 @@
                 <h1>Add a Unit</h1>
             </div>
             <div class="modal-body">
-                <form action="post">
-                <h3>Address</h3><br>
-                    <input type="text" id="street" placeholder="Street" required><br>
-                    <input type="text" id="city" placeholder="City" required><br>
-                    <input type="text" id="zipCode" placeholder="Zip Code" required><br>
-                    <input type="text" id="state" placeholder="State"><br><br>
-                <h3>Details</h3><br>
-                    <div>
-                        <!-- Need to add bed and both plus and minus buttons                     -->
-                    </div>
-                    <div class="yardSection">
-                        <h4><strong>Yard</strong></h4><br>
-                        <input type="checkbox" id="frontYard" name="yard" value="frontYard">
-                        <input type="checkbox" id="sideYard" name="yard" value="sideYard">
-                        <input type="checkbox" id="backYard" name="yard" value="backYard"><br>
-                        <label for="frontYard">Front Yard</label>                       
-                        <label for="sideYard">Side Yard</label>                        
-                        <label for="backYard">Back Yard</label>
-                    </div>
-                    <div class="garageSection">
-                        <h4><strong>Garage</strong></h4>
-                        <input type="radio" id="yes" name="garage">
-                        <input type="radio" id="no" name="garage"><br>
-                        <label for="yes">Yes</label><label for="no">No</label>
-                    </div>
-                <button id="addUnit1" type="button" class="btn close">Create Unit</button>
+                <form action="post" class="unitForm">
+                    <h3>Address</h3><br>
+                        <input type="text" id="street" placeholder="Street" required><br>
+                        <input type="text" id="city" placeholder="City" required><br>
+                        <input type="text" id="zipCode" placeholder="Zip Code" required><br>
+                        <input type="text" id="state" placeholder="State"><br><br>
+                    <h3>Details</h3><br>
+                        <div>
+                            <!-- Need to add bed and both plus and minus buttons                     -->
+                        </div>
+                        <div class="yardSection">
+                            <h4><strong>Yard</strong></h4><br>
+                            <input type="checkbox" id="frontYard" name="yard" value="frontYard">
+                            <input type="checkbox" id="sideYard" name="yard" value="sideYard">
+                            <input type="checkbox" id="backYard" name="yard" value="backYard"><br>
+                            <label for="frontYard">Front Yard</label>                       
+                            <label for="sideYard">Side Yard</label>                        
+                            <label for="backYard">Back Yard</label>
+                        </div>
+                        <div class="garageSection">
+                            <h4><strong>Garage</strong></h4>
+                            <input type="radio" id="yes" name="garage">
+                            <input type="radio" id="no" name="garage"><br>
+                            <label for="yes">Yes</label><label for="no">No</label>
+                        </div>
+                    <button id="addUnit1" type="button" class="btn close">Create Unit</button>
             </form>
             </div>
         </div>
