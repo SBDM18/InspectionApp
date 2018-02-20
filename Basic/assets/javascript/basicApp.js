@@ -36,8 +36,8 @@ $('#loginBtn').on("click", function(){
 });
 //retrieves data from the register modal
 $("#regBtn").on("click", function(){
-    let username = $("#user").val();
-    let password = $("#pass").val();
+    let username = $("#userNameReg").val();
+    let password = $("#passWordReg").val();
     let company = $("#company").val();
     let email = $("#email").val();
     let phone = $("#phone").val();

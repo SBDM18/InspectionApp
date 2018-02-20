@@ -65,12 +65,8 @@ a:hover {
     text-align: center;
     text-transform: uppercase;
     display: block;
-}
-.p-b-34{
-    padding-bottom: 34px;
-}
-.p-t-27{
-    padding-top: 27px;
+     padding-top: 27px;
+     padding-bottom: 34px;
 }
 /*------------------------------------------------------------------
 [ Input ]*/

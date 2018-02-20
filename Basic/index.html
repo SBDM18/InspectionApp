@@ -54,13 +54,13 @@
         <div class="modal-content">
             <form class="login100-form validate-form">
                 <span class="login100-form-logo"><i class="zdmi zmdi-landscape">Logo</i></span>
-                <span class="login-form-title p-b-34 p-t-27">Log in</span>
+                <span class="login100-form-title loginTitle">Log in</span>
                 <div class="wrap-input100 validate-input" data-validate="Enter username">
-                    <input type="text" class="input100" name="username" placeholder="Username">
+                    <input type="text" class="input100" id="userName" name="username" placeholder="Username">
                     <span class="focus-input100" data-placeholder="&#xf007;"></span>
                 </div>
                 <div class="wrap-input100 validate-input" data-validate="Enter Password">
-                    <input type="text" class="input100" name="pass" placeholder="Password">
+                    <input type="password" class="input100" id="passWord" name="pass" placeholder="Password">
                     <span class="focus-input100" data-placeholder="&#xf023;"></span>
                 </div>
                 <div class="container-login100-form-btn">
@@ -69,29 +69,49 @@
                 <div class="text-center p-t-90">
                     <a class="txt1" href="#">Forgot Password?</a>
                 </div>
-            </form>
-             <!-- <div class="modal-header"> 
-                <span class="close">&times;</span>
-                <h1>Login</h1>
-             </div> 
-            <div class="modal-body">
-                <form action="post" class="loginForm">
-                    <label for="username" style="font-size: 12px ">Username</label>
-                    <input id="username" type="text" placeholder="Username" required><br>
-                    <label for="password" style="font-size: 12px">Password</label> 
-                    <input id="password" type="password" placeholder="Password" required><br>
-                    <button id="loginBtn" type="button" class="btn close">Login</button>
-                </form>
-            </div> -->
+            </form>            
         </div>
     </div>
     <div id="myRegModal" class="popupContainer">
-        <div class="modal-content">
-            <div class="modal-header">
-                <span class="close">&times;</span>
-                <h1>Registration</h1>
-            </div>
-            <div class="modal-body">
+       <div class="modal-content">
+            <form class="login100-form validate-form">
+                <span class="login100-form-logo"><i class="zdmi zmdi-landscape">Logo</i></span>
+                <span class="login100-form-title loginTitle">Register</span>
+                <div class="wrap-input100 validate-input" data-validate="Enter First Name">
+                    <input type="text" class="input100" id="firstName" name="firstname" placeholder="First Name">
+                    <span class="focus-input100"></span>
+                </div>
+                <div class="wrap-input100 validate-input" data-validate="Enter Last Name">
+                    <input type="text" class="input100" id="userName" name="lastname" placeholder="Last Name">
+                    <span class="focus-input100" data-placeholder="&#xf007;"></span>
+                </div>
+                <div class="wrap-input100 validate-input" data-validate="Enter username">
+                    <input type="text" class="input100" id="userNameReg" name="username" placeholder="Username">
+                    <span class="focus-input100" data-placeholder="&#xf007;"></span>
+                </div>
+                <div class="wrap-input100 validate-input" data-validate="Enter password">
+                    <input type="password" class="input100" id="passWordReg" name="password" placeholder="Password">
+                    <span class="focus-input100" data-placeholder="&#xf007;"></span>
+                </div>
+                <div class="wrap-input100 validate-input" data-validate="Enter Company Name">
+                    <input type="text" class="input100" id="companyName" name="username" placeholder="Company Name">
+                    <span class="focus-input100" data-placeholder="&#xf007;"></span>
+                </div>
+                <div class="wrap-input100 validate-input" data-validate="Enter Email">
+                    <input type="email" class="input100" id="email" name="email" placeholder="Email">
+                    <span class="focus-input100" data-placeholder="&#xf007;"></span>
+                </div>
+                <div class="wrap-input100 validate-input" data-validate="Enter Phone Number">
+                    <input type="phone" class="input100" id="phoneNum" name="phoneNumber" placeholder="Phone Number">
+                    <span class="focus-input100" data-placeholder="&#xf007;"></span>
+                </div>
+                <div class="container-login100-form-btn">
+                    <button id="regBtn" class="login100-form-btn close">Register</button>
+                </div>
+
+            </form>
+       </div>
+            <!-- <div class="modal-body">
                 <form action="post" class="regForm">
                     <label for="username">Username</label><br>
                     <input type="text" id="user" placeholder="Username" required><br>
@@ -106,8 +126,8 @@
                     <br>
                     <button id="regBtn" type="button" class="btn close">Register</button>
                 </form>
-            </div>            
-        </div>
+            </div>             -->
+        
     </div>
     <!-- HTML for the add a unit modal -->
     <div id="addUnitModal" class="popupContainer" style="display:none;">
