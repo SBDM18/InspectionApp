@@ -5,19 +5,22 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Insightful Inspection</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
     <!-- Link to Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Crimson+Text" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Crimson+Text" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Damion|Lato" rel="stylesheet">
     <!-- Link to local css files -->
     <link rel="stylesheet" type="text/css" media="screen" href="./assets/css/reset.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="./assets/css/style.css" />
-    <link rel="stylesheet" type="text/css" media="screen" href="./assets/css/modal.css"/>
-    
-       
+    <link rel="stylesheet" type="text/css" media="screen" href="./assets/css/modal.css">
+    <!-- Link to dashboard css file -->
+    <link rel="stylesheet" type="text/css" media="screen" href="./assets/css/dashboard.css">
+    <!-- Link to bootstrap css -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
 </head>
 <body>
-    
+ <!-- style="display:none -->
         <div class="containerFront">
             <div class="frontTitle top">Welcome to</div>
             <div class="frontTitle">Insightful Inspection</div>
@@ -125,11 +128,42 @@
         </div>
     </div>
 
+
+
+
+<div class="container-fluid dashboard" style="display:none">
+        <div class="row">
+            <div class="col-sm-2 nav-side letter-color">
+                <div class="row">
+                    <div class="col-sm-12">
+                        Header - Our Company Name
+                    </div>
+                    <div class="col-sm-12">
+                        dashboard content navigator
+                        <div class="nav-links">
+                            <img src="./assets/images/mag_glass.png" alt="Magnifying Glass" class="nav-icon">
+                            <div class="link-name letter-color" style="display:none">Overview</div>
+                        </div>
+                        <div class="nav-links">Units</div>
+                        <div class="nav-links">Inspections</div>
+                        <div class="nav-links">Templates</div>
+                        <div class="nav-links">Reports</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-10">
+                body
+            </div>
+        </div>
+    </div>
+
     <!-- Link to JQuery -->
     <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.1.min.js"></script>
     <!-- leanModal.js -->
     <script type="text/javascript" src="./assets/javascript/jquery.leanModal.min.js"></script>
     <!-- Link to javascript file -->
     <script src="./assets/javascript/basicApp.js"></script>
+    <!-- Link to JQuery Dashboard.js -->
+    <script src='./assets/javascript/dashboard.js'></script>
 </body>
 </html>
