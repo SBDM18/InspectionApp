@@ -36,13 +36,15 @@ $('#loginBtn').on("click", function(){
 });
 //retrieves data from the register modal
 $("#regBtn").on("click", function(){
+    let firstname = $("#firstName").val();
+    let lastname = $("#lastName").val();
     let username = $("#userNameReg").val();
     let password = $("#passWordReg").val();
     let company = $("#companyName").val();
     let email = $("#email").val();
-    let phone = $("#phone").val();
+    let phone = $("#phoneNum").val();
     //If registration successful create an alet/modal to thank individual for registering with INsightful Inspection
-    console.log("This is new user information: " + username + "," + password + "," + company +"," + email + "," +phone );
+    console.log("This is new user information: " +firstname +"," + lastname + "," + username + "," + password + "," + company +"," + email + "," +phone );
     $("#myRegModal").hide();
 });
 $("#addUnit1").on("click", function(){    

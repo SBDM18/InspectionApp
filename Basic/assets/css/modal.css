@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-
-=======
->>>>>>> ff2dec2d369bffaabeab8f89630b58ec983e4ccd
 /*---------------------------------------------*/
 
 a {
@@ -240,6 +236,21 @@ button:hover {
     .wrap-login100 {
         padding: 55px 15px 37px 15px;
     }
+}
+/*------------------------------------------------------------------
+[ Registration modal ]*/
+.popupContainerReg {
+    position: absolute;
+    width: 550px;
+    height: auto;
+    left: 45%;
+    top: 60px;
+}
+.firstnLast{
+    
+}
+.FL{
+    width: 40%;
 }
 /*------------------------------------------------------------------
 [ Alert validate ]*/
