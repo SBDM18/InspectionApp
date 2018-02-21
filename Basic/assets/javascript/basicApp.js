@@ -36,17 +36,16 @@ $('#loginBtn').on("click", function(){
 });
 //retrieves data from the register modal
 $("#regBtn").on("click", function(){
-    let username = $("#user").val();
-    let password = $("#pass").val();
-    let company = $("#company").val();
+    let username = $("#userNameReg").val();
+    let password = $("#passWordReg").val();
+    let company = $("#companyName").val();
     let email = $("#email").val();
     let phone = $("#phone").val();
     //If registration successful create an alet/modal to thank individual for registering with INsightful Inspection
     console.log("This is new user information: " + username + "," + password + "," + company +"," + email + "," +phone );
     $("#myRegModal").hide();
 });
-$("#addUnit1").on("click", function(){
-
+$("#addUnit1").on("click", function(){    
 
 
     alert("You successfully added a unit");
@@ -56,7 +55,9 @@ $("#addUnit1").on("click", function(){
 // javascript for functioning plus and minus in the addUnitModal for Bed and bath
 
 
-
+//javascript for validatin input 
+/*==================================================================
+    [ Validate ]*/
 
 
 
