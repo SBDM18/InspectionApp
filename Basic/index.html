@@ -23,7 +23,7 @@
 </head>
 <body>
     
-        <div class="containerFront" style="display:none">
+        <div class="containerFront" style="display:none;">
             <div class="frontTitle top">Welcome to</div>
             <div class="frontTitle">Insightful Inspection</div>
             <div class="frontBtn">
@@ -37,7 +37,7 @@
         <div class="modal-content">
             <form class="login100-form validate-form">
                 <span class="login100-form-logo"><i class="zdmi zmdi-landscape">Logo</i></span>
-                <span class="login100-form-title loginTitle">Log in</span>
+                <span class="login100-form-title ">Log in</span>
                 <div class="wrap-input100 validate-input" data-validate="Enter username">
                     <input type="text" class="input100" id="username" name="username" placeholder="Username">
                     <span class="focus-input100" data-placeholder="&#xf007;"></span>
@@ -59,88 +59,98 @@
        <div class="modal-content">
             <form class="login100-form validate-form">
                 <span class="login100-form-logo"><i class="zdmi zmdi-landscape">Logo</i></span>
-                <span class="login100-form-title loginTitle">Register</span>
+                <span class="login100-form-title ">Register</span>
                 <div class="firstnLast">
                     <div class="wrap-input100 FL validate-input" data-validate="Enter First Name">
                         <input type="text" class="input100" id="firstName" name="firstname" placeholder="First Name">
                         <span class="focus-input100"></span>
                     </div>
-                    <div class="wrap-input100 FL validate-input" data-validate="Enter Last Name">
+                    <div class="wrap-input100 FL ln validate-input" data-validate="Enter Last Name">
                         <input type="text" class="input100" id="lastName" name="lastname" placeholder="Last Name">
                         <span class="focus-input100" data-placeholder="&#xf007;"></span>
                     </div>
                 </div>
-                <div class="wrap-input100 validate-input" data-validate="Enter username">
-                    <input type="text" class="input100" id="userNameReg" name="username" placeholder="Username">
-                    <span class="focus-input100" data-placeholder="&#xf007;"></span>
-                </div>
-                <div class="wrap-input100 validate-input" data-validate="Enter password">
-                    <input type="password" class="input100" id="passWordReg" name="password" placeholder="Password">
-                    <span class="focus-input100" data-placeholder="&#xf007;"></span>
+                <div class="firstnLast">
+                    <div class="wrap-input100 FL validate-input" data-validate="Enter username">
+                        <input type="text" class="input100" id="userNameReg" name="username" placeholder="Username">
+                        <span class="focus-input100" data-placeholder="&#xf007;"></span>
+                    </div>
+                    <div class="wrap-input100 FL ln validate-input" data-validate="Enter password">
+                        <input type="password" class="input100" id="passWordReg" name="password" placeholder="Password">
+                        <span class="focus-input100" data-placeholder="&#xf007;"></span>
+                    </div>
                 </div>
                 <div class="wrap-input100 validate-input" data-validate="Enter Company Name">
                     <input type="text" class="input100" id="companyName" name="username" placeholder="Company Name">
                     <span class="focus-input100" data-placeholder="&#xf007;"></span>
                 </div>
-                <div class="wrap-input100 validate-input" data-validate="Enter Email">
-                    <input type="email" class="input100" id="email" name="email" placeholder="Email">
-                    <span class="focus-input100" data-placeholder="&#xf007;"></span>
-                </div>
-                <div class="wrap-input100 validate-input" data-validate="Enter Phone Number">
-                    <input type="phone" class="input100" id="phoneNum" name="phoneNumber" placeholder="Phone Number">
-                    <span class="focus-input100" data-placeholder="&#xf007;"></span>
+                <div class="firstnLast">
+                    <div class="wrap-input100 FL validate-input" data-validate="Enter Email">
+                        <input type="email" class="input100" id="email" name="email" placeholder="Email">
+                        <span class="focus-input100" data-placeholder="&#xf007;"></span>
+                    </div>
+                    <div class="wrap-input100 FL ln validate-input" data-validate="Enter Phone Number">
+                        <input type="phone" class="input100" id="phoneNum" name="phoneNumber" placeholder="Phone Number">
+                        <span class="focus-input100" data-placeholder="&#xf007;"></span>
+                    </div>
                 </div>
                 <div class="container-login100-form-btn">
                     <button id="regBtn" class="login100-form-btn close">Register</button>
                 </div>
-
             </form>
-       </div>
-        
+       </div>        
     </div>
+
     <!-- HTML for the add a unit modal -->
-    <div id="addUnitModal" class="popupContainer" style="display:none;">
+    <div id="addUnitModal" class="popupContainerAdd" >
         <div class="modal-content">
-            <div class="modal-header">
-                <span class="close">&times;</span>
-                <h1>Add a Unit</h1>
-            </div>
-            <div class="modal-body">
-                <form action="post" class="unitForm">
-                    <h3>Address</h3><br>
-                        <input type="text" id="street" placeholder="Street" required><br>
-                        <input type="text" id="city" placeholder="City" required><br>
-                        <input type="text" id="zipCode" placeholder="Zip Code" required><br>
-                        <input type="text" id="state" placeholder="State"><br><br>
-                    <h3>Details</h3><br>
-                        <div>
-                            <!-- Need to add bed and both plus and minus buttons                     -->
-                        </div>
-                        <div class="yardSection">
-                            <h4><strong>Yard</strong></h4><br>
-                            <input type="checkbox" id="frontYard" name="yard" value="frontYard">
-                            <input type="checkbox" id="sideYard" name="yard" value="sideYard">
-                            <input type="checkbox" id="backYard" name="yard" value="backYard"><br>
-                            <label for="frontYard">Front Yard</label>                       
-                            <label for="sideYard">Side Yard</label>                        
-                            <label for="backYard">Back Yard</label>
-                        </div>
-                        <div class="garageSection">
-                            <h4><strong>Garage</strong></h4>
-                            <input type="radio" id="yes" name="garage">
-                            <input type="radio" id="no" name="garage"><br>
-                            <label for="yes">Yes</label><label for="no">No</label>
-                        </div>
-                    <button id="addUnit1" type="button" class="btn close">Create Unit</button>
-            </form>
-            </div>
+            <form class="login100-form validate-form">
+                <span class="login100-form-title ">Add a Unit</span>
+                <h2 class="formTitle1">Address</h2>
+                <div class="firstnLast address">
+                    <div class="wrap-input100 FL validate-input" data-validate="Enter Street">
+                        <input type="text" class="input100" id="street" name="street" placeholder="Street" >
+                        <span class="focus-input100" data-placeholder="&#xf006;"></span>
+                    </div>
+                    <div class="wrap-input100 FL ln validate-input" data-validate="Enter City">
+                        <input type="text" class="input100" id="city" name="street" placeholder="City">
+                        <span class="focus-input100" data-placeholder="&#xf006;"></span>
+                    </div>
+                </div>
+                <div class="firstnLast ">
+                    <div class="wrap-input100 FL validate-input" data-validate="Enter State">
+                        <input type="text" class="input100" id="state" name="street" placeholder="State">
+                        <span class="focus-input100" data-placeholder="&#xf006;"></span>
+                    </div>
+                    <div class="wrap-input100 FL ln validate-input" data-validate="Enter Zip Code">
+                        <input type="text" class="input100" id="zip" name="street" placeholder="Zip Code">
+                        <span class="focus-input100" data-placeholder="&#xf006;"></span>
+                    </div>
+                </div>
+                <h2 class="formTitle1">Details</h2>
+                    <span># of Beds</span><span>#of Baths</span>
+                    
+
+                <h3 class="formTitle2">Yard</h3>
+                    <input type="checkbox" id="frontYard" name="yard" value="frontYard" class="yardCheck">
+                    <input type="checkbox" id="sideYard" name="yard" value="sideYard" class="yardCheck"> 
+                    <input type="checkbox" id="backYard" name="yard" value="backYard" class="yardCheck"><br>
+                    <label for="frontYard" class="yardTitle">Front Yard</label>
+                    <label for="sideYard" class="yardTitle">Side Yard</label>
+                    <label for="backYard" class="yardTitle">Back Yard</label>
+                <h3 class="formTitle2">Garage</h3>
+                    <input type="radio" id="yes" name="garage">
+                    <input type="radio" id="no" name="garage"><br>
+                    <label for="yes">Yes</label>
+                    <label for="no">No</label>
+                <div class="container-login100-form-btn">
+                    <button id="submitUnit" class="login100-form-btn close">Create Unit</button>
+                </div>
+            </form>           
         </div>
     </div>
 
-
-
-
-    <div class="container-fluid dashboard">
+    <div class="container-fluid dashboard"  >
         <div class="row main-content">
             <div class="col-sm-2 letter-color background">
                 <div class="row nav-section">
@@ -175,11 +185,12 @@
                     </div>
                 </div>
             </div>
-            <div class="col-sm-10 dashboard-body">
-                body
+            <div class="col-sm-10 main">
+               
             </div>
         </div>
     </div>
+
 
     <!-- Link to JQuery -->
     <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.1.min.js"></script>
