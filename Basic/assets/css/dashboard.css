@@ -136,7 +136,7 @@ html{
     border: solid 3px lightgreen;
 }
 /*--------------------------------------------------------
-[ Unit Section on Dashboard]*/
+[ Unit Section on Dashboard and general top half for most of the dashboard]*/
 .search-cont{
     border-top:solid 3px honeydew;
     border-bottom: solid 3px honeydew;
@@ -221,7 +221,22 @@ html{
 
 /*------------------------------------------------------------
 [ Inspection Dashboard page ]*/
-
+.card{
+    margin: 5%;
+}
+.timeline-cont{
+    margin-top: 11px;
+    border: solid 3px gray;
+    height: 574px;
+}
+.timelineTitle{
+    margin: 10% 0% 10% 10%;
+    color: yellow;
+    font-family: 'Courier New', Courier, monospace;
+}
+.timeTable{
+    margin: 3% 2% 0 0;
+}
 /*------------------------------------------------------------
 [ Inspection Card slideshow page ]*/
 

@@ -48,17 +48,9 @@ $("#regBtn").on("click", function(){
         company: $("#companyName").val(),
         email: $("#email").val(),
         phone: $("#phoneNum").val() 
-    };
-    // let firstname = $("#firstName").val();
-    // let lastname = $("#lastName").val();
-    // let username = $("#userNameReg").val();
-    // let password = $("#passWordReg").val();
-    // let company = $("#companyName").val();
-    // let email = $("#email").val();
-    // let phone = $("#phoneNum").val();
+    };    
     //If registration successful create an alet/modal to thank individual for registering with INsightful Inspection
- //   console.log("This is new user information: " +firstname +"," + lastname + "," + username + "," + password + "," + company +"," + email + "," +phone );
-    console.log(newReg);
+    console.log("This is new user info: " + newReg);
  $("#myRegModal").hide();
 });
 $("#addUnit1").on("click", function(){    

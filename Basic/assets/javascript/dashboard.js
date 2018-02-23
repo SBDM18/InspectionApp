@@ -137,7 +137,103 @@ function unitDashList(){
     $(".main").html(html);
 }
 function inspectDashCards(){
-    let html = ''
+    let html = `<div class="row">
+        <div class="col-sm-2">
+            <div style="color: Blue ">
+                <i class="fas fa-caret-square-left fa-4x"></i>
+            </div>
+        </div>
+        <div class="col-sm-10">
+            <div style="font-size: 24px; color: lightblue ">
+                <h1>Reports</h1>
+            </div>
+        </div>
+    </div>
+        <div class="row search-cont">
+            <div class="col-sm-8">
+                <div class="search">
+                    <span class="fas fa-search"></span>
+                    <input type="text" class="unitSearch" placeholder="Search by category">
+                        </div>
+                </div>
+                <div class="col-sm-4">
+                    <button id="unitSearch" class="button">Search</button>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-8">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="card" style="width: 250px;">
+                                <div class="card-body">
+                                    <h5 class="card-title">Card title</h5>
+                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="card" style="width: 250px;">
+                                <div class="card-body">
+                                    <h5 class="card-title">Card title</h5>
+                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="card" style="width: 250px;">
+                                <div class="card-body">
+                                    <h5 class="card-title">Card title</h5>
+                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="card" style="width: 250px;">
+                                <div class="card-body">
+                                    <h5 class="card-title">Card title</h5>
+                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="card" style="width: 250px;">
+                                <div class="card-body">
+                                    <h5 class="card-title">Card title</h5>
+                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="card" style="width: 250px;">
+                                <div class="card-body">
+                                    <h5 class="card-title">Card title</h5>
+                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4 timeline-cont">
+                    <h1 class="timelineTitle">Timeline</h1>
+                    <table class="table table-striped table-hover timeTable" style="background-color:white;">
+                        <tbody>
+                            <tr>
+                                <td>House 1</td>
+                            </tr>
+                            <tr>
+                                <td>House 2</td>
+                            </tr>
+                            <tr>
+                                <td>House 3</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>`
 
     $(".main").html(html);
 }
