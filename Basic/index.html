@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Insightful Inspection</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Font awesome cdn -->
+    <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+    <!-- Link to Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Crimson+Text" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Crimson+Text" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Damion|Lato" rel="stylesheet">
+    <!-- Link to local css files -->
+    <link rel="stylesheet" type="text/css" media="screen" href="./assets/css/reset.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="./assets/css/style.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="./assets/css/modal.css">
+    <!-- Link to dashboard css file -->
+    <link rel="stylesheet" type="text/css" media="screen" href="./assets/css/dashboard.css">
+    <!-- Link to bootstrap css -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+</head>
+<body>
+    
+        <div class="containerFront" style="display:none;">
+            <div class="frontTitle top">Welcome to</div>
+            <div class="frontTitle">Insightful Inspection</div>
+            <div class="frontBtn">
+                <button id="login" href="#loginModal"class="btn">Login</button>
+                <button id="register" href="#myRegModal" class=" btn">Register</button>
+            </div>
+        </div>  
+
+    <!-- Html for the front page modals -->
+    <div id="loginModal" class="popupContainer" style="display:none;">
+        <div class="modal-content">
+            <form class="login100-form validate-form">
+                <span class="login100-form-logo"><i class="zdmi zmdi-landscape">Logo</i></span>
+                <span class="login100-form-title ">Log in</span>
+                <div class="wrap-input100 validate-input" data-validate="Enter username">
+                    <input type="text" class="input100" id="username" name="username" placeholder="Username">
+                    <span class="focus-input100" data-placeholder="&#xf007;"></span>
+                </div>
+                <div class="wrap-input100 validate-input" data-validate="Enter Password">
+                    <input type="password" class="input100" id="password" name="pass" placeholder="Password">
+                    <span class="focus-input100" data-placeholder="&#xf023;"></span>
+                </div>
+                <div class="container-login100-form-btn">
+                    <button id="loginBtn" class="login100-form-btn close">Login</button>
+                </div>
+                <div class="text-center p-t-90">
+                    <a class="txt1" href="#">Forgot Password?</a>
+                </div>
+            </form>            
+        </div>
+    </div>
+    <div id="myRegModal" class="popupContainerReg">
+       <div class="modal-content">
+            <form class="login100-form validate-form">
+                <span class="login100-form-logo"><i class="zdmi zmdi-landscape">Logo</i></span>
+                <span class="login100-form-title ">Register</span>
+                <div class="firstnLast">
+                    <div class="wrap-input100 FL validate-input" data-validate="Enter First Name">
+                        <input type="text" class="input100" id="firstName" name="firstname" placeholder="First Name">
+                        <span class="focus-input100"></span>
+                    </div>
+                    <div class="wrap-input100 FL ln validate-input" data-validate="Enter Last Name">
+                        <input type="text" class="input100" id="lastName" name="lastname" placeholder="Last Name">
+                        <span class="focus-input100" data-placeholder="&#xf007;"></span>
+                    </div>
+                </div>
+                <div class="firstnLast">
+                    <div class="wrap-input100 FL validate-input" data-validate="Enter username">
+                        <input type="text" class="input100" id="userNameReg" name="username" placeholder="Username">
+                        <span class="focus-input100" data-placeholder="&#xf007;"></span>
+                    </div>
+                    <div class="wrap-input100 FL ln validate-input" data-validate="Enter password">
+                        <input type="password" class="input100" id="passWordReg" name="password" placeholder="Password">
+                        <span class="focus-input100" data-placeholder="&#xf007;"></span>
+                    </div>
+                </div>
+                <div class="wrap-input100 validate-input" data-validate="Enter Company Name">
+                    <input type="text" class="input100" id="companyName" name="username" placeholder="Company Name">
+                    <span class="focus-input100" data-placeholder="&#xf007;"></span>
+                </div>
+                <div class="firstnLast">
+                    <div class="wrap-input100 FL validate-input" data-validate="Enter Email">
+                        <input type="email" class="input100" id="email" name="email" placeholder="Email">
+                        <span class="focus-input100" data-placeholder="&#xf007;"></span>
+                    </div>
+                    <div class="wrap-input100 FL ln validate-input" data-validate="Enter Phone Number">
+                        <input type="phone" class="input100" id="phoneNum" name="phoneNumber" placeholder="Phone Number">
+                        <span class="focus-input100" data-placeholder="&#xf007;"></span>
+                    </div>
+                </div>
+                <div class="container-login100-form-btn">
+                    <button id="regBtn" class="login100-form-btn close">Register</button>
+                </div>
+            </form>
+       </div>        
+    </div>
+
+    <!-- HTML for the add a unit modal -->
+    <div id="addUnitModal" class="popupContainerAdd" >
+        <div class="modal-content">
+            <form class="login100-form validate-form">
+                <span class="login100-form-title ">Add a Unit</span>
+                <h2 class="formTitle1">Address</h2>
+                <div class="firstnLast address">
+                    <div class="wrap-input100 FL validate-input" data-validate="Enter Street">
+                        <input type="text" class="input100" id="street" name="street" placeholder="Street" >
+                        <span class="focus-input100" data-placeholder="&#xf006;"></span>
+                    </div>
+                    <div class="wrap-input100 FL ln validate-input" data-validate="Enter City">
+                        <input type="text" class="input100" id="city" name="street" placeholder="City">
+                        <span class="focus-input100" data-placeholder="&#xf006;"></span>
+                    </div>
+                </div>
+                <div class="firstnLast ">
+                    <div class="wrap-input100 FL validate-input" data-validate="Enter State">
+                        <input type="text" class="input100" id="state" name="street" placeholder="State">
+                        <span class="focus-input100" data-placeholder="&#xf006;"></span>
+                    </div>
+                    <div class="wrap-input100 FL ln validate-input" data-validate="Enter Zip Code">
+                        <input type="text" class="input100" id="zip" name="street" placeholder="Zip Code">
+                        <span class="focus-input100" data-placeholder="&#xf006;"></span>
+                    </div>
+                </div>
+                <h2 class="formTitle1">Details</h2>
+                    <span># of Beds</span><span>#of Baths</span>
+                    
+
+                <h3 class="formTitle2">Yard</h3>
+                    <input type="checkbox" id="frontYard" name="yard" value="frontYard" class="yardCheck">
+                    <input type="checkbox" id="sideYard" name="yard" value="sideYard" class="yardCheck"> 
+                    <input type="checkbox" id="backYard" name="yard" value="backYard" class="yardCheck"><br>
+                    <label for="frontYard" class="yardTitle">Front Yard</label>
+                    <label for="sideYard" class="yardTitle">Side Yard</label>
+                    <label for="backYard" class="yardTitle">Back Yard</label>
+                <h3 class="formTitle2">Garage</h3>
+                    <input type="radio" id="yes" name="garage">
+                    <input type="radio" id="no" name="garage"><br>
+                    <label for="yes">Yes</label>
+                    <label for="no">No</label>
+                <div class="container-login100-form-btn">
+                    <button id="submitUnit" class="login100-form-btn close">Create Unit</button>
+                </div>
+            </form>           
+        </div>
+    </div>
+
+    <div class="container-fluid dashboard"  >
+        <div class="row main-content">
+            <div class="col-sm-2 letter-color background">
+                <div class="row nav-section">
+                    <div class="col-sm-12 logo">
+                        Header - Our Company Name
+                    </div>
+                    <div class="col-sm-12 nav-content">
+
+                        <div class="nav-links overview">
+                            <img src="./assets/images/view_icon.png" alt="Overview" class="nav-icon">
+                            <div class="link-name letter-color" style="display:none">Overview</div>
+                        </div>
+                        <div class="nav-links units">
+                            <img src="./assets/images/home_icon.png" alt="Home" class="nav-icon">
+                            <div class="link-name letter-color" style="display:none">Units</div>
+                        </div>
+                        <div class="nav-links inspection">
+                            <img src="./assets/images/mag_glass.png" alt="Magnifying Glass" class="nav-icon">
+                            <div class="link-name letter-color" style="display:none">Inspections</div>
+                        </div>
+                        <div class="nav-links template">
+                            <img src="./assets/images/temp_icon.png" alt="Template" class="nav-icon">
+                            <div class="link-name letter-color" style="display:none">Templates</div>
+                        </div>
+                        <div class="nav-links report">
+                            <img src="./assets/images/rep_icon.png" alt="Report" class="nav-icon">
+                            <div class="link-name letter-color" style="display:none">Reports</div>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 company-info">
+                        Hometeam Property Management
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-10 main">
+               
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Link to JQuery -->
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.1.min.js"></script>
+    <!-- leanModal.js -->
+    <script type="text/javascript" src="./assets/javascript/jquery.leanModal.min.js"></script>
+    <!-- Link to javascript file -->
+    <script src="./assets/javascript/basicApp.js"></script>
+    <!-- Link to JQuery Dashboard.js -->
+    <script src='./assets/javascript/dashboard.js'></script>
+</body>
+</html>
