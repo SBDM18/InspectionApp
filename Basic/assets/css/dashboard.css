@@ -122,6 +122,135 @@ html{
     color: #A24936;
     transform: scale(1.1,1.1);
 }
+/* Classes to help identify rows and coloumns for style of pages */
+.one{
+    border:solid 3px red;
+
+}
+.two{
+    border: solid 3px yellow;
+}
+.three{
+    border: solid 3px lightblue;
+}
+.four{
+    border: solid 3px lightgreen;
+}
+/*--------------------------------------------------------
+[ Unit Section on Dashboard and general top half for most of the dashboard]*/
+.search-cont{
+    border-top:solid 3px honeydew;
+    border-bottom: solid 3px honeydew;
+}
+.search{
+    position: relative;
+}
+.search input {
+    text-indent: 30px;
+}
+.search .fa-search {
+    position: absolute;
+    top: 26px;
+    left: 55px;
+    font-size: 15px;
+}
+.unitSearch{    
+    border-radius: 5px;
+    border: solid 3px lightgray;
+    width: 85%;
+    height: 35px;
+    margin: 3% 0 3% 8%;
+    background-color: lavender;
+}
+#unitSearch{
+    margin: 6% 0 3% 30%;
+}
+.fa-search{
+    position: relative;
+}
+.button {
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #63b8ee), color-stop(1, #468ccf));
+    background: -moz-linear-gradient(top, #63b8ee 5%, #468ccf 100%);
+    background: -webkit-linear-gradient(top, #63b8ee 5%, #468ccf 100%);
+    background: -o-linear-gradient(top, #63b8ee 5%, #468ccf 100%);
+    background: -ms-linear-gradient(top, #63b8ee 5%, #468ccf 100%);
+    background: linear-gradient(to bottom, #63b8ee 5%, #468ccf 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#63b8ee', endColorstr='#468ccf', GradientType=0);
+    background-color: #63b8ee;
+    -moz-border-radius: 13px;
+    -webkit-border-radius: 13px;
+    border-radius: 13px;
+    border: 2px solid #3866a3;
+    display: inline-block;
+    cursor: pointer;
+    color: #14396a;
+    font-family: Georgia;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 1px 9px;
+    text-decoration: none;
+}
+
+.button:hover {
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #468ccf), color-stop(1, #63b8ee));
+    background: -moz-linear-gradient(top, #468ccf 5%, #63b8ee 100%);
+    background: -webkit-linear-gradient(top, #468ccf 5%, #63b8ee 100%);
+    background: -o-linear-gradient(top, #468ccf 5%, #63b8ee 100%);
+    background: -ms-linear-gradient(top, #468ccf 5%, #63b8ee 100%);
+    background: linear-gradient(to bottom, #468ccf 5%, #63b8ee 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#468ccf', endColorstr='#63b8ee', GradientType=0);
+    background-color: #468ccf;
+}
+
+.button:active {
+    position: relative;
+    top: 1px;
+}
+.addUnit{
+    margin-top: 40%;    
+}
+.city{
+    margin-left: 20%;
+    margin-top: 20%;
+}
+/*------------------------------------------------------------
+[ Unit section/city specific]*/
+.table{
+    margin-top: 9%;
+    margin-left: 2%;
+}
+
+/*------------------------------------------------------------
+[ Inspection Dashboard page ]*/
+.card{
+    margin: 5%;
+}
+.timeline-cont{
+    margin-top: 11px;
+    border: solid 3px gray;
+    height: 574px;
+}
+.timelineTitle{
+    margin: 10% 0% 10% 10%;
+    color: yellow;
+    font-family: 'Courier New', Courier, monospace;
+}
+.timeTable{
+    margin: 3% 2% 0 0;
+}
+/*------------------------------------------------------------
+[ Inspection Card slideshow page ]*/
+
+/*------------------------------------------------------------
+[ Report Dashboard]*/
+.reportTab{
+    margin-top: 3%;
+    margin-left: 4%;
+}
+
+/*------------------------------------------------------------
+[ Template Dashboard]*/
+
 
 .addUnitBtn{
     background-color:#BFC1D2 !important;

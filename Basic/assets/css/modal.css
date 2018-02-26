@@ -247,10 +247,31 @@ button:hover {
     top: 60px;
 }
 .firstnLast{
-    
+    display: flex;
+    flex-direction: row;
 }
 .FL{
-    width: 40%;
+    width: 50%;
+}
+.ln{
+    margin-left: 40px;
+}
+/*------------------------------------------------------------------
+[ Add unit Modal]*/
+.popupContainerAdd{
+    position: absolute;
+    width: 550px;
+    height: auto;
+    left: 45%;
+    top: 60px;
+}
+.yardCheck{
+    margin-right: 5%;
+}
+.yardTitle{
+    margin-right: 10%;
+    font-size: 14px;
+    font-weight: 200;
 }
 /*------------------------------------------------------------------
 [ Alert validate ]*/
