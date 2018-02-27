@@ -97,29 +97,6 @@ function unitDashList(){
     $(".dash-main").html(html);
 }
 function inspectDashCards(){
-    let html = `<div class="row">
-        <div class="col-sm-2">
-            <div style="color: #BFC1D2 ">
-                <i class="fas fa-caret-square-left fa-4x"></i>
-            </div>
-        </div>
-        <div class="col-sm-10">
-            <div style="font-size: 24px; color: #BFC1D2 ">
-                <h1>Reports</h1>
-            </div>
-        </div>
-    </div>
-        <div class="row search-cont">
-            <div class="col-sm-8">
-                <div class="search">
-                    <span class="fas fa-search"></span>
-                    <input type="text" class="unitSearch" placeholder="Search by category">
-                        </div>
-                </div>
-                <div class="col-sm-4">
-                    <button id="unitSearch" class="button">Search</button>
-                </div>
-            </div>`
 
     let html = `
 
@@ -228,9 +205,8 @@ function reportDash(){
                 <div class="col-sm-4">
                     <button id="unitSearch" class="button">Search</button>
                 </div>
-            </div>`
+            </div>
 
-    let html = `
             <div class="row">
                 <div class="col-sm-11">
                     <table class="table table-striped table-hover reportTab" style="background-color:white;">
