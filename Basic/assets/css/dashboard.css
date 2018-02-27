@@ -139,8 +139,8 @@ html{
 /*--------------------------------------------------------
 [ Unit Section on Dashboard and general top half for most of the dashboard]*/
 .search-cont{
-    border-top:solid 3px honeydew;
-    border-bottom: solid 3px honeydew;
+    border-top:solid 3px #BFC1D2;
+    border-bottom: solid 3px #BFC1D2;
 }
 .search{
     position: relative;
@@ -169,21 +169,21 @@ html{
     position: relative;
 }
 .button {
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #63b8ee), color-stop(1, #468ccf));
-    background: -moz-linear-gradient(top, #63b8ee 5%, #468ccf 100%);
-    background: -webkit-linear-gradient(top, #63b8ee 5%, #468ccf 100%);
-    background: -o-linear-gradient(top, #63b8ee 5%, #468ccf 100%);
-    background: -ms-linear-gradient(top, #63b8ee 5%, #468ccf 100%);
-    background: linear-gradient(to bottom, #63b8ee 5%, #468ccf 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#63b8ee', endColorstr='#468ccf', GradientType=0);
-    background-color: #63b8ee;
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #BFC1D2), color-stop(1, #b3b3b3));
+    background: -moz-linear-gradient(top, #BFC1D2 5%, #b3b3b3 100%);
+    background: -webkit-linear-gradient(top, #BFC1D2 5%, #b3b3b3 100%);
+    background: -o-linear-gradient(top, #BFC1D2 5%, #b3b3b3 100%);
+    background: -ms-linear-gradient(top, #BFC1D2 5%, #b3b3b3 100%);
+    background: linear-gradient(to bottom, #BFC1D2 5%, #b3b3b3 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#BFC1D2', endColorstr='#b3b3b3', GradientType=0);
+    background-color: #BFC1D2;
     -moz-border-radius: 13px;
     -webkit-border-radius: 13px;
     border-radius: 13px;
-    border: 2px solid #3866a3;
+    border: 2px solid rgb(154, 157, 179);
     display: inline-block;
     cursor: pointer;
-    color: #14396a;
+    color: #000000;
     font-family: Georgia;
     font-size: 16px;
     font-weight: bold;
@@ -192,14 +192,14 @@ html{
 }
 
 .button:hover {
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #468ccf), color-stop(1, #63b8ee));
-    background: -moz-linear-gradient(top, #468ccf 5%, #63b8ee 100%);
-    background: -webkit-linear-gradient(top, #468ccf 5%, #63b8ee 100%);
-    background: -o-linear-gradient(top, #468ccf 5%, #63b8ee 100%);
-    background: -ms-linear-gradient(top, #468ccf 5%, #63b8ee 100%);
-    background: linear-gradient(to bottom, #468ccf 5%, #63b8ee 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#468ccf', endColorstr='#63b8ee', GradientType=0);
-    background-color: #468ccf;
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #e9e9e9), color-stop(1, #b3b3b3));
+    background: -moz-linear-gradient(top, #e9e9e9 5%, #b3b3b3 100%);
+    background: -webkit-linear-gradient(top, #e9e9e9 5%, #b3b3b3 100%);
+    background: -o-linear-gradient(top, #e9e9e9 5%, #b3b3b3 100%);
+    background: -ms-linear-gradient(top, #e9e9e9 5%, #b3b3b3 100%);
+    background: linear-gradient(to bottom, #e9e9e9 5%, #b3b3b3 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#e9e9e9', endColorstr='#63b8ee', GradientType=0);
+    background-color: #e9e9e9;
 }
 
 .button:active {
@@ -212,6 +212,9 @@ html{
 .city{
     margin-left: 20%;
     margin-top: 20%;
+}
+.cityTitle{
+    color: #000000;
 }
 /*------------------------------------------------------------
 [ Unit section/city specific]*/
@@ -227,13 +230,15 @@ html{
 }
 .timeline-cont{
     margin-top: 11px;
-    border: solid 3px gray;
+    border: solid 3px #BFC1D2;
     height: 574px;
 }
 .timelineTitle{
-    margin: 10% 0% 10% 10%;
-    color: yellow;
-    font-family: 'Courier New', Courier, monospace;
+    margin-top: 10%;
+    margin-bottom: 10%;
+    color: #000000;
+    font-weight: bold;
+    text-align: center;
 }
 .timeTable{
     margin: 3% 2% 0 0;
