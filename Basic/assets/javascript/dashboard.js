@@ -55,7 +55,7 @@ function unitDashFolders(){
     $(".dash-main").html(html);
 }
 function unitDashList(){
-       
+    let html = `
                     <div class="col-sm-9">
                         <table class="table table-striped table-hover" style="background-color:#BFC1D2;">
                             <thead class="thead-light">
@@ -119,7 +119,7 @@ function inspectDashCards(){
                 <div class="col-sm-4">
                     <button id="unitSearch" class="button">Search</button>
                 </div>
-            </div>
+            </div>`
 
     let html = `
 
@@ -228,7 +228,7 @@ function reportDash(){
                 <div class="col-sm-4">
                     <button id="unitSearch" class="button">Search</button>
                 </div>
-            </div>
+            </div>`
 
     let html = `
             <div class="row">
