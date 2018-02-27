@@ -20,29 +20,8 @@ $(document).ready(function(){
 })
 
 function unitDashFolders(){
-    let html = `<div class="row">
-                    <div class="col-sm-2">
-                        <div style="color: #BFC1D2 ">
-                            <i class="fas fa-caret-square-left fa-4x"></i>
-                        </div>
-                    </div>                    
-                    <div class="col-sm-10">
-                        <div style="font-size: 24px; color: #BFC1D2 ">
-                            <h1>Units</h1>
-                        </div>
-                    </div>
-                </div>
-                <div class="row search-cont">
-                    <div class="col-sm-8">
-                        <div class="search">
-                            <span class="fas fa-search"></span>
-                            <input type="text" class="unitSearch" placeholder="Search for specific unit">                            
-                        </div>
-                    </div>
-                    <div class="col-sm-4">
-                        <button id="unitSearch" class="button">Search</button>
-                    </div>
-                </div>
+
+    let html = `
                 <div class="row">
                     <div class="col-sm-9">
                         <div class="row">
@@ -70,42 +49,23 @@ function unitDashFolders(){
                         <button class="addUnit button" href="#addUnitModal">Add Unit</button>
                     </div>
                 </div> `  
-    $(".main").html(html);
+                var but = document.getElementsByClassName('addUnit');
+                console.log(but);
+                
+    $(".dash-main").html(html);
 }
 function unitDashList(){
-    let html = `<div class="row">
-                    <div class="col-sm-2">
-                        <div style="color: #BFC1D2 ">
-                            <i class="fas fa-caret-square-left fa-4x"></i>
-                        </div>
-                    </div>
-                    <div class="col-sm-10">
-                        <div style="font-size: 24px; color: #BFC1D2 ">
-                            <h1>Units / 'City Folder Clicked'</h1>
-                        </div>
-                    </div>
-                </div>
-                <div class="row search-cont">
-                    <div class="col-sm-8">
-                        <div class="search">
-                            <span class="fas fa-search"></span>
-                            <input type="text" class="unitSearch" placeholder="Search a unit within folder">
-                        </div>
-                    </div>
-                    <div class="col-sm-4">
-                        <button id="unitSearch" class="button">Search</button>
-                    </div>
-                </div>
-                <div class="row">
+       
                     <div class="col-sm-9">
                         <table class="table table-striped table-hover" style="background-color:#BFC1D2;">
                             <thead class="thead-light">
-                                <tr>
+
+                         <tr>
                                     <th scope="col">#</th>
                                     <th scope="col">Address</th>
                                 </tr>
                             </thead>
-                            <tbody>
+                            <tbody>  
                                 <tr>
                                     <th scope="row">1</th>
                                     <td>3668 Quimby St.</td>
@@ -134,7 +94,7 @@ function unitDashList(){
                     </div>
                 </div>
                 `
-    $(".main").html(html);
+    $(".dash-main").html(html);
 }
 function inspectDashCards(){
     let html = `<div class="row">
@@ -160,6 +120,9 @@ function inspectDashCards(){
                     <button id="unitSearch" class="button">Search</button>
                 </div>
             </div>
+
+    let html = `
+
             <div class="row">
                 <div class="col-sm-8">
                     <div class="row">
@@ -234,14 +197,15 @@ function inspectDashCards(){
                     </table>
                 </div>
             </div>`
-
-    $(".main").html(html);
+    $('.dashTitle').replaceWith("<h1 class='dashTitle'>Inspections</h1>");
+    $(".dash-main").html(html);
 }
 function inspectSlideCards(){
     let htlml = ''
     $(".main").html(html);
 }
 function reportDash(){
+
     let html = `<div class="row">
         <div class="col-sm-2">
             <div style="color: #BFC1D2 ">
@@ -265,6 +229,8 @@ function reportDash(){
                     <button id="unitSearch" class="button">Search</button>
                 </div>
             </div>
+
+    let html = `
             <div class="row">
                 <div class="col-sm-11">
                     <table class="table table-striped table-hover reportTab" style="background-color:white;">
@@ -323,40 +289,44 @@ function reportDash(){
                     </table>
                 </div>
             </div>`
-    $(".main").html(html);
+    $(".dash-main").html(html);
 }
 function templateDash(){
     let html = ''
-    $('.main').html(html);
+    $('.dash-main').html(html);
 };
 
 $(".overview").on("click", function(){
-    $('.main').empty();
+    $('.dash-main').empty();
 
 });
 $(".units").on("click", function () {
-    $(".main").empty();
+    $(".dash-main").empty();
+
     unitDashFolders();
+
 });
 $(".city").on("click", function(){   
     
-    $(".main").empty();
+    $(".dash-main").empty();
     unitDashList()
 });
 $(".inspection").on("click", function () {
-    $(".main").empty();
+    $(".dash-main").empty();
     inspectDashCards();
 
 });
 $(".template").on("click", function () {
-    $(".main").empty();
+    $(".dash-main").empty();
     templateDash();
 
 });
 $(".report").on("click", function () {
-    $(".main").empty();
+    $(".dash-main").empty();
+    
     reportDash();
 });
+
 
 
 $(document).on('click', '.addUnit', function(){

@@ -59,6 +59,14 @@ $("#addUnit1").on("click", function(){
     alert("You successfully added a unit");
     $("#addUnitModal").hide();
 });
+$("#unitSearch").on('click', function(){
+    console.log('working');
+    
+});
+$(".addUnit").on('click', function(){
+    console.log('working');
+    
+});
 
 // javascript for functioning plus and minus in the addUnitModal for Bed and bath
 
