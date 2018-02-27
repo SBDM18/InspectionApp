@@ -20,23 +20,24 @@ $(document).ready(function(){
 })
 
 function unitDashFolders(){
+
     let html = `
                 <div class="row">
                     <div class="col-sm-9">
                         <div class="row">
                             <div class="col-sm-4">
-                                <div class="city" style="color:white;">
+                                <div class="city" style="color:#BFC1D2;">
                                     <i class="fas fa-folder fa-5x"></i>
                                     <p class="cityTitle">San Diego</p>
                                 </div>
                             </div>
-                            <div class="col-sm-4" style="color:white;">
+                            <div class="col-sm-4" style="color:#BFC1D2;">
                                 <div class="city">
                                     <i class="fas fa-folder fa-5x"></i>
                                     <p class="cityTitle">San Diego</p>
                                 </div>
                             </div>
-                            <div class="col-sm-4" style="color:white;">
+                            <div class="col-sm-4" style="color:#BFC1D2;">
                                 <div class="city">
                                     <i class="fas fa-folder fa-5x"></i>
                                     <p class="cityTitle">San Diego</p>
@@ -55,9 +56,8 @@ function unitDashFolders(){
 }
 function unitDashList(){
        
-    let html = `<div class="row">
                     <div class="col-sm-9">
-                        <table class="table table-striped table-hover" style="background-color:white;">
+                        <table class="table table-striped table-hover" style="background-color:#BFC1D2;">
                             <thead class="thead-light">
 
                          <tr>
@@ -97,7 +97,32 @@ function unitDashList(){
     $(".dash-main").html(html);
 }
 function inspectDashCards(){
+    let html = `<div class="row">
+        <div class="col-sm-2">
+            <div style="color: #BFC1D2 ">
+                <i class="fas fa-caret-square-left fa-4x"></i>
+            </div>
+        </div>
+        <div class="col-sm-10">
+            <div style="font-size: 24px; color: #BFC1D2 ">
+                <h1>Reports</h1>
+            </div>
+        </div>
+    </div>
+        <div class="row search-cont">
+            <div class="col-sm-8">
+                <div class="search">
+                    <span class="fas fa-search"></span>
+                    <input type="text" class="unitSearch" placeholder="Search by category">
+                        </div>
+                </div>
+                <div class="col-sm-4">
+                    <button id="unitSearch" class="button">Search</button>
+                </div>
+            </div>
+
     let html = `
+
             <div class="row">
                 <div class="col-sm-8">
                     <div class="row">
@@ -180,6 +205,31 @@ function inspectSlideCards(){
     $(".main").html(html);
 }
 function reportDash(){
+
+    let html = `<div class="row">
+        <div class="col-sm-2">
+            <div style="color: #BFC1D2 ">
+                <i class="fas fa-caret-square-left fa-4x"></i>
+            </div>
+        </div>
+        <div class="col-sm-10">
+            <div style="font-size: 24px; color: #BFC1D2 ">
+                <h1>Reports</h1>
+            </div>
+        </div>
+    </div>
+        <div class="row search-cont">
+            <div class="col-sm-8">
+                <div class="search">
+                    <span class="fas fa-search"></span>
+                    <input type="text" class="unitSearch" placeholder="Search by category">
+                        </div>
+                </div>
+                <div class="col-sm-4">
+                    <button id="unitSearch" class="button">Search</button>
+                </div>
+            </div>
+
     let html = `
             <div class="row">
                 <div class="col-sm-11">
@@ -278,3 +328,11 @@ $(".report").on("click", function () {
 });
 
 
+
+$(document).on('click', '.addUnit', function(){
+    $(".addUnit").leanModal({
+        top: 100,
+        overlay: 0.6,
+        closeButton: ".close",
+    });
+})
