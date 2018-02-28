@@ -69,7 +69,7 @@ function unitDashList(){
                             <tbody>  
                                 <tr>
                                     <th scope="row">1</th>
-                                    <td>3668 Quimby St.</td>
+                                    <td>3668 Quimby St.</td>                                    
                                 </tr>
                                 <tr>
                                     <th scope="row">2</th>
@@ -260,7 +260,7 @@ $(".units").on("click", function () {
     unitDashFolders();
 
 });
-$(".city").on("click", function(){   
+$(document).on("click", ".city", function(){   
     
     $(".dash-main").empty();
     unitDashList()
@@ -285,7 +285,7 @@ $(".report").on("click", function () {
 
 $(document).on('click', '.addUnit', function(){
     $(".addUnit").leanModal({
-        top: 100,
+        top: 40,
         overlay: 0.6,
         closeButton: ".close",
     });
