@@ -16,5 +16,9 @@
     "url": "https://github.com/SBDM18/InspectionApp/issues"
   },
   "homepage": "https://github.com/SBDM18/InspectionApp#readme",
-  "dependencies": {}
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
+    "path": "^0.12.7"
+  }
 }
