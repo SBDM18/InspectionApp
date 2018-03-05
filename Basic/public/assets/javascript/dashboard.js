@@ -55,6 +55,7 @@ function unitDashFolders(){
     $(".dash-main").html(html);
 }
 function unitDashList(){
+       
     let html = `
                     <div class="col-sm-9">
                         <table class="table table-striped table-hover" style="background-color:#BFC1D2;">
@@ -68,7 +69,7 @@ function unitDashList(){
                             <tbody>  
                                 <tr>
                                     <th scope="row">1</th>
-                                    <td>3668 Quimby St.</td>
+                                    <td>3668 Quimby St.</td>                                    
                                 </tr>
                                 <tr>
                                     <th scope="row">2</th>
@@ -97,7 +98,7 @@ function unitDashList(){
     $(".dash-main").html(html);
 }
 function inspectDashCards(){
-
+    
     let html = `
 
             <div class="row">
@@ -183,30 +184,7 @@ function inspectSlideCards(){
 }
 function reportDash(){
 
-    let html = `<div class="row">
-        <div class="col-sm-2">
-            <div style="color: #BFC1D2 ">
-                <i class="fas fa-caret-square-left fa-4x"></i>
-            </div>
-        </div>
-        <div class="col-sm-10">
-            <div style="font-size: 24px; color: #BFC1D2 ">
-                <h1>Reports</h1>
-            </div>
-        </div>
-    </div>
-        <div class="row search-cont">
-            <div class="col-sm-8">
-                <div class="search">
-                    <span class="fas fa-search"></span>
-                    <input type="text" class="unitSearch" placeholder="Search by category">
-                        </div>
-                </div>
-                <div class="col-sm-4">
-                    <button id="unitSearch" class="button">Search</button>
-                </div>
-            </div>
-
+    let html = `       
             <div class="row">
                 <div class="col-sm-11">
                     <table class="table table-striped table-hover reportTab" style="background-color:white;">
@@ -282,7 +260,7 @@ $(".units").on("click", function () {
     unitDashFolders();
 
 });
-$(".city").on("click", function(){   
+$(document).on("click", ".city", function(){   
     
     $(".dash-main").empty();
     unitDashList()
@@ -307,7 +285,7 @@ $(".report").on("click", function () {
 
 $(document).on('click', '.addUnit', function(){
     $(".addUnit").leanModal({
-        top: 100,
+        top: 40,
         overlay: 0.6,
         closeButton: ".close",
     });
