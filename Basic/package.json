@@ -18,7 +18,13 @@
   "homepage": "https://github.com/SBDM18/InspectionApp#readme",
   "dependencies": {
     "body-parser": "^1.18.2",
+    "crypto-random-string": "^1.0.0",
     "express": "^4.16.2",
-    "path": "^0.12.7"
+    "method-override": "^2.3.10",
+    "mysql": "^2.15.0",
+    "mysql2": "^1.5.2",
+    "path": "^0.12.7",
+    "sequelize": "^4.35.1",
+    "sequelize-cli": "^4.0.0"
   }
 }

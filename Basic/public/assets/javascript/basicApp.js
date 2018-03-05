@@ -22,22 +22,30 @@ $(".addUnit").leanModal({
     closeButton:".close",   
 });
 
-let newUser ={};
+
 //retrieves data from login modal
 $('#loginBtn').on("click", function(){
     let newUser ={
         userpass: $("#password").val(),
         username: $("#username").val()       
     };
-    
-    console.log(newUser);
+
+    $.ajax("/api/user", function(){
+        type:"POST",
+        data: newUser
+    }).then(res=>{
+        console.log("username sent to server");
+        
+        console.log(res);
+    })
   
     $(".containerFront").hide();//hide the login page and show the home page
     $(".wrapper").show();
     //Create an IF statement, if login is valid send to home page if not send alert saying incorrect try again
     $("#loginModal").hide();
-    return newUser;
 });
+
+
 //retrieves data from the register modal
 $("#regBtn").on("click", function(){
     let newReg ={
@@ -48,7 +56,16 @@ $("#regBtn").on("click", function(){
         company: $("#companyName").val(),
         email: $("#email").val(),
         phone: $("#phoneNum").val() 
-    };    
+    };
+    $.ajax("/api/reg", function (){
+        type:"POST",
+        data: newReg
+    }).then(res =>{
+        console.log("registration information sent to server");
+        
+        console.log(res);
+        
+    });
     //If registration successful create an alet/modal to thank individual for registering with INsightful Inspection
     console.log("This is new user info: " + newReg);
  $("#myRegModal").hide();
