@@ -1,5 +1,4 @@
 $(document).ready(function () {
-    $(".wrapper").hide();
     $("#loginModal").hide();
     $("#myRegModal").hide();
     $("#addUnitModal").hide();
@@ -22,7 +21,7 @@ $(".addUnit").leanModal({
     closeButton:".close",   
 });
 
-let newUser ={};
+
 //retrieves data from login modal
 $('#loginBtn').on("click", function(){
     let newUser ={
@@ -50,8 +49,10 @@ $("#regBtn").on("click", function(){
         phone: $("#phoneNum").val() 
     };    
     //If registration successful create an alet/modal to thank individual for registering with INsightful Inspection
-    console.log("This is new user info: " + newReg);
- $("#myRegModal").hide();
+    console.log(newReg);
+    $("#myRegModal").hide();
+    return newReg;
+ 
 });
 $("#addUnit1").on("click", function(){    
 
