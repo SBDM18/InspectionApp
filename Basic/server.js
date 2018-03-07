@@ -1,13 +1,8 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-<<<<<<< HEAD
-const path = require('path');
-const models = require('./models');
-=======
 const path = require('path')
 const exphbs = require('express-handlebars');
 const routes = require('./controllers/inspect_controller.js');
->>>>>>> 7908ded1daa3802d4c1fd1a7b29673e85d46e302
 
 
 const PORT = process.env.PORT || 3000;
@@ -23,15 +18,6 @@ app.get('/', function(req,res){
     res.sendFile(path.join(__dirname,"index.html"));
 });
 
-<<<<<<< HEAD
-// app.use(routes);
-
-
-
-app.listen(PORT, function(){
-    console.log("App is listening on PORT" + PORT);
-});
-=======
 app.engine('handlebars', exphbs({ defaultLayout: 'main'}));
 app.set('view engine', 'handlebars');
 
@@ -65,4 +51,3 @@ app.listen(PORT, function () {
 // Secret Access Key:
 // 9Fb4n7WgRhTU3HGEHZayGY4R23sBq41yfkxJ6vAm
 
->>>>>>> 7908ded1daa3802d4c1fd1a7b29673e85d46e302
