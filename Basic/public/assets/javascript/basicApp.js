@@ -1,5 +1,4 @@
-$(document).ready(function () {
-    $(".wrapper").hide();
+$(window).ready(function () {
     $("#loginModal").hide();
     $("#myRegModal").hide();
     $("#addUnitModal").hide();
@@ -22,24 +21,46 @@ $(".addUnit").leanModal({
     closeButton:".close",   
 });
 
-let newUser ={};
+$(document).on('click', '.addUnit', function () {
+    $(".addUnit").leanModal({
+        top: 40,
+        overlay: 0.6,
+        closeButton: ".close",
+    });
+});
+
+
 //retrieves data from login modal
-$('#loginBtn').on("click", function(){
+$('#loginBtn').on("click", function(event){
+    event.preventDefualt();
     let newUser ={
         userpass: $("#password").val(),
         username: $("#username").val()       
     };
     
     console.log(newUser);
-  
+    $.ajax("/login", {
+        type: "POST",
+        data: newUser
+    }).then(res => {
+        console.log("information sent to server for registration");
+        console.log(res);
+
+    });
     $(".containerFront").hide();//hide the login page and show the home page
-    $(".wrapper").show();
+    
+    //redirect route to home.handlebars
+
+
     //Create an IF statement, if login is valid send to home page if not send alert saying incorrect try again
     $("#loginModal").hide();
-    return newUser;
+    
 });
+
+
 //retrieves data from the register modal
-$("#regBtn").on("click", function(){
+$("#regBtn").on("click", function(event){
+    event.preventDefault();
     let newReg ={
         firstname: $("#firstName").val(),
         lastname: $("#lastName").val(),
@@ -48,10 +69,29 @@ $("#regBtn").on("click", function(){
         company: $("#companyName").val(),
         email: $("#email").val(),
         phone: $("#phoneNum").val() 
-    };    
+    };
+    $.ajax("/api/reg", function (){
+        type:"POST",
+        data: newReg
+    }).then(res =>{
+        console.log("registration information sent to server");
+        
+        console.log(res);
+        
+    });
     //If registration successful create an alet/modal to thank individual for registering with INsightful Inspection
-    console.log("This is new user info: " + newReg);
- $("#myRegModal").hide();
+    console.log(newReg);
+    $.ajax("/registration",{
+        type:"POST",
+        data: newReg
+    }).then(res =>{
+        console.log("information sent to server for registration");
+        console.log(res);
+        
+    });
+    $("#myRegModal").hide();
+    // redirect to home page (possibly admin page since they will be a user)
+ 
 });
 $("#addUnit1").on("click", function(){    
 
