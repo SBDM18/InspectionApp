@@ -25,7 +25,7 @@ router.get('/', function(req,res){
     });
     //send response inside the then bloc or/and send response in catch bloc for error
 });
-router.post('/'){
+router.post('/', function(){
     //example for using mongoose for a post request
     const addunit = new AddUnit({
         unit_id: new mongoose.Types.ObjectId(),
@@ -35,7 +35,7 @@ router.post('/'){
     addunit.save().then(result => {
         console.log(result);
     }).catch(err => console.log(err));
-}
+});
 
 // need to create routes to navigate through the handlebar pages can add more detailed information to the routes later
 

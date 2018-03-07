@@ -26,11 +26,7 @@ app.set('view engine', 'handlebars');
 const mongoose = require('mongoose');
 
 // + process.env.MONGO_ATLAS_PW1 +
-mongoose.connect('mongodb+srv://dward:A0rr9Ib465VZwuo0@insightinspect-dev-hfhtu.mongodb.net/test',
-    {
-    useMongoClient:true
-    }
-);
+mongoose.connect('mongodbsrv://dward:A0rr9Ib465VZwuo0@insightinspect-dev-hfhtu.mongodb.net/test');
 var db = mongoose.connection;
 
 //calls routes from controller folder
