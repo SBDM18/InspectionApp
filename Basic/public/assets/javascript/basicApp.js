@@ -1,4 +1,4 @@
-$(document).ready(function () {
+$(window).ready(function () {
     $("#loginModal").hide();
     $("#myRegModal").hide();
     $("#addUnitModal").hide();
@@ -21,6 +21,14 @@ $(".addUnit").leanModal({
     closeButton:".close",   
 });
 
+$(document).on('click', '.addUnit', function () {
+    $(".addUnit").leanModal({
+        top: 40,
+        overlay: 0.6,
+        closeButton: ".close",
+    });
+});
+
 
 //retrieves data from login modal
 $('#loginBtn').on("click", function(event){
@@ -40,7 +48,10 @@ $('#loginBtn').on("click", function(event){
 
     });
     $(".containerFront").hide();//hide the login page and show the home page
-    $(".wrapper").show();
+    
+    //redirect route to home.handlebars
+
+
     //Create an IF statement, if login is valid send to home page if not send alert saying incorrect try again
     $("#loginModal").hide();
     
@@ -68,7 +79,7 @@ $("#regBtn").on("click", function(event){
         
     });
     $("#myRegModal").hide();
-  //  return newReg;
+    // redirect to home page (possibly admin page since they will be a user)
  
 });
 $("#addUnit1").on("click", function(){    
