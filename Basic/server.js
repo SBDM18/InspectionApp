@@ -1,7 +1,6 @@
 var express = require('express');
 var bodyParser = require('body-parser');
 var path = require('path');
-var db = require('./models');
 var routes = require('./controllers/inspect_controller.js')
 
 var app = express();
@@ -18,13 +17,18 @@ app.get('/', function(req,res){
 //calls routes from controller folder
 app.use(routes);
 
+//this if information for mongoose to connect mongodb database will move to other folder later
+var mongoose = require('mongoose');
+
+mongoose.connect('mongodb://localhost/insightInspect');
+var db = mongoose.connection;
 
 
-db.sequelize.sync().then(function () {
-    app.listen(PORT, function () {
-        console.log('App listening on port: ' + PORT);
-    });
+app.listen(PORT, function () {
+    console.log('App listening on port: ' + PORT);
 });
+
+
 
 
 

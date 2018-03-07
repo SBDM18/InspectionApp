@@ -47,7 +47,7 @@ $('#loginBtn').on("click", function(event){
 });
 //retrieves data from the register modal
 $("#regBtn").on("click", function(event){
-    event.preventDefualt();
+    event.preventDefault();
     let newReg ={
         firstname: $("#firstName").val(),
         lastname: $("#lastName").val(),
