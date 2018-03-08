@@ -1,4 +1,4 @@
-$(window).ready(function () {
+$(document).ready(function () {
     $("#loginModal").hide();
     $("#myRegModal").hide();
     $("#addUnitModal").hide();
@@ -32,7 +32,7 @@ $(document).on('click', '.addUnit', function () {
 
 //retrieves data from login modal
 $('#loginBtn').on("click", function(event){
-    event.preventDefualt();
+    event.preventDefault();
     let newUser ={
         userpass: $("#password").val(),
         username: $("#username").val()       
@@ -45,7 +45,6 @@ $('#loginBtn').on("click", function(event){
     }).then(res => {
         console.log("information sent to server for registration");
         console.log(res);
-
     });
     $(".containerFront").hide();//hide the login page and show the home page
     
@@ -70,7 +69,7 @@ $("#regBtn").on("click", function(event){
         email: $("#email").val(),
         phone: $("#phoneNum").val() 
     };
-    $.ajax("/api/reg", function (){
+    $.ajax("/api/reg",{
         type:"POST",
         data: newReg
     }).then(res =>{

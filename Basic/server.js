@@ -1,9 +1,8 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-const path = require('path')
+const path = require('path');
 const exphbs = require('express-handlebars');
-const routes = require('./controllers/inspect_controller.js');
-
+const routes = require('./controllers/home_controller.js');
 
 const PORT = process.env.PORT || 3000;
 
@@ -13,11 +12,6 @@ app.use(express.static('public'));
 app.use(bodyParser.urlencoded({ extended: true }));
 
 
-
-app.get('/', function(req,res){
-    res.sendFile(path.join(__dirname,"index.html"));
-});
-
 app.engine('handlebars', exphbs({ defaultLayout: 'main'}));
 app.set('view engine', 'handlebars');
 
@@ -26,7 +20,7 @@ app.set('view engine', 'handlebars');
 const mongoose = require('mongoose');
 
 // + process.env.MONGO_ATLAS_PW1 +
-mongoose.connect('mongodbsrv://dward:A0rr9Ib465VZwuo0@insightinspect-dev-hfhtu.mongodb.net/test');
+mongoose.connect('mongodb+srv://dward:A0rr9Ib465VZwuo0@insightinspect-dev-hfhtu.mongodb.net/test');
 var db = mongoose.connection;
 
 //calls routes from controller folder
