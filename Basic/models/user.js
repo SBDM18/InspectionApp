@@ -45,7 +45,7 @@ registerSchema.plugin(uniqueValidator, {message: 'is already taken'});
 
 registerSchema.methods.setPassword = function(password){
    this.salt = bcrypt.
-}
+};
 
 
 module.exports = mongoose.model('Users', registerSchema);

@@ -1,8 +1,16 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-const path = require('path');
+// const path = require('path');
 const exphbs = require('express-handlebars');
-const routes = require('./controllers/inspect_controller');
+const mongoose = require('mongoose');
+
+const routeUser = require('./controllers/user_controller');
+const routeAdmin = require('./controllers/admin_controller');
+const routeHome = require('./controllers/home_controller');
+const routeInspect = require('./controllers/inspect_controller');
+const routeUnit = require('./controllers/unit_controller');
+const routeReport = require('./controllers/report_controller');
+const routeTemplate = require('./controllers/template_controller');
 
 const PORT = process.env.PORT || 3000;
 
@@ -17,15 +25,20 @@ app.set('view engine', 'handlebars');
 
 
 
-const mongoose = require('mongoose');
+
 
 // + process.env.MONGO_ATLAS_PW1 +
 mongoose.connect('mongodb://dward:sFjbTsUmvzP9O8sP@insightinspect-dev-shard-00-00-hfhtu.mongodb.net:27017,insightinspect-dev-shard-00-01-hfhtu.mongodb.net:27017,insightinspect-dev-shard-00-02-hfhtu.mongodb.net:27017/test?ssl=true&replicaSet=InsightInspect-dev-shard-0&authSource=admin');
 var db = mongoose.connection;
     
-    //calls routes from controller folder
-    app.use(routes);
-    
+//calls routes from controller folder
+app.use(routeUser);
+app.use(routeAdmin);
+app.use(routeHome);
+app.use(routeInspect);
+app.use(routeUnit);
+app.use(routeReport);
+app.use(routeTemplate);    
 app.listen(PORT, function () {
     console.log('App listening on port: ' + PORT);
 });

@@ -46,7 +46,7 @@ $('#loginBtn').on("click", function(event){
         console.log("information sent to server for registration");
         console.log(res);
     });
-    $(".containerFront").hide();//hide the login page and show the home page
+    // $(".containerFront").hide();//hide the login page and show the home page
     
     //redirect route to home.handlebars
 
