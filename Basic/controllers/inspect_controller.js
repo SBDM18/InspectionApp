@@ -8,7 +8,7 @@ const AddUnit = require('../models/addUnit.js')
 //information that is sent to be displayed in the atlas Db dashboard takes a little while
 
 //Route for the login/reg page
-router.get('/', function(req,res){
+router.get('/:unit_id', function(req,res){
    const id = req.params.unit_id;
     //example of using mongoose for a get request
     AddUnit.findById(id).exec().then(doc =>{
@@ -25,16 +25,21 @@ router.get('/', function(req,res){
     });
     //send response inside the then bloc or/and send response in catch bloc for error
 });
-router.post('/', function(){
+router.post('/', (req,res) =>{
     //example for using mongoose for a post request
     const addunit = new AddUnit({
         unit_id: new mongoose.Types.ObjectId(),
+        name: req.body.name,
 
     });
     // save()saves the data using mongoose 
     addunit.save().then(result => {
         console.log(result);
     }).catch(err => console.log(err));
+    res.status(201).json({
+        message: "Handling POST requests to /addunit",
+        createdUnit: addunit
+    })
 });
 
 // need to create routes to navigate through the handlebar pages can add more detailed information to the routes later
