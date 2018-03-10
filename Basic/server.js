@@ -3,6 +3,7 @@ const bodyParser = require('body-parser');
 // const path = require('path');
 const exphbs = require('express-handlebars');
 const mongoose = require('mongoose');
+const methodOverride = require('method-override');
 
 const routeUser = require('./controllers/user_controller');
 const routeAdmin = require('./controllers/admin_controller');
@@ -22,6 +23,8 @@ app.use(bodyParser.json({ extended: true }));
 
 app.engine('handlebars', exphbs({ defaultLayout: 'main'}));
 app.set('view engine', 'handlebars');
+// Override with POST having ?_method=DELETE
+app.use(methodOverride('_method'));
 
 
 
@@ -39,6 +42,7 @@ app.use(routeInspect);
 app.use(routeUnit);
 app.use(routeReport);
 app.use(routeTemplate);    
+
 app.listen(PORT, function () {
     console.log('App listening on port: ' + PORT);
 });

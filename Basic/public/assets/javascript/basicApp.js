@@ -40,7 +40,7 @@ $('#loginBtn').on("click", function(event){
     
     console.log(newUser);
     $.ajax("/login", {
-        type: "POST",
+        type: "GET",
         data: newUser
     }).then(res => {
         console.log("information sent to server for registration");
@@ -86,12 +86,31 @@ $("#regBtn").on("click", function(event){
     // redirect to home page (possibly admin page since they will be a user)
  
 });
-$("#addUnit1").on("click", function(){    
-
-
-    alert("You successfully added a unit");
-    $("#addUnitModal").hide();
+$("#submitUnit").on("click", event =>{    
+    event.preventDefault();
+    let newUnit ={
+        street: $("#street").val(),
+        city: $("#city").val(),
+        state: $("#state").val(),
+        zip: $("#zip").val(),
+        bedroomTotal: 2,
+        bathroomTotal: 3,
+        yard: $("input[name='yard']:checked").val().trim(),
+        garage: $(".garage:checked").val(),        
+    };
+    //after addunit insert jwt id to authenticate the user/ manager 
+    $.ajax("/addunit",{
+        type:"POST",
+        data: newUnit
+    }).then(res =>{
+        console.log("information sent to server for adding a unit");
+        console.log(res);
+        alert("You successfully added a unit");
+        $("#addUnitModal").hide();             
+    });
+   
 });
+
 $("#unitSearch").on('click', function(){
     console.log('working');
     
