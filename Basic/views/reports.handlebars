@@ -1,0 +1,120 @@
+<div class="container-fluid dashboard" >
+   <div class="row main-content">
+      <div class="col-sm-2 letter-color background">
+         <div class="row nav-section">
+            <div class="col-sm-12 logo">
+               Header - Our Company Name
+            </div>
+            <div class="col-sm-12 nav-content">
+
+               <a class="nav-links overview" href="/home">
+                  <img src="./assets/images/view_icon.png" alt="Overview" class="nav-icon">
+                  <div class="link-name letter-color" style="display:none">Overview</div>
+               </a>
+               <a class="nav-links units" href="/units">
+                  <img src="./assets/images/home_icon.png" alt="Home" class="nav-icon">
+                  <div class="link-name letter-color" style="display:none">Units</div>
+               </a>
+               <a class="nav-links inspection" href="/inspection">
+                  <img src="./assets/images/mag_glass.png" alt="Magnifying Glass" class="nav-icon">
+                  <div class="link-name letter-color" style="display:none">Inspections</div>
+               </a>
+               <a class="nav-links template" href="/templates">
+                  <img src="./assets/images/temp_icon.png" alt="Template" class="nav-icon">
+                  <div class="link-name letter-color" style="display:none">Templates</div>
+               </a>
+               <a class="nav-links report" href="/reports">
+                  <img src="./assets/images/rep_icon.png" alt="Report" class="nav-icon">
+                  <div class="link-name letter-color" style="display:none">Reports</div>
+               </a>
+            </div>
+            <div class="col-sm-12 company-info">
+               Hometeam Property Management
+            </div>
+         </div>
+      </div>
+      <div class="col-sm-10 main">
+            <div class="row">
+                  <div class="col-sm-2">
+                        <div style="color: Blue ">
+                              <i class="fas fa-caret-square-left fa-4x"></i>
+                        </div>
+                  </div>
+                  <div class="col-sm-10">
+                        <div style="font-size: 24px; color: lightblue ">
+                              <h1 class="dashTitle">Reports</h1>
+                        </div>
+                  </div>
+            </div>
+            <div class="row search-cont">
+                  <div class="col-sm-8">
+                        <div class="search">
+                              <span class="fas fa-search"></span>
+                              <input type="text" class="unitSearch" placeholder="Search for specific report">
+                        </div>
+                  </div>
+                  <div class="col-sm-4">
+                        <button id="unitSearch" class="button">Search</button>
+                  </div>
+            </div>
+         <div class="row">
+            <div class="col-sm-11">
+               {{!-- this table will be populated by pulling information from inspection table? or create new table that sends data of a completed inspection and url of where the pdf. report is stored.. 
+               need to research how to create pdfs --}}
+               <table class="table table-striped table-hover reportTab" style="background-color:white;">
+                  <thead class="thead-light">
+                     <tr>
+                        <th scope="col">Address</th>
+                        <th scope="col">City</th>
+                        <th scope="col">Type</th>
+                        <th scope="col">Date</th>
+                        <th scope="col">Status</th>
+                        <th scope="col">Created</th>
+                     </tr>
+                  </thead>
+                  <tbody>
+                     <tr>
+                        <td>3668 Quimby St.</td>
+                        <td>San Diego</td>
+                        <td>Move In</td>
+                        <td>2/22/2018</td>
+                        <td>Completed</td>
+                        <td>Daniel</td>
+                     </tr>
+                     <tr>
+                        <td>3668 Tennyson St.</td>
+                        <td>San Diego</td>
+                        <td>Move In</td>
+                        <td>2/22/2018</td>
+                        <td>Completed</td>
+                        <td>Daniel</td>
+                     </tr>
+                     <tr>
+                        <td>3668 Poe St.</td>
+                        <td>San Diego</td>
+                        <td>Move Out</td>
+                        <td>2/22/2018</td>
+                        <td>Draft</td>
+                        <td>Daniel</td>
+                     </tr>
+                     <tr>
+                        <td>3668 Homer St.</td>
+                        <td>San Diego</td>
+                        <td>Move In</td>
+                        <td>2/12/2018</td>
+                        <td>In progress</td>
+                        <td>Daniel</td>
+                     </tr>
+                     <tr>
+                        <td>3668 Curtis St.</td>
+                        <td>San Diego</td>
+                        <td>Move In</td>
+                        <td>2/22/2018</td>
+                        <td>Completed</td>
+                        <td>Daniel</td>
+                     </tr>
+                  </tbody>
+               </table>
+            </div>
+         </div>
+      </div>

@@ -1,0 +1,148 @@
+<div class="container-fluid dashboard" >
+   <div class="row main-content">
+      <div class="col-sm-2 letter-color background">
+         <div class="row nav-section">
+            <div class="col-sm-12 logo">
+               Header - Our Company Name
+            </div>
+            <div class="col-sm-12 nav-content">
+
+               <a class="nav-links overview" href="/home">
+                  <img src="./assets/images/view_icon.png" alt="Overview" class="nav-icon">
+                  <div class="link-name letter-color" style="display:none">Overview</div>
+               </a>
+               <a class="nav-links units" href="/units">
+                  <img src="./assets/images/home_icon.png" alt="Home" class="nav-icon">
+                  <div class="link-name letter-color" style="display:none">Units</div>
+               </a>
+               <a class="nav-links inspection" href="/inspection">
+                  <img src="./assets/images/mag_glass.png" alt="Magnifying Glass" class="nav-icon">
+                  <div class="link-name letter-color" style="display:none">Inspections</div>
+               </a>
+               <a class="nav-links template" href="/templates">
+                  <img src="./assets/images/temp_icon.png" alt="Template" class="nav-icon">
+                  <div class="link-name letter-color" style="display:none">Templates</div>
+               </a>
+               <a class="nav-links report" href="/reports">
+                  <img src="./assets/images/rep_icon.png" alt="Report" class="nav-icon">
+                  <div class="link-name letter-color" style="display:none">Reports</div>
+               </a>
+            </div>
+            <div class="col-sm-12 company-info">
+               Hometeam Property Management
+            </div>
+         </div>
+      </div>
+      <div class="col-sm-10 main">
+        <div class="row">
+            <div class="col-sm-2">
+               <div style="color: Blue ">
+                  <i class="fas fa-caret-square-left fa-4x"></i>
+               </div>
+            </div>
+            <div class="col-sm-10">
+               <div style="font-size: 24px; color: lightblue ">
+                  <h1 class="dashTitle">Units</h1>
+               </div>
+            </div>
+         </div>
+         <div class="row search-cont">
+            <div class="col-sm-8">
+               <div class="search">
+                  <span class="fas fa-search"></span>
+                  <input type="text" class="unitSearch" placeholder="Search for specific unit">
+               </div>
+            </div>
+            <div class="col-sm-4">
+               <button id="unitSearch" class="button">Search</button>
+            </div>
+        </div>
+        
+            <div class="row dash-main">
+               <div class="row">
+                  <div class="col-sm-9">
+                     <div class="row">
+                        <div class="col-sm-4">
+                           {{!-- these folder divs will be created when we pull data from the database... i believe it should be done in an object function
+                           using es6 template literals --}}
+                           <div class="city" style="color:#BFC1D2;">
+                              <i class="fas fa-folder fa-5x"></i>
+                              <p class="cityTitle">San Diego</p>
+                           </div>
+                        </div>
+                        <div class="col-sm-4" style="color:#BFC1D2;">
+                           <div class="city">
+                              <i class="fas fa-folder fa-5x"></i>
+                              <p class="cityTitle">San Diego</p>
+                           </div>
+                        </div>
+                        <div class="col-sm-4" style="color:#BFC1D2;">
+                           <div class="city">
+                              <i class="fas fa-folder fa-5x"></i>
+                              <p class="cityTitle">San Diego</p>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-sm-3">
+                     <button class="addUnit button" href="#addUnitModal">Add Unit</button>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+
+<!-- HTML for the add a unit modal -->
+{{!-- this modal still has to grab data and be styled up nicely... maybe add a couple more features to the list ; # of stories..
+etc --}}
+<div id="addUnitModal" class="popupContainerAdd" style="display:none;">
+   <div class="modal-content">
+      <form class="login100-form validate-form">
+         <span class="login100-form-title ">Add a Unit</span>
+         <h2 class="formTitle1">Address</h2>
+         <div class="firstnLast address">
+            <div class="wrap-input100 FL validate-input" data-validate="Enter Street">
+               <input type="text" class="input100" id="street" name="street" placeholder="Street">
+               <span class="focus-input100" data-placeholder="&#xf006;"></span>
+            </div>
+            <div class="wrap-input100 FL ln validate-input" data-validate="Enter City">
+               <input type="text" class="input100" id="city" name="street" placeholder="City">
+               <span class="focus-input100" data-placeholder="&#xf006;"></span>
+            </div>
+         </div>
+         <div class="firstnLast ">
+            <div class="wrap-input100 FL validate-input" data-validate="Enter State">
+               <input type="text" class="input100" id="state" name="street" placeholder="State">
+               <span class="focus-input100" data-placeholder="&#xf006;"></span>
+            </div>
+            <div class="wrap-input100 FL ln validate-input" data-validate="Enter Zip Code">
+               <input type="text" class="input100" id="zip" name="street" placeholder="Zip Code">
+               <span class="focus-input100" data-placeholder="&#xf006;"></span>
+            </div>
+         </div>
+         <h2 class="formTitle1">Details</h2>
+         <span># of Beds</span>
+         <span>#of Baths</span>
+         {{!-- create and incorporate plus and minus buttons for beds and baths --}}
+         <h3 class="formTitle2">Yard</h3>
+         <input type="checkbox" id="frontYard" name="yard" value="frontYard" class="yardCheck">
+         <input type="checkbox" id="sideYard" name="yard" value="sideYard" class="yardCheck">
+         <input type="checkbox" id="backYard" name="yard" value="backYard" class="yardCheck">
+         <br>
+         <label for="frontYard" class="yardTitle">Front Yard</label>
+         <label for="sideYard" class="yardTitle">Side Yard</label>
+         <label for="backYard" class="yardTitle">Back Yard</label>
+         <h3 class="formTitle2">Garage</h3>
+         <input type="radio" id="yes" name="garage">
+         <input type="radio" id="no" name="garage">
+         <br>
+         <label for="yes">Yes</label>
+         <label for="no">No</label>
+         <div class="container-login100-form-btn">
+            <button id="submitUnit" class="login100-form-btn close">Create Unit</button>
+         </div>
+      </form>
+   </div>
+</div>

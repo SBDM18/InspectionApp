@@ -1,0 +1,81 @@
+<div class="containerFront">
+   <div class="frontTitle top">Welcome to</div>
+   <div class="frontTitle">Insightful Inspection</div>
+   <div class="frontBtn">
+      <button id="login" href="#loginModal" class="btn">Login</button>
+      <button id="register" href="#myRegModal" class=" btn">Register</button>
+   </div>
+</div>
+<!-- Html for the front page modals -->
+<div id="loginModal" class="popupContainer" style="display:none;">
+   <div class="modal-content">
+      <form class="login100-form validate-form">
+         <span class="login100-form-logo">
+            <i class="zdmi zmdi-landscape">Logo</i>
+         </span>
+         <span class="login100-form-title ">Log in</span>
+         <div class="wrap-input100 validate-input" data-validate="Enter username">
+            <input type="text" class="input100" id="username" name="username" placeholder="Username">
+            <span class="focus-input100" data-placeholder="&#xf007;"></span>
+         </div>
+         <div class="wrap-input100 validate-input" data-validate="Enter Password">
+            <input type="password" class="input100" id="password" name="pass" placeholder="Password">
+            <span class="focus-input100" data-placeholder="&#xf023;"></span>
+         </div>
+         <div class="container-login100-form-btn">
+            <a id="loginBtn" class="login100-form-btn close"
+            href="/home">Login</a>
+         </div>
+         <div class="text-center p-t-90">
+            <a class="txt1" href="#">Forgot Password?</a>
+         </div>
+      </form>
+   </div>
+</div>
+<div id="myRegModal" class="popupContainerReg">
+   <div class="modal-content">
+      <form class="login100-form validate-form">
+         <span class="login100-form-logo">
+            <i class="zdmi zmdi-landscape">Logo</i>
+         </span>
+         <span class="login100-form-title ">Register</span>
+         <div class="firstnLast">
+            <div class="wrap-input100 FL validate-input" data-validate="Enter First Name">
+               <input type="text" class="input100" id="firstName" name="firstname" placeholder="First Name">
+               <span class="focus-input100"></span>
+            </div>
+            <div class="wrap-input100 FL ln validate-input" data-validate="Enter Last Name">
+               <input type="text" class="input100" id="lastName" name="lastname" placeholder="Last Name">
+               <span class="focus-input100" data-placeholder="&#xf007;"></span>
+            </div>
+         </div>
+         <div class="firstnLast">
+            <div class="wrap-input100 FL validate-input" data-validate="Enter username">
+               <input type="text" class="input100" id="userNameReg" name="username" placeholder="Username">
+               <span class="focus-input100" data-placeholder="&#xf007;"></span>
+            </div>
+            <div class="wrap-input100 FL ln validate-input" data-validate="Enter password">
+               <input type="password" class="input100" id="passWordReg" name="password" placeholder="Password">
+               <span class="focus-input100" data-placeholder="&#xf007;"></span>
+            </div>
+         </div>
+         <div class="wrap-input100 validate-input" data-validate="Enter Company Name">
+            <input type="text" class="input100" id="companyName" name="username" placeholder="Company Name">
+            <span class="focus-input100" data-placeholder="&#xf007;"></span>
+         </div>
+         <div class="firstnLast">
+            <div class="wrap-input100 FL validate-input" data-validate="Enter Email">
+               <input type="email" class="input100" id="email" name="email" placeholder="Email">
+               <span class="focus-input100" data-placeholder="&#xf007;"></span>
+            </div>
+            <div class="wrap-input100 FL ln validate-input" data-validate="Enter Phone Number">
+               <input type="phone" class="input100" id="phoneNum" name="phoneNumber" placeholder="Phone Number">
+               <span class="focus-input100" data-placeholder="&#xf007;"></span>
+            </div>
+         </div>
+         <div class="container-login100-form-btn">
+            <a id="regBtn" class="login100-form-btn close" href="/admin">Register</a>
+         </div>
+      </form>
+   </div>
+</div>
