@@ -10,8 +10,7 @@ router.get('/', function(req,res){
 });
 
 router.post('/registration', (req,res) => {
-    console.log(req.body);
-    
+    // console.log(req.body);    
     //mongoose post request to the schema model user.js
     const newReg = new newManager({
         type:"Admin",
@@ -30,15 +29,27 @@ router.post('/registration', (req,res) => {
         console.log(result);        
     }).catch(err => console.log(err));
     res.status(201).json({
-        message: "Handling POSt request to /registration",
+        message: "Handling POST request to /registration",
         createdRegistration: newReg
     });
 });
 
 //Route to home page from login. Sends user JWT back to client to use for authentication
-router.get('/home', function(req,res){
+router.get('/login', function(req,res){
+    const username = req.params.username;
     
-    res.render("home", req);
+    newManager.findOne(username).exec().then( doc =>{
+        console.log("From database: ", doc);
+        if(doc){
+            res.status(200).json(doc);
+            res.render("home", req);
+        }else{
+            res.status(404).json("No valid username/password entered");
+        }        
+    }).catch(err =>{
+        console.log(err);
+        res.status(500).json({error: err});        
+    });
 });
 
 
