@@ -2,12 +2,8 @@ const mongoose = require('mongoose');
 const uniqueValidator = require('mongoose-unique-validator');
 const bcrypt = ('bcrypt');
 
-//setting values for bcrypt to use
-const saltRounds = 10,
-      password = 's0/\/\P4$$w0rD',
-      someOtherPlaintextPassword = 'not_bacon';
 
-const registerSchema = mongooose.Schema({
+const regSchema = mongooose.Schema({
    type: {type: "Admin"},
    firstName : {type: String,required: [true, "can't be blank"]},
    lastName: {type: String,required: [true, "can't be blank"]},
@@ -19,8 +15,9 @@ const registerSchema = mongooose.Schema({
       match: [/^[a-zA-z0-9]+$/, 'is invalid'],
       index: true
    },
-   hash: String,
-   salt: String,
+   password: {type: String, required: true},
+//    hash: String,
+//    salt: String,
    company: {
       type: String,
       required: [true, "can't be blank"],
@@ -41,11 +38,13 @@ const registerSchema = mongooose.Schema({
 
 },{timestamps:true});
 
-registerSchema.plugin(uniqueValidator, {message: 'is already taken'});
+regSchema.plugin(uniqueValidator, {message: 'is already taken'});
 
-registerSchema.methods.setPassword = function(password){
-   this.salt = bcrypt.
-};
-
+regSchema.methods.generateHash = function(password){
+      return bcrypt.hashSync(password, bcrypt.genSaltSync(9));
+}
+regSchema.methods.validPassword = function(password){
+      return bcrypt.compareSync(password, this.password)
+}
 
 module.exports = mongoose.model('Users', registerSchema);
