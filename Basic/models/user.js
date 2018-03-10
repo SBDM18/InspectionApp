@@ -3,8 +3,8 @@ const uniqueValidator = require('mongoose-unique-validator');
 const bcrypt = ('bcrypt');
 
 
-const regSchema = mongooose.Schema({
-   type: {type: "Admin"},
+const regSchema = mongoose.Schema({
+   type: String,
    firstName : {type: String,required: [true, "can't be blank"]},
    lastName: {type: String,required: [true, "can't be blank"]},
    username: {
@@ -29,7 +29,7 @@ const regSchema = mongooose.Schema({
       required: [true, "can't be blank"],
       lowercase: true,
       unique:true,
-      match: [/\s+@\s+\.\s+/, 'is invalid'],
+         match: [/\S+@\S+\.\S+/, 'is invalid'],
       index: true
    },
    phoneNumber: { type: Number, required: true, unique: true },
@@ -40,11 +40,11 @@ const regSchema = mongooose.Schema({
 
 regSchema.plugin(uniqueValidator, {message: 'is already taken'});
 
-regSchema.methods.generateHash = function(password){
-      return bcrypt.hashSync(password, bcrypt.genSaltSync(9));
-}
-regSchema.methods.validPassword = function(password){
-      return bcrypt.compareSync(password, this.password)
-}
+// regSchema.methods.generateHash = function(password){
+//       return bcrypt.hashSync(password, bcrypt.genSaltSync(9));
+// };
+// regSchema.methods.validPassword = function(password){
+//       return bcrypt.compareSync(password, this.password)
+// };
 
-module.exports = mongoose.model('Users', registerSchema);
+module.exports = mongoose.model('Users', regSchema);

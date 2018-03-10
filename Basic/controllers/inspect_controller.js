@@ -13,7 +13,7 @@ router.get('/inspection', function (req, res) {
 
 //information that is sent to be displayed in the atlas Db dashboard takes a little while
 
-// //Route for the login/reg page
+//Route for the login/reg page
 // router.get('/:unit_id', function(req,res){
 //    const id = req.params.unit_id;
 //     //example of using mongoose for a get request

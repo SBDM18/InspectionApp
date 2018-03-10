@@ -45,6 +45,7 @@ $('#loginBtn').on("click", function(event){
     }).then(res => {
         console.log("information sent to server for registration");
         console.log(res);
+        window.location = '/home';
     });
     // $(".containerFront").hide();//hide the login page and show the home page
     
@@ -61,23 +62,15 @@ $('#loginBtn').on("click", function(event){
 $("#regBtn").on("click", function(event){
     event.preventDefault();
     let newReg ={
-        firstname: $("#firstName").val(),
-        lastname: $("#lastName").val(),
-        regUsername:$("#userNameReg").val(),
-        regPass: $("#passWordReg").val(),
+        firstName: $("#firstName").val(),
+        lastName: $("#lastName").val(),
+        username:$("#userNameReg").val(),
+        password: $("#passWordReg").val(),
         company: $("#companyName").val(),
         email: $("#email").val(),
-        phone: $("#phoneNum").val() 
+        phoneNumber: $("#phoneNum").val() 
     };
-    $.ajax("/api/reg",{
-        type:"POST",
-        data: newReg
-    }).then(res =>{
-        console.log("registration information sent to server");
-        
-        console.log(res);
-        
-    });
+
     //If registration successful create an alet/modal to thank individual for registering with INsightful Inspection
     console.log(newReg);
     $.ajax("/registration",{
@@ -86,7 +79,8 @@ $("#regBtn").on("click", function(event){
     }).then(res =>{
         console.log("information sent to server for registration");
         console.log(res);
-        
+        window.location = '/admin';
+        // res.render('/admin');        
     });
     $("#myRegModal").hide();
     // redirect to home page (possibly admin page since they will be a user)
