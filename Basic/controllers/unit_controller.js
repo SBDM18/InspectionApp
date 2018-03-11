@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const mongoose = require('mongoose');
+const checkAuth = require('../auth/check-auth.js');
 
 const newUnit = require('../models/addUnit.js');
 
@@ -9,7 +10,7 @@ router.get('/units', function (req, res) {
     res.render("units");
 });
 
-router.post('/addunit', (req,res) =>{
+router.post('/addunit', checkAuth, (req,res) =>{
     const addNewUnit = new newUnit({
         unit_id: new mongoose.Types.ObjectId(),
         user_U_id: "grab data from database",

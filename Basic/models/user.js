@@ -16,35 +16,33 @@ const regSchema = mongoose.Schema({
       index: true
    },
    password: {type: String, required: true},
-//    hash: String,
-//    salt: String,
    company: {
       type: String,
       required: [true, "can't be blank"],
-      unique: true,
-      index: true
    },
    email: {
       type: String,
       required: [true, "can't be blank"],
       lowercase: true,
       unique:true,
-         match: [/\S+@\S+\.\S+/, 'is invalid'],
+      match: [/\S+@\S+\.\S+/, 'is invalid'],
       index: true
    },
    phoneNumber: { type: Number, required: true, unique: true },
    manager_U_id: mongoose.Schema.Types.ObjectId,
    user_U_id: mongoose.Schema.Types.ObjectId
 
-},{timestamps:true});
+},{timestamps:true},{_id:false});
 
-// regSchema.plugin(uniqueValidator, {message: 'is already taken'});
+ regSchema.plugin(uniqueValidator, {message: 'is already taken'});
 
-regSchema.methods.generateHash = function(password){
-      return bcrypt.hashSync(password, bcrypt.genSaltSync(9));
-};
-regSchema.methods.validPassword = function(password){
-      return bcrypt.compareSync(password, this.password)
-};
+
+
+// regSchema.methods.generateHash = function(password){
+//       return bcrypt.hashSync(password, bcrypt.genSaltSync(9));
+// };
+// regSchema.methods.validPassword = function(password){
+//       return bcrypt.compareSync(password, this.password)
+// };
 
 module.exports = mongoose.model('Users', regSchema);
