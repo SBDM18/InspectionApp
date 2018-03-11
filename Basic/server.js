@@ -26,10 +26,6 @@ app.set('view engine', 'handlebars');
 // Override with POST having ?_method=DELETE
 app.use(methodOverride('_method'));
 
-
-
-
-
 // + process.env.MONGO_ATLAS_PW1 +
 mongoose.connect('mongodb://dward:sFjbTsUmvzP9O8sP@insightinspect-dev-shard-00-00-hfhtu.mongodb.net:27017,insightinspect-dev-shard-00-01-hfhtu.mongodb.net:27017,insightinspect-dev-shard-00-02-hfhtu.mongodb.net:27017/test?ssl=true&replicaSet=InsightInspect-dev-shard-0&authSource=admin');
 var db = mongoose.connection;
@@ -47,8 +43,6 @@ app.listen(PORT, function () {
     console.log('App listening on port: ' + PORT);
 });
 
-
-//probably discuss the arragnement of folders for routes ( do we want to split up our controller pages into specific routes that will be created) also discuss how we want to layout the mongoose models page
 
 //dbatlas uri mongodb+srv://<username>:<Password>@insightinspect-dev-hfhtu.mongodb.net/test
 //username mgroe GigqoEECIgF9bURC MONGO_ATLAS_PW2

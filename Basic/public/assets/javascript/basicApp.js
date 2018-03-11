@@ -39,7 +39,7 @@ $('#loginBtn').on("click", function(event){
     };
     
     console.log(newUser);
-    $.ajax("/login", {
+    $.ajax("/api/login", {
         type: "GET",
         data: newUser
     }).then(res => {
@@ -73,7 +73,7 @@ $("#regBtn").on("click", function(event){
 
     //If registration successful create an alet/modal to thank individual for registering with INsightful Inspection
     console.log(newReg);
-    $.ajax("/registration",{
+    $.ajax("/api/register",{
         type:"POST",
         data: newReg
     }).then(res =>{
@@ -99,7 +99,7 @@ $("#submitUnit").on("click", event =>{
         garage: $(".garage:checked").val(),        
     };
     //after addunit insert jwt id to authenticate the user/ manager 
-    $.ajax("/addunit",{
+    $.ajax("/api/addunit",{
         type:"POST",
         data: newUnit
     }).then(res =>{
