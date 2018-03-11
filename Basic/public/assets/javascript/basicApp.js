@@ -1,4 +1,4 @@
-$(window).ready(function () {
+$(document).ready(function () {
     $("#loginModal").hide();
     $("#myRegModal").hide();
     $("#addUnitModal").hide();
@@ -32,22 +32,22 @@ $(document).on('click', '.addUnit', function () {
 
 //retrieves data from login modal
 $('#loginBtn').on("click", function(event){
-    event.preventDefualt();
+    event.preventDefault();
     let newUser ={
         userpass: $("#password").val(),
         username: $("#username").val()       
     };
     
     console.log(newUser);
-    $.ajax("/login", {
-        type: "POST",
+    $.ajax("/api/login", {
+        type: "GET",
         data: newUser
     }).then(res => {
         console.log("information sent to server for registration");
         console.log(res);
-
+        window.location = '/home';
     });
-    $(".containerFront").hide();//hide the login page and show the home page
+    // $(".containerFront").hide();//hide the login page and show the home page
     
     //redirect route to home.handlebars
 
@@ -62,43 +62,55 @@ $('#loginBtn').on("click", function(event){
 $("#regBtn").on("click", function(event){
     event.preventDefault();
     let newReg ={
-        firstname: $("#firstName").val(),
-        lastname: $("#lastName").val(),
-        regUsername:$("#userNameReg").val(),
-        regPass: $("#passWordReg").val(),
+        firstName: $("#firstName").val(),
+        lastName: $("#lastName").val(),
+        username:$("#userNameReg").val(),
+        password: $("#passWordReg").val(),
         company: $("#companyName").val(),
         email: $("#email").val(),
-        phone: $("#phoneNum").val() 
+        phoneNumber: $("#phoneNum").val() 
     };
-    $.ajax("/api/reg", function (){
-        type:"POST",
-        data: newReg
-    }).then(res =>{
-        console.log("registration information sent to server");
-        
-        console.log(res);
-        
-    });
+
     //If registration successful create an alet/modal to thank individual for registering with INsightful Inspection
     console.log(newReg);
-    $.ajax("/registration",{
+    $.ajax("/api/register",{
         type:"POST",
         data: newReg
     }).then(res =>{
         console.log("information sent to server for registration");
         console.log(res);
-        
+        window.location = '/admin';
+        // res.render('/admin');        
     });
     $("#myRegModal").hide();
     // redirect to home page (possibly admin page since they will be a user)
  
 });
-$("#addUnit1").on("click", function(){    
-
-
-    alert("You successfully added a unit");
-    $("#addUnitModal").hide();
+$("#submitUnit").on("click", event =>{    
+    event.preventDefault();
+    let newUnit ={
+        street: $("#street").val(),
+        city: $("#city").val(),
+        state: $("#state").val(),
+        zip: $("#zip").val(),
+        bedroomTotal: 2,
+        bathroomTotal: 3,
+        yard: $("input[name='yard']:checked").val().trim(),
+        garage: $(".garage:checked").val(),        
+    };
+    //after addunit insert jwt id to authenticate the user/ manager 
+    $.ajax("/api/addunit",{
+        type:"POST",
+        data: newUnit
+    }).then(res =>{
+        console.log("information sent to server for adding a unit");
+        console.log(res);
+        alert("You successfully added a unit");
+        $("#addUnitModal").hide();             
+    });
+   
 });
+
 $("#unitSearch").on('click', function(){
     console.log('working');
     
