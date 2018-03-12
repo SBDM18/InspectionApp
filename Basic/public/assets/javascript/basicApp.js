@@ -39,11 +39,11 @@ $('#loginBtn').on("click", function(event){
     };
     
     console.log(newUser);
-    $.ajax("/api/login", {
-        type: "GET",
+    $.ajax("/login", {
+        type: "POST",
         data: newUser
     }).then(res => {
-        console.log("information sent to server for registration");
+        console.log("information sent to server for login");
         console.log(res);
         window.location = '/home';
     });
@@ -73,7 +73,7 @@ $("#regBtn").on("click", function(event){
 
     //If registration successful create an alet/modal to thank individual for registering with INsightful Inspection
     console.log(newReg);
-    $.ajax("/api/register",{
+    $.ajax("/register",{
         type:"POST",
         data: newReg
     }).then(res =>{
