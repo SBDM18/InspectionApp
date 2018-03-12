@@ -29,8 +29,8 @@ const regSchema = mongoose.Schema({
       index: true
    },
    phoneNumber: { type: Number, required: true, unique: true },
-   manager_U_id: mongoose.Schema.Types.ObjectId,
-   user_U_id: mongoose.Schema.Types.ObjectId
+   manager_U_id: String,
+   user_U_id: String
 
 },{timestamps:true},{_id:false});
 

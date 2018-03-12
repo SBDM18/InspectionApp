@@ -16,3 +16,7 @@ module.exports = (req, res, next) =>{
             });
         };    
 };
+
+//add checkAuth to any request that needs to be verified before it can process.. creates route protection with jwt token
+
+//decide if we want to have a folde for routes and another for controllers allowing us to import the controllers into the routes

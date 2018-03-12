@@ -7,26 +7,26 @@
             </div>
             <div class="col-sm-12 nav-content">
 
-               <div class="nav-links overview" href="/home">
+               <a class="nav-links overview" href="/home">
                   <img src="./assets/images/view_icon.png" alt="Overview" class="nav-icon">
                   <div class="link-name letter-color" style="display:none">Overview</div>
-               </div>
-               <div class="nav-links units" href="/units">
+               </a>
+               <a class="nav-links units" href="/units">
                   <img src="./assets/images/home_icon.png" alt="Home" class="nav-icon">
                   <div class="link-name letter-color" style="display:none">Units</div>
-               </div>
-               <div class="nav-links inspection" href="/inspection">
+               </a>
+               <a class="nav-links inspection" href="/inspection">
                   <img src="./assets/images/mag_glass.png" alt="Magnifying Glass" class="nav-icon">
                   <div class="link-name letter-color" style="display:none">Inspections</div>
-               </div>
-               <div class="nav-links template" href="/templates">
+               </a>
+               <a class="nav-links template" href="/templates">
                   <img src="./assets/images/temp_icon.png" alt="Template" class="nav-icon">
                   <div class="link-name letter-color" style="display:none">Templates</div>
-               </div>
-               <div class="nav-links report" href="/reports">
+               </a>
+               <a class="nav-links report" href="/reports">
                   <img src="./assets/images/rep_icon.png" alt="Report" class="nav-icon">
                   <div class="link-name letter-color" style="display:none">Reports</div>
-               </div>
+               </a>
             </div>
             <div class="col-sm-12 company-info">
                Hometeam Property Management
@@ -34,7 +34,49 @@
          </div>
       </div>
       <div class="col-sm-10 main">
-        <h1>admin page</h1>
+        <div class="row adminT">
+              <div class="col-sm-2"></div>
+              <div class="col-sm-10"><h1 id="adminTitle">Manager(username) Admin Page </h1></div>
+        </div>
+        <div class="row">
+              <div class="col-sm-1"></div>
+              <div class="col-sm-3">
+                <button class="addUser adminBtn"><h3>Add User</h3></button>
+              </div>
+              <div class="col-sm-3"></div>
+              <div class="col-sm-5"><h3>Upcoming Inspections</h3></div>
+        </div>
+        <div class="row">
+              <div class="col-sm-1"></div>
+              <div class="col-sm-3">
+                <button class="delUser adminBtn"><h3>Delete User</h3></button>
+              </div>
+              <div class="col-sm-3"></div>
+              <div class="col-sm-5"><h3>Completed Inspections</h3></div>
+        </div>
+        <div class="row">
+              <div class="col-sm-1"></div>
+              <div class="col-sm-3">
+                <button class="editUser adminBtn"><h3>Edit User</h3></button>
+              </div>
+              <div class="col-sm-3"></div>
+              <div class="col-sm-5"><h3>Incomplete Inspections</h3></div>
+        </div>
+        <div class="row">
+              <div class="col-sm-1"></div>
+              <div class="col-sm-5">
+                <h2>Business Details</h2>
+                <h4>Average time for inspection</h4>
+                <h4>How many inspections in a month</h4>
+              </div>
+              <div class="col-sm-1"></div>
+              <div class="col-sm-5">
+                <h1>Billing Information</h1>
+
+              </div>
+        </div>
+
+
         {{!-- have to decide and style up what we would like for the admin page.... will discuss this with shun on friday --}}
       </div>
    </div>
