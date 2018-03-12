@@ -251,42 +251,44 @@ function templateDash(){
 };
 
 $(".overview").on("click", function(){
+//    create route to send to the home.handlebars page (overview is the home page)
+   
     $('.dash-main').empty();
 
 });
 $(".units").on("click", function () {
     $(".dash-main").empty();
+// create route to send user to the unit.handlebars page and grab data from server side to display unit city folders
 
-    unitDashFolders();
 
 });
 $(document).on("click", ".city", function(){   
-    
+    // create route to grab data from server which checked database for the city and brought back the units that are within that specific city folder
     $(".dash-main").empty();
     unitDashList()
 });
 $(".inspection").on("click", function () {
     $(".dash-main").empty();
+    // create route that grabs information to display into the inspection cards and return the most recent activity for inspections
     inspectDashCards();
-
 });
 $(".template").on("click", function () {
     $(".dash-main").empty();
+    // create route that grabs information for the managers templates if the manager is signed in.. if user is signed in allow them to only see the templates not edit or create new. the manager will have access to creation and edit
     templateDash();
 
 });
 $(".report").on("click", function () {
     $(".dash-main").empty();
     
+    // create route that grabs data for the list of pdf reports and displays them in a table
     reportDash();
 });
 
+// still need to create a back button and a route for home.handlebars unless they are within the 2nd page of units or inspection than it would go back to their respective beginning page (have a this statement check which class was picked and than decide what function to perform within the button click)
+
+// create on click for the cards in inspectionDashcards... allowing user to pick a type of inspection and display the information in a list form with the other cards displayed in a carousel
 
 
-$(document).on('click', '.addUnit', function(){
-    $(".addUnit").leanModal({
-        top: 40,
-        overlay: 0.6,
-        closeButton: ".close",
-    });
-})
+
+
