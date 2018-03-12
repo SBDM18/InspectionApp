@@ -11,6 +11,8 @@ const unitScheme = mongoose.Schema({
     city: String,
     state: String,
     zip: Number,
+    unitNumber: String,
+    storiesNumber: String,
     bedroomTotal: Number,
     bathroomTotal: Number,
     yard: String,

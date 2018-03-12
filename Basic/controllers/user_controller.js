@@ -2,9 +2,15 @@ const express = require('express');
 const router = express.Router();
 const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
+const cryptoRanString = require('crypto-random-string');
 const jwt = require('jsonwebtoken');
 
 const newManager = require('../models/user.js');
+
+const user_ID = cryptoRanString(10);
+const man_ID = cryptoRanString(10);
+
+
 
 //Route to index page
 router.get('/', function(req,res){
@@ -16,8 +22,10 @@ router.post('/api/register', (req,res) => {
         if(err){
             return res.status(500).json({
                 error:err
-            })
+            });
         }else{
+            console.log(req.body.password);
+            
             bcrypt.hash(req.body.password, salt, null, (err, hash) => {
                 if (err) {
                     return res.status(500).json({
@@ -26,8 +34,8 @@ router.post('/api/register', (req,res) => {
                 } else {
                     const newReg = new newManager({
                         type: "Admin",
-                        manager_U_id: new mongoose.Types.ObjectId(),
-                        user_U_id: new mongoose.Types.ObjectId(),
+                        manager_U_id: man_ID,
+                        user_U_id: user_ID,
                         firstName: req.body.firstName,
                         lastName: req.body.lastName,
                         username: req.body.username,
@@ -42,7 +50,7 @@ router.post('/api/register', (req,res) => {
                         res.status(201).json({
                             message: "Handling POST request to /api/registration. New Manager created",
                             createdRegistration: newReg
-                        })
+                        });
                     }).catch(err => {
                        catchError(err);
                     });
@@ -99,7 +107,7 @@ function catchError(err){
     console.log(err);
     res.status(500).json({
         error: err
-    })
+    });
 }
 
 module.exports = router;
