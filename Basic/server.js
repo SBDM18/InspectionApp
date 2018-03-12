@@ -18,7 +18,10 @@ const PORT = process.env.PORT || 3000;
 const app = express();
 
 app.use(express.static('public'));
-app.use(bodyParser.json({ extended: true }));
+// parse application/x-www-form-urlencoded
+app.use(bodyParser.urlencoded({ extended: false }));
+// parse application/json
+app.use(bodyParser.json());
 
 
 app.engine('handlebars', exphbs({ defaultLayout: 'main'}));
