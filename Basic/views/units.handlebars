@@ -123,8 +123,8 @@ etc --}}
             </div>
          </div>
          <h2 class="formTitle1">Details</h2>
-         <span># of Beds</span>
-         <span>#of Baths</span>
+         <span># of Beds</span> <input type="number" id="bedNum" value="1">
+         <span>#of Baths</span> <input type="number" id="bathNum" value="1">
          {{!-- create and incorporate plus and minus buttons for beds and baths --}}
          <h3 class="formTitle2">Yard</h3>
          <input type="checkbox" id="frontYard" name="yard" value="frontYard" class="yardCheck">
@@ -134,6 +134,8 @@ etc --}}
          <label for="frontYard" class="yardTitle">Front Yard</label>
          <label for="sideYard" class="yardTitle">Side Yard</label>
          <label for="backYard" class="yardTitle">Back Yard</label>
+         <input type="text" id="unitNum" placeholder="Unit #">
+         <input type="text" id="storiesNum" placeholder="# of stories">
          <h3 class="formTitle2">Garage</h3>
          <input type="radio" id="yes" class="garage" name="garage">
          <input type="radio" id="no" class="garage" name="garage">
@@ -141,7 +143,7 @@ etc --}}
          <label for="yes">Yes</label>
          <label for="no">No</label>
          <div class="container-login100-form-btn">
-            <button id="submitUnit" class="login100-form-btn close">Create Unit</button>
+            <button id="createUnit" class="login100-form-btn close">Create Unit</button>
          </div>
       </form>
    </div>
