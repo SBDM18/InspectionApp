@@ -36,8 +36,8 @@ var db = mongoose.connection;
 //calls routes from controller folder
 app.use(routeUser);
 app.use(routeAdmin);
-app.use(routeHome);
 app.use(routeInspect);
+app.use(routeHome);
 app.use(routeUnit);
 app.use(routeReport);
 app.use(routeTemplate);    
