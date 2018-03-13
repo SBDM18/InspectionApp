@@ -1,9 +1,8 @@
 var express = require('express');
 var router = express.Router();
 const mongoose = require('mongoose');
-//mongoose example
 
-const AddUnit = require('../models/addUnit.js')
+const template = require('../models/inspection.js')
 
 
 router.get('/inspection', function (req, res) {
