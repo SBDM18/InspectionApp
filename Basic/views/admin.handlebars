@@ -74,8 +74,152 @@
                 <h1>Billing Information</h1>
 
               </div>
+        </div>  
+
+        <div id="editModal" class="popupContainerAdd" style="display:none;" >
+          <div class="modal-content">
+            <form class="login100-form validate-form">
+              <span class="login100-form-logo">
+                <i class="zdmi zmdi-landscape">Logo</i>
+              </span>
+              <span class="login100-form-title ">Register</span>
+              <div class="firstnLast">
+                <div class="wrap-input100 FL validate-input" data-validate="Enter First Name">
+                  <input type="text" class="input100" id="firstName" name="firstname" placeholder="First Name">
+                  <span class="focus-input100"></span>
+                </div>
+                <div class="wrap-input100 FL ln validate-input" data-validate="Enter Last Name">
+                  <input type="text" class="input100" id="lastName" name="lastname" placeholder="Last Name">
+                  <span class="focus-input100" data-placeholder="&#xf007;"></span>
+                </div>
+              </div>
+              <div class="firstnLast">
+                <div class="wrap-input100 FL validate-input" data-validate="Enter username">
+                  <input type="text" class="input100" id="userNameReg" name="username" placeholder="Username">
+                  <span class="focus-input100" data-placeholder="&#xf007;"></span>
+                </div>
+                <div class="wrap-input100 FL ln validate-input" data-validate="Enter password">
+                  <input type="password" class="input100" id="passWordReg" name="password" placeholder="Password">
+                  <span class="focus-input100" data-placeholder="&#xf007;"></span>
+                </div>
+              </div>
+              <div class="wrap-input100 validate-input" data-validate="Enter Company Name">
+                <input type="text" class="input100" id="companyName" name="username" placeholder="Company Name">
+                <span class="focus-input100" data-placeholder="&#xf007;"></span>
+              </div>
+              <div class="firstnLast">
+                <div class="wrap-input100 FL validate-input" data-validate="Enter Email">
+                  <input type="email" class="input100" id="email" name="email" placeholder="Email">
+                  <span class="focus-input100" data-placeholder="&#xf007;"></span>
+                </div>
+                <div class="wrap-input100 FL ln validate-input" data-validate="Enter Phone Number">
+                  <input type="phone" class="input100" id="phoneNum" name="phoneNumber" placeholder="Phone Number">
+                  <span class="focus-input100" data-placeholder="&#xf007;"></span>
+                </div>
+              </div>
+              <div class="container-login100-form-btn">
+                <a id="edit" class="login100-form-btn close" href="/editUser">Register</a>
+              </div>
+            </form>
+          </div>
         </div>
 
+        <div id="addUserModal" class="popupContainerAdd" style="display:none;">
+          <div class="modal-content">
+            <form class="login100-form validate-form">
+              <span class="login100-form-logo">
+                <i class="zdmi zmdi-landscape">Logo</i>
+              </span>
+              <span class="login100-form-title ">Register</span>
+              <div class="firstnLast">
+                <div class="wrap-input100 FL validate-input" data-validate="Enter First Name">
+                  <input type="text" class="input100" id="firstName" name="firstname" placeholder="First Name">
+                  <span class="focus-input100"></span>
+                </div>
+                <div class="wrap-input100 FL ln validate-input" data-validate="Enter Last Name">
+                  <input type="text" class="input100" id="lastName" name="lastname" placeholder="Last Name">
+                  <span class="focus-input100" data-placeholder="&#xf007;"></span>
+                </div>
+              </div>
+              <div class="firstnLast">
+                <div class="wrap-input100 FL validate-input" data-validate="Enter username">
+                  <input type="text" class="input100" id="userNameReg" name="username" placeholder="Username">
+                  <span class="focus-input100" data-placeholder="&#xf007;"></span>
+                </div>
+                <div class="wrap-input100 FL ln validate-input" data-validate="Enter password">
+                  <input type="password" class="input100" id="passWordReg" name="password" placeholder="Password">
+                  <span class="focus-input100" data-placeholder="&#xf007;"></span>
+                </div>
+              </div>
+              <div class="wrap-input100 validate-input" data-validate="Enter Company Name">
+                <input type="text" class="input100" id="companyName" name="username" placeholder="Company Name">
+                <span class="focus-input100" data-placeholder="&#xf007;"></span>
+              </div>
+              <div class="firstnLast">
+                <div class="wrap-input100 FL validate-input" data-validate="Enter Email">
+                  <input type="email" class="input100" id="email" name="email" placeholder="Email">
+                  <span class="focus-input100" data-placeholder="&#xf007;"></span>
+                </div>
+                <div class="wrap-input100 FL ln validate-input" data-validate="Enter Phone Number">
+                  <input type="phone" class="input100" id="phoneNum" name="phoneNumber" placeholder="Phone Number">
+                  <span class="focus-input100" data-placeholder="&#xf007;"></span>
+                </div>
+              </div>
+              <div class="container-login100-form-btn">
+                <a id="create" class="login100-form-btn close" href="/addUser">Register</a>
+              </div>
+            </form>
+          </div>
+        </div>
+
+
+        <div id="deleteModal" class="popupContainerAdd" style="display:none;">
+          <div class="modal-content">
+            <form class="login100-form validate-form">
+              <span class="login100-form-logo">
+                <i class="zdmi zmdi-landscape">Logo</i>
+              </span>
+              <span class="login100-form-title ">Register</span>
+              <div class="firstnLast">
+                <div class="wrap-input100 FL validate-input" data-validate="Enter First Name">
+                  <input type="text" class="input100" id="firstName" name="firstname" placeholder="First Name">
+                  <span class="focus-input100"></span>
+                </div>
+                <div class="wrap-input100 FL ln validate-input" data-validate="Enter Last Name">
+                  <input type="text" class="input100" id="lastName" name="lastname" placeholder="Last Name">
+                  <span class="focus-input100" data-placeholder="&#xf007;"></span>
+                </div>
+              </div>
+              <div class="firstnLast">
+                <div class="wrap-input100 FL validate-input" data-validate="Enter username">
+                  <input type="text" class="input100" id="userNameReg" name="username" placeholder="Username">
+                  <span class="focus-input100" data-placeholder="&#xf007;"></span>
+                </div>
+                <div class="wrap-input100 FL ln validate-input" data-validate="Enter password">
+                  <input type="password" class="input100" id="passWordReg" name="password" placeholder="Password">
+                  <span class="focus-input100" data-placeholder="&#xf007;"></span>
+                </div>
+              </div>
+              <div class="wrap-input100 validate-input" data-validate="Enter Company Name">
+                <input type="text" class="input100" id="companyName" name="username" placeholder="Company Name">
+                <span class="focus-input100" data-placeholder="&#xf007;"></span>
+              </div>
+              <div class="firstnLast">
+                <div class="wrap-input100 FL validate-input" data-validate="Enter Email">
+                  <input type="email" class="input100" id="email" name="email" placeholder="Email">
+                  <span class="focus-input100" data-placeholder="&#xf007;"></span>
+                </div>
+                <div class="wrap-input100 FL ln validate-input" data-validate="Enter Phone Number">
+                  <input type="phone" class="input100" id="phoneNum" name="phoneNumber" placeholder="Phone Number">
+                  <span class="focus-input100" data-placeholder="&#xf007;"></span>
+                </div>
+              </div>
+              <div class="container-login100-form-btn">
+                <a id="delete" class="login100-form-btn close" href="/deleteUser">Register</a>
+              </div>
+            </form>
+          </div>
+        </div>
 
         {{!-- have to decide and style up what we would like for the admin page.... will discuss this with shun on friday --}}
       </div>

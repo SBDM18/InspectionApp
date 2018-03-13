@@ -17,8 +17,7 @@ router.get('/', function(req,res){
 });
 
 router.post('/register', (req,res) => {
-    console.log(req.body);
-    
+    console.log(req.body);    
     
     bcrypt.genSalt(6, (err,salt) =>{
         if(err){
@@ -89,14 +88,14 @@ router.post('/login', (req,res,next) => {
                const token = jwt.sign({
                     email: user.email,
                     userId: user.user_U_id,
-                    type: user.type
+                    type: user.type,
+                    username: user.username
                 }, process.env.JWT_Key,
                 //define the options
                 {
                     expiresIn: "1h"
                 }
                 );
-
                 return res.status(200).json({
                     message: 'Auth successful',
                     token: token

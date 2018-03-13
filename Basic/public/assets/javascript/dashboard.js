@@ -17,7 +17,9 @@ $(document).ready(function(){
         // $(this).find(navicon).toggleClass('shrink-icon');
         // $(this).find(linkname).toggleClass('letter-color-select');
     });
-})
+
+    
+});
 
 function unitDashFolders(){
 

@@ -2,8 +2,34 @@ $(document).ready(function () {
     $("#loginModal").hide();
     $("#myRegModal").hide();
     $("#addUnitModal").hide();
+    $("#editModal").hide();
+    $("#addUserModal").hide();
+    $("#deleteModal").hide();
 });
 
+$(document).on('click', '#edit', function () {
+    $("#edit").leanModal({
+        top: 100,
+        overlay: 0.6,
+        closeButton: ".close"
+    });
+});
+
+$(document).on('click', '#create', function () {
+    $('#create').leanModal({
+        top: 100,
+        overlay: 0.6,
+        closeButton: ".close"
+    });
+});
+
+$(document).on('click', '#delete', function () {
+    $("#delete").leanModal({
+        top: 100,
+        overlay: 0.6,
+        closeButton: ".close",
+    });
+});
 //calls leanModal to display a modal based off of the ID
 $("#login").leanModal({
     top: 100,
@@ -40,9 +66,12 @@ $('#loginBtn').on("click", function(event){
     
     console.log("This user:" + newUser);
     $.ajax("/login", {
-        type: "PUT",
+        type: "POST",
         data: newUser
     }).done(res => {
+        if(error){
+            alert("try again");
+        }
         console.log("information sent to server for login");
         console.log(res);
         window.location = '/home';
@@ -89,6 +118,7 @@ $("#regBtn").on("click", function(event){
 $("#createUnit").on("click", event =>{    
     event.preventDefault();
     let newUnit ={
+        type: $("#type").val(),
         street: $("#street").val(),
         city: $("#city").val(),
         state: $("#state").val(),
@@ -110,7 +140,7 @@ $("#createUnit").on("click", event =>{
         console.log("information sent to server for adding a unit");
         console.log(res);
         alert("You successfully added a unit");
-        $("#addUnitModal").hide();             
+        // $("#addUnitModal").hide();             
     });
    
 });
