@@ -38,11 +38,11 @@ $('#loginBtn').on("click", function(event){
         username: $("#username").val()       
     };
     
-    console.log(newUser);
+    console.log("This user:" + newUser);
     $.ajax("/login", {
-        type: "POST",
+        type: "PUT",
         data: newUser
-    }).then(res => {
+    }).done(res => {
         console.log("information sent to server for login");
         console.log(res);
         window.location = '/home';
@@ -126,6 +126,24 @@ $(".addUnit").on('click', function(){
 //javascript for validatin input 
 /*==================================================================
     [ Validate ]*/
+
+
+
+// JAVASCRIPT FOR AJAX ON TEMPLATE PAGE
+//======================================
+//======================================
+$(document).on('click', '.template', function(){
+
+    $.ajax("/template", {
+        type: "GET",
+    }).then(res => {
+        console.log("Going to template page");
+        console.log(res);
+        window.location = '/template';
+        // res.render('/admin');        
+    });
+    
+})
 
 
 
