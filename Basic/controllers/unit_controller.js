@@ -3,6 +3,8 @@ const router = express.Router();
 const mongoose = require('mongoose');
 const checkAuth = require('../auth/check-auth.js');
 
+const cryptoRanString = require('crypto-random-string');
+
 const newUnit = require('../models/addUnit.js');
 
 //Route to unit page
@@ -19,6 +21,8 @@ router.post('/addunit', checkAuth, (req,res) =>{
         city: req.body.city,
         state: req.body.state,
         zip: req.body.zip,
+        unitNumber: req.body.unitNumber,
+        storiesNumber: req.body.storiesNumber,
         bedroomTotal: req.body.bedroomTotal,
         bathroomTotal: req.body.bathroomTotal,
         yard: req.body.yard,

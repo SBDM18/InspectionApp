@@ -5,5 +5,4 @@ var mongoose = require('mongoose');
 router.get('/home', function(req,res){
    res.render('home');
 });
-
 module.exports = router;
