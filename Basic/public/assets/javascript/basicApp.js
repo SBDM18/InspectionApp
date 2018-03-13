@@ -21,6 +21,71 @@ $(".addUnit").leanModal({
     closeButton:".close",   
 });
 
+// ====================================
+//     Parts Matt has added 3/12/2018
+// ====================================
+// ++++++++++++++++++++++++++++++++++++
+// ++++++++++++++++++++++++++++++++++++
+// ====================================
+
+$(".addTemplate").leanModal({
+    top:100,
+    overlay:0.6,
+    closeButton: ".close"
+})
+
+$(document).on('click', '.temp-btn', function () {
+    console.log('Hitting this...');
+    
+    if ($(this).hasClass('selected')){
+        $(this).removeClass('selected');
+        $(this).css({ 'background-color': 'grey' })
+    } else {
+        $(this).css({ 'background-color': '#656aff' })
+        $(this).addClass('selected');
+    }
+})
+
+//on submission get values and show what the req body is posting
+$(document).on('click', '#tempSubBtn', function(){
+
+    var title = $('#temp-title').val();
+
+    if ($('#entryToggle').hasClass('selected')){
+        var entry = 'entry';
+    }
+    if ($('#bedroomToggle').hasClass('selected')) {
+        var bedroom = 'bedroom';
+    }
+    if ($('#bathroomToggle').hasClass('selected')) {
+        var bathroom = 'bathroom';
+    }
+    if ($('#hallsToggle').hasClass('selected')) {
+        var halls = 'halls';
+    }
+    if ($('#stairsToggle').hasClass('selected')) {
+        var stairs = 'stairs';
+    }
+    if ($('#kitchenToggle').hasClass('selected')) {
+        var kitchen = 'kitchen';
+    }
+    if ($('#livingroomToggle').hasClass('selected')) {
+        var livingroom = 'livingroom';
+    }
+
+    console.log('Here is the data: ', title, entry, bedroom, bathroom, halls, stairs, kitchen, livingroom);
+    
+
+})
+
+// ====================================
+//          End of Additions
+// ====================================
+// ++++++++++++++++++++++++++++++++++++
+// ++++++++++++++++++++++++++++++++++++
+// ====================================
+
+
 $(document).on('click', '.addUnit', function () {
     $(".addUnit").leanModal({
         top: 40,
@@ -133,16 +198,15 @@ $(".addUnit").on('click', function(){
 //======================================
 //======================================
 $(document).on('click', '.template', function(){
-
-    $.ajax("/template", {
-        type: "GET",
-    }).then(res => {
-        console.log("Going to template page");
-        console.log(res);
-        window.location = '/template';
-        // res.render('/admin');        
-    });
-    
+    window.location = '/template';
+    // $.ajax("/template", {
+    //     type: "GET",
+    // }).then(res => {
+    //     console.log("Going to template page");
+    //     console.log(res);
+    //     window.location = '/template';
+    //     // res.render('/admin');        
+    // });
 })
 
 

@@ -8,429 +8,429 @@ const templateSchema = mongoose.Schema({
         walls: [{
             quality: String,
             img_album: String,
-            note: Blob
+            note: String
         }],
         ceiling: [{
             quality: String,
             img_album: String,
-            note: Blob
+            note: String
         }],
         doors: [{
             quality: String,
             img_album: String,
-            note: Blob
+            note: String
         }],
         flooring: [{
             quality: String,
             img_album: String,
-            note: Blob
+            note: String
         }],
         baseboards: [{
             quality: String,
             img_album: String,
-            note: Blob
+            note: String
         }],
         doorbell: [{
             quality: String,
             img_album: String,
-            note: Blob
+            note: String
         }],
         lights: [{
             quality: String,
             img_album: String,
-            note: Blob
+            note: String
         }]
     }],
     bedroom: [{
         walls: [{
             quality: String,
             img_album: String,
-            note: Blob
+            note: String
         }],
         ceiling: [{
             quality: String,
             img_album: String,
-            note: Blob
+            note: String
         }],
         doors: [{
             quality: String,
             img_album: String,
-            note: Blob
+            note: String
         }],
         windowcoverings: [{
             quality: String,
             img_album: String,
-            note: Blob
+            note: String
         }],
         windows: [{
             quality: String,
             img_album: String,
-            note: Blob
+            note: String
         }],
         screens: [{
             quality: String,
             img_album: String,
-            note: Blob
+            note: String
         }],
         flooring: [{
             quality: String,
             img_album: String,
-            note: Blob
+            note: String
         }],
         baseboards: [{
             quality: String,
             img_album: String,
-            note: Blob
+            note: String
         }],
         closet: [{
             quality: String,
             img_album: String,
-            note: Blob
+            note: String
         }],
         poweroutlets: [{
             quality: String,
             img_album: String,
-            note: Blob
+            note: String
         }],
         closet: [{
             quality: String,
             img_album: String,
-            note: Blob
+            note: String
         }],
         smokealarm: [{
             quality: String,
             img_album: String,
-            note: Blob
+            note: String
         }],
     }],
     bathroom: [{
         walls: [{
             quality: String,
             img_album: String,
-            note: Blob
+            note: String
         }],
         ceiling: [{
             quality: String,
             img_album: String,
-            note: Blob
+            note: String
         }],
         doors: [{
             quality: String,
             img_album: String,
-            note: Blob            
+            note: String            
         }],
         flooring: [{
             quality: String,
             img_album: String,
-            note: Blob            
+            note: String            
         }],
         doors: [{
             quality: String,
             img_album: String,
-            note: Blob            
+            note: String            
         }],
         baseboards: [{
             quality: String,
             img_album: String,
-            note: Blob            
+            note: String            
         }],
         lights: [{
             quality: String,
             img_album: String,
-            note: Blob            
+            note: String            
         }],
         poweroutlets: [{
             quality: String,
             img_album: String,
-            note: Blob           
+            note: String           
         }],
         cabinets: [{
             quality: String,
             img_album: String,
-            note: Blob            
+            note: String            
         }],
         towelrack: [{
             quality: String,
             img_album: String,
-            note: Blob            
+            note: String            
         }],
         countertop: [{
             quality: String,
             img_album: String,
-            note: Blob            
+            note: String            
         }],
         showerdoor: [{
             quality: String,
             img_album: String,
-            note: Blob           
+            note: String           
         }],
         shower: [{
             quality: String,
             img_album: String,
-            note: Blob            
+            note: String            
         }],
         mirror: [{
             quality: String,
             img_album: String,
-            note: Blob            
+            note: String            
         }],
         sink: [{
             quality: String,
             img_album: String,
-            note: Blob            
+            note: String            
         }],
         faucet: [{
             quality: String,
             img_album: String,
-            note: Blob            
+            note: String            
         }],
         exhaustfan: [{
             quality: String,
             img_album: String,
-            note: Blob
+            note: String
         }],
         toilet: [{
             quality: String,
             img_album: String,
-            note: Blob            
+            note: String            
         }],
         toilettissuedispenser: [{
             quality: String,
             img_album: String,
-            note: Blob            
+            note: String            
         }]
     }],
     halls: [{
         walls: [{
             quality: String,
             img_album: String,
-            note: Blob
+            note: String
         }],
         ceiling: [{
             quality: String,
             img_album: String,
-            note: Blob            
+            note: String            
         }],
         flooring: [{
             quality: String,
             img_album: String,
-            note: Blob            
+            note: String            
         }],
         baseboards: [{
             quality: String,
             img_album: String,
-            note: Blob            
+            note: String            
         }],
         lights: [{
             quality: String,
             img_album: String,
-            note: Blob            
+            note: String            
         }],
         stairs: [{
             quality: String,
             img_album: String,
-            note: Blob            
+            note: String            
         }],
         closet: [{
             quality: String,
             img_album: String,
-            note: Blob            
+            note: String            
         }],
         smokealarm: [{
             quality: String,
             img_album: String,
-            note: Blob            
+            note: String            
         }],
         carbonmono: [{
             quality: String,
             img_album: String,
-            note: Blob            
+            note: String            
         }] 
     }],
     stairs: [{
         walls: [{
             quality: String,
             img_album: String,
-            note: Blob
+            note: String
         }],
         ceiling: [{
             quality: String,
             img_album: String,
-            note: Blob
+            note: String
         }],
         flooring: [{
             quality: String,
             img_album: String,
-            note: Blob
+            note: String
         }],
         baseboards: [{
             quality: String,
             img_album: String,
-            note: Blob
+            note: String
         }],
         lights: [{
             quality: String,
             img_album: String,
-            note: Blob
+            note: String
         }],
         stairs: [{
             quality: String,
             img_album: String,
-            note: Blob
+            note: String
         }],
         railings: [{
             quality: String,
             img_album: String,
-            note: Blob
+            note: String
         }],
         closet: [{
             quality: String,
             img_album: String,
-            note: Blob
+            note: String
         }],
         smokealarm: [{
             quality: String,
             img_album: String,
-            note: Blob
+            note: String
         }],
         carbonmono: [{
             quality: String,
             img_album: String,
-            note: Blob
+            note: String
         }]
     }],
     kitchen: [{
         walls: [{
             quality: String,
             img_album: String,
-            note: Blob
+            note: String
         }],
         ceiling: [{
             quality: String,
             img_album: String,
-            note: Blob
+            note: String
         }],
         flooring: [{
             quality: String,
             img_album: String,
-            note: Blob
+            note: String
         }],
         baseboards: [{
             quality: String,
             img_album: String,
-            note: Blob
+            note: String
         }],
         lights: [{
             quality: String,
             img_album: String,
-            note: Blob
+            note: String
         }],
         poweroutlets: [{
             quality: String,
             img_album: String,
-            note: Blob
+            note: String
         }],
         cupboards: [{
             quality: String,
             img_album: String,
-            note: Blob
+            note: String
         }],
         countertop: [{
             quality: String,
             img_album: String,
-            note: Blob
+            note: String
         }],
         pantry: [{
             quality: String,
             img_album: String,
-            note: Blob
+            note: String
         }],
         refrigerator: [{
             quality: String,
             img_album: String,
-            note: Blob
+            note: String
         }],
         oven: [{
             quality: String,
             img_album: String,
-            note: Blob
+            note: String
         }],
         stovetop: [{
             quality: String,
             img_album: String,
-            note: Blob
+            note: String
         }],
         exhaustfan: [{
             quality: String,
             img_album: String,
-            note: Blob
+            note: String
         }],
         sink: [{
             quality: String,
             img_album: String,
-            note: Blob
+            note: String
         }],
         faucet: [{
             quality: String,
             img_album: String,
-            note: Blob
+            note: String
         }],
         garbagedisp: [{
             quality: String,
             img_album: String,
-            note: Blob
+            note: String
         }],
         microwave: [{
             quality: String,
             img_album: String,
-            note: Blob
+            note: String
         }],
         dishwasher: [{
             quality: String,
             img_album: String,
-            note: Blob
+            note: String
         }]
     }],
     livingroom: [{
         walls: [{
             quality: String,
             img_album: String,
-            note: Blob
+            note: String
         }],
         ceiling: [{
             quality: String,
             img_album: String,
-            note: Blob
+            note: String
         }],
         flooring: [{
             quality: String,
             img_album: String,
-            note: Blob
+            note: String
         }],
         baseboards: [{
             quality: String,
             img_album: String,
-            note: Blob
+            note: String
         }],
         lights: [{
             quality: String,
             img_album: String,
-            note: Blob
+            note: String
         }],
         poweroutlets: [{
             quality: String,
             img_album: String,
-            note: Blob
+            note: String
         }],
         windows: [{
             quality: String,
             img_album: String,
-            note: Blob
+            note: String
         }],
         screens: [{
             quality: String,
             img_album: String,
-            note: Blob
+            note: String
         }]
     }],
 })
