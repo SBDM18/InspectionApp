@@ -68,17 +68,20 @@ router.post('/register', (req,res) => {
 //Route to home page from login. Sends user JWT back to client to use for authentication
 router.post('/login', (req,res,next) => {
     console.log(req.body.userpass);
+    console.log(req.body);
+    let name = req.body.username;
     
-    newManager.findOne({ username: req.body.username}).exec().then(user => {
+    
+    newManager.findOne({ username: name}).exec().then(user => {
         console.log(user);
-        console.log("Password from database", user.password);
-        console.log("password inptted in", req.body.userpass);
+        // console.log( user.userpass);
+        // console.log("password inptted in", req.body.userpass);
         if(user.length < 1){
             return res.status(401).json({
                 message: 'Auth failed'
             });           
         }        
-        bcrypt.compare(req.body.userpass, user.password, (err,result) => {
+        bcrypt.compare(req.body.userpass, user.userpass, (err,result) => {
             if(err){
                 return res.status(401).json({
                     message: 'Auth failed'
@@ -100,10 +103,12 @@ router.post('/login', (req,res,next) => {
                     message: 'Auth successful',
                     token: token
                 });
+                window.location('/home');
             }
             res.status(401).json({
                 message: 'Auth failed'
             });
+            alert("Invalid entry please try again");
         });
     }).catch(err =>{
         catchError(err);

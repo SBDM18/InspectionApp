@@ -6,30 +6,6 @@ $(document).ready(function () {
     $("#addUserModal").hide();
     $("#deleteModal").hide();
 });
-
-$(document).on('click', '#edit', function () {
-    $("#edit").leanModal({
-        top: 100,
-        overlay: 0.6,
-        closeButton: ".close"
-    });
-});
-
-$(document).on('click', '#create', function () {
-    $('#create').leanModal({
-        top: 100,
-        overlay: 0.6,
-        closeButton: ".close"
-    });
-});
-
-$(document).on('click', '#delete', function () {
-    $("#delete").leanModal({
-        top: 100,
-        overlay: 0.6,
-        closeButton: ".close",
-    });
-});
 //calls leanModal to display a modal based off of the ID
 $("#login").leanModal({
     top: 100,
@@ -46,6 +22,33 @@ $(".addUnit").leanModal({
     overlay:0.6,
     closeButton:".close",   
 });
+//displays modal for the admin page
+$(".delUser").leanModal({
+    top: 100,
+    overlay: 0.6,
+    closeButton: ".close"
+});
+
+$('.editUser').leanModal({
+    top: 100,
+    overlay: 0.6,
+    closeButton: ".close"
+});
+
+$(".addUser").leanModal({
+    top: 100,
+    overlay: 0.6,
+    closeButton: ".close",
+});
+
+$(document).on('click', '.addUnit', function () {
+    $(".addUnit").leanModal({
+        top: 40,
+        overlay: 0.6,
+        closeButton: ".close",
+    });
+});
+
 
 // ====================================
 //     Parts Matt has added 3/12/2018
@@ -58,7 +61,7 @@ $(".addTemplate").leanModal({
     top:100,
     overlay:0.6,
     closeButton: ".close"
-})
+});
 
 $(document).on('click', '.temp-btn', function () {
     console.log('Hitting this...');
@@ -70,7 +73,7 @@ $(document).on('click', '.temp-btn', function () {
         $(this).css({ 'background-color': '#656aff' })
         $(this).addClass('selected');
     }
-})
+});
 
 //on submission get values and show what the req body is posting
 $(document).on('click', '#tempSubBtn', function(){
@@ -99,10 +102,9 @@ $(document).on('click', '#tempSubBtn', function(){
         var livingroom = 'livingroom';
     }
 
-    console.log('Here is the data: ', title, entry, bedroom, bathroom, halls, stairs, kitchen, livingroom);
-    
+    console.log('Here is the data: ', title, entry, bedroom, bathroom, halls, stairs, kitchen, livingroom);    
 
-})
+});
 
 // ====================================
 //          End of Additions
@@ -110,16 +112,6 @@ $(document).on('click', '#tempSubBtn', function(){
 // ++++++++++++++++++++++++++++++++++++
 // ++++++++++++++++++++++++++++++++++++
 // ====================================
-
-
-$(document).on('click', '.addUnit', function () {
-    $(".addUnit").leanModal({
-        top: 40,
-        overlay: 0.6,
-        closeButton: ".close",
-    });
-});
-
 
 //retrieves data from login modal
 $('#loginBtn').on("click", function(event){
@@ -142,9 +134,6 @@ $('#loginBtn').on("click", function(event){
         window.location = '/home';
     });
     // $(".containerFront").hide();//hide the login page and show the home page
-    
-    //redirect route to home.handlebars
-
 
     //Create an IF statement, if login is valid send to home page if not send alert saying incorrect try again
     $("#loginModal").hide();
@@ -164,13 +153,13 @@ $("#regBtn").on("click", function(event){
         email: $("#email").val(),
         phoneNumber: $("#phoneNum").val() 
     };
-
     //If registration successful create an alet/modal to thank individual for registering with INsightful Inspection
     console.log(newReg);
     $.ajax("/register",{
         type:"POST",
         data: newReg
     }).then(res =>{
+        alert("Thank you for registering with Insightful Inspection")
         console.log("information sent to server for registration");
         console.log(res);
         window.location = '/admin';
@@ -208,6 +197,66 @@ $("#createUnit").on("click", event =>{
         // $("#addUnitModal").hide();             
     });
    
+});
+
+$("#createUser").on("click", event => {
+    event.preventDefault();
+    let newReg = {
+        firstName: $("#firstNAme").val(),
+        lastName: $("#lastNAme").val(),
+        username: $("#userNAme").val(),
+        password: $("#passWOrd").val(),
+        company: $("#companyNAme").val(),
+        email: $("#Email").val(),
+        phoneNumber: $("#phoneNUm").val()
+    };
+    //If registration successful create an alet/modal to thank individual for registering with INsightful Inspection
+    console.log(newReg);
+    $.ajax("/adduser", {
+        type: "POST",
+        data: newReg
+    }).then(res => {
+        alert("You have succesfully added a new user");
+        console.log("information sent to server for registration");
+        console.log(res);
+        // window.location = '/admin';
+        // res.render('/admin');        
+    });
+    $("#addUserModal").hide();
+});
+
+$("#delete").on("click", event =>{
+    let value = {
+        email: $("#delUserEm").val()
+    };
+    console.log(value);
+    $.ajax("/delete",{
+        type: "DELETE",
+        data: value
+    }).then(res =>{
+        alert("You successfully delete User ");
+        console.log(res);        
+    });    
+    $("#deleteModal").hide();
+});
+$("#edit").on("click", event =>{
+    let edit = {
+        firstName: $("#firstNAMe").val(),
+        lastName: $("#lastNAMe").val(),
+        username: $("#userNAMe").val(),
+        password: $("#passWORd").val(),
+        company: $("#companyNAMe").val(),
+        email: $("#EMail").val(),
+        phoneNumber: $("#phoneNUM").val()
+    };
+    $.ajax("/edituser", {
+        type:"POST",
+        data: edit
+    }).then(res =>{
+        alert("You successfully edit a User");
+        console.log(res);        
+    });
+    $("#editModal").hide();
 });
 
 $("#unitSearch").on('click', function(){

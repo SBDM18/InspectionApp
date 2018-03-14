@@ -17,45 +17,10 @@ $(document).ready(function(){
         // $(this).find(navicon).toggleClass('shrink-icon');
         // $(this).find(linkname).toggleClass('letter-color-select');
     });
-
     
 });
 
-function unitDashFolders(){
 
-    let html = `
-                <div class="row">
-                    <div class="col-sm-9">
-                        <div class="row">
-                            <div class="col-sm-4">
-                                <div class="city" style="color:#BFC1D2;">
-                                    <i class="fas fa-folder fa-5x"></i>
-                                    <p class="cityTitle">San Diego</p>
-                                </div>
-                            </div>
-                            <div class="col-sm-4" style="color:#BFC1D2;">
-                                <div class="city">
-                                    <i class="fas fa-folder fa-5x"></i>
-                                    <p class="cityTitle">San Diego</p>
-                                </div>
-                            </div>
-                            <div class="col-sm-4" style="color:#BFC1D2;">
-                                <div class="city">
-                                    <i class="fas fa-folder fa-5x"></i>
-                                    <p class="cityTitle">San Diego</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-3">
-                        <button class="addUnit button" href="#addUnitModal">Add Unit</button>
-                    </div>
-                </div> `  
-                var but = document.getElementsByClassName('addUnit');
-                console.log(but);
-                
-    $(".dash-main").html(html);
-}
 function unitDashList(){
        
     let html = `
@@ -99,192 +64,16 @@ function unitDashList(){
                 `
     $(".dash-main").html(html);
 }
-function inspectDashCards(){
-    
-    let html = `
 
-            <div class="row">
-                <div class="col-sm-8">
-                    <div class="row">
-                        <div class="col-sm-6">
-                            <div class="card" style="width: 250px;">
-                                <div class="card-body">
-                                    <h5 class="card-title">Card title</h5>
-                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-6">
-                            <div class="card" style="width: 250px;">
-                                <div class="card-body">
-                                    <h5 class="card-title">Card title</h5>
-                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-sm-6">
-                            <div class="card" style="width: 250px;">
-                                <div class="card-body">
-                                    <h5 class="card-title">Card title</h5>
-                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-6">
-                            <div class="card" style="width: 250px;">
-                                <div class="card-body">
-                                    <h5 class="card-title">Card title</h5>
-                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-sm-6">
-                            <div class="card" style="width: 250px;">
-                                <div class="card-body">
-                                    <h5 class="card-title">Card title</h5>
-                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-6">
-                            <div class="card" style="width: 250px;">
-                                <div class="card-body">
-                                    <h5 class="card-title">Card title</h5>
-                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-4 timeline-cont">
-                    <h1 class="timelineTitle">Timeline</h1>
-                    <table class="table table-striped table-hover timeTable" style="background-color:white;">
-                        <tbody>
-                            <tr>
-                                <td>House 1</td>
-                            </tr>
-                            <tr>
-                                <td>House 2</td>
-                            </tr>
-                            <tr>
-                                <td>House 3</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>`
-    $('.dashTitle').replaceWith("<h1 class='dashTitle'>Inspections</h1>");
-    $(".dash-main").html(html);
-}
 function inspectSlideCards(){
     let htlml = ''
     $(".main").html(html);
 }
-function reportDash(){
 
-    let html = `       
-            <div class="row">
-                <div class="col-sm-11">
-                    <table class="table table-striped table-hover reportTab" style="background-color:white;">
-                        <thead class="thead-light">
-                            <tr>
-                                <th scope="col">Address</th>
-                                <th scope="col">City</th>
-                                <th scope="col">Type</th>
-                                <th scope="col">Date</th>
-                                <th scope="col">Status</th>
-                                <th scope="col">Created</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>3668 Quimby St.</td>
-                                <td>San Diego</td>
-                                <td>Move In</td>
-                                <td>2/22/2018</td>
-                                <td>Completed</td>
-                                <td>Daniel</td>
-                            </tr>
-                            <tr>
-                                <td>3668 Tennyson St.</td>
-                                <td>San Diego</td>
-                                <td>Move In</td>
-                                <td>2/22/2018</td>
-                                <td>Completed</td>
-                                <td>Daniel</td>
-                            </tr>
-                            <tr>
-                                <td>3668 Poe St.</td>
-                                <td>San Diego</td>
-                                <td>Move Out</td>
-                                <td>2/22/2018</td>
-                                <td>Draft</td>
-                                <td>Daniel</td>
-                            </tr>
-                            <tr>
-                                <td>3668 Homer St.</td>
-                                <td>San Diego</td>
-                                <td>Move In</td>
-                                <td>2/12/2018</td>
-                                <td>In progress</td>
-                                <td>Daniel</td>
-                            </tr>
-                            <tr>
-                                <td>3668 Curtis St.</td>
-                                <td>San Diego</td>
-                                <td>Move In</td>
-                                <td>2/22/2018</td>
-                                <td>Completed</td>
-                                <td>Daniel</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>`
-    $(".dash-main").html(html);
-}
-function templateDash(){
-    let html = ''
-    $('.dash-main').html(html);
-};
-
-$(".overview").on("click", function(){
-//    create route to send to the home.handlebars page (overview is the home page)
-   
-    $('.dash-main').empty();
-
-});
-$(".units").on("click", function () {
-    $(".dash-main").empty();
-// create route to send user to the unit.handlebars page and grab data from server side to display unit city folders
-
-
-});
 $(document).on("click", ".city", function(){   
     // create route to grab data from server which checked database for the city and brought back the units that are within that specific city folder
     $(".dash-main").empty();
     unitDashList()
-});
-// $(".inspection").on("click", function () {
-//     $(".dash-main").empty();
-//     // create route that grabs information to display into the inspection cards and return the most recent activity for inspections
-//     inspectDashCards();
-// });
-$(".template").on("click", function () {
-    $(".dash-main").empty();
-    // create route that grabs information for the managers templates if the manager is signed in.. if user is signed in allow them to only see the templates not edit or create new. the manager will have access to creation and edit
-    templateDash();
-
-});
-$(".report").on("click", function () {
-    $(".dash-main").empty();
-    
-    // create route that grabs data for the list of pdf reports and displays them in a table
-    reportDash();
 });
 
 // still need to create a back button and a route for home.handlebars unless they are within the 2nd page of units or inspection than it would go back to their respective beginning page (have a this statement check which class was picked and than decide what function to perform within the button click)

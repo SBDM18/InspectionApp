@@ -29,20 +29,13 @@ app.set('view engine', 'handlebars');
 // Override with POST having ?_method=DELETE
 app.use(methodOverride('_method'));
 
-<<<<<<< HEAD
-// + process.env.MONGO_ATLAS_PW1 +
-// mongoose.connect('mongodb://dward:sFjbTsUmvzP9O8sP@insightinspect-dev-shard-00-00-hfhtu.mongodb.net:27017,insightinspect-dev-shard-00-01-hfhtu.mongodb.net:27017,insightinspect-dev-shard-00-02-hfhtu.mongodb.net:27017/test?ssl=true&replicaSet=InsightInspect-dev-shard-0&authSource=admin');
-
-mongoose.connect("mongodb://localhost:27017/test");
-=======
 // // + process.env.MONGO_ATLAS_PW1 +
-// mongoose.connect('mongodb://dward:sFjbTsUmvzP9O8sP@insightinspect-dev-shard-00-00-hfhtu.mongodb.net:27017,insightinspect-dev-shard-00-01-hfhtu.mongodb.net:27017,insightinspect-dev-shard-00-02-hfhtu.mongodb.net:27017/test?ssl=true&replicaSet=InsightInspect-dev-shard-0&authSource=admin');
-// var db = mongoose.connection;
+mongoose.connect('mongodb://dward:sFjbTsUmvzP9O8sP@insightinspect-dev-shard-00-00-hfhtu.mongodb.net:27017,insightinspect-dev-shard-00-01-hfhtu.mongodb.net:27017,insightinspect-dev-shard-00-02-hfhtu.mongodb.net:27017/test?ssl=true&replicaSet=InsightInspect-dev-shard-0&authSource=admin');
+var db = mongoose.connection;
 
 //localhost mongodb connection
-mongoose.connect("mongodb://localhost:27017/textdb");
->>>>>>> master
-var db = mongoose.connection;
+// mongoose.connect("mongodb://localhost:27017/textdb");
+// var db = mongoose.connection;
     
 //calls routes from controller folder
 app.use(routeUser);
