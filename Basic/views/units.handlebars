@@ -62,26 +62,14 @@
                <div class="row">
                   <div class="col-sm-9">
                      <div class="row">
-                        <div class="col-sm-4">
-                           {{!-- these folder divs will be created when we pull data from the database... i believe it should be done in an object function
-                           using es6 template literals --}}
-                           <div class="city" style="color:#BFC1D2;">
-                              <i class="fas fa-folder fa-5x"></i>
-                              <p class="cityTitle">San Diego</p>
-                           </div>
-                        </div>
-                        <div class="col-sm-4" style="color:#BFC1D2;">
-                           <div class="city">
-                              <i class="fas fa-folder fa-5x"></i>
-                              <p class="cityTitle">San Diego</p>
-                           </div>
-                        </div>
-                        <div class="col-sm-4" style="color:#BFC1D2;">
-                           <div class="city">
-                              <i class="fas fa-folder fa-5x"></i>
-                              <p class="cityTitle">San Diego</p>
-                           </div>
-                        </div>
+                         <div class="col-sm-3">
+                             {{#each cities}}
+                                <div class="city" data-city="{{city}}" style="color:#BFC1D2;">
+                                    <i class="fas fa-folder fa-5x"></i>
+                                    <p class="cityTitle">{{city}}</p>
+                                </div>
+                             {{/each}}
+                         </div>                       
                      </div>
                   </div>
                   <div class="col-sm-3">
@@ -138,8 +126,8 @@ etc --}}
          <input type="text" id="unitNum" placeholder="Unit #">
          <input type="text" id="storiesNum" placeholder="# of stories">
          <h3 class="formTitle2">Garage</h3>
-         <input type="radio" id="yes" class="garage" name="garage">
-         <input type="radio" id="no" class="garage" name="garage">
+         <input type="radio" id="yes" class="garage" name="garage" value="yes">
+         <input type="radio" id="no" class="garage" name="garage" value="no">
          <br>
          <label for="yes">Yes</label>
          <label for="no">No</label>

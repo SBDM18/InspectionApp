@@ -70,18 +70,19 @@ router.post('/login', (req,res,next) => {
     console.log(req.body.userpass);
     console.log(req.body);
     let name = req.body.username;
+    console.log(name);
     
     
     newManager.findOne({ username: name}).exec().then(user => {
         console.log(user);
-        // console.log( user.userpass);
-        // console.log("password inptted in", req.body.userpass);
+         console.log( user.password);
+         console.log("password inptted in", req.body.userpass);
         if(user.length < 1){
             return res.status(401).json({
                 message: 'Auth failed'
             });           
         }        
-        bcrypt.compare(req.body.userpass, user.userpass, (err,result) => {
+        bcrypt.compare(req.body.userpass, user.password, (err,result) => {
             if(err){
                 return res.status(401).json({
                     message: 'Auth failed'
@@ -90,6 +91,7 @@ router.post('/login', (req,res,next) => {
             if(result){
                const token = jwt.sign({
                     email: user.email,
+                    managerID: manager_U_id,
                     userId: user.user_U_id,
                     type: user.type,
                     username: user.username
@@ -103,7 +105,7 @@ router.post('/login', (req,res,next) => {
                     message: 'Auth successful',
                     token: token
                 });
-                window.location('/home');
+                // window.location('/home');
             }
             res.status(401).json({
                 message: 'Auth failed'

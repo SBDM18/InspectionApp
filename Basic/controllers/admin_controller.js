@@ -75,15 +75,50 @@ router.delete('/delete', (req,res,next) =>{
 });
 
 router.post('/edituser', (req,res,next) => {
-    User.findOneAndUpdate({email: req.body.email}).exec().then(result =>{
-        console.log(result);
-        
-        res.status(200).json({
-            message: " Selected user was updated"
-        });        
-    }).catch(err =>{
-        catchError(err);
-    });
+    console.log(req.body);
+    bcrypt.genSalt(6, (err, salt) => {
+        if (err) {
+            return res.status(500).json({
+                error: err
+            });
+        } else {
+            // console.log(req.body.password);
+            bcrypt.hash(req.body.password, salt, null, (err, hash) => {
+                console.log("bcrypt has hashed password");
+
+                if (err) {
+                    return res.status(500).json({
+                        error: err
+                    });
+                } else {
+                    User.findOneAndUpdate({ email: req.body.email },
+                        {
+                            type: "User",
+                            manager_U_id: "have to grab from manager database",
+                            user_U_id: "grab from database",
+                            firstName: req.body.firstName,
+                            lastName: req.body.lastName,
+                            username: req.body.username,
+                            password: hash,
+                            company: req.body.company,
+                            email: req.body.email,
+                            phoneNumber: req.body.phoneNumber
+                        },
+                        { upsert: true, new: true, runValidators: true },
+                        (err, doc) => {
+                            if (err) {
+                                alert(" Was not able to update specified user");
+                            } else {
+                                alert("User specified was updated");
+                                console.log(doc);
+                                res.json(doc);
+                            }
+                        }
+                    );
+                }
+            });
+        }
+    });    
 });
 
 function catchError(err) {
@@ -92,5 +127,6 @@ function catchError(err) {
         error: err
     });
 }
+
 
 module.exports = router;

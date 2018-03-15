@@ -5,6 +5,7 @@ const uniqueValidator = require('mongoose-unique-validator');
 
 const unitScheme = mongoose.Schema({
     unit_id: String,
+    manager_U_id: String,
     user_U_id: String,
     type: String,
     street: String,
