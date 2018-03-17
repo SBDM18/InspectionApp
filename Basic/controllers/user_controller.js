@@ -67,14 +67,10 @@ router.post('/register', (req,res) => {
 
 //Route to home page from login. Sends user JWT back to client to use for authentication
 router.post('/login', (req,res,next) => {
-    console.log(req.body.userpass);
-    console.log(req.body);
     let name = req.body.username;
-    console.log(name);
-    
+    console.log(name);    
     
     newManager.findOne({ username: name}).exec().then(user => {
-        console.log(user);
          console.log( user.password);
          console.log("password inptted in", req.body.userpass);
         if(user.length < 1){
@@ -91,16 +87,18 @@ router.post('/login', (req,res,next) => {
             if(result){
                const token = jwt.sign({
                     email: user.email,
-                    managerID: manager_U_id,
-                    userId: user.user_U_id,
+                    manID: user.manager_U_id,
+                    uID: user.user_U_id,
                     type: user.type,
                     username: user.username
                 }, process.env.JWT_Key,
                 //define the options
                 {
-                    expiresIn: "1h"
+                    expiresIn: "4h"
                 }
                 );
+                console.log("token created");
+                
                 return res.status(200).json({
                     message: 'Auth successful',
                     token: token
@@ -110,7 +108,6 @@ router.post('/login', (req,res,next) => {
             res.status(401).json({
                 message: 'Auth failed'
             });
-            alert("Invalid entry please try again");
         });
     }).catch(err =>{
         catchError(err);

@@ -8,13 +8,9 @@ const cryptoRanString = require('crypto-random-string');
 const newUnit = require('../models/addUnit.js');
 
 //Route to unit page
-router.get('/units', function (req, res) {
+router.get('/units', checkAuth, function (req, res) {
 
     newUnit.find().where({ manager_U_id: "123456" }).exec().then(doc =>{
-        console.log(doc[0].city);
-        console.log(doc[1].city);
-        console.log(doc[2].city);
-        console.log(doc[3].city);
         var cityObj ={
             cities: doc
         };     
@@ -26,19 +22,19 @@ router.get('/units', function (req, res) {
 });
 
 router.post('/addunit', checkAuth, (req, res) => {
+    console.log("Token info " , req.userData);
     // console.log(req.body);
     // console.log("this is the address : ", req.body.street);
     // console.log("this is the unit # : ", req.body.unitNumber);
-    let unitID = cryptoRanString(6);
-   
+    let unitID = cryptoRanString(6);   
     
 
    newUnit.findOneAndUpdate(
         { street: req.body.street }, // find a document with that filter
        {
            unit_id: unitID, 
-           user_U_id: "12cd3ser45",
-           manager_U_id:"123456",
+           user_U_id: req.userData.uID,
+           manager_U_id:req.userData.manID,
            type: req.body.type,
            street: req.body.street,
            city: req.body.city,

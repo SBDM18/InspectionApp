@@ -12,8 +12,10 @@ router.get('/admin', function (req, res) {
 });
 
 router.post('/adduser', checkAuth, (req, res) => {
-    console.log(req.body);
-    console.log(checkAuth);    
+    console.log(req.userData.manID);
+    console.log(req.userData.type);
+    
+        
 
     bcrypt.genSalt(6, (err, salt) => {
         if (err) {
@@ -34,7 +36,7 @@ router.post('/adduser', checkAuth, (req, res) => {
                     const man_ID = cryptoRanString(10);
                     const newUser = new User({
                         type: "User",
-                        manager_U_id: man_ID,
+                        manager_U_id: req.userData.manID,
                         user_U_id: user_ID,
                         firstName: req.body.firstName,
                         lastName: req.body.lastName,
@@ -60,7 +62,7 @@ router.post('/adduser', checkAuth, (req, res) => {
     });
 });
 
-router.delete('/delete', (req,res,next) =>{
+router.delete('/delete', checkAuth, (req,res,next) =>{
     console.log(req.body);
       
     User.findOneAndRemove({ email: req.body.email}).exec().then(result =>{
@@ -74,7 +76,7 @@ router.delete('/delete', (req,res,next) =>{
     });    
 });
 
-router.post('/edituser', (req,res,next) => {
+router.post('/edituser', checkAuth, (req,res,next) => {
     console.log(req.body);
     bcrypt.genSalt(6, (err, salt) => {
         if (err) {

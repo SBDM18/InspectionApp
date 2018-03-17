@@ -116,22 +116,22 @@ $(document).on('click', '#tempSubBtn', function(){
 //retrieves data from login modal
 $('#loginBtn').on("click", function(event){
     event.preventDefault();
-    let newUser ={
-        userpass: $("#password").val(),
-        username: $("#username").val()       
+    let newReg ={
+        userpass: $(".password").val(),
+        username: $(".username").val()       
     };
     
-    console.log("This user:" + newUser);
+    console.log( newReg);
     $.ajax("/login", {
         type: "POST",
-        data: newUser
-    }).done(res => {
-        if(error){
-            alert("try again");
-        }
-        console.log("information sent to server for login");
-        console.log(res);
+        data: newReg
+    }).done((res,err) => {
+        console.log(err);
+        
+        localStorage.setItem("token" , res.token);
+        console.log(localStorage.getItem("token"));
         window.location = '/home';
+        
     });
     // $(".containerFront").hide();//hide the login page and show the home page
 
@@ -159,6 +159,8 @@ $("#regBtn").on("click", function(event){
         type:"POST",
         data: newReg
     }).then(res =>{
+        localStorage.setItem("token", res.token);
+        console.log(localStorage.getItem("token"));
         alert("Thank you for registering with Insightful Inspection")
         console.log("information sent to server for registration");
         console.log(res);
@@ -189,11 +191,12 @@ $("#createUnit").on("click", event =>{
     //after addunit insert jwt id to authenticate the user/ manager 
     $.ajax("/addunit",{
         type:"POST",
-        data: newUnit
+        data: newUnit,
+        headers:{"Authorization": localStorage.getItem("token")}
     }).then(res =>{
         console.log("information sent to server for adding a unit");
         console.log(res);
-        alert("You successfully added a unit");
+        swal("You successfully added a unit");
         // $("#addUnitModal").hide();             
     });
    
@@ -214,9 +217,10 @@ $("#createUser").on("click", event => {
     console.log(newReg);
     $.ajax("/adduser", {
         type: "POST",
-        data: newReg
+        data: newReg,
+        headers: { "Authorization": localStorage.getItem("token") }
     }).then(res => {
-        alert("You have succesfully added a new user");
+        swal("You have succesfully added a new user");
         console.log("information sent to server for registration");
         console.log(res);
         // window.location = '/admin';
@@ -232,9 +236,10 @@ $("#delete").on("click", event =>{
     console.log(value);
     $.ajax("/delete",{
         type: "DELETE",
-        data: value
+        data: value,
+        headers: { "Authorization": localStorage.getItem("token") }
     }).then(res =>{
-        alert("You successfully delete User ");
+        swal("You successfully deleted a User ");
         console.log(res);        
     });    
     $("#deleteModal").hide();
@@ -251,9 +256,10 @@ $("#edit").on("click", event =>{
     };
     $.ajax("/edituser", {
         type:"POST",
-        data: edit
+        data: edit,
+        headers: { "Authorization": localStorage.getItem("token") }
     }).then(res =>{
-        alert("You successfully edit a User");
+        swal("You successfully edited a User");
         console.log(res);        
     });
     $("#editModal").hide();
@@ -290,7 +296,7 @@ $(document).on('click', '.template', function(){
     //     window.location = '/template';
     //     // res.render('/admin');        
     // });
-})
+});
 
 
 
