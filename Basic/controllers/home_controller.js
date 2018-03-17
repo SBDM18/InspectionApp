@@ -4,7 +4,8 @@ const mongoose = require('mongoose');
 const checkAuth = require('../auth/check-auth.js');
 
 
-router.get('/home/', function(req,res){
+router.get('/home',  function(req,res){
+    
    res.render('home');
 
 

@@ -7,8 +7,25 @@ const checkAuth = require('../auth/check-auth.js');
 
 const User = require('../models/user.js');
 
-router.get('/admin', function (req, res) {
-    res.render("admin");
+router.get('/admin', checkAuth, (req, res , next) =>{
+     console.log(req.userData.manID);
+     
+
+     User.find().where({
+         manager_U_id: req.userData.manID
+     }).exec().then(doc => {
+         console.log(doc);
+         
+        //  let userList = {
+        //      users: doc
+        //  };
+         
+
+         res.render('admin');
+
+     }).catch(err => {
+         catchError(err);
+     });    
 });
 
 router.post('/adduser', checkAuth, (req, res) => {
@@ -60,6 +77,24 @@ router.post('/adduser', checkAuth, (req, res) => {
             });
         }
     });
+});
+
+router.delete('/deleteInfo', checkAuth, (req,res,next) =>{
+    let manid = console.log(req.userData.manID);
+    console.log(manid);
+    
+    User.find().where({manager_U_id: manid}).exec().then(doc =>{
+        let userList = {
+            users: doc
+        };
+        console.log(userList);
+
+        res.render('admin',userList);
+
+    }).catch(err =>{
+        catchError(err);
+    });
+    
 });
 
 router.delete('/delete', checkAuth, (req,res,next) =>{

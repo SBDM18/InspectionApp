@@ -6,7 +6,7 @@ const checkAuth = require('../auth/check-auth.js');
 
 var template = require('../models/template.js');
 
-router.get('/templates', function (req, res) {
+router.get('/templates', checkAuth, function (req, res) {
     res.render('template');
 });
 

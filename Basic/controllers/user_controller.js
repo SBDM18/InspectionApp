@@ -101,7 +101,8 @@ router.post('/login', (req,res,next) => {
                 
                 return res.status(200).json({
                     message: 'Auth successful',
-                    token: token
+                    token: token,
+                    authTok: user.user_U_id
                 });
                 // window.location('/home');
             }

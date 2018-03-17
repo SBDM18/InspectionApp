@@ -129,6 +129,8 @@ $('#loginBtn').on("click", function(event){
         console.log(err);
         
         localStorage.setItem("token" , res.token);
+        localStorage.setItem("auth" , res.authTok);
+        console.log(localStorage.getItem("auth"));    
         console.log(localStorage.getItem("token"));
         window.location = '/home';
         
@@ -161,7 +163,7 @@ $("#regBtn").on("click", function(event){
     }).then(res =>{
         localStorage.setItem("token", res.token);
         console.log(localStorage.getItem("token"));
-        alert("Thank you for registering with Insightful Inspection")
+        swal("Thank you for registering with Insightful Inspection. Please login ");
         console.log("information sent to server for registration");
         console.log(res);
         window.location = '/admin';
@@ -228,7 +230,15 @@ $("#createUser").on("click", event => {
     });
     $("#addUserModal").hide();
 });
-
+$(".delUser").on("click", ()=>{
+    $.ajax("/deleteInfo",{
+        type:"GET",
+        headers: {"Authorization": localStorage.getItem("token")}
+    }).then(res =>{
+        console.log(res);
+        
+    });
+});
 $("#delete").on("click", event =>{
     let value = {
         email: $("#delUserEm").val()
@@ -264,6 +274,65 @@ $("#edit").on("click", event =>{
     });
     $("#editModal").hide();
 });
+
+//Click events for navigation bar
+$(document).on("click", ".overview", () => {
+    $.ajax("/home", {
+        type: "GET",
+        data: JSON,
+        headers: { "Authorization": localStorage.getItem("token") }
+    }).then(res => {
+        console.log("get request worked");
+    });
+});
+$(document).on("click", ".units", ()=>{
+    console.log("button");
+    
+    $.ajax("/units",{
+        type:"GET",
+        // data:JSON,
+        headers: { "Authorization": localStorage.getItem("token") }
+    }).then(res =>{
+        console.log("get request worked");        
+    });
+});
+$(document).on("click", ".inspection", () => {
+    $.ajax("/inspection", {
+        type: "GET",
+        data: JSON,
+        headers: { "Authorization": localStorage.getItem("token") }
+    }).then(res => {
+        console.log("get request worked");
+    });
+});
+$(document).on("click", ".template", () => {
+    $.ajax("/templates", {
+        type: "GET",
+        data: JSON,
+        headers: { "Authorization": localStorage.getItem("token") }
+    }).then(res => {
+        console.log("get request worked");
+    });
+});
+$(document).on("click", ".units", () => {
+    $.ajax("/reports", {
+        type: "GET",
+        data: JSON,
+        headers: { "Authorization": localStorage.getItem("token") }
+    }).then(res => {
+        console.log("get request worked");
+    });
+});
+$(document).on("click", ".report", () => {
+    $.ajax("/admin", {
+        type: "GET",
+        data: JSON,
+        headers: { "Authorization": localStorage.getItem("token") }
+    }).then(res => {
+        console.log("get request worked");
+    });
+});
+
 
 $("#unitSearch").on('click', function(){
     console.log('working');
