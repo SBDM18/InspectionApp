@@ -5,12 +5,12 @@ const checkAuth = require('../auth/check-auth.js');
 
 const cryptoRanString = require('crypto-random-string');
 
-const newUnit = require('../models/addUnit.js');
+const Unit = require('../models/addUnit.js');
 
 //Route to unit page
-router.get('/units', checkAuth, function (req, res) {
+router.get('/units', function (req, res) {
 
-    newUnit.find().where({ manager_U_id: "123456" }).exec().then(doc =>{
+    Unit.find().where({ manager_U_id: "123456" }).exec().then(doc =>{
         var cityObj ={
             cities: doc
         };     
@@ -20,6 +20,20 @@ router.get('/units', checkAuth, function (req, res) {
     });    
     // res.render("units");
 });
+router.get('/units/unitlist', (req,res) =>{
+   
+    
+    Unit.find().where({manager_U_id:"123456", city: "San Diego"}).exec().then(doc =>{
+        let listObj ={
+            units: doc
+        };
+        console.log(listObj);
+        
+        res.render("units", listObj );
+    }).catch((err)=>{
+        catchError(err);
+    });
+})
 
 router.post('/addunit', checkAuth, (req, res) => {
     console.log("Token info " , req.userData);
@@ -29,7 +43,7 @@ router.post('/addunit', checkAuth, (req, res) => {
     let unitID = cryptoRanString(6);   
     
 
-   newUnit.findOneAndUpdate(
+   Unit.findOneAndUpdate(
         { street: req.body.street }, // find a document with that filter
        {
            unit_id: unitID, 
@@ -106,6 +120,12 @@ router.post('/addunit', checkAuth, (req, res) => {
 //     });
 // });
 
+function catchError(err) {
+    console.log(err);
+    res.status(500).json({
+        error: err
+    });
+}
 
 
 module.exports = router;
