@@ -182,8 +182,19 @@
               <span class="login100-form-title ">Delete a User</span>
               <h1>List of users</h1>
               <table id="deleteTable">
-                <thead><tr><th scope="col">headers for uuser table</th></tr></thead>
-                <tbody><tr><td>repeatable table with user information under the respective manager id</td></tr></tbody>
+                <thead>
+                  <tr><th scope="col">headers for uuser table</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {{#each users}}
+                    <tr>
+                      <td>{{firstName}}</td>
+                      <td>{{lastName}}</td>
+                      <td>{{email}}</td>
+                    </tr>
+                  {{/each}}
+                </tbody>
               </table>
               <div class="firstnLast">
                 <div class="wrap-input100 FL validate-input" data-validate="Enter Email">

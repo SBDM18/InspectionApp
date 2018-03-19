@@ -286,11 +286,10 @@ $(document).on("click", ".overview", () => {
     });
 });
 $(document).on("click", ".units", ()=>{
-    console.log("button");
-    
+    console.log("button");    
     $.ajax("/units",{
         type:"GET",
-        // data:JSON,
+        data:JSON,
         headers: { "Authorization": localStorage.getItem("token") }
     }).then(res =>{
         console.log("get request worked");        

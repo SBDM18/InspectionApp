@@ -8,7 +8,7 @@ const cryptoRanString = require('crypto-random-string');
 const newUnit = require('../models/addUnit.js');
 
 //Route to unit page
-router.get('/units', checkAuth, function (req, res) {
+router.get('/units',  function (req, res) {
 
     newUnit.find().where({ manager_U_id: "123456" }).exec().then(doc =>{
         var cityObj ={

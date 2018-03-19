@@ -7,21 +7,22 @@ const checkAuth = require('../auth/check-auth.js');
 
 const User = require('../models/user.js');
 
-router.get('/admin', checkAuth, (req, res , next) =>{
-     console.log(req.userData.manID);
+router.get('/admin', (req, res , next) =>{
+    //  console.log(req.userData.manID);
      
 
      User.find().where({
-         manager_U_id: req.userData.manID
+         manager_U_id: "013c1b5521"
      }).exec().then(doc => {
-         console.log(doc);
-         
-        //  let userList = {
-        //      users: doc
-        //  };
-         
+         doc.shift();
+        //  console.log(doc);         
+          let userList = {
+             users: doc
+          };         
+          console.log(userList);
+          
 
-         res.render('admin');
+         res.render('admin', userList);
 
      }).catch(err => {
          catchError(err);
@@ -30,9 +31,7 @@ router.get('/admin', checkAuth, (req, res , next) =>{
 
 router.post('/adduser', checkAuth, (req, res) => {
     console.log(req.userData.manID);
-    console.log(req.userData.type);
-    
-        
+    console.log(req.userData.type);        
 
     bcrypt.genSalt(6, (err, salt) => {
         if (err) {
@@ -79,7 +78,7 @@ router.post('/adduser', checkAuth, (req, res) => {
     });
 });
 
-router.delete('/deleteInfo', checkAuth, (req,res,next) =>{
+router.get('/deleteinfo', checkAuth, (req,res,next) =>{
     let manid = console.log(req.userData.manID);
     console.log(manid);
     

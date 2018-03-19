@@ -433,7 +433,7 @@ const templateSchema = mongoose.Schema({
             note: String
         }]
     }],
-})
+});
 
 
 module.exports=mongoose.model('Templates', templateSchema);
