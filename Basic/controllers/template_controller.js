@@ -8,10 +8,6 @@ router.get('/templates', function (req, res) {
     res.render('template');
 });
 
-router.post('/templates/:data', function(req, res){
-
-    console.log('Data values from the modal', req.body);
-
 
     // const newTemp = new template({
 
@@ -26,6 +22,6 @@ router.post('/templates/:data', function(req, res){
     // }).catch(err => {
     //     catchError(err);
     // });
-})
+
 
 module.exports = router;
