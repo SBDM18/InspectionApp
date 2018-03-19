@@ -4,7 +4,8 @@ const uniqueValidator = require('mongoose-unique-validator');
 
 
 const unitScheme = mongoose.Schema({
-    unit_id: mongoose.Schema.Types.ObjectId,
+    unit_id: String,
+    manager_U_id: String,
     user_U_id: String,
     type: String,
     street: String,
@@ -12,7 +13,7 @@ const unitScheme = mongoose.Schema({
     state: String,
     zip: Number,
     unitNumber: String,
-    storiesNumber: String,
+    storiesNumber: Number,
     bedroomTotal: Number,
     bathroomTotal: Number,
     yard: String,

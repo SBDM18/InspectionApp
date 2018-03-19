@@ -1,10 +1,12 @@
 var express = require('express');
 var router = express.Router();
 var mongoose = require('mongoose');
+const checkAuth = require('../auth/check-auth.js');
+
 
 var template = require('../models/template.js');
 
-router.get('/templates', function (req, res) {
+router.get('/templates',  function (req, res) {
     res.render('template');
 });
 

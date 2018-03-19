@@ -38,11 +38,4 @@ const regSchema = mongoose.Schema({
 
 
 
-// regSchema.methods.generateHash = function(password){
-//       return bcrypt.hashSync(password, bcrypt.genSaltSync(9));
-// };
-// regSchema.methods.validPassword = function(password){
-//       return bcrypt.compareSync(password, this.password)
-// };
-
 module.exports = mongoose.model('Users', regSchema);
