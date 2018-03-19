@@ -17,8 +17,7 @@ router.get('/', function(req,res){
 });
 
 router.post('/register', (req,res) => {
-    console.log(req.body);
-    
+    console.log(req.body);    
     
     bcrypt.genSalt(6, (err,salt) =>{
         if(err){
@@ -68,12 +67,12 @@ router.post('/register', (req,res) => {
 
 //Route to home page from login. Sends user JWT back to client to use for authentication
 router.post('/login', (req,res,next) => {
-    console.log(req.body.userpass);
+    let name = req.body.username;
+    console.log(name);    
     
-    newManager.findOne({ username: req.body.username}).exec().then(user => {
-        console.log(user);
-        console.log("Password from database", user.password);
-        console.log("password inptted in", req.body.userpass);
+    newManager.findOne({ username: name}).exec().then(user => {
+         console.log( user.password);
+         console.log("password inptted in", req.body.userpass);
         if(user.length < 1){
             return res.status(401).json({
                 message: 'Auth failed'
@@ -88,18 +87,24 @@ router.post('/login', (req,res,next) => {
             if(result){
                const token = jwt.sign({
                     email: user.email,
-                    userId: user.user_U_id
+                    manID: user.manager_U_id,
+                    uID: user.user_U_id,
+                    type: user.type,
+                    username: user.username
                 }, process.env.JWT_Key,
                 //define the options
                 {
-                    expiresIn: "1h"
+                    expiresIn: "4h"
                 }
                 );
-
+                console.log("token created");
+                
                 return res.status(200).json({
                     message: 'Auth successful',
-                    token: token
+                    token: token,
+                    authTok: user.user_U_id
                 });
+                // window.location('/home');
             }
             res.status(401).json({
                 message: 'Auth failed'
