@@ -133,6 +133,7 @@ $('#loginBtn').on("click", function(event){
         console.log(localStorage.getItem("auth"));    
         console.log(localStorage.getItem("token"));
         window.location = '/home';
+        //create sweet alert that when click ok sends to home page
         
     });
     // $(".containerFront").hide();//hide the login page and show the home page
@@ -166,7 +167,8 @@ $("#regBtn").on("click", function(event){
         swal("Thank you for registering with Insightful Inspection. Please login ");
         console.log("information sent to server for registration");
         console.log(res);
-        window.location = '/admin';
+        // window.location = '/admin';
+        //create sweet alert when press ok sends you to admin page
         // res.render('/admin');        
     });
     $("#myRegModal").hide();

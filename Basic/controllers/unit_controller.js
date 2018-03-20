@@ -1,18 +1,15 @@
 const express = require('express');
 const router = express.Router();
 const mongoose = require('mongoose');
+const expressValidator = require('express-validator');
+const cryptoRanString = require('crypto-random-string');
 const checkAuth = require('../auth/check-auth.js');
 
-const cryptoRanString = require('crypto-random-string');
 
 const Unit = require('../models/addUnit.js');
 
 //Route to unit page
-<<<<<<< HEAD
 router.get('/units',  function (req, res) {
-=======
-router.get('/units', function (req, res) {
->>>>>>> cc3979ec79d009d13b3d52afbaeb3e02e3055468
 
     Unit.find().where({ manager_U_id: "123456" }).exec().then(doc =>{
         var cityObj ={

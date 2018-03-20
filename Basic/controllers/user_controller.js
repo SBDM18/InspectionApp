@@ -1,13 +1,14 @@
 const express = require('express');
-const router = express.Router();
 const mongoose = require('mongoose');
 const bcrypt = require('bcrypt-nodejs');
 const cryptoRanString = require('crypto-random-string');
+const { check, validationResult } = require('express-validator/check');
 const jwt = require('jsonwebtoken');
+const passport = require('passport');
 
 const newManager = require('../models/user.js');
 
-
+const router = express.Router();
 
 
 
@@ -15,9 +16,9 @@ const newManager = require('../models/user.js');
 router.get('/', function(req,res){
     res.render("index");
 });
-
+//add express validation later to login and registration... can also use this for adding units as well
 router.post('/register', (req,res) => {
-    console.log(req.body);    
+    console.log(req.body); 
     
     bcrypt.genSalt(6, (err,salt) =>{
         if(err){
@@ -67,6 +68,7 @@ router.post('/register', (req,res) => {
 
 //Route to home page from login. Sends user JWT back to client to use for authentication
 router.post('/login', (req,res,next) => {
+ 
     let name = req.body.username;
     console.log(name);    
     
@@ -98,13 +100,20 @@ router.post('/login', (req,res,next) => {
                 }
                 );
                 console.log("token created");
-                createCookie("auth", token, 5);
+                console.log(token);  
+                const man_id = user.manager_U_id;
+                console.log(man_id);
+                
+                req.login(man_id, (err)=>{
+                    
+                });             
+
                 return res.status(200).json({
                     message: 'Auth successful',
                     token: token,
                     authTok: user.user_U_id
                 });
-                // window.location('/home');
+               
             }
             res.status(401).json({
                 message: 'Auth failed'
@@ -113,6 +122,13 @@ router.post('/login', (req,res,next) => {
     }).catch(err =>{
         catchError(err);
     });
+});
+
+passport.serializeUser((token,done)=>{
+    done(null,man_id);
+});
+passport.deserializeUser((token,done)=>{
+    done(null,man_id);
 });
  
 function createCookie(name,value,days){
