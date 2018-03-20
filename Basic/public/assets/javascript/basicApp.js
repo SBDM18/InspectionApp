@@ -118,7 +118,7 @@ $('#loginBtn').on("click", function(event){
     event.preventDefault();
     let newReg ={
         userpass: $(".password").val(),
-        username: $(".username").val()       
+        username: $(".username").val()    
     };
     
     console.log( newReg);
@@ -126,8 +126,7 @@ $('#loginBtn').on("click", function(event){
         type: "POST",
         data: newReg
     }).done((res,err) => {
-        console.log(err);
-        
+        console.log(err);       
         localStorage.setItem("token" , res.token);
         localStorage.setItem("auth" , res.authTok);
         console.log(res.authTok);    
@@ -143,7 +142,7 @@ $('#loginBtn').on("click", function(event){
 });
 
 
-//retrieves data from the register modal
+//retrieves data from the register modal, creates a new registered manager
 $("#regBtn").on("click", function(event){
     event.preventDefault();
     let newReg ={
@@ -173,6 +172,7 @@ $("#regBtn").on("click", function(event){
     // redirect to home page (possibly admin page since they will be a user)
  
 });
+//Creates a new unit
 $("#createUnit").on("click", event =>{    
     event.preventDefault();
     let newUnit ={
@@ -203,7 +203,7 @@ $("#createUnit").on("click", event =>{
     });
    
 });
-
+//Create new user underneath the respective manager that is logged in
 $("#createUser").on("click", event => {
     event.preventDefault();
     let newReg = {
@@ -230,15 +230,8 @@ $("#createUser").on("click", event => {
     });
     $("#addUserModal").hide();
 });
-$(".delUser").on("click", ()=>{
-    $.ajax("/deleteInfo",{
-        type:"GET",
-        headers: {"Authorization": localStorage.getItem("token")}
-    }).then(res =>{
-        console.log(res);
-        
-    });
-});
+
+//Admin delete button click takes email value and searches db than deletes said user
 $("#delete").on("click", event =>{
     let value = {
         email: $("#delUserEm").val()
@@ -250,10 +243,10 @@ $("#delete").on("click", event =>{
         headers: { "Authorization": localStorage.getItem("token") }
     }).then(res =>{
         swal("You successfully deleted a User ");
-        console.log(res);        
     });    
     $("#deleteModal").hide();
 });
+//Admin edit button click grabs data to edit user
 $("#edit").on("click", event =>{
     let edit = {
         firstName: $("#firstNAMe").val(),
@@ -274,61 +267,26 @@ $("#edit").on("click", event =>{
     });
     $("#editModal").hide();
 });
+//Button click for city folders to display data with respective data-id="city"
+$(document).on("click",".city", () =>{
+    let cityClick = {
+        uniqueCity: $(this).data("city")
+    };
+    console.log(cityClick);
+    let auth = localStorage.getItem("auth");
 
-//Click events for navigation bar
-$(document).on("click", ".overview", () => {
-    $.ajax("/home", {
+    $.ajax("/units/"+auth+"/unitlist", {
         type: "GET",
-        data: JSON,
+        data: cityClick,
         headers: { "Authorization": localStorage.getItem("token") }
     }).then(res => {
-        console.log("get request worked");
+        console.log("grabbed data from specific city");
+        $(".dash-main").empty();
+        unitDashList();
     });
-});
-$(document).on("click", ".units", ()=>{
-    console.log("button");    
-    $.ajax("/units",{
-        type:"GET",
-        data:JSON,
-        headers: { "Authorization": localStorage.getItem("token") }
-    }).then(res =>{
-        console.log("get request worked");        
-    });
-});
-$(document).on("click", ".inspection", () => {
-    $.ajax("/inspection", {
-        type: "GET",
-        data: JSON,
-    }).then(res => {
-        window.on = "/inspection/" +localStorage.getItem("auth");
-    });
-});
-$(document).on("click", ".template", () => {
-    $.ajax("/templates", {
-        type: "GET",
-        data: JSON,
-        headers: { "Authorization": localStorage.getItem("token") }
-    }).then(res => {
-        console.log("get request worked");
-    });
-});
-$(document).on("click", ".units", () => {
-    $.ajax("/reports", {
-        type: "GET",
-        data: JSON,
-        headers: { "Authorization": localStorage.getItem("token") }
-    }).then(res => {
-        console.log("get request worked");
-    });
-});
-$(document).on("click", ".report", () => {
-    $.ajax("/admin", {
-        type: "GET",
-        data: JSON,
-        headers: { "Authorization": localStorage.getItem("token") }
-    }).then(res => {
-        console.log("get request worked");
-    });
+
+    // create route to grab data from server which checked database for the city and brought back the units that are within that specific city folder
+
 });
 
 

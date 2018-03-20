@@ -14,8 +14,21 @@ router.get('/units/:authTok', (req, res) =>{
     
 
     Unit.find().where({ manager_U_id: user }).exec().then(doc =>{
+        var citiesFiltered = doc.reduce((accumalator, current) => {
+            if (checkIfAlreadyExist(current)) {
+                return accumalator;
+            } else {
+                return [...accumalator, current];
+            }
+            function checkIfAlreadyExist(currentVal) {
+                return accumalator.some((item) => {
+                    return (item.city === currentVal.city)
+                });
+            }
+        }, []);
+
         var cityObj ={
-            cities: doc,
+            cities: citiesFiltered,
             route: user
         };     
         console.log(cityObj);
@@ -28,9 +41,14 @@ router.get('/units/:authTok', (req, res) =>{
 });
 router.get('/units/:authTok/unitlist', (req,res) =>{
     const user = req.params.authTok;
+    const u_city = req.body.uniqueCity;
+    console.log(user);
+    
+    console.log(u_city);
+    
    
     
-    Unit.find().where({manager_U_id: `${user}`, city: "San Diego"}).exec().then(doc =>{
+    Unit.find().where({manager_U_id: user, city: "La Jolla"}).exec().then(doc =>{
         let listObj ={
             units: doc,
             route: user

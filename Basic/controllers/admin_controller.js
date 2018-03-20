@@ -7,10 +7,8 @@ const checkAuth = require('../auth/check-auth.js');
 
 const User = require('../models/user.js');
 
-router.get('/admin/:authTok', (req, res , next) =>{
-    const user = req.params.authTok;
-    //  console.log(req.userData.manID);
-     
+router.get('/admin', (req, res , next) =>{
+    const user = req.params.authTok;     
 
      User.find().where({
          manager_U_id: "013c1b5521"
@@ -49,8 +47,7 @@ router.post('/adduser', checkAuth, (req, res) => {
                         error: err
                     });
                 } else {
-                    const user_ID = cryptoRanString(10);
-                    const man_ID = cryptoRanString(10);
+                    const user_ID = cryptoRanString(6);
                     const newUser = new User({
                         type: "User",
                         manager_U_id: req.userData.manID,
@@ -77,24 +74,6 @@ router.post('/adduser', checkAuth, (req, res) => {
             });
         }
     });
-});
-
-router.get('/deleteinfo', checkAuth, (req,res,next) =>{
-    let manid = console.log(req.userData.manID);
-    console.log(manid);
-    
-    User.find().where({manager_U_id: manid}).exec().then(doc =>{
-        let userList = {
-            users: doc
-        };
-        console.log(userList);
-
-        res.render('admin',userList);
-
-    }).catch(err =>{
-        catchError(err);
-    });
-    
 });
 
 router.delete('/delete', checkAuth, (req,res,next) =>{
