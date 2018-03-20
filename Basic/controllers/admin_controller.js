@@ -19,8 +19,7 @@ router.get('/admin', (req, res , next) =>{
           let userList = {
              users: doc
           };         
-          console.log(userList);
-          
+          console.log(userList);          
 
          res.render('admin', userList);
 
