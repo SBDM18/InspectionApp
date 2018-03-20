@@ -130,9 +130,9 @@ $('#loginBtn').on("click", function(event){
         
         localStorage.setItem("token" , res.token);
         localStorage.setItem("auth" , res.authTok);
-        console.log(localStorage.getItem("auth"));    
-        console.log(localStorage.getItem("token"));
-        window.location = '/home';
+        console.log(res.authTok);    
+        console.log(res.token);
+         window.location = '/home/' + localStorage.getItem("auth");
         
     });
     // $(".containerFront").hide();//hide the login page and show the home page
@@ -299,9 +299,8 @@ $(document).on("click", ".inspection", () => {
     $.ajax("/inspection", {
         type: "GET",
         data: JSON,
-        headers: { "Authorization": localStorage.getItem("token") }
     }).then(res => {
-        console.log("get request worked");
+        window.on = "/inspection/" +localStorage.getItem("auth");
     });
 });
 $(document).on("click", ".template", () => {

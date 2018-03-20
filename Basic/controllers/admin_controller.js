@@ -7,7 +7,8 @@ const checkAuth = require('../auth/check-auth.js');
 
 const User = require('../models/user.js');
 
-router.get('/admin', (req, res , next) =>{
+router.get('/admin/:authTok', (req, res , next) =>{
+    const user = req.params.authTok;
     //  console.log(req.userData.manID);
      
 
@@ -22,7 +23,7 @@ router.get('/admin', (req, res , next) =>{
           console.log(userList);
           
 
-         res.render('admin', userList);
+         res.render('admin', { route: user, userList});
 
      }).catch(err => {
          catchError(err);

@@ -6,8 +6,9 @@ const checkAuth = require('../auth/check-auth.js');
 
 var template = require('../models/template.js');
 
-router.get('/templates',  function (req, res) {
-    res.render('template');
+router.get('/templates/:authTok',  function (req, res) {
+    const user = req.params.authTok;
+        res.render('template', { route: user });
 });
 
 router.post('/templates/:data', function(req, res){
