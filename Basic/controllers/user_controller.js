@@ -70,9 +70,14 @@ router.post('/login', (req,res,next) => {
     console.log(name);    
     
     newManager.findOne({ username: name}).exec().then(user => {
+        if(user == null){
+            console.log("User does not exist");            
+        }
          console.log( user.password);
          console.log("password inptted in", req.body.userpass);
         if(user.length < 1){
+            console.log("User is invalid");
+            
             return res.status(401).json({
                 message: 'Auth failed'
             });           

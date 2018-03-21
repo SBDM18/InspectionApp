@@ -42,11 +42,8 @@ router.get('/units/:authTok', (req, res) =>{
 router.get('/units/:authTok/unitlist', (req,res) =>{
     const user = req.params.authTok;
     const u_city = req.body.uniqueCity;
-    console.log(user);
-    
-    console.log(u_city);
-    
-   
+    console.log(user);    
+    console.log(u_city);   
     
     Unit.find().where({manager_U_id: user, city: "La Jolla"}).exec().then(doc =>{
         let listObj ={

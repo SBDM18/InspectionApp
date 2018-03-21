@@ -333,3 +333,18 @@ button:hover {
         opacity: 1;
     }
 }
+/*testing form validation*/
+/* form input[type="text"]:valid,
+form input[type="email"]:valid,
+form input[type="password"]:valid {
+    background: url(../images/checkmark.png);
+    background-size: 20px;
+    background-repeat: no-repeat;
+    background-position: 20px 80px;
+}
+
+form input[type="text"]:valid+label,
+form input[type="email"]:valid+label,
+form input[type="password"]:valid+label {
+    opacity: 0;
+} */
