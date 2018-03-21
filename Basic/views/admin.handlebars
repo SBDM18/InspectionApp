@@ -12,7 +12,7 @@
                   <div class="link-name letter-color" style="display:none">Overview</div>
                </a>
                <a class="nav-links units" href="/units">
-                  <img src="./assets/images/home_icon.png" alt="Home" class="nav-icon">
+                  <img src="./assets/images/home_icon.png" alt="Units" class="nav-icon">
                   <div class="link-name letter-color" style="display:none">Units</div>
                </a>
                <a class="nav-links inspection" href="/inspection">
@@ -41,7 +41,7 @@
         <div class="row">
               <div class="col-sm-1"></div>
               <div class="col-sm-3">
-                <button class="addUser adminBtn"><h3>Add User</h3></button>
+                <button class="addUser adminBtn" href="#addUserModal"><h3>Add User</h3></button>
               </div>
               <div class="col-sm-3"></div>
               <div class="col-sm-5"><h3>Upcoming Inspections</h3></div>
@@ -49,7 +49,7 @@
         <div class="row">
               <div class="col-sm-1"></div>
               <div class="col-sm-3">
-                <button class="delUser adminBtn"><h3>Delete User</h3></button>
+                <button class="delUser adminBtn" href="#deleteModal"><h3>Delete User</h3></button>
               </div>
               <div class="col-sm-3"></div>
               <div class="col-sm-5"><h3>Completed Inspections</h3></div>
@@ -57,7 +57,7 @@
         <div class="row">
               <div class="col-sm-1"></div>
               <div class="col-sm-3">
-                <button class="editUser adminBtn"><h3>Edit User</h3></button>
+                <button class="editUser adminBtn" href="#editModal"><h3>Edit User</h3></button>
               </div>
               <div class="col-sm-3"></div>
               <div class="col-sm-5"><h3>Incomplete Inspections</h3></div>
@@ -74,8 +74,129 @@
                 <h1>Billing Information</h1>
 
               </div>
+        </div>  
+
+        <div id="editModal" class="popupContainerReg"  style="display:none;">
+          <div class="modal-content">
+            <form class="login100-form validate-form">
+              <span class="login100-form-logo">
+                <i class="zdmi zmdi-landscape">Logo</i>
+              </span>
+              <span class="login100-form-title ">Register</span>
+              <div class="firstnLast">
+                <div class="wrap-input100 FL validate-input" data-validate="Enter First Name">
+                  <input type="text" class="input100" id="firstName" name="firstname" placeholder="First Name">
+                  <span class="focus-input100"></span>
+                </div>
+                <div class="wrap-input100 FL ln validate-input" data-validate="Enter Last Name">
+                  <input type="text" class="input100" id="lastName" name="lastname" placeholder="Last Name">
+                  <span class="focus-input100" data-placeholder="&#xf007;"></span>
+                </div>
+              </div>
+              <div class="firstnLast">
+                <div class="wrap-input100 FL validate-input" data-validate="Enter username">
+                  <input type="text" class="input100" id="userNameReg" name="username" placeholder="Username">
+                  <span class="focus-input100" data-placeholder="&#xf007;"></span>
+                </div>
+                <div class="wrap-input100 FL ln validate-input" data-validate="Enter password">
+                  <input type="password" class="input100" id="passWordReg" name="password" placeholder="Password">
+                  <span class="focus-input100" data-placeholder="&#xf007;"></span>
+                </div>
+              </div>
+              <div class="wrap-input100 validate-input" data-validate="Enter Company Name">
+                <input type="text" class="input100" id="companyName" name="username" placeholder="Company Name">
+                <span class="focus-input100" data-placeholder="&#xf007;"></span>
+              </div>
+              <div class="firstnLast">
+                <div class="wrap-input100 FL validate-input" data-validate="Enter Email">
+                  <input type="email" class="input100" id="email" name="email" placeholder="Email">
+                  <span class="focus-input100" data-placeholder="&#xf007;"></span>
+                </div>
+                <div class="wrap-input100 FL ln validate-input" data-validate="Enter Phone Number">
+                  <input type="phone" class="input100" id="phoneNum" name="phoneNumber" placeholder="Phone Number">
+                  <span class="focus-input100" data-placeholder="&#xf007;"></span>
+                </div>
+              </div>
+              <div class="container-login100-form-btn">
+                <a id="edit" class="login100-form-btn close" href="/editUser">Submit</a>
+              </div>
+            </form>
+          </div>
         </div>
 
+        <div id="addUserModal" class="popupContainerAdd" style="display:none;">
+          <div class="modal-content">
+            <form class="login100-form validate-form">
+              <span class="login100-form-logo">
+                <i class="zdmi zmdi-landscape">Logo</i>
+              </span>
+              <span class="login100-form-title ">Add New User</span>
+              <div class="firstnLast">
+                <div class="wrap-input100 FL validate-input" data-validate="Enter First Name">
+                  <input type="text" class="input100" id="firstNAme" name="firstname" placeholder="First Name">
+                  <span class="focus-input100"></span>
+                </div>
+                <div class="wrap-input100 FL ln validate-input" data-validate="Enter Last Name">
+                  <input type="text" class="input100" id="lastNAme" name="lastname" placeholder="Last Name">
+                  <span class="focus-input100" data-placeholder="&#xf007;"></span>
+                </div>
+              </div>
+              <div class="firstnLast">
+                <div class="wrap-input100 FL validate-input" data-validate="Enter username">
+                  <input type="text" class="input100" id="userNAme" name="username" placeholder="Username">
+                  <span class="focus-input100" data-placeholder="&#xf007;"></span>
+                </div>
+                <div class="wrap-input100 FL ln validate-input" data-validate="Enter password">
+                  <input type="password" class="input100" id="passWOrd" name="password" placeholder="Password">
+                  <span class="focus-input100" data-placeholder="&#xf007;"></span>
+                </div>
+              </div>
+              <div class="wrap-input100 validate-input" data-validate="Enter Company Name">
+                <input type="text" class="input100" id="companyNAme" name="username" placeholder="Company Name">
+                <span class="focus-input100" data-placeholder="&#xf007;"></span>
+              </div>
+              <div class="firstnLast">
+                <div class="wrap-input100 FL validate-input" data-validate="Enter Email">
+                  <input type="email" class="input100" id="Email" name="email" placeholder="Email">
+                  <span class="focus-input100" data-placeholder="&#xf007;"></span>
+                </div>
+                <div class="wrap-input100 FL ln validate-input" data-validate="Enter Phone Number">
+                  <input type="phone" class="input100" id="phoneNUm" name="phoneNumber" placeholder="Phone Number">
+                  <span class="focus-input100" data-placeholder="&#xf007;"></span>
+                </div>
+              </div>
+              <div class="container-login100-form-btn">
+                <a id="createUser" class="login100-form-btn close" href="/addUser">Submit</a>
+              </div>
+            </form>
+          </div>
+        </div>
+
+
+        <div id="deleteModal" class="popupContainerAdd" style="display:none;">
+          <div class="modal-content">
+            <form class="login100-form validate-form">
+              <span class="login100-form-logo">
+                <i class="zdmi zmdi-landscape">Logo</i>
+              </span>
+              <span class="login100-form-title ">Delete a User</span>
+              <h1>List of users</h1>
+              <table id="deleteTable">
+                <thead><tr><th scope="col">headers for uuser table</th></tr></thead>
+                <tbody><tr><td>repeatable table with user information under the respective manager id</td></tr></tbody>
+              </table>
+              <div class="firstnLast">
+                <div class="wrap-input100 FL validate-input" data-validate="Enter Email">
+                  <input type="email" class="input100" id="delUserEm" name="email" placeholder="Email of user to Delete">
+                  <span class="focus-input100" data-placeholder="&#xf007;"></span>
+                </div>
+              </div>
+              <div class="container-login100-form-btn">
+                <a id="delete" class="login100-form-btn close" >Submit</a>
+              </div>
+            </form>
+          </div>
+        </div>
 
         {{!-- have to decide and style up what we would like for the admin page.... will discuss this with shun on friday --}}
       </div>
