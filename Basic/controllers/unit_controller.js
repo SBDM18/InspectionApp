@@ -8,28 +8,47 @@ const cryptoRanString = require('crypto-random-string');
 const Unit = require('../models/addUnit.js');
 
 //Route to unit page
-<<<<<<< HEAD
-router.get('/units',  function (req, res) {
-=======
-router.get('/units', function (req, res) {
->>>>>>> cc3979ec79d009d13b3d52afbaeb3e02e3055468
+router.get('/units/:authTok', (req, res) =>{
+    const user = req.params.authTok;
+    console.log(user);
+    
 
-    Unit.find().where({ manager_U_id: "123456" }).exec().then(doc =>{
+    Unit.find().where({ manager_U_id: user }).exec().then(doc =>{
+        var citiesFiltered = doc.reduce((accumalator, current) => {
+            if (checkIfAlreadyExist(current)) {
+                return accumalator;
+            } else {
+                return [...accumalator, current];
+            }
+            function checkIfAlreadyExist(currentVal) {
+                return accumalator.some((item) => {
+                    return (item.city === currentVal.city)
+                });
+            }
+        }, []);
+
         var cityObj ={
-            cities: doc
+            cities: citiesFiltered,
+            route: user
         };     
-        res.render("units", cityObj);
+        console.log(cityObj);
+        
+        res.render("units",  cityObj );
     }).catch((err)=>{
         res.json(err);
     });    
     // res.render("units");
 });
-router.get('/units/unitlist', (req,res) =>{
-   
+router.get('/units/:authTok/unitlist', (req,res) =>{
+    const user = req.params.authTok;
+    const u_city = req.body.uniqueCity;
+    console.log(user);    
+    console.log(u_city);   
     
-    Unit.find().where({manager_U_id:"123456", city: "San Diego"}).exec().then(doc =>{
+    Unit.find().where({manager_U_id: user, city: "La Jolla"}).exec().then(doc =>{
         let listObj ={
-            units: doc
+            units: doc,
+            route: user
         };
         console.log(listObj);
         

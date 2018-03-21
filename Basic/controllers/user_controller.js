@@ -25,8 +25,7 @@ router.post('/register', (req,res) => {
                 error:err
             });
         }else{
-            // console.log(req.body.password);
-            
+            // console.log(req.body.password);            
             bcrypt.hash(req.body.password, salt, null, (err, hash) => {
                 console.log("bcrypt has hashed password");
                 
@@ -71,9 +70,14 @@ router.post('/login', (req,res,next) => {
     console.log(name);    
     
     newManager.findOne({ username: name}).exec().then(user => {
+        if(user == null){
+            console.log("User does not exist");            
+        }
          console.log( user.password);
          console.log("password inptted in", req.body.userpass);
         if(user.length < 1){
+            console.log("User is invalid");
+            
             return res.status(401).json({
                 message: 'Auth failed'
             });           
@@ -97,12 +101,11 @@ router.post('/login', (req,res,next) => {
                     expiresIn: "4h"
                 }
                 );
-                console.log("token created");
-                createCookie("auth", token, 5);
+                console.log("token created");               
                 return res.status(200).json({
                     message: 'Auth successful',
                     token: token,
-                    authTok: user.user_U_id
+                    authTok: user.manager_U_id
                 });
                 // window.location('/home');
             }
@@ -114,30 +117,12 @@ router.post('/login', (req,res,next) => {
         catchError(err);
     });
 });
- 
-function createCookie(name,value,days){
-    if(days){
-        var date = new Date();
-        date.setTime(date.getTime()+(days*24*60*60*1000));
-        var expires = "; expires ="+date.toGMTString();
-    }else{
-        var expires = "";
-        document.cookie = name+"="+value+expires+"; path =/";
-    }
-}
-function readCookie(name){
-    var nameEQ = name + "=";
-    var ca = document.cookie.split(';');
-    for(var i = 0; i < ca.length; i++){
-        var c = ca[i];
-        while (c.charAt(0)==' ') c = c.substring(1,c.length);
-        if(c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
-    }
-    return null
-}
-function eraseCookie(name){
-    createCookie(name,"",-1);
-}
+
+//Route to logout.
+router.post('/logout', function (req, res) {
+    res.json({});
+})
+
 function catchError(err){
     console.log(err);
     res.status(500).json({
