@@ -63,6 +63,8 @@ $(".addTemplate").leanModal({
     closeButton: ".close"
 });
 
+// var tempBtns = [];
+
 $(document).on('click', '.temp-btn', function () {
     console.log('Hitting this...');
     
@@ -72,8 +74,41 @@ $(document).on('click', '.temp-btn', function () {
     } else {
         $(this).css({ 'background-color': '#656aff' })
         $(this).addClass('selected');
+        // tempBtns.push($(this).text());
     }
+
+    // console.log(tempBtns);
+    
 });
+
+$(document).on('click', '#tempSubBtn', function(){
+    let newTemp = {
+        title: $('#temp-title').val(),
+        entry: $('#entryToggle').hasClass('selected'),
+        numentries: $('#entry-num').val() ? $('#entry-num').val() : 0,
+        bedroom: $('#bedroomToggle').hasClass('selected'),
+        numbed: $('#bed-num').val() ? $('#bed-num').val() : 0,
+        bathroom: $('#bathroomToggle').hasClass('selected'),
+        numbath: $('#bath-num').val() ? $('#bath-num').val() : 0,
+        halls: $('#hallsToggle').hasClass('selected'),
+        numhalls: $('#hall-num').val() ? $('#hall-num').val() : 0,
+        stairs: $('#stairsToggle').hasClass('selected'),
+        numstairs: $('#stair-num').val() ? $('#stair-num').val() : 0,
+        kitchen: $('#kitchenToggle').hasClass('selected'),
+        numkitchen: $('#kitchen-num').val() ? $('#kitchen-num').val() : 0,
+        livingroom: $('#livingroomToggle').hasClass('selected'),
+        numlr: $('#lr-num').val() ? $('#lr-num').val() : 0
+    }
+    console.log(newTemp);
+    $.ajax("/templates", {
+        type: "POST",
+        data: newTemp
+    }).done((res, err) => {
+        err ? console.log(err) : console.log('No error');
+        window.location = '/templates';
+    });
+    
+})
 
 //on submission get values and show what the req body is posting
 $(document).on('click', '#tempSubBtn', function(){

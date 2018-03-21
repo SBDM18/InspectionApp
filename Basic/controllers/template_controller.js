@@ -6,9 +6,18 @@ const checkAuth = require('../auth/check-auth.js');
 
 var template = require('../models/template.js');
 
-router.get('/templates', checkAuth, function (req, res) {
+router.get('/templates', /*checkAuth,*/ function (req, res) {
     res.render('template');
 });
+
+
+router.post('/templates', function(req, res){
+
+    console.log("This is the req.body");
+    
+    console.log(req.body);
+    
+})
 
 
     // const newTemp = new template({
