@@ -284,9 +284,24 @@ $(document).on("click",".city", () =>{
         $(".dash-main").empty();
         unitDashList();
     });
-
     // create route to grab data from server which checked database for the city and brought back the units that are within that specific city folder
+});
 
+$(document).on("click", ".backBtn", () =>{
+    console.log("Working");
+    
+});
+$(document).on("click", ".logOut", ()=>{
+    console.log("Working");
+    var empty = {};
+
+    $.ajax("/logout", {
+        type: "POST",
+        data: empty
+    }).then(res => {
+        localStorage.clear();
+        window.location = '/';
+    });    
 });
 
 

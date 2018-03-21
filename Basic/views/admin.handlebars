@@ -3,7 +3,7 @@
       <div class="col-sm-2 letter-color background">
          <div class="row nav-section">
             <div class="col-sm-12 logo">
-               Header - Our Company Name
+              <img src="../../assets/images/logo.png" width="150" height="100" alt="Logo">
             </div>
             <div class="col-sm-12 nav-content">
 
@@ -35,13 +35,20 @@
       </div>
       <div class="col-sm-10 main">
         <div class="row adminT">
-              <div class="col-sm-2"></div>
-              <div class="col-sm-10"><h1 id="adminTitle">Manager(username) Admin Page </h1></div>
+              <div class="col-sm-2">
+                <div style="color: Blue; margin-top:15px; margin-bottom:15px;" class="backBtn">
+                  <i class="fas fa-caret-square-left fa-4x"></i>
+                </div>
+              </div>
+              <div class="col-sm-8"><h1 id="adminTitle">Manager(username) Admin Page </h1></div>
+              <div class="col-sm-2 logOut" style="margin-bottom:15px;">
+                <i class="fas fa-sign-out-alt fa-4x"></i>
+              </div>
         </div>
         <div class="row">
               <div class="col-sm-1"></div>
               <div class="col-sm-3">
-                <button class="addUser login100-form-btn" href="#addUserModal"><h3>Add User</h3></button>
+                <button class="addUser login100-form-btn adminBtn" href="#addUserModal"><h3>Add User</h3></button>
               </div>
               <div class="col-sm-3"></div>
               <div class="col-sm-5"><h3>Upcoming Inspections</h3></div>
@@ -49,7 +56,7 @@
         <div class="row">
               <div class="col-sm-1"></div>
               <div class="col-sm-3">
-                <button class="delUser login100-form-btn" href="#deleteModal"><h3>Delete User</h3></button>
+                <button class="delUser login100-form-btn adminBtn" href="#deleteModal"><h3>Delete User</h3></button>
               </div>
               <div class="col-sm-3"></div>
               <div class="col-sm-5"><h3>Completed Inspections</h3></div>
@@ -57,7 +64,7 @@
         <div class="row">
               <div class="col-sm-1"></div>
               <div class="col-sm-3">
-                <button class="editUser login100-form-btn" href="#editModal"><h3>Edit User</h3></button>
+                <button class="editUser login100-form-btn adminBtn" href="#editModal"><h3>Edit User</h3></button>
               </div>
               <div class="col-sm-3"></div>
               <div class="col-sm-5"><h3>Incomplete Inspections</h3></div>
@@ -80,7 +87,7 @@
           <div class="modal-content">
             <form class="login100-form validate-form">
               <span class="login100-form-logo">
-                <i class="zdmi zmdi-landscape">Logo</i>
+                <i class="zdmi zmdi-landscape"><img src="../../assets/images/logo.png" width="130" height="100" alt="Logo"></i>
               </span>
               <span class="login100-form-title ">Edit User</span>
               <div class="firstnLast">
@@ -90,31 +97,31 @@
                 </div>
                 <div class="wrap-input100 FL ln validate-input" data-validate="Enter Last Name">
                   <input type="text" class="input100" id="lastName" name="lastname" placeholder="Last Name">
-                  <span class="focus-input100" data-placeholder="&#xf007;"></span>
+                  <span class="focus-input100" ></span>
                 </div>
               </div>
               <div class="firstnLast">
                 <div class="wrap-input100 FL validate-input" data-validate="Enter username">
                   <input type="text" class="input100" id="userNameReg" name="username" placeholder="Username">
-                  <span class="focus-input100" data-placeholder="&#xf007;"></span>
+                  <span class="focus-input100" ></span>
                 </div>
                 <div class="wrap-input100 FL ln validate-input" data-validate="Enter password">
                   <input type="password" class="input100" id="passWordReg" name="password" placeholder="Password">
-                  <span class="focus-input100" data-placeholder="&#xf007;"></span>
+                  <span class="focus-input100" ></span>
                 </div>
               </div>
               <div class="wrap-input100 validate-input" data-validate="Enter Company Name">
                 <input type="text" class="input100" id="companyName" name="username" placeholder="Company Name">
-                <span class="focus-input100" data-placeholder="&#xf007;"></span>
+                <span class="focus-input100" ></span>
               </div>
               <div class="firstnLast">
                 <div class="wrap-input100 FL validate-input" data-validate="Enter Email">
                   <input type="email" class="input100" id="email" name="email" placeholder="Email">
-                  <span class="focus-input100" data-placeholder="&#xf007;"></span>
+                  <span class="focus-input100" ></span>
                 </div>
                 <div class="wrap-input100 FL ln validate-input" data-validate="Enter Phone Number">
                   <input type="phone" class="input100" id="phoneNum" name="phoneNumber" placeholder="Phone Number">
-                  <span class="focus-input100" data-placeholder="&#xf007;"></span>
+                  <span class="focus-input100" ></span>
                 </div>
               </div>
               <div class="container-login100-form-btn">
@@ -128,7 +135,7 @@
           <div class="modal-content">
             <form class="login100-form validate-form">
               <span class="login100-form-logo">
-                <i class="zdmi zmdi-landscape">Logo</i>
+                <i class="zdmi zmdi-landscape"><img src="../../assets/images/logo.png" width="130" height="100" alt="Logo"></i>
               </span>
               <span class="login100-form-title ">Add New User</span>
               <div class="firstnLast">
@@ -138,31 +145,31 @@
                 </div>
                 <div class="wrap-input100 FL ln validate-input" data-validate="Enter Last Name">
                   <input type="text" class="input100" id="lastNAme" name="lastname" placeholder="Last Name">
-                  <span class="focus-input100" data-placeholder="&#xf007;"></span>
+                  <span class="focus-input100" ></span>
                 </div>
               </div>
               <div class="firstnLast">
                 <div class="wrap-input100 FL validate-input" data-validate="Enter username">
                   <input type="text" class="input100" id="userNAme" name="username" placeholder="Username">
-                  <span class="focus-input100" data-placeholder="&#xf007;"></span>
+                  <span class="focus-input100" ></span>
                 </div>
                 <div class="wrap-input100 FL ln validate-input" data-validate="Enter password">
                   <input type="password" class="input100" id="passWOrd" name="password" placeholder="Password">
-                  <span class="focus-input100" data-placeholder="&#xf007;"></span>
+                  <span class="focus-input100" ></span>
                 </div>
               </div>
               <div class="wrap-input100 validate-input" data-validate="Enter Company Name">
                 <input type="text" class="input100" id="companyNAme" name="username" placeholder="Company Name">
-                <span class="focus-input100" data-placeholder="&#xf007;"></span>
+                <span class="focus-input100" ></span>
               </div>
               <div class="firstnLast">
                 <div class="wrap-input100 FL validate-input" data-validate="Enter Email">
                   <input type="email" class="input100" id="Email" name="email" placeholder="Email">
-                  <span class="focus-input100" data-placeholder="&#xf007;"></span>
+                  <span class="focus-input100" ></span>
                 </div>
                 <div class="wrap-input100 FL ln validate-input" data-validate="Enter Phone Number">
                   <input type="phone" class="input100" id="phoneNUm" name="phoneNumber" placeholder="Phone Number">
-                  <span class="focus-input100" data-placeholder="&#xf007;"></span>
+                  <span class="focus-input100" ></span>
                 </div>
               </div>
               <div class="container-login100-form-btn">
@@ -177,7 +184,7 @@
           <div class="modal-content">
             <form class="login100-form validate-form">
               <span class="login100-form-logo">
-                <i class="zdmi zmdi-landscape">Logo</i>
+                <i class="zdmi zmdi-landscape"><img src="../../assets/images/logo.png" width="130" height="100" alt="Logo"></i>
               </span>
               <span class="login100-form-title ">Delete a User</span>
               <h1>List of users</h1>
@@ -199,7 +206,7 @@
               <div class="firstnLast">
                 <div class="wrap-input100 FL validate-input" data-validate="Enter Email">
                   <input type="email" class="input100" id="delUserEm" name="email" placeholder="Email of user to Delete">
-                  <span class="focus-input100" data-placeholder="&#xf007;"></span>
+                  <span class="focus-input100"></span>
                 </div>
               </div>
               <div class="container-login100-form-btn">

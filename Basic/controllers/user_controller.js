@@ -112,7 +112,12 @@ router.post('/login', (req,res,next) => {
         catchError(err);
     });
 });
- 
+
+//Route to logout.
+router.post('/logout', function (req, res) {
+    res.json({});
+})
+
 function catchError(err){
     console.log(err);
     res.status(500).json({
