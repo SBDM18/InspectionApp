@@ -117,14 +117,16 @@ $('#loginBtn').on("click", function(event){
         type: "POST",
         data: newReg
     }).done((res,err) => {
-        console.log(err);       
+        console.log(err);               
         localStorage.setItem("token" , res.token);
         localStorage.setItem("auth" , res.authTok);
         console.log(res.authTok);    
         console.log(res.token);
          window.location = '/home/' + localStorage.getItem("auth");
         
-    });
+        }).fail((errorThrown)=>{
+            swal("Username or Password are invalid");
+        });
     // $(".containerFront").hide();//hide the login page and show the home page
 
     //Create an IF statement, if login is valid send to home page if not send alert saying incorrect try again
@@ -158,6 +160,8 @@ $("#regBtn").on("click", function(event){
         console.log(res);
         window.location = '/admin';
         // res.render('/admin');        
+    }).fail((errorThrown)=>{
+        swal("Error", "Registering new manager could not be completed some information was invalid");
     });
     $("#myRegModal").hide();
     // redirect to home page (possibly admin page since they will be a user)
@@ -191,6 +195,8 @@ $("#createUnit").on("click", event =>{
         console.log(res);
         swal("You successfully added a unit");
         // $("#addUnitModal").hide();             
+    }).fail((errorThrown)=>{
+        swal("Try again","There was an error adding the unit. ");
     });
    
 });
@@ -218,6 +224,8 @@ $("#createUser").on("click", event => {
         console.log(res);
         // window.location = '/admin';
         // res.render('/admin');        
+    }).fail((errorThrown)=>{
+        swal("There was an error in the information provided to create a new user");
     });
     $("#addUserModal").hide();
 });
@@ -234,7 +242,9 @@ $("#delete").on("click", event =>{
         headers: { "Authorization": localStorage.getItem("token") }
     }).then(res =>{
         swal("You successfully deleted a User ");
-    });    
+    }).fail((errorThrown)=>{
+        swal("Email entered did not match a user and no delete occured");
+    });  
     $("#deleteModal").hide();
 });
 //Admin edit button click grabs data to edit user
@@ -255,6 +265,8 @@ $("#edit").on("click", event =>{
     }).then(res =>{
         swal("You successfully edited a User");
         console.log(res);        
+    }).fail((errorThrown)=>{
+        swal("Could not edit the user that was entered");
     });
     $("#editModal").hide();
 });
@@ -355,6 +367,23 @@ $(".qtyminus").click(function (e) {
 /*==================================================================
     [ Validate ]*/
 
+
+    // function validateLogin() {
+    //     let username = $("username").val();
+    //     let password = $("password").val();
+    //     if(username == null || username == " "){
+    //         swal("Please enter a username");
+    //         return false;
+    //     }
+    //     if(password == null || password == " "){
+    //         swal("Please enter a password");
+    //         return false;
+    //     }
+    //     return true;
+    // }
+
+
+  
 
 
 // JAVASCRIPT FOR AJAX ON TEMPLATE PAGE
