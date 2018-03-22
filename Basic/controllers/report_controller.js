@@ -4,8 +4,9 @@ const mongoose = require('mongoose');
 const checkAuth = require('../auth/check-auth.js');
 
 
-router.get('/reports', checkAuth, function(req,res){
-    res.render("reports");
+router.get('/reports/:authTok',  function(req,res){
+    const user = req.params.authTok;
+    res.render("reports", { route: user } );
 });
 
 

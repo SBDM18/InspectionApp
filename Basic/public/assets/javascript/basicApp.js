@@ -153,7 +153,7 @@ $('#loginBtn').on("click", function(event){
     event.preventDefault();
     let newReg ={
         userpass: $(".password").val(),
-        username: $(".username").val()       
+        username: $(".username").val()    
     };
     
     console.log( newReg);
@@ -161,15 +161,16 @@ $('#loginBtn').on("click", function(event){
         type: "POST",
         data: newReg
     }).done((res,err) => {
-        console.log(err);
-        
+        console.log(err);               
         localStorage.setItem("token" , res.token);
         localStorage.setItem("auth" , res.authTok);
-        console.log(localStorage.getItem("auth"));    
-        console.log(localStorage.getItem("token"));
-        window.location = '/home';
+        console.log(res.authTok);    
+        console.log(res.token);
+         window.location = '/home/' + localStorage.getItem("auth");
         
-    });
+        }).fail((errorThrown)=>{
+            swal("Username or Password are invalid");
+        });
     // $(".containerFront").hide();//hide the login page and show the home page
 
     //Create an IF statement, if login is valid send to home page if not send alert saying incorrect try again
@@ -178,7 +179,7 @@ $('#loginBtn').on("click", function(event){
 });
 
 
-//retrieves data from the register modal
+//retrieves data from the register modal, creates a new registered manager
 $("#regBtn").on("click", function(event){
     event.preventDefault();
     let newReg ={
@@ -203,11 +204,14 @@ $("#regBtn").on("click", function(event){
         console.log(res);
         window.location = '/admin';
         // res.render('/admin');        
+    }).fail((errorThrown)=>{
+        swal("Error", "Registering new manager could not be completed some information was invalid");
     });
     $("#myRegModal").hide();
     // redirect to home page (possibly admin page since they will be a user)
  
 });
+//Creates a new unit
 $("#createUnit").on("click", event =>{    
     event.preventDefault();
     let newUnit ={
@@ -235,10 +239,12 @@ $("#createUnit").on("click", event =>{
         console.log(res);
         swal("You successfully added a unit");
         // $("#addUnitModal").hide();             
+    }).fail((errorThrown)=>{
+        swal("Try again","There was an error adding the unit. ");
     });
    
 });
-
+//Create new user underneath the respective manager that is logged in
 $("#createUser").on("click", event => {
     event.preventDefault();
     let newReg = {
@@ -262,18 +268,13 @@ $("#createUser").on("click", event => {
         console.log(res);
         // window.location = '/admin';
         // res.render('/admin');        
+    }).fail((errorThrown)=>{
+        swal("There was an error in the information provided to create a new user");
     });
     $("#addUserModal").hide();
 });
-$(".delUser").on("click", ()=>{
-    $.ajax("/deleteInfo",{
-        type:"GET",
-        headers: {"Authorization": localStorage.getItem("token")}
-    }).then(res =>{
-        console.log(res);
-        
-    });
-});
+
+//Admin delete button click takes email value and searches db than deletes said user
 $("#delete").on("click", event =>{
     let value = {
         email: $("#delUserEm").val()
@@ -285,10 +286,12 @@ $("#delete").on("click", event =>{
         headers: { "Authorization": localStorage.getItem("token") }
     }).then(res =>{
         swal("You successfully deleted a User ");
-        console.log(res);        
-    });    
+    }).fail((errorThrown)=>{
+        swal("Email entered did not match a user and no delete occured");
+    });  
     $("#deleteModal").hide();
 });
+//Admin edit button click grabs data to edit user
 $("#edit").on("click", event =>{
     let edit = {
         firstName: $("#firstNAMe").val(),
@@ -306,66 +309,46 @@ $("#edit").on("click", event =>{
     }).then(res =>{
         swal("You successfully edited a User");
         console.log(res);        
+    }).fail((errorThrown)=>{
+        swal("Could not edit the user that was entered");
     });
     $("#editModal").hide();
 });
+//Button click for city folders to display data with respective data-id="city"
+$(document).on("click",".city", () =>{
+    let cityClick = {
+        uniqueCity: $(this).data("city")
+    };
+    console.log(cityClick);
+    let auth = localStorage.getItem("auth");
 
-//Click events for navigation bar
-$(document).on("click", ".overview", () => {
-    $.ajax("/home", {
+    $.ajax("/units/"+auth+"/unitlist", {
         type: "GET",
-        data: JSON,
+        data: cityClick,
         headers: { "Authorization": localStorage.getItem("token") }
     }).then(res => {
-        console.log("get request worked");
+        console.log("grabbed data from specific city");
+        $(".dash-main").empty();
+        unitDashList();
     });
+    // create route to grab data from server which checked database for the city and brought back the units that are within that specific city folder
 });
-$(document).on("click", ".units", ()=>{
-    console.log("button");
+
+$(document).on("click", ".backBtn", () =>{
+    console.log("Working");
     
-    $.ajax("/units",{
-        type:"GET",
-        // data:JSON,
-        headers: { "Authorization": localStorage.getItem("token") }
-    }).then(res =>{
-        console.log("get request worked");        
-    });
 });
-$(document).on("click", ".inspection", () => {
-    $.ajax("/inspection", {
-        type: "GET",
-        data: JSON,
-        headers: { "Authorization": localStorage.getItem("token") }
+$(document).on("click", ".logOut", ()=>{
+    console.log("Working");
+    var empty = {};
+
+    $.ajax("/logout", {
+        type: "POST",
+        data: empty
     }).then(res => {
-        console.log("get request worked");
-    });
-});
-$(document).on("click", ".template", () => {
-    $.ajax("/templates", {
-        type: "GET",
-        data: JSON,
-        headers: { "Authorization": localStorage.getItem("token") }
-    }).then(res => {
-        console.log("get request worked");
-    });
-});
-$(document).on("click", ".units", () => {
-    $.ajax("/reports", {
-        type: "GET",
-        data: JSON,
-        headers: { "Authorization": localStorage.getItem("token") }
-    }).then(res => {
-        console.log("get request worked");
-    });
-});
-$(document).on("click", ".report", () => {
-    $.ajax("/admin", {
-        type: "GET",
-        data: JSON,
-        headers: { "Authorization": localStorage.getItem("token") }
-    }).then(res => {
-        console.log("get request worked");
-    });
+        localStorage.clear();
+        window.location = '/';
+    });    
 });
 
 
@@ -385,6 +368,23 @@ $(".addUnit").on('click', function(){
 /*==================================================================
     [ Validate ]*/
 
+
+    // function validateLogin() {
+    //     let username = $("username").val();
+    //     let password = $("password").val();
+    //     if(username == null || username == " "){
+    //         swal("Please enter a username");
+    //         return false;
+    //     }
+    //     if(password == null || password == " "){
+    //         swal("Please enter a password");
+    //         return false;
+    //     }
+    //     return true;
+    // }
+
+
+  
 
 
 // JAVASCRIPT FOR AJAX ON TEMPLATE PAGE
