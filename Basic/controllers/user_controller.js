@@ -108,12 +108,8 @@ router.post('/login', (req,res,next) => {
                     message: 'Auth successful',
                     token: token,
                     authTok: user.manager_U_id,
-<<<<<<< HEAD
-                    userType: user.type
-=======
                     userType: user.type,
                     userId: user.user_U_id
->>>>>>> matt
                 });
                 // window.location('/home');
             }

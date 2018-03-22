@@ -73,7 +73,7 @@ $(document).on('click', '.temp-btn', function () {
 });
 
 $(document).on('click', '#tempSubBtn', function(e){
-    e.preventDefault
+    e.preventDefault();
     let user = localStorage.getItem('type');
     let newTemp = {
         user: user,

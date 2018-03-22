@@ -50,17 +50,17 @@
                   </div>
             </div>
             <div class="row">
+                  <button class="addTemplate login100-form-btn" href="#templateModal"> Create a Template </button>
+                  <button id="login" href="#loginModal" class=" login100-form-btn ">Login</button>
+            </div>
+            <div class="row">
                   {{#each templates}}
                   <div class="city" data-city="{{title}}" style="color:#BFC1D2;">
                         <i class="fas fa-folder fa-5x"></i>
                         <p class="cityTitle">{{title}}</p>
                   </div>
                   {{/each}}
-            </div>
-            <div class="row">
-            <button class="addTemplate" href="#templateModal"> Create a Template </button>
-                  <button id="login" href="#loginModal" class=" login100-form-btn btn">Login</button>
-            </div>
+            </div>           
       </div>
 
       <div id="templateModal" class="popupContainer" style="display:none;">
