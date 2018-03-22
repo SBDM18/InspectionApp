@@ -4,18 +4,20 @@
       <thead class="thead-light">
 
          <tr>
-            <th scope="col">#</th>
             <th scope="col">Address</th>
          </tr>
       </thead>
       <tbody>
-         <tr>
-            {{#each units}}
-            <td>{{street}}</td>
-            {{/each}}
-         </tr>
+         {{#each units}}
+            <tr>            
+                <td>{{street}}<button class=" startIns" data-id="unit_id">Start Inspection</button></td>           
+            </tr>
+         {{/each}}        
       </tbody>
    </table>
+</div>
+<div class="col-sm-3">
+    <button class="addUnit button" href="#addUnitModal">Add Unit</button>
 </div>
 
 

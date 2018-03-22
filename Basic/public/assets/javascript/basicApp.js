@@ -275,13 +275,13 @@ $("#edit").on("click", event =>{
 $(document).on("click",".city", function(){
     let cityClick = $(this).data("city");
     console.log(cityClick);
+    var replaced = cityClick.split(' ').join('+');
     let auth = localStorage.getItem("auth");
     console.log(auth);
-    let route = `${auth}/${cityClick}`;
+    let route = `${auth}/${replaced}`;
     
     $.ajax("/unitlist/"+route+"", {
         type: "GET",
-        data: cityClick,
         headers: { "Authorization": localStorage.getItem("token") }
     }).then(res => {
         console.log("grabbed data from specific city");
