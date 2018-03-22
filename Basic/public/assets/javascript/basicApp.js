@@ -129,10 +129,10 @@ $('#loginBtn').on("click", function(event){
         console.log(err);               
         localStorage.setItem("token" , res.token);
         localStorage.setItem("auth" , res.authTok);
+        localStorage.setItem("type", res.userType);
         console.log(res.authTok);    
         console.log(res.token);
-         window.location = '/home/' + localStorage.getItem("auth");
-        
+         window.location = '/home/' + localStorage.getItem("auth");        
         }).fail((errorThrown)=>{
             swal("Username or Password are invalid");
         });
@@ -280,24 +280,28 @@ $("#edit").on("click", event =>{
     $("#editModal").hide();
 });
 //Button click for city folders to display data with respective data-id="city"
-$(document).on("click",".city", () =>{
-    let cityClick = {
-        uniqueCity: $(this).data("city")
-    };
+
+$(document).on("click",".city", function(){
+    let cityClick = $(this).data("city");
     console.log(cityClick);
     let auth = localStorage.getItem("auth");
-
-    $.ajax("/units/"+auth+"/unitlist", {
+    console.log(auth);
+    let route = `${auth}/${cityClick}`;
+    
+    $.ajax("/unitlist/"+route+"", {
         type: "GET",
         data: cityClick,
         headers: { "Authorization": localStorage.getItem("token") }
     }).then(res => {
         console.log("grabbed data from specific city");
-        $(".dash-main").empty();
-        unitDashList();
-    });
+        $(".dash-main").empty();         
+        $(".dash-main").append(res);       
+    }).fail((errorThrown)=>{
+        swal("Error in unit request");
+    })
     // create route to grab data from server which checked database for the city and brought back the units that are within that specific city folder
 });
+
 
 $(document).on("click", ".backBtn", () =>{
     console.log("Working");

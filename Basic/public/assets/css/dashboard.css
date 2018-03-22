@@ -216,12 +216,16 @@ html{
     position: relative;
     top: 1px;
 }
+.folder{
+    display: flex;
+}
 .addUnit{
     margin-top: 40%;    
 }
 .city{
-    margin-left: 20%;
-    margin-top: 20%;
+    margin-left: 10%;
+    margin-top: 10%;
+    flex-direction: column;
 }
 .cityTitle{
     color: #000000;

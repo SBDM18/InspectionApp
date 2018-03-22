@@ -31,7 +31,7 @@ router.get('/units/:authTok', (req, res) =>{
             cities: citiesFiltered,
             route: user
         };     
-        console.log(cityObj);
+        // console.log(cityObj);
         
         res.render("units",  cityObj );
     }).catch((err)=>{
@@ -39,20 +39,19 @@ router.get('/units/:authTok', (req, res) =>{
     });    
     // res.render("units");
 });
-router.get('/units/:authTok/unitlist', (req,res) =>{
+router.get('/unitlist/:authTok/:city', (req,res) =>{
     const user = req.params.authTok;
-    const u_city = req.body.uniqueCity;
+    const u_city = req.params.city;
     console.log(user);    
     console.log(u_city);   
     
-    Unit.find().where({manager_U_id: user, city: "La Jolla"}).exec().then(doc =>{
+    Unit.find().where({manager_U_id: user, city: u_city}).exec().then(doc =>{
         let listObj ={
             units: doc,
             route: user
         };
-        console.log(listObj);
-        
-        res.render("units", listObj );
+        console.log(listObj);        
+        res.render("unitlist", listObj );
     }).catch((err)=>{
         catchError(err);
     });

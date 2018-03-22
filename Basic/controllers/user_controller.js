@@ -70,6 +70,8 @@ router.post('/login', (req,res,next) => {
     console.log(name);    
     
     newManager.findOne({ username: name}).exec().then(user => {
+        console.log(user);
+        
         if(user == null){
             console.log("User does not exist");            
         }
@@ -105,7 +107,8 @@ router.post('/login', (req,res,next) => {
                 return res.status(200).json({
                     message: 'Auth successful',
                     token: token,
-                    authTok: user.manager_U_id
+                    authTok: user.manager_U_id,
+                    userType: user.type
                 });
                 // window.location('/home');
             }
