@@ -101,11 +101,13 @@ router.post('/login', (req,res,next) => {
                     expiresIn: "4h"
                 }
                 );
-                console.log("token created");               
+                console.log("token created");
                 return res.status(200).json({
                     message: 'Auth successful',
                     token: token,
-                    authTok: user.manager_U_id
+                    authTok: user.manager_U_id,
+                    userType: user.type,
+                    userId: user.user_U_id
                 });
                 // window.location('/home');
             }

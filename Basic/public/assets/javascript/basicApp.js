@@ -81,8 +81,11 @@ $(document).on('click', '.temp-btn', function () {
     
 });
 
-$(document).on('click', '#tempSubBtn', function(){
+$(document).on('click', '#tempSubBtn', function(e){
+    e.preventDefault
+    let user = localStorage.getItem('type');
     let newTemp = {
+        user: user,
         title: $('#temp-title').val(),
         entry: $('#entryToggle').hasClass('selected'),
         numentries: $('#entry-num').val() ? $('#entry-num').val() : 0,
@@ -99,13 +102,17 @@ $(document).on('click', '#tempSubBtn', function(){
         livingroom: $('#livingroomToggle').hasClass('selected'),
         numlr: $('#lr-num').val() ? $('#lr-num').val() : 0
     }
+
+    let auth = localStorage.getItem("auth");
+
     console.log(newTemp);
-    $.ajax("/templates", {
+    $.ajax("/templates/"+auth, {
         type: "POST",
-        data: newTemp
+        data: newTemp,
+        headers: { "Authorization": localStorage.getItem("token") }
     }).done((res, err) => {
         err ? console.log(err) : console.log('No error');
-        window.location = '/templates';
+        window.location = '/templist/'+auth;
     });
     
 })
@@ -164,6 +171,10 @@ $('#loginBtn').on("click", function(event){
         console.log(err);               
         localStorage.setItem("token" , res.token);
         localStorage.setItem("auth" , res.authTok);
+        localStorage.setItem('type', res.userType);
+        localStorage.getItem('id', res.userId)
+
+        console.log(res.userType);
         console.log(res.authTok);    
         console.log(res.token);
          window.location = '/home/' + localStorage.getItem("auth");
