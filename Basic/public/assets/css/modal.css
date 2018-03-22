@@ -270,6 +270,41 @@ button:hover {
     font-size: 14px;
     font-weight: 200;
 }
+.qty {
+    width: 40px;
+    height: 25px;
+    text-align: center;
+}
+.qtyminus{
+    border-radius: 50px;
+    color: yellow;
+    background-color: teal;
+    font-weight: 400;
+}
+.qtyplus{
+    border-radius: 50px;
+     color: yellow;
+     background-color: teal;
+     font-weight: 400;
+}
+#bedNum{
+    width: 30px;
+}
+#bathNum{
+    width: 30px;
+}
+#unitNum{
+    width: 60px;
+    border-radius: 5px;
+}
+#storiesNum{
+    width: 90px;
+    border-radius: 5px;
+}
+#type{
+    width: 100px;
+    border-radius: 5px;
+}
 /*------------------------------------------------------------------
 [ Alert validate ]*/
 

@@ -225,7 +225,11 @@ html{
 .city{
     margin-left: 10%;
     margin-top: 10%;
+<<<<<<< HEAD
     flex-direction: column;
+=======
+    float: left;
+>>>>>>> 767006733b32e0f3e7435cc32170e2f70ebcd75c
 }
 .cityTitle{
     color: #000000;
