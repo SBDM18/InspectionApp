@@ -50,60 +50,54 @@
                   </div>
             </div>
             <div class="row">
-                  <button class="login100-form-btn addTemplate" href="#templateModal"> Create a Template </button>
-                  <button id="login" href="#loginModal" class=" login100-form-btn ">Login</button>
+                  {{#each templates}}
+                  <div class="city" data-city="{{title}}" style="color:#BFC1D2;">
+                        <i class="fas fa-folder fa-5x"></i>
+                        <p class="cityTitle">{{title}}</p>
+                  </div>
+                  {{/each}}
+            </div>
+            <div class="row">
+            <button class="addTemplate" href="#templateModal"> Create a Template </button>
+                  <button id="login" href="#loginModal" class=" login100-form-btn btn">Login</button>
             </div>
       </div>
 
       <div id="templateModal" class="popupContainer" style="display:none;">
             <div class="modal-content-temp">
-                  <form class="login100-form validate-form">
-                        <span class="login100-form-title ">Template</span>
-                        <div class="wrap-input100 validate-input" data-validate="Enter username">
+                  <form class="template-form validate-form">
+                        <span class="template-form-title ">Template</span>
+                        <div class="wrap-input100 validate-input" data-validate="Enter tempname">
                               <input type="text" class="input100" id="temp-title" name="title" placeholder="Template Name">
                               <span class="focus-input100" data-placeholder="&#xf007;"></span>
                         </div>
                         <div class="temp-text">
-                              <button id="entryToggle" type="button" class="btn temp-btn" data-toggle="button" aria-pressed="false" autocomplete="off">
-                                    Entry
-                              </button>
-                              <input type="text" class="input100" id="temp-title" name="title" placeholder="# of Entries">
+                              <button id="entryToggle" type="button" class="btn temp-btn" data-toggle="button" aria-pressed="false" autocomplete="off">Entry</button>
+                              <input type="text" class="input100" id="entry-num" name="title" placeholder="# of Entries">
                         </div>
                         <div class="temp-text">
-                              <button id="bedroomToggle" type="button" class="btn temp-btn" data-toggle="button" aria-pressed="false" autocomplete="off">
-                                    Bedroom
-                              </button>
-                              <input type="text" class="input100" id="temp-title" name="title" placeholder="# of Bedrooms">
+                              <button id="bedroomToggle" type="button" class="btn temp-btn" data-toggle="button" aria-pressed="false" autocomplete="off">Bedroom</button>
+                              <input type="text" class="input100" id="bed-num" name="title" placeholder="# of Bedrooms">
                         </div>
                         <div class="temp-text">
-                              <button id="bathroomToggle" type="button" class="btn temp-btn" data-toggle="button" aria-pressed="false" autocomplete="off">
-                                    Bathroom
-                              </button>
-                              <input type="text" class="input100" id="temp-title" name="title" placeholder="# of Bathrooms">
+                              <button id="bathroomToggle" type="button" class="btn temp-btn" data-toggle="button" aria-pressed="false" autocomplete="off">Bathroom</button>
+                              <input type="text" class="input100" id="bath-num" name="title" placeholder="# of Bathrooms">
                         </div>
                         <div class="temp-text">
-                              <button id="hallsToggle" type="button" class="btn temp-btn" data-toggle="button" aria-pressed="false" autocomplete="off">
-                                    Halls
-                              </button>
-                              <input type="text" class="input100" id="temp-title" name="title" placeholder="# of Halls">
+                              <button id="hallsToggle" type="button" class="btn temp-btn" data-toggle="button" aria-pressed="false" autocomplete="off">Halls</button>
+                              <input type="text" class="input100" id="hall-num" name="title" placeholder="# of Halls">
                         </div>
                         <div class="temp-text">
-                              <button id="stairsToggle" type="button" class="btn temp-btn" data-toggle="button" aria-pressed="false" autocomplete="off">
-                                    Stairs
-                              </button>
-                              <input type="text" class="input100" id="temp-title" name="title" placeholder="# of Stairs">
+                              <button id="stairsToggle" type="button" class="btn temp-btn" data-toggle="button" aria-pressed="false" autocomplete="off">Stairs</button>
+                              <input type="text" class="input100" id="stair-num" name="title" placeholder="# of Stairs">
                         </div>
                         <div class="temp-text">
-                              <button id="kitchenToggle" type="button" class="btn temp-btn" data-toggle="button" aria-pressed="false" autocomplete="off">
-                                    Kitchen
-                              </button>
-                              <input type="text" class="input100" id="temp-title" name="title" placeholder="# of Kitchen's">
+                              <button id="kitchenToggle" type="button" class="btn temp-btn" data-toggle="button" aria-pressed="false" autocomplete="off">Kitchen</button>
+                              <input type="text" class="input100" id="kitchen-num" name="title" placeholder="# of Kitchen's">
                         </div>
                         <div class="temp-text">
-                              <button id="livingroomToggle" type="button" class="btn temp-btn" data-toggle="button" aria-pressed="false" autocomplete="off">
-                                    Livingroom
-                              </button>
-                              <input type="text" class="input100" id="temp-title" name="title" placeholder="# of Livingroom's">
+                              <button id="livingroomToggle" type="button" class="btn temp-btn" data-toggle="button" aria-pressed="false" autocomplete="off">Livingroom</button>
+                              <input type="text" class="input100" id="lr-num" name="title" placeholder="# of Livingroom's">
                         </div>
                         <div class="temp-text template-submit-btn">
                               <a id="tempSubBtn" class="login100-form-btn temp-submit close " >Submit Template</a>
