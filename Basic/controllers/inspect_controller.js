@@ -1,13 +1,14 @@
-var express = require('express');
-var router = express.Router();
+const express = require('express');
+const router = express.Router();
 const mongoose = require('mongoose');
 const checkAuth = require('../auth/check-auth.js');
 
 const template = require('../models/inspection.js')
 
 
-router.get('/inspection', checkAuth, function (req, res) {
-    res.render("inspection");
+router.get('/inspection/:authTok', function (req, res) {
+    const user = req.params.authTok;
+    res.render("inspection", { route: user });
 });
 
 

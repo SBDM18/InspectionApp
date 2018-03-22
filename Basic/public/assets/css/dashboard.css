@@ -138,6 +138,9 @@ html{
 }
 /*--------------------------------------------------------
 [ Unit Section on Dashboard and general top half for most of the dashboard]*/
+.dashTitle{
+    margin-top: 20px;
+}
 .search-cont{
     border-top:solid 3px #BFC1D2;
     border-bottom: solid 3px #BFC1D2;
@@ -167,6 +170,13 @@ html{
 }
 .fa-search{
     position: relative;
+}
+.fa-sign-out-alt{
+    margin-top: 15px;
+    cursor: pointer;
+}
+.backBtn{
+    cursor: pointer;
 }
 .button {
     background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #BFC1D2), color-stop(1, #b3b3b3));
@@ -255,6 +265,9 @@ html{
 
 /*------------------------------------------------------------
 [ Template Dashboard]*/
+.tempRow{
+    border-bottom: solid 3px #b3b3b3;
+}
 .addUnitBtn{
     background-color:#BFC1D2 !important;
 }
@@ -287,14 +300,10 @@ html{
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     margin: 30px 0px 30px 0px;
 }
-.adminBtn{
+.adminBtn{        
+    margin: 35px 0px 15px 0px;   
     width: 200px;
-    height: 100px;
-    background: blue;
-    border: solid 3px white;
-    margin: 15px 0px 15px 0px;
-    font-size: 24px;
-    color: aliceblue;
+    height: 70px;
 }
 /*--------------------------------------------------------------------
 [ Home dashboard page ]*/

@@ -25,8 +25,7 @@ router.post('/register', (req,res) => {
                 error:err
             });
         }else{
-            // console.log(req.body.password);
-            
+            // console.log(req.body.password);            
             bcrypt.hash(req.body.password, salt, null, (err, hash) => {
                 console.log("bcrypt has hashed password");
                 
@@ -71,9 +70,14 @@ router.post('/login', (req,res,next) => {
     console.log(name);    
     
     newManager.findOne({ username: name}).exec().then(user => {
+        if(user == null){
+            console.log("User does not exist");            
+        }
          console.log( user.password);
          console.log("password inptted in", req.body.userpass);
         if(user.length < 1){
+            console.log("User is invalid");
+            
             return res.status(401).json({
                 message: 'Auth failed'
             });           
@@ -98,11 +102,12 @@ router.post('/login', (req,res,next) => {
                 }
                 );
                 console.log("token created");
-                
                 return res.status(200).json({
                     message: 'Auth successful',
                     token: token,
-                    authTok: user.user_U_id
+                    authTok: user.manager_U_id,
+                    userType: user.type,
+                    userId: user.user_U_id
                 });
                 // window.location('/home');
             }
@@ -114,7 +119,11 @@ router.post('/login', (req,res,next) => {
         catchError(err);
     });
 });
- 
+
+//Route to logout.
+router.post('/logout', function (req, res) {
+    res.json({});
+})
 
 function catchError(err){
     console.log(err);

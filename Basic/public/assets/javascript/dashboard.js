@@ -70,25 +70,7 @@ function inspectSlideCards(){
     $(".main").html(html);
 }
 
-$(document).on("click", ".city", function(){ 
-    let city ={
-        uniqueCity: $(this).data("city")
-    }
-    console.log(city);
-    
-    $.ajax("/units/unitlist", {
-        type:"GET",
-        data: city,
-        headers: {"Authorization": localStorage.getItem("token")}    
-    }).then(res =>{
-            console.log("grabbed data from specific city");
-            
-    });
-      
-    // create route to grab data from server which checked database for the city and brought back the units that are within that specific city folder
-    $(".dash-main").empty();
-    unitDashList()
-});
+
 
 // still need to create a back button and a route for home.handlebars unless they are within the 2nd page of units or inspection than it would go back to their respective beginning page (have a this statement check which class was picked and than decide what function to perform within the button click)
 
