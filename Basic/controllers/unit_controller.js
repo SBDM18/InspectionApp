@@ -14,17 +14,19 @@ router.get('/units/:authTok', (req, res) =>{
     
 
     Unit.find().where({ manager_U_id: user }).exec().then(doc =>{
-        var citiesFiltered = doc.reduce((accumalator, current) => {
-            if (checkIfAlreadyExist(current)) {
+        console.log(doc);
+        
+        var citiesFiltered = doc.reduce((accumalator, current)=>{
+            if(checkIfAlreadyExist(current)){
                 return accumalator;
-            } else {
+            }else{
                 return [...accumalator, current];
             }
-            function checkIfAlreadyExist(currentVal) {
-                return accumalator.some((item) => {
-                    return (item.city === currentVal.city)
+            function checkIfAlreadyExist(currentVal){
+                return accumalator.some((item)=>{
+                    return(item.city === currentVal.city);
                 });
-            }
+            }            
         }, []);
 
         var cityObj ={
@@ -40,15 +42,9 @@ router.get('/units/:authTok', (req, res) =>{
     // res.render("units");
 });
 router.get('/units/:authTok/unitlist', (req,res) =>{
-    const user = req.params.authTok;
-    const u_city = req.body.uniqueCity;
-    console.log(user);
+    const user = req.params.authTok;   
     
-    console.log(u_city);
-    
-   
-    
-    Unit.find().where({manager_U_id: user, city: "La Jolla"}).exec().then(doc =>{
+    Unit.find().where({manager_U_id: user, city: "San Diego"}).exec().then(doc =>{
         let listObj ={
             units: doc,
             route: user
@@ -59,7 +55,7 @@ router.get('/units/:authTok/unitlist', (req,res) =>{
     }).catch((err)=>{
         catchError(err);
     });
-})
+});
 
 router.post('/addunit', checkAuth, (req, res) => {
     console.log("Token info " , req.userData);
@@ -102,49 +98,6 @@ router.post('/addunit', checkAuth, (req, res) => {
     ); 
 });
 
-// router.post('/addunit', (req,res) =>{
-//     console.log(req.body);
-//     let street = req.body.street;
-//     let unitNum = req.body.unitNumber;
-//     console.log("this is the address : " ,req.body.street);
-//     console.log("this is the unit # : ", req.body.unitNumber);
-
-//     newUnit.find().where({street: req.body.street,unitNumber: req.body.unitNumber}).exec().then(unit =>{
-//         console.log(unit);
-//         console.log("this is street :", unit[1].street);
-//         console.log("this is unit# :", unit[1].unitNumber);
-//         if(unit.street <1 && unit.unitNumber<1){
-//             return res.status(401).json({
-//                 message: "Street and unit already exists"
-//             });
-//         }   
-    
-//         const unitID = cryptoRanString(6);
-//         const addNewUnit = new newUnit({
-//             unit_id: unitID,
-//             user_U_id: "grab data from database",
-//             type: req.body.type,
-//             street: req.body.street,
-//             city: req.body.city,
-//             state: req.body.state,
-//             zip: req.body.zip,
-//             unitNumber: req.body.unitNumber,
-//             storiesNumber: req.body.storiesNumber,
-//             bedroomTotal: req.body.bedroomTotal,
-//             bathroomTotal: req.body.bathroomTotal,
-//             yard: req.body.yard,
-//             garage: req.body.garage
-//         });
-
-//         addNewUnit.save().then(result =>{
-//             console.log(result);        
-//         }).catch(err => console.log(err));
-//         res.status(201).json({
-//             message: "Handling POST request to /addunit",
-//             createdNewUnit: addNewUnit
-//         });
-//     });
-// });
 
 function catchError(err) {
     console.log(err);
