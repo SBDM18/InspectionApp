@@ -244,6 +244,9 @@ html{
     background-color: wheat;
     color: limegreen;
 }
+.delHead{
+    margin-right: 20px;
+}
 
 /*------------------------------------------------------------
 [ Inspection Dashboard page ]*/
