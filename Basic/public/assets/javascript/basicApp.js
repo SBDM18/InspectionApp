@@ -18,7 +18,7 @@ $('#register').leanModal({
     closeButton: ".close"
 });
 $(".addUnit").leanModal({
-    top:100,
+    top:20,
     overlay:0.6,
     closeButton:".close",   
 });
@@ -40,15 +40,6 @@ $(".addUser").leanModal({
     overlay: 0.6,
     closeButton: ".close",
 });
-
-$(document).on('click', '.addUnit', function () {
-    $(".addUnit").leanModal({
-        top: 40,
-        overlay: 0.6,
-        closeButton: ".close",
-    });
-});
-
 
 // ====================================
 //     Parts Matt has added 3/12/2018
@@ -82,7 +73,7 @@ $(document).on('click', '.temp-btn', function () {
 });
 
 $(document).on('click', '#tempSubBtn', function(e){
-    e.preventDefault
+    e.preventDefault();
     let user = localStorage.getItem('type');
     let newTemp = {
         user: user,
@@ -177,8 +168,7 @@ $('#loginBtn').on("click", function(event){
         console.log(res.userType);
         console.log(res.authTok);    
         console.log(res.token);
-         window.location = '/home/' + localStorage.getItem("auth");
-        
+         window.location = '/home/' + localStorage.getItem("auth");        
         }).fail((errorThrown)=>{
             swal("Username or Password are invalid");
         });
@@ -326,27 +316,38 @@ $("#edit").on("click", event =>{
     $("#editModal").hide();
 });
 //Button click for city folders to display data with respective data-id="city"
-$(document).on("click",".city", () =>{
-    let cityClick = {
-        uniqueCity: $(this).data("city")
-    };
-    console.log(cityClick);
-    let auth = localStorage.getItem("auth");
 
-    $.ajax("/units/"+auth+"/unitlist", {
+$(document).on("click",".city", function(){
+    let cityClick = $(this).data("city");
+    console.log(cityClick);
+    var replaced = cityClick.split(' ').join('+');
+    let auth = localStorage.getItem("auth");
+    console.log(auth);
+    let route = `${auth}/${replaced}`;
+    
+    $.ajax("/unitlist/"+route+"", {
         type: "GET",
-        data: cityClick,
         headers: { "Authorization": localStorage.getItem("token") }
     }).then(res => {
         console.log("grabbed data from specific city");
-        $(".dash-main").empty();
-        unitDashList();
-    });
+        $(".dash-main").empty();         
+        $(".dash-main").append(res);       
+    }).fail((errorThrown)=>{
+        swal("Error in unit request");
+    })
     // create route to grab data from server which checked database for the city and brought back the units that are within that specific city folder
 });
 
+
 $(document).on("click", ".backBtn", () =>{
     console.log("Working");
+
+    $.ajax("/back", {
+        type: "GET",
+        data: JSON
+    }).then(res =>{
+        window.location = '/home/' +localStorage.getItem('auth');
+    });
     
 });
 $(document).on("click", ".logOut", ()=>{
@@ -375,7 +376,43 @@ $(".addUnit").on('click', function(){
 // javascript for functioning plus and minus in the addUnitModal for Bed and bath
 
 
-//javascript for validatin input 
+//javascript for bed/bath buttons
+/*==================================================================*/
+// This button will increment the value
+$('.qtyplus').click(function (e) {
+    // Stop acting like a button
+    e.preventDefault();
+    // Get the field name
+    fieldName = $(this).attr('field');
+    // Get its current value
+    var currentVal = parseInt($('input[name=' + fieldName + ']').val());
+    // If is not undefined
+    if (!isNaN(currentVal)) {
+        // Increment
+        $('input[name=' + fieldName + ']').val(currentVal + 1);
+    } else {
+        // Otherwise put a 0 there
+        $('input[name=' + fieldName + ']').val(0);
+    }
+});
+// This button will decrement the value till 0
+$(".qtyminus").click(function (e) {
+    // Stop acting like a button
+    e.preventDefault();
+    // Get the field name
+    fieldName = $(this).attr('field');
+    // Get its current value
+    var currentVal = parseInt($('input[name=' + fieldName + ']').val());
+    // If it isn't undefined or its greater than 0
+    if (!isNaN(currentVal) && currentVal > 0) {
+        // Decrement one
+        $('input[name=' + fieldName + ']').val(currentVal - 1);
+    } else {
+        // Otherwise put a 0 there
+        $('input[name=' + fieldName + ']').val(0);
+    }
+});
+   
 /*==================================================================
     [ Validate ]*/
 

@@ -1,0 +1,24 @@
+
+<div class="col-sm-9">
+   <table class="table table-striped table-hover" style="background-color:#BFC1D2;">
+      <thead class="thead-light">
+
+         <tr>
+            <th scope="col">Address</th>
+         </tr>
+      </thead>
+      <tbody>
+         {{#each units}}
+            <tr>            
+                <td>{{street}}<button class=" startIns" data-id="unit_id">Start Inspection</button></td>           
+            </tr>
+         {{/each}}        
+      </tbody>
+   </table>
+</div>
+<div class="col-sm-3">
+    <button class="addUnit button" href="#addUnitModal">Add Unit</button>
+</div>
+
+
+

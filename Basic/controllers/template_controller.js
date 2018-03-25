@@ -75,7 +75,11 @@ router.get('/templist/:authTok', function (req, res) {
     console.log('Hitting this end point..');
     Template.find().then(doc => {
         console.log(doc);
-        res.render("templist", doc);
+        var tempObj = {
+            templates: doc,
+            route: user
+        };
+        res.render("template", tempObj);
     }).catch((err) => {
         res.json(err);
     }); 

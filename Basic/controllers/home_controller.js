@@ -10,4 +10,5 @@ router.get('/home/:authTok',  (req,res) =>{
    res.render('home', {route: userRoute});
 
 });
+
 module.exports = router;

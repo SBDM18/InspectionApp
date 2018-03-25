@@ -70,6 +70,8 @@ router.post('/login', (req,res,next) => {
     console.log(name);    
     
     newManager.findOne({ username: name}).exec().then(user => {
+        console.log(user);
+        
         if(user == null){
             console.log("User does not exist");            
         }
