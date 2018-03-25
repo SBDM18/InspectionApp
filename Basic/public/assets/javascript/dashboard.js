@@ -36,7 +36,7 @@ function unitDashList(){
                             <tbody>  
                                 <tr>
                                     <th scope="row">1</th>
-                                    <td>3668 Quimby St.</td>                                    
+                                    <td>3668 Quimby St.<button>Start Inspection</button></td>                                    
                                 </tr>
                                 <tr>
                                     <th scope="row">2</th>

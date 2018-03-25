@@ -7,21 +7,22 @@ const checkAuth = require('../auth/check-auth.js');
 
 const User = require('../models/user.js');
 
-router.get('/admin', (req, res , next) =>{
+router.get('/admin/:authTok', (req, res , next) =>{
     const user = req.params.authTok;     
 
      User.find().where({
-         manager_U_id: "013c1b5521"
+         manager_U_id: user
      }).exec().then(doc => {
          doc.shift();
         //  console.log(doc);         
           let userList = {
-             users: doc
+             users: doc,
+             route: user
           };         
           console.log(userList);
           
 
-         res.render('admin', { route: user, userList});
+         res.render('admin',  userList);
 
      }).catch(err => {
          catchError(err);
