@@ -8,6 +8,9 @@ const cryptoRanString = require('crypto-random-string');
 const Unit = require('../models/addUnit.js');
 const Template = require('../models/template.js');
 
+var Template = require('../models/template.js');
+
+
 //Route to unit page
 router.get('/units/:authTok', (req, res) => {
     const user = req.params.authTok;
@@ -55,15 +58,32 @@ router.get('/unitlist/:authTok/:city', (req, res) => {
     console.log(user);
     console.log(u_city);
 
-    Unit.find().where({ manager_U_id: user, city: replaced}).exec().then(doc => {
-        
-        let listObj = {
-            units: doc,
-            route: user
-        };
-        console.log(listObj);
 
-        res.render("unitlist", listObj);
+    var resObj = {}
+
+
+    // Template.find().where({ man_Id: user }).exec().then(tempDoc => {
+
+    //     resObj.temp = tempDoc;
+
+    // }).catch((err)=>{
+    //     catchError(err);
+    // });
+
+    Template.find({}).then(tempDoc =>{
+        resObj.temp = tempDoc;
+    })
+
+
+    Unit.find().where({ manager_U_id: user, city: replaced}).exec().then(unitDoc => {
+
+        resObj.unit = unitDoc;
+
+        console.log('Here is the listObj from unitlist');
+
+        console.log(resObj);
+
+        res.render("unitlist", resObj);
     }).catch((err) => {
         catchError(err);
     });

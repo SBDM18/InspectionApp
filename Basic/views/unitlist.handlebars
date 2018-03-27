@@ -8,37 +8,49 @@
          </tr>
       </thead>
       <tbody>
-         {{#each units}}
+         {{#each unit}}
             <tr>            
-                <td>{{street}}<button class="startIns" href="#startInsp" data-id="{{unit_id}}" data-street="{{street}}">Start Inspection</button></td>           
+                <td>{{street}}<button class="startIns" data-id="unit_id" href="#inspectionModal">Start Inspection</button></td>           
             </tr>
          {{/each}}        
       </tbody>
    </table>
 </div>
-<div class="col-sm-3">
-    <button class="addUnit button" href="#addUnitModal">Add Unit</button>
-</div>
 
-<div id="startInsp" class="popupContainer" style="display:none;">
-    <div class="modal-content">
-        <form class="login100-form validate-form" name="loginForm">
-            <span class="login100-form-logo">
-                <i class="zdmi zmdi-landscape">
-                    <img src="../../assets/images/logo.png" width="130" height="100" alt="Logo">
-                </i>
-            </span>
-           
-            <div id="addresTitle">
-                <h1>{{street}}</h1>
+<div id="inspectionModal" class="popupContainer" style="display:none;">
+    <div class="modal-content-temp">
+        <form class="temp-form validate-form">
+            <span class="template-form-title ">Start Inspection</span>
+            <div class="wrap-input100 validate-input" data-validate="Enter Inspection Name">
+                <input type="text" class="input100" id="temp-title" name="title" placeholder="Inspection Name">
+                <span class="focus-input100" data-placeholder="&#xf007;"></span>
             </div>
 
-            <div class="container-login100-form-btn">
-                <a id="inspectStart" class="login100-form-btn close" href="/inspectdash/{{route}}">Start Inspection</a>
+            <div>
+                Unit for Inspection
+                <div>
+                    {{#each unit}}
+                    <div>{{street}}</div>
+                    <div>{{city}},{{state}} {{zip}}</div>
+                    {{/each}}
+                </div>
             </div>
-           
+
+            <div>
+                Choose a template to start the Inspection
+                <div>
+                    {{#each temp}}
+                    <a id="{{title}}" class="temp-selector" href="/inspect/:authTok">{{title}}</a>
+                    {{/each}}
+                </div>
+            </div>
         </form>
+
     </div>
-</div>
+
+{{!-- <div class="col-sm-3">
+    <button class="addUnit button" href="#addUnitModal">Add Unit</button>
+</div> --}}
+
 
 

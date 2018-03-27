@@ -67,7 +67,8 @@ router.post('/register', (req,res) => {
 //Route to home page from login. Sends user JWT back to client to use for authentication
 router.post('/login', (req,res,next) => {
     let name = req.body.username;
-    console.log(name);    
+    console.log(name);
+    
     
     newManager.findOne({ username: name}).exec().then(user => {
         console.log(user);
@@ -75,7 +76,7 @@ router.post('/login', (req,res,next) => {
         if(user == null){
             console.log("User does not exist");            
         }
-         console.log( user.password);
+         console.log(user.password);
          console.log("password inptted in", req.body.userpass);
         if(user.length < 1){
             console.log("User is invalid");
