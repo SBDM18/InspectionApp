@@ -5,6 +5,7 @@ $(document).ready(function () {
     $("#editModal").hide();
     $("#addUserModal").hide();
     $("#deleteModal").hide();
+    $("#startInsp").hide();
 });
 //calls leanModal to display a modal based off of the ID
 $("#login").leanModal({
@@ -18,7 +19,7 @@ $('#register').leanModal({
     closeButton: ".close"
 });
 $(".addUnit").leanModal({
-    top:100,
+    top:20,
     overlay:0.6,
     closeButton:".close",   
 });
@@ -38,17 +39,19 @@ $('.editUser').leanModal({
 $(".addUser").leanModal({
     top: 100,
     overlay: 0.6,
+    closeButton: ".close"
+});
+$(".startIns").leanModal({
+    top:40,
+    overlay:0.6,
+    closeButton: ".close"
+});
+
+$(".startIns").leanModal({
+    top: 100,
+    overlay: 0.6,
     closeButton: ".close",
 });
-
-$(document).on('click', '.addUnit', function () {
-    $(".addUnit").leanModal({
-        top: 40,
-        overlay: 0.6,
-        closeButton: ".close",
-    });
-});
-
 
 // ====================================
 //     Parts Matt has added 3/12/2018
@@ -63,8 +66,10 @@ $(".addTemplate").leanModal({
     closeButton: ".close"
 });
 
+// var tempBtns = [];
+
 $(document).on('click', '.temp-btn', function () {
-    console.log('Hitting this...');
+    
     
     if ($(this).hasClass('selected')){
         $(this).removeClass('selected');
@@ -72,8 +77,47 @@ $(document).on('click', '.temp-btn', function () {
     } else {
         $(this).css({ 'background-color': '#656aff' })
         $(this).addClass('selected');
+        // tempBtns.push($(this).text());
     }
+    
 });
+
+$(document).on('click', '#tempSubBtn', function(e){
+    e.preventDefault();
+    let user = localStorage.getItem('type');
+    let newTemp = {
+        user: user,
+        title: $('#temp-title').val(),
+        entry: $('#entryToggle').hasClass('selected'),
+        numentries: $('#entry-num').val() ? $('#entry-num').val() : 0,
+        bedroom: $('#bedroomToggle').hasClass('selected'),
+        numbed: $('#bed-num').val() ? $('#bed-num').val() : 0,
+        bathroom: $('#bathroomToggle').hasClass('selected'),
+        numbath: $('#bath-num').val() ? $('#bath-num').val() : 0,
+        halls: $('#hallsToggle').hasClass('selected'),
+        numhalls: $('#hall-num').val() ? $('#hall-num').val() : 0,
+        stairs: $('#stairsToggle').hasClass('selected'),
+        numstairs: $('#stair-num').val() ? $('#stair-num').val() : 0,
+        kitchen: $('#kitchenToggle').hasClass('selected'),
+        numkitchen: $('#kitchen-num').val() ? $('#kitchen-num').val() : 0,
+        livingroom: $('#livingroomToggle').hasClass('selected'),
+        numlr: $('#lr-num').val() ? $('#lr-num').val() : 0
+    }
+
+    let city = localStorage.setItem('city');
+    let auth = localStorage.getItem("auth");
+
+    console.log(newTemp);
+    $.ajax("/templates/"+auth, {
+        type: "POST",
+        data: newTemp,
+        headers: { "Authorization": localStorage.getItem("token") }
+    }).done((res, err) => {
+        err ? console.log(err) : console.log('No error');
+        window.location = '/templist/'+auth;
+    });
+    
+})
 
 //on submission get values and show what the req body is posting
 $(document).on('click', '#tempSubBtn', function(){
@@ -106,6 +150,38 @@ $(document).on('click', '#tempSubBtn', function(){
 
 });
 
+
+
+// ++++++++++++++++++++++++++++++++++++
+// ====================================
+// ====================================
+//      Start Inspection Button
+// ====================================
+// ====================================
+// ++++++++++++++++++++++++++++++++++++
+
+$(document).on('click', '.temp-selector', function(){
+
+    let auth = localStorage.getItem("auth");
+
+    var obj ={
+        city: localStorage.getItem('city')
+    }
+
+    $.ajax("/inspect/" + auth, {
+        type: "GET",
+        data: obj,
+        headers: { "Authorization": localStorage.getItem("token") }
+    }).done((res, err) => {
+        err ? console.log(err) : console.log('No error');
+        window.location = '/inspect/' + auth + '/' + city;
+    });
+
+
+})
+
+
+
 // ====================================
 //          End of Additions
 // ====================================
@@ -129,10 +205,13 @@ $('#loginBtn').on("click", function(event){
         console.log(err);               
         localStorage.setItem("token" , res.token);
         localStorage.setItem("auth" , res.authTok);
+        localStorage.setItem('type', res.userType);
+        localStorage.getItem('id', res.userId)
+
+        console.log(res.userType);
         console.log(res.authTok);    
         console.log(res.token);
-         window.location = '/home/' + localStorage.getItem("auth");
-        
+         window.location = '/home/' + localStorage.getItem("auth");        
         }).fail((errorThrown)=>{
             swal("Username or Password are invalid");
         });
@@ -280,30 +359,59 @@ $("#edit").on("click", event =>{
     $("#editModal").hide();
 });
 //Button click for city folders to display data with respective data-id="city"
-$(document).on("click",".city", () =>{
-    let cityClick = {
-        uniqueCity: $(this).data("city")
-    };
-    console.log(cityClick);
-    let auth = localStorage.getItem("auth");
 
-    $.ajax("/units/"+auth+"/unitlist", {
+$(document).on("click",".city", function(){
+    let cityClick = $(this).data("city");
+    console.log(cityClick);
+    var replaced = cityClick.split(' ').join('+');
+    let auth = localStorage.getItem("auth");
+    console.log(auth);
+    let route = `${auth}/${replaced}`;
+    
+    $.ajax("/unitlist/"+route+"", {
         type: "GET",
-        data: cityClick,
         headers: { "Authorization": localStorage.getItem("token") }
     }).then(res => {
         console.log("grabbed data from specific city");
-        $(".dash-main").empty();
-        unitDashList();
+        $(".dash-main").empty();         
+        $(".dash-main").append(res);       
+    }).fail((errorThrown)=>{
+        swal("Error in unit request");
     });
-    // create route to grab data from server which checked database for the city and brought back the units that are within that specific city folder
+});
+
+$(document).on("click", ".startIns", function(){
+    let unitID = $(this).data("id");
+    let street = $(this).data("street");    
+    let auth = localStorage.getItem("auth");
+
+    $.ajax("/temp/" + auth + "/"+ unitID , {
+        type: "GET",
+        headers: { "Authorization": localStorage.getItem("token") }
+    }).then(res => {
+        console.log("grabbed data from template");
+        
+    }).fail((errorThrown) => {
+        swal("Error in unit request");
+    });
+});
+
+$("#inspectStart").on("click", function(){
+    console.log("working need to grab data of which template is grabbed");
 });
 
 $(document).on("click", ".backBtn", () =>{
     console.log("Working");
+
+    $.ajax("/back", {
+        type: "GET",
+        data: JSON
+    }).then(res =>{
+        window.location = '/home/' +localStorage.getItem('auth');
+    });
     
 });
-$(document).on("click", ".logOut", ()=>{
+$(document).on("click", ".logOut", () =>{
     console.log("Working");
     var empty = {};
 
@@ -329,7 +437,43 @@ $(".addUnit").on('click', function(){
 // javascript for functioning plus and minus in the addUnitModal for Bed and bath
 
 
-//javascript for validatin input 
+//javascript for bed/bath buttons
+/*==================================================================*/
+// This button will increment the value
+$('.qtyplus').click(function (e) {
+    // Stop acting like a button
+    e.preventDefault();
+    // Get the field name
+    fieldName = $(this).attr('field');
+    // Get its current value
+    var currentVal = parseInt($('input[name=' + fieldName + ']').val());
+    // If is not undefined
+    if (!isNaN(currentVal)) {
+        // Increment
+        $('input[name=' + fieldName + ']').val(currentVal + 1);
+    } else {
+        // Otherwise put a 0 there
+        $('input[name=' + fieldName + ']').val(0);
+    }
+});
+// This button will decrement the value till 0
+$(".qtyminus").click(function (e) {
+    // Stop acting like a button
+    e.preventDefault();
+    // Get the field name
+    fieldName = $(this).attr('field');
+    // Get its current value
+    var currentVal = parseInt($('input[name=' + fieldName + ']').val());
+    // If it isn't undefined or its greater than 0
+    if (!isNaN(currentVal) && currentVal > 0) {
+        // Decrement one
+        $('input[name=' + fieldName + ']').val(currentVal - 1);
+    } else {
+        // Otherwise put a 0 there
+        $('input[name=' + fieldName + ']').val(0);
+    }
+});
+   
 /*==================================================================
     [ Validate ]*/
 
@@ -366,8 +510,6 @@ $(document).on('click', '.template', function(){
     //     // res.render('/admin');        
     // });
 });
-
-
 
 
 

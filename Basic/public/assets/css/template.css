@@ -27,9 +27,10 @@
         background: linear-gradient(top, #656aff, #a119db);
 }
 
-.temp-btn {
-        color: white;
-        background-color: grey;
+.temp-submit {
+        margin-top: 10px;
+        margin-bottom: 40px;
+        margin-left: 20%;
 }
 
 .temp-text {

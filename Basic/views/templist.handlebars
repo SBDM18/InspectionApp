@@ -1,0 +1,58 @@
+<div class="container-fluid dashboard">
+    <div class="row main-content">
+        <div class="col-sm-2 letter-color background">
+            <div class="row nav-section">
+                <div class="col-sm-12 logo">
+                    <img src="../../assets/images/logo.png" width="150" height="100" alt="Logo">
+                </div>
+                <div class="col-sm-12 nav-content">
+
+                    <a class="nav-links overview" href="/home/{{route}}">
+                        <img src="../assets/images/view_icon.png" alt="Overview" class="nav-icon">
+                        <div class="link-name letter-color" style="display:none">Overview</div>
+                    </a>
+                    <a class="nav-links units" href="/units/{{route}}">
+                        <img src="../assets/images/home_icon.png" alt="Home" class="nav-icon">
+                        <div class="link-name letter-color" style="display:none">Units</div>
+                    </a>
+                    <a class="nav-links inspection" href="/inspection/{{route}}">
+                        <img src="../assets/images/mag_glass.png" alt="Magnifying Glass" class="nav-icon">
+                        <div class="link-name letter-color" style="display:none">Inspections</div>
+                    </a>
+                    <a class="nav-links template" href="/templates/{{route}}">
+                        <img src="../assets/images/temp_icon.png" alt="Template" class="nav-icon">
+                        <div class="link-name letter-color" style="display:none">Templates</div>
+                    </a>
+                    <a class="nav-links report" href="/reports/{{route}}">
+                        <img src="../assets/images/rep_icon.png" alt="Report" class="nav-icon">
+                        <div class="link-name letter-color" style="display:none">Reports</div>
+                    </a>
+                </div>
+                <div class="col-sm-12 company-info">
+                    Hometeam Property Management
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-10 main">
+            <div class="row tempRow">
+                <div class="col-sm-2">
+                    <div style="color: Blue; margin-top:15px; margin-bottom:15px;" class="backBtn">
+                        <i class="fas fa-caret-square-left fa-4x"></i>
+                    </div>
+                </div>
+                <div class="col-sm-8">
+                    <div style="font-size: 24px; color: lightblue ">
+                        <h1 class="dashTitle">Units</h1>
+                    </div>
+                </div>
+                <div class="col-sm-2 logOut" style="margin-bottom:15px;">
+                    <i class="fas fa-sign-out-alt fa-4x"></i>
+                </div>
+            </div>
+            <div class="row">
+                <button class="addTemplate" href="#templateModal"> Create a Template </button>
+                <button id="login" href="#loginModal" class=" login100-form-btn btn">Login</button>
+            </div>
+        </div>
+    </div>
+</div>

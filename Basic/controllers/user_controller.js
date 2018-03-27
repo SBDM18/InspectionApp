@@ -67,13 +67,16 @@ router.post('/register', (req,res) => {
 //Route to home page from login. Sends user JWT back to client to use for authentication
 router.post('/login', (req,res,next) => {
     let name = req.body.username;
-    console.log(name);    
+    console.log(name);
+    
     
     newManager.findOne({ username: name}).exec().then(user => {
+        console.log(user);
+        
         if(user == null){
             console.log("User does not exist");            
         }
-         console.log( user.password);
+         console.log(user.password);
          console.log("password inptted in", req.body.userpass);
         if(user.length < 1){
             console.log("User is invalid");
@@ -101,11 +104,13 @@ router.post('/login', (req,res,next) => {
                     expiresIn: "4h"
                 }
                 );
-                console.log("token created");               
+                console.log("token created");
                 return res.status(200).json({
                     message: 'Auth successful',
                     token: token,
-                    authTok: user.manager_U_id
+                    authTok: user.manager_U_id,
+                    userType: user.type,
+                    userId: user.user_U_id
                 });
                 // window.location('/home');
             }

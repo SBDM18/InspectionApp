@@ -3,7 +3,13 @@ const router = express.Router();
 const mongoose = require('mongoose');
 const checkAuth = require('../auth/check-auth.js');
 
-const template = require('../models/inspection.js')
+<<<<<<< HEAD
+const Inspect = require('../models/inspection.js')
+=======
+const Template = require('../models/template.js')
+const Unit = require('../models/addUnit.js')
+// const template = require('../models/inspection.js')
+>>>>>>> matt
 
 
 router.get('/inspection/:authTok', function (req, res) {
@@ -11,43 +17,47 @@ router.get('/inspection/:authTok', function (req, res) {
     res.render("inspection", { route: user });
 });
 
+<<<<<<< HEAD
+router.get('/inspectdash/:authTok', function(req,res,next){
+    const user = req.params.authTok;
+    res.render('inspectDash',{route:user});
+});
+=======
+router.get('/inspect/:authTok/:city', function(req, res) {
+    const user = req.params.authTok;
+    const u_city = req.params.city;
+
+    var replaced = u_city.split('+').join(' ');
+    console.log(user);
+    console.log(u_city);
+
+    var resObj = {}
+
+    resObj.route = user;
+
+    Template.find({}).then(tempDoc => {
+        resObj.temp = tempDoc;
+    })
+
+    Unit.find().where({ manager_U_id: user, city: replaced }).exec().then(unitDoc => {
+
+        resObj.unit = unitDoc;
+
+        console.log('Here is the listObj from unitlist');
+
+        console.log(resObj);
+
+        // res.render('inspect', resObj)
+    }).catch((err) => {
+        catchError(err);
+    });
+
+})
+
+>>>>>>> matt
+
 
 //information that is sent to be displayed in the atlas Db dashboard takes a little while
-
-//Route for the login/reg page
-// router.get('/:unit_id', function(req,res){
-//    const id = req.params.unit_id;
-//     //example of using mongoose for a get request
-//     AddUnit.findById(id).exec().then(doc =>{
-//         console.log("From database: ", doc);
-//         if(doc){
-//             res.status(200).json(doc);
-//         }else{
-//             res.status(404).json("No valid entry for provided ID");
-//         }
-//         res.status(200).json(doc);
-//     }).catch(err => {
-//             console.log(err);
-//             res.status(500).json({error: err});
-//     });
-//     //send response inside the then bloc or/and send response in catch bloc for error
-// });
-// router.post('/', (req,res) =>{
-//     //example for using mongoose for a post request
-//     const addunit = new AddUnit({
-//         unit_id: new mongoose.Types.ObjectId(),
-//         name: req.body.name,
-
-//     });
-//     // save()saves the data using mongoose 
-//     addunit.save().then(result => {
-//         console.log(result);
-//     }).catch(err => console.log(err));
-//     res.status(201).json({
-//         message: "Handling POST requests to /addunit",
-//         createdUnit: addunit
-//     })
-// });
 
 // need to create routes to navigate through the handlebar pages can add more detailed information to the routes later
 

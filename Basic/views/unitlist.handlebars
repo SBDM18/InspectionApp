@@ -1,0 +1,56 @@
+
+<div class="col-sm-9">
+   <table class="table table-striped table-hover" style="background-color:#BFC1D2;">
+      <thead class="thead-light">
+
+         <tr>
+            <th scope="col">Address</th>
+         </tr>
+      </thead>
+      <tbody>
+         {{#each unit}}
+            <tr>            
+                <td>{{street}}<button class="startIns" data-id="unit_id" href="#inspectionModal">Start Inspection</button></td>           
+            </tr>
+         {{/each}}        
+      </tbody>
+   </table>
+</div>
+
+<div id="inspectionModal" class="popupContainer" style="display:none;">
+    <div class="modal-content-temp">
+        <form class="temp-form validate-form">
+            <span class="template-form-title ">Start Inspection</span>
+            <div class="wrap-input100 validate-input" data-validate="Enter Inspection Name">
+                <input type="text" class="input100" id="temp-title" name="title" placeholder="Inspection Name">
+                <span class="focus-input100" data-placeholder="&#xf007;"></span>
+            </div>
+
+            <div>
+                Unit for Inspection
+                <div>
+                    {{#each unit}}
+                    <div>{{street}}</div>
+                    <div>{{city}},{{state}} {{zip}}</div>
+                    {{/each}}
+                </div>
+            </div>
+
+            <div>
+                Choose a template to start the Inspection
+                <div>
+                    {{#each temp}}
+                    <a id="{{title}}" class="temp-selector" href="/inspect/:authTok">{{title}}</a>
+                    {{/each}}
+                </div>
+            </div>
+        </form>
+
+    </div>
+
+{{!-- <div class="col-sm-3">
+    <button class="addUnit button" href="#addUnitModal">Add Unit</button>
+</div> --}}
+
+
+
