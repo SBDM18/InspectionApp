@@ -7,9 +7,14 @@ const checkAuth = require('../auth/check-auth.js');
 var Template = require('../models/template.js');
 
 router.get('/templates/:authTok', function (req, res) {
-    const user = req.params.authTok;
+    const user = req.params.authTok.toString();
 
+    console.log(user);
+    
     Template.find().where({ man_Id: user }).exec().then(doc => {
+
+        console.log(doc);
+        
 
         var tempObj = {
             templates: doc,

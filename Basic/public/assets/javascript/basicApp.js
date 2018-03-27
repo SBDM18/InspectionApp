@@ -41,6 +41,12 @@ $(".addUser").leanModal({
     closeButton: ".close",
 });
 
+$(".startIns").leanModal({
+    top: 100,
+    overlay: 0.6,
+    closeButton: ".close",
+});
+
 // ====================================
 //     Parts Matt has added 3/12/2018
 // ====================================
@@ -57,7 +63,7 @@ $(".addTemplate").leanModal({
 // var tempBtns = [];
 
 $(document).on('click', '.temp-btn', function () {
-    console.log('Hitting this...');
+    
     
     if ($(this).hasClass('selected')){
         $(this).removeClass('selected');
@@ -67,8 +73,6 @@ $(document).on('click', '.temp-btn', function () {
         $(this).addClass('selected');
         // tempBtns.push($(this).text());
     }
-
-    // console.log(tempBtns);
     
 });
 
@@ -94,6 +98,7 @@ $(document).on('click', '#tempSubBtn', function(e){
         numlr: $('#lr-num').val() ? $('#lr-num').val() : 0
     }
 
+    let city = localStorage.setItem('city');
     let auth = localStorage.getItem("auth");
 
     console.log(newTemp);
@@ -138,6 +143,38 @@ $(document).on('click', '#tempSubBtn', function(){
     console.log('Here is the data: ', title, entry, bedroom, bathroom, halls, stairs, kitchen, livingroom);    
 
 });
+
+
+
+// ++++++++++++++++++++++++++++++++++++
+// ====================================
+// ====================================
+//      Start Inspection Button
+// ====================================
+// ====================================
+// ++++++++++++++++++++++++++++++++++++
+
+$(document).on('click', '.temp-selector', function(){
+
+    let auth = localStorage.getItem("auth");
+
+    var obj ={
+        city: localStorage.getItem('city')
+    }
+
+    $.ajax("/inspect/" + auth, {
+        type: "GET",
+        data: obj,
+        headers: { "Authorization": localStorage.getItem("token") }
+    }).done((res, err) => {
+        err ? console.log(err) : console.log('No error');
+        window.location = '/inspect/' + auth + '/' + city;
+    });
+
+
+})
+
+
 
 // ====================================
 //          End of Additions
@@ -350,7 +387,7 @@ $(document).on("click", ".backBtn", () =>{
     });
     
 });
-$(document).on("click", ".logOut", ()=>{
+$(document).on("click", ".logOut", () =>{
     console.log("Working");
     var empty = {};
 
