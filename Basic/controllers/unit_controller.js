@@ -6,6 +6,7 @@ const checkAuth = require('../auth/check-auth.js');
 const cryptoRanString = require('crypto-random-string');
 
 const Unit = require('../models/addUnit.js');
+const Template = require('../models/template.js');
 
 //Route to unit page
 router.get('/units/:authTok', (req, res) => {
@@ -44,6 +45,8 @@ router.get('/units/:authTok', (req, res) => {
     });
     // res.render("units");
 });
+
+
 router.get('/unitlist/:authTok/:city', (req, res) => {
     const user = req.params.authTok;
     const u_city = req.params.city;
@@ -62,6 +65,27 @@ router.get('/unitlist/:authTok/:city', (req, res) => {
 
         res.render("unitlist", listObj);
     }).catch((err) => {
+        catchError(err);
+    });
+});
+
+router.get('/temp/:authTok/:unitID',(req,res)=>{
+    const user = req.params.authTok;
+    const unitID =req.params.unitID;
+    console.log(user);
+    console.log(unitID);
+
+    Template.find().exec().then((err,docs) =>{
+        console.log(docs);
+        let tempObj = {
+            temp: docs,
+            route: user        }
+        console.log('====================================');
+        console.log(tempObj);
+        console.log('====================================');
+
+        res.render("unitlist", tempObj);
+    }).catch((err) =>{
         catchError(err);
     });
 });

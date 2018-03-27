@@ -5,6 +5,7 @@ $(document).ready(function () {
     $("#editModal").hide();
     $("#addUserModal").hide();
     $("#deleteModal").hide();
+    $("#startInsp").hide();
 });
 //calls leanModal to display a modal based off of the ID
 $("#login").leanModal({
@@ -38,7 +39,12 @@ $('.editUser').leanModal({
 $(".addUser").leanModal({
     top: 100,
     overlay: 0.6,
-    closeButton: ".close",
+    closeButton: ".close"
+});
+$(".startIns").leanModal({
+    top:40,
+    overlay:0.6,
+    closeButton: ".close"
 });
 
 // ====================================
@@ -334,10 +340,28 @@ $(document).on("click",".city", function(){
         $(".dash-main").append(res);       
     }).fail((errorThrown)=>{
         swal("Error in unit request");
-    })
-    // create route to grab data from server which checked database for the city and brought back the units that are within that specific city folder
+    });
 });
 
+$(document).on("click", ".startIns", function(){
+    let unitID = $(this).data("id");
+    let street = $(this).data("street");    
+    let auth = localStorage.getItem("auth");
+
+    $.ajax("/temp/" + auth + "/"+ unitID , {
+        type: "GET",
+        headers: { "Authorization": localStorage.getItem("token") }
+    }).then(res => {
+        console.log("grabbed data from template");
+        
+    }).fail((errorThrown) => {
+        swal("Error in unit request");
+    });
+});
+
+$("#inspectStart").on("click", function(){
+    console.log("working need to grab data of which template is grabbed");
+});
 
 $(document).on("click", ".backBtn", () =>{
     console.log("Working");
@@ -449,8 +473,6 @@ $(document).on('click', '.template', function(){
     //     // res.render('/admin');        
     // });
 });
-
-
 
 
 
