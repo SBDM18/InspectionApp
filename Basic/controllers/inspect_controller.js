@@ -7,11 +7,11 @@ const Template = require('../models/template.js');
 const Unit = require('../models/addUnit.js');
 const Inspect = require('../models/inspection.js');
 
-
+let inspDoc = {};
 router.get('/inspection/:authTok', function (req, res) {
     const user = req.params.authTok;
-
-    let inspDoc = {}
+   
+    
     inspDoc.route = user;
 
     Inspect.find().where({manager_U_id: user}).exec().then(doc=>{
@@ -21,20 +21,20 @@ router.get('/inspection/:authTok', function (req, res) {
             return element.status == "Completed";
         }).length;
         let inprogressFiltered = doc.filter(element =>{
-            return element.status == "In Complete";
+            return element.status == "In Progress";
         }).length;
         let incompleteFiltered = doc.filter(element =>{
             return element.status == "In Complete";
-        });
+        }).length;
 
-        console.log("In pRogress",inprogressFiltered);
-        console.log("in complete",incompleteFiltered);
-        console.log("complete",completeFiltered);
+        // console.log("In pRogress",inprogressFiltered);
+        // console.log("in complete",incompleteFiltered);
+        // console.log("complete",completeFiltered);
         
         inspDoc.complete = completeFiltered;
         inspDoc.incomplete = incompleteFiltered;
         inspDoc.inprogress = inprogressFiltered;
-        // console.log(inspDoc);
+        //  console.log(inspDoc);
         
 
         res.render("inspection",  inspDoc);
@@ -44,8 +44,15 @@ router.get('/inspection/:authTok', function (req, res) {
     });
 });
 
-router.get('/inspectdash', function(req,res){
-    res.render('inspectDash'); 
+router.get('/inspectdash/:status', function(req,res){
+    let status_u = req.params.status;
+    console.log("This is the status ", status_u);
+    // let inspections = {};
+    Inspect.find().where({status: `${status_u}`}).exec().then(stat =>{
+        inspDoc.status = stat;
+    });
+    console.log(inspDoc);
+    res.render('inspectDash', inspDoc); 
 });
 
 router.get('/inspect/:authTok/:city', function(req, res) {

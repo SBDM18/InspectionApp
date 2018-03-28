@@ -87,7 +87,7 @@ $(".inCard").on("click", function(){
     let clicked = $(this).data('id');
     console.log(clicked);
 
-    $.ajax("/inspectDash",{
+    $.ajax("/inspectdash/" + clicked,{
         type:"GET",
         headers: { "Authorization": localStorage.getItem("token") }
     }).then(res =>{
