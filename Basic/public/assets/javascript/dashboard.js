@@ -70,6 +70,65 @@ function inspectSlideCards(){
     $(".main").html(html);
 }
 
+$(".inspectBTN").on('click', function(){
+        console.log("working");
+        $.ajax('/inspectinfo', {
+            type:"POST",
+            headers: { "Authorization": localStorage.getItem("token") }
+        }).then(res =>{
+            console.log("information sent to server");
+            swal("successfuly added inspection");            
+        }).fail((errorThrown)=>{
+            swal("try again");
+        });
+});
+
+$(".inCard").on("click", function(){
+    let clicked = $(this).data('id');
+    console.log(clicked);
+
+    $.ajax("/inspectDash",{
+        type:"GET",
+        headers: { "Authorization": localStorage.getItem("token") }
+    }).then(res =>{
+            console.log("info grabbed");
+            $(".dash-main").empty();
+            $('.dash-main').append(res);
+              
+    }).fail((errorThrown)=>{
+        swal("error occured");
+    });    
+});
+
+$(".inspecCardD").on("click", function(){
+    let clicked= $(this).data('id');
+    console.log(clicked);
+    
+})
+
+
+$("#myCarousel").on("slide.bs.carousel", function (e) {
+    var $e = $(e.relatedTarget);
+    var idx = $e.index();
+    var itemsPerSlide = 3;
+    var totalItems = $(".carousel-item").length;
+
+    if (idx >= totalItems - (itemsPerSlide - 1)) {
+        var it = itemsPerSlide - (totalItems - idx);
+        for (var i = 0; i < it; i++) {
+            // append slides to end
+            if (e.direction == "left") {
+                $(".carousel-item")
+                    .eq(i)
+                    .appendTo(".carousel-inner");
+            } else {
+                $(".carousel-item")
+                    .eq(0)
+                    .appendTo(".carousel-inner");
+            }
+        }
+    }
+});
 
 
 // still need to create a back button and a route for home.handlebars unless they are within the 2nd page of units or inspection than it would go back to their respective beginning page (have a this statement check which class was picked and than decide what function to perform within the button click)

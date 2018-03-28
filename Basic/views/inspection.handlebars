@@ -66,16 +66,16 @@
                   <div class="col-sm-6">
                      {{!-- these cards will have general information (completed, in progress, not completed) it will display data pertaining to
                      each of these titles that is pulled from the database inspections collection --}}
-                     <div class="card" style="width: 250px;">
-                        <div class="card-body">
+                     <div class="card inCard" style="width: 250px;" data-id="Completed">
+                        <div class="card-body" >
                            <h5 class="card-title">Completed</h5>
                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                         </div>
                      </div>
                   </div>
                   <div class="col-sm-6">
-                     <div class="card" style="width: 250px;">
-                        <div class="card-body">
+                     <div class="card inCard"  style="width: 250px;" data-id="In Complete">
+                        <div class="card-body" >
                            <h5 class="card-title">Incomplete</h5>
                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                         </div>
@@ -84,15 +84,15 @@
                </div>
                <div class="row">
                   <div class="col-sm-6">
-                     <div class="card" style="width: 250px;">
-                        <div class="card-body">
+                     <div class="card inCard" style="width: 250px;" data-id="In Progress">
+                        <div class="card-body" >
                            <h5 class="card-title">In Progress</h5>
                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                         </div>
                      </div>
                   </div>
                   <div class="col-sm-6">
-                     <div class="card" style="width: 250px;">
+                     <div class="card inCard" style="width: 250px;">
                         <div class="card-body">
                            <h5 class="card-title"></h5>
                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
@@ -100,24 +100,7 @@
                      </div>
                   </div>
                </div>
-               <div class="row">
-                  <div class="col-sm-6">
-                     <div class="card" style="width: 250px;">
-                        <div class="card-body">
-                           <h5 class="card-title">Card title</h5>
-                           <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        </div>
-                     </div>
-                  </div>
-                  <div class="col-sm-6">
-                     <div class="card" style="width: 250px;">
-                        <div class="card-body">
-                           <h5 class="card-title">Card title</h5>
-                           <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        </div>
-                     </div>
-                  </div>
-               </div>
+               
             </div>
             <div class="col-sm-4 timeline-cont">
                <h1 class="timelineTitle">Timeline</h1>
@@ -125,15 +108,12 @@
                   {{!-- this table gets filled in from data sent from the database of the most recently completed inspections and display chronologicly:
                   includes timestamp, who created the inspection and house address --}}
                   <tbody>
-                     <tr>
-                        <td>House 1</td>
-                     </tr>
-                     <tr>
-                        <td>House 2</td>
-                     </tr>
-                     <tr>
-                        <td>House 3</td>
-                     </tr>
+                      {{#each inspect}}
+                        <tr>
+                            <td style="font-size: 9px;">{{street}} {{created}}</td>
+                        </tr>
+                     {{/each}}
+                    
                   </tbody>
                </table>
             </div>

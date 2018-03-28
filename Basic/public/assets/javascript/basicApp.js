@@ -476,21 +476,7 @@ $(".qtyminus").click(function (e) {
    
 /*==================================================================
     [ Validate ]*/
-
-
-    // function validateLogin() {
-    //     let username = $("username").val();
-    //     let password = $("password").val();
-    //     if(username == null || username == " "){
-    //         swal("Please enter a username");
-    //         return false;
-    //     }
-    //     if(password == null || password == " "){
-    //         swal("Please enter a password");
-    //         return false;
-    //     }
-    //     return true;
-    // }
+ 
 
 
   

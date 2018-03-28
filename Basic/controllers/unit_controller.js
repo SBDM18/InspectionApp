@@ -8,7 +8,7 @@ const cryptoRanString = require('crypto-random-string');
 const Unit = require('../models/addUnit.js');
 const Template = require('../models/template.js');
 
-var Template = require('../models/template.js');
+
 
 
 //Route to unit page
