@@ -57,34 +57,38 @@ router.get('/inspectdash/:status', function(req,res){
 
 router.get('/inspect/:authTok/:city', function(req, res) {
     const user = req.params.authTok;
-    const u_city = req.params.city;
+    
+    console.log('hitting this endpoint');
 
-    var replaced = u_city.split('+').join(' ');
+    // var replaced = u_city.split('+').join(' ');
     console.log(user);
-    console.log(u_city);
+    // console.log(u_city);
 
     var resObj = {}
 
     resObj.route = user;
 
-    Template.find({}).then(tempDoc => {
-        resObj.temp = tempDoc;
-    });
-
     Unit.find().where({ manager_U_id: user, city: replaced }).exec().then(unitDoc => {
 
         resObj.unit = unitDoc;
 
-        console.log('Here is the listObj from unitlist');
+        Template.find({}).then(tempDoc => {
+            resObj.temp = tempDoc;
 
-        console.log(resObj);
+            console.log('Here is the listObj from unitlist');
 
-        // res.render('inspect', resObj)
+            console.log(resObj);
+
+            res.render('inspect', resObj)
+
+        })
     }).catch((err) => {
         catchError(err);
     });
 
-});
+    res.render('inspect', resObj)
+
+})
 
 // 
 
