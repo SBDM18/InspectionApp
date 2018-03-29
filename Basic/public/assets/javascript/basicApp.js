@@ -146,8 +146,6 @@ $(document).on('click', '#tempSubBtn', function(){
         var livingroom = 'livingroom';
     }
 
-    console.log('Here is the data: ', title, entry, bedroom, bathroom, halls, stairs, kitchen, livingroom);    
-
 });
 
 
@@ -163,20 +161,23 @@ $(document).on('click', '#tempSubBtn', function(){
 $(document).on('click', '.temp-selector', function(){
 
     let auth = localStorage.getItem("auth");
+    let city = localStorage.getItem('city');
+    let route = `/${auth}`;
 
-    var obj ={
-        city: localStorage.getItem('city')
-    }
+    var newIns ={
+        status: "incomplete"
+    }    
 
-    $.ajax("/inspect/" + auth, {
-        type: "GET",
-        data: obj,
+    $.ajax("/units/" + route, {
+        type: "POST",
+        data: newIns,
         headers: { "Authorization": localStorage.getItem("token") }
     }).done((res, err) => {
-        err ? console.log(err) : console.log('No error');
-        window.location = '/inspect/' + auth + '/' + city;
+        // console.log("/inspect/"+route);
+        
+        // err ? console.log(err) : console.log('No error');
+        // window.location = '/inspect/' + route ;
     });
-
 
 })
 
