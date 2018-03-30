@@ -9,8 +9,7 @@ const Inspect = require('../models/inspection.js');
 
 let inspDoc = {};
 router.get('/inspection/:authTok', function (req, res) {
-    const user = req.params.authTok;
-   
+    const user = req.params.authTok;   
     
     inspDoc.route = user;
 
@@ -88,9 +87,12 @@ router.get('/inspect/:authTok/:city', function(req, res) {
 
     res.render('inspect', resObj)
 
-})
+});
 
 // 
+router.get('/inspectstart/:authTok/', (req,res)=>{
+    res.render('inspect');
+});
 
 
 

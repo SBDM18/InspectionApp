@@ -162,24 +162,18 @@ $(document).on('click', '.temp-selector', function(){
 
     let auth = localStorage.getItem("auth");
     let city = localStorage.getItem('city');
-    let route = `/${auth}`;
+   
 
-    var newIns ={
-        status: "incomplete"
-    }    
-
-    $.ajax("/units/" + route, {
-        type: "POST",
-        data: newIns,
-        headers: { "Authorization": localStorage.getItem("token") }
+    $.ajax("/inspectstart/" + auth, {
+        type: "GET",      
+        headers: { "Authorization": localStorage.getItem("token")}
     }).done((res, err) => {
         // console.log("/inspect/"+route);
         
         // err ? console.log(err) : console.log('No error');
         // window.location = '/inspect/' + route ;
     });
-
-})
+});
 
 
 
@@ -381,25 +375,24 @@ $(document).on("click",".city", function(){
     });
 });
 
-$(document).on("click", ".startIns", function(){
-    let unitID = $(this).data("id");
-    let street = $(this).data("street");    
-    let auth = localStorage.getItem("auth");
+// $(document).on("click", ".startIns", function(){
+//     let unitID = $(this).data("id");
+//     let street = $(this).data("street");    
+//     let auth = localStorage.getItem("auth");
+//     console.log(auth);
+//     console.log(unitID, street);
+    
 
-    $.ajax("/temp/" + auth + "/"+ unitID , {
-        type: "GET",
-        headers: { "Authorization": localStorage.getItem("token") }
-    }).then(res => {
-        console.log("grabbed data from template");
+//     $.ajax("/temp/" + auth + "/"+ unitID , {
+//         type: "GET",
+//         headers: { "Authorization": localStorage.getItem("token") }
+//     }).then(res => {
+//         console.log("grabbed data from template");
         
-    }).fail((errorThrown) => {
-        swal("Error in unit request");
-    });
-});
+//     });
+// });
 
-$("#inspectStart").on("click", function(){
-    console.log("working need to grab data of which template is grabbed");
-});
+
 
 $(document).on("click", ".backBtn", () =>{
     console.log("Working");
