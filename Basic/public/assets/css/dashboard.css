@@ -274,6 +274,10 @@ html{
 h3{
     color: white;
 }
+.inspectTab{
+    margin-left: 10%;
+}
+
 /*------------------------------------------------------------
 [ Inspection Card slideshow page ]*/
 @media (min-width: 768px) {

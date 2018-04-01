@@ -1,9 +1,9 @@
 <div class="row dash-main">
     <div id="myCarousel" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner row w-100 mx-auto">
-            <div class="carousel-item col-md-4 active">
+            <div class="carousel-item col-md-4 active ">
                 <div class="card inspecCardD" data-id="Completed">                    
-                    <div class="card-body">
+                    <div class="card-body" style="background-color:yellowgreen;">
                         <h4 class="card-title" >Complete</h4>
                         <p class="card-text">Amount of Inspections completed: {{complete}}</p>
                         <p class="card-text">
@@ -14,7 +14,7 @@
             </div>
             <div class="carousel-item col-md-4">
                 <div class="card inspecCardD" data-id="In Progress">                    
-                    <div class="card-body">
+                    <div class="card-body" style="background-color:rgb(201, 15, 167);">
                         <h4 class="card-title">In Progress</h4>
                         <p class="card-text">Amount of Inspections incomplete: {{incomplete}}</p>
                         <p class="card-text">
@@ -25,7 +25,7 @@
             </div>
             <div class="carousel-item col-md-4">
                 <div class="card inspecCardD" data-id="Incomplete">                   
-                    <div class="card-body">
+                    <div class="card-body" style="background-color:red;">
                         <h4 class="card-title">Incomplete</h4>
                         <p class="card-text">Amount of Inspections inprogress: {{inprogress}}</p>
                         <p class="card-text">
@@ -33,19 +33,7 @@
                         </p>
                     </div>
                 </div>
-            </div>
-            <div class="carousel-item col-md-4">
-                <div class="card inspecCardD">                  
-                    <div class="card-body">
-                        <h4 class="card-title">Card 4</h4>
-                        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This
-                            content is a little bit longer.</p>
-                        <p class="card-text">
-                            <small class="text-muted">Last updated 3 mins ago</small>
-                        </p>
-                    </div>
-                </div>
-            </div>
+            </div>           
             
         </div>
         <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">

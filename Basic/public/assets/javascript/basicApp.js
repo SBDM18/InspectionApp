@@ -164,6 +164,7 @@ $(document).on('click', '.temp-selector', function(){
     let city = localStorage.getItem('city');
    
 
+<<<<<<< HEAD
     $.ajax("/inspectstart/" + auth, {
         type: "GET",      
         headers: { "Authorization": localStorage.getItem("token")}
@@ -172,6 +173,19 @@ $(document).on('click', '.temp-selector', function(){
         
         // err ? console.log(err) : console.log('No error');
         // window.location = '/inspect/' + route ;
+=======
+    // var obj ={
+    //     city: localStorage.getItem('city')
+    // }
+
+    $.ajax("/inspect/" + auth, {
+        type: "GET",
+        // data: obj,
+        headers: { "Authorization": localStorage.getItem("token") }
+    }).done((res, err) => {
+        err ? console.log(err) : console.log('No error');
+        window.location = '/inspect/' + auth;
+>>>>>>> e0886aa4cfaf8bf78ff732cb7d8e16574f9f63af
     });
 });
 
