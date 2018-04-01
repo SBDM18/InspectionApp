@@ -38,9 +38,9 @@
 
             <div>
                 Choose a template to start the Inspection
-                <div>
+                <div class="temp-name-btns">
                     {{#each temp}}
-                    <a id="{{title}}" class="temp-selector" href="inspect/{{route}}">{{title}}</a>
+                    <button id="{{title}}" class="temp-selector">{{title}}</button>
                     {{/each}}
                 </div>
             </div>
