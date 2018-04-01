@@ -9,20 +9,12 @@ var Template = require('../models/template.js');
 router.get('/templates/:authTok', function (req, res) {
     const user = req.params.authTok.toString();
 
-    console.log(user);
-    
     Template.find().where({ man_Id: user }).exec().then(doc => {
-
-        console.log(doc);
-        
 
         var tempObj = {
             templates: doc,
             route: user
         };
-        console.log('Temp obj...');
-        
-        console.log(tempObj);
 
         res.render("template", tempObj);
     }).catch((err) => {
@@ -32,10 +24,6 @@ router.get('/templates/:authTok', function (req, res) {
 
 
 router.post('/templates/:authTok', checkAuth, function(req, res){
-    console.log('User Info++', req.userData);
-    
-    console.log("This is the req.body");
-    console.log(req.body);
 
     const man = req.params.authTok;
     const user = req.userData.uID;
@@ -77,9 +65,7 @@ router.post('/templates/:authTok', checkAuth, function(req, res){
 
 router.get('/templist/:authTok', function (req, res) {
     const user = req.params.authTok;
-    console.log('Hitting this end point..');
-    Template.find().then(doc => {
-        console.log(doc);
+        Template.find().then(doc => {
         var tempObj = {
             templates: doc,
             route: user
