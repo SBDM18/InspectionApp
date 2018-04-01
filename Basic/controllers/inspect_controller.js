@@ -67,15 +67,11 @@ router.get('/inspect/:authTok/:city', function(req, res) {
 
     resObj.route = user;
 
-<<<<<<< HEAD
-    Unit.find().where({ manager_U_id: user, city: replaced }).exec().then(unitDoc => {
-=======
     Template.find({}).then(tempDoc => {
         resObj.temp = tempDoc;
     });
 
     Unit.find().where({ manager_U_id: user, city: u_city }).exec().then(unitDoc => {
->>>>>>> e0886aa4cfaf8bf78ff732cb7d8e16574f9f63af
 
         resObj.unit = unitDoc;
 
@@ -84,15 +80,7 @@ router.get('/inspect/:authTok/:city', function(req, res) {
 
             console.log('Here is the listObj from unitlist');
 
-<<<<<<< HEAD
-            console.log(resObj);
-
-            res.render('inspect', resObj)
-
-        })
-=======
         res.render('inspect', resObj)
->>>>>>> e0886aa4cfaf8bf78ff732cb7d8e16574f9f63af
     }).catch((err) => {
         catchError(err);
     });
