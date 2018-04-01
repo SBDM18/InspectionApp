@@ -30,7 +30,6 @@ router.get('/templates/:authTok', function (req, res) {
     });    
 });
 
-
 router.post('/templates/:authTok', checkAuth, function(req, res){
     console.log('User Info++', req.userData);
     

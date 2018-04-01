@@ -164,17 +164,17 @@ $(document).on('click', '.temp-selector', function(){
 
     let auth = localStorage.getItem("auth");
 
-    var obj ={
-        city: localStorage.getItem('city')
-    }
+    // var obj ={
+    //     city: localStorage.getItem('city')
+    // }
 
     $.ajax("/inspect/" + auth, {
         type: "GET",
-        data: obj,
+        // data: obj,
         headers: { "Authorization": localStorage.getItem("token") }
     }).done((res, err) => {
         err ? console.log(err) : console.log('No error');
-        window.location = '/inspect/' + auth + '/' + city;
+        window.location = '/inspect/' + auth;
     });
 
 

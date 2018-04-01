@@ -95,8 +95,8 @@ router.get('/temp/:authTok/:unitID',(req,res)=>{
     console.log(user);
     console.log(unitID);
 
-    Template.find().exec().then((err,docs) =>{
-        console.log(docs);
+    Template.find({}).exec().then((err,docs) =>{
+        console.log("this is the template ", docs);
         let tempObj = {
             temp: docs,
             route: user        }

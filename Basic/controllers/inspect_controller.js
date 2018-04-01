@@ -59,7 +59,7 @@ router.get('/inspect/:authTok/:city', function(req, res) {
     const user = req.params.authTok;
     const u_city = req.params.city;
 
-    var replaced = u_city.split('+').join(' ');
+    // var replaced = u_city.split('+').join(' ');
     console.log(user);
     console.log(u_city);
 
@@ -71,7 +71,7 @@ router.get('/inspect/:authTok/:city', function(req, res) {
         resObj.temp = tempDoc;
     });
 
-    Unit.find().where({ manager_U_id: user, city: replaced }).exec().then(unitDoc => {
+    Unit.find().where({ manager_U_id: user, city: u_city }).exec().then(unitDoc => {
 
         resObj.unit = unitDoc;
 
@@ -79,7 +79,7 @@ router.get('/inspect/:authTok/:city', function(req, res) {
 
         console.log(resObj);
 
-        // res.render('inspect', resObj)
+        res.render('inspect', resObj)
     }).catch((err) => {
         catchError(err);
     });
