@@ -8,6 +8,8 @@ const Unit = require('../models/addUnit.js');
 const Inspect = require('../models/inspection.js');
 
 let inspDoc = {};
+
+
 router.get('/inspection/:authTok', function (req, res) {
     const user = req.params.authTok;   
     
@@ -54,9 +56,10 @@ router.get('/inspectdash/:status', function(req,res){
     res.render('inspectDash', inspDoc); 
 });
 
-router.get('/inspect/:authTok/:city', function(req, res) {
+router.get('/inspect/:authTok', function(req, res) {
     const user = req.params.authTok;
-    
+    // const u_city = req.params.city;
+
     console.log('hitting this endpoint');
 
     // var replaced = u_city.split('+').join(' ');
@@ -67,12 +70,7 @@ router.get('/inspect/:authTok/:city', function(req, res) {
 
     resObj.route = user;
 
-<<<<<<< HEAD
-    Unit.find().where({ manager_U_id: user, city: replaced }).exec().then(unitDoc => {
-=======
-    Template.find({}).then(tempDoc => {
-        resObj.temp = tempDoc;
-    });
+    Unit.find().where({ manager_U_id: user }).exec().then(unitDoc => {
 
     Unit.find().where({ manager_U_id: user, city: u_city }).exec().then(unitDoc => {
 >>>>>>> e0886aa4cfaf8bf78ff732cb7d8e16574f9f63af
@@ -81,14 +79,7 @@ router.get('/inspect/:authTok/:city', function(req, res) {
 
         Template.find({}).then(tempDoc => {
             resObj.temp = tempDoc;
-
-            console.log('Here is the listObj from unitlist');
-
-<<<<<<< HEAD
-            console.log(resObj);
-
             res.render('inspect', resObj)
-
         })
 =======
         res.render('inspect', resObj)
@@ -97,7 +88,7 @@ router.get('/inspect/:authTok/:city', function(req, res) {
         catchError(err);
     });
 
-    res.render('inspect', resObj)
+    // res.render('inspect', resObj)
 
 });
 
