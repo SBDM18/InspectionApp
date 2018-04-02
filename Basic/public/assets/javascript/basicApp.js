@@ -164,16 +164,6 @@ $(document).on('click', '.temp-selector', function(){
     let city = localStorage.getItem('city');
    
 
-<<<<<<< HEAD
-    $.ajax("/inspectstart/" + auth, {
-        type: "GET",      
-        headers: { "Authorization": localStorage.getItem("token")}
-    }).done((res, err) => {
-        // console.log("/inspect/"+route);
-        
-        // err ? console.log(err) : console.log('No error');
-        // window.location = '/inspect/' + route ;
-=======
     // var obj ={
     //     city: localStorage.getItem('city')
     // }
@@ -185,7 +175,6 @@ $(document).on('click', '.temp-selector', function(){
     }).done((res, err) => {
         err ? console.log(err) : console.log('No error');
         window.location = '/inspect/' + auth;
->>>>>>> e0886aa4cfaf8bf78ff732cb7d8e16574f9f63af
     });
 });
 
