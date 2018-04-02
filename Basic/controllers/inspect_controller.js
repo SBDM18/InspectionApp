@@ -72,18 +72,14 @@ router.get('/inspect/:authTok', function(req, res) {
 
     Unit.find().where({ manager_U_id: user }).exec().then(unitDoc => {
 
-    Unit.find().where({ manager_U_id: user, city: u_city }).exec().then(unitDoc => {
->>>>>>> e0886aa4cfaf8bf78ff732cb7d8e16574f9f63af
-
         resObj.unit = unitDoc;
 
         Template.find({}).then(tempDoc => {
             resObj.temp = tempDoc;
             res.render('inspect', resObj)
         })
-=======
+
         res.render('inspect', resObj)
->>>>>>> e0886aa4cfaf8bf78ff732cb7d8e16574f9f63af
     }).catch((err) => {
         catchError(err);
     });
