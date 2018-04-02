@@ -104,7 +104,7 @@ $(document).on('click', '#tempSubBtn', function(e){
         numlr: $('#lr-num').val() ? $('#lr-num').val() : 0
     }
 
-    let city = localStorage.setItem('city');
+    // let city = localStorage.setItem('city');
     let auth = localStorage.getItem("auth");
 
     console.log(newTemp);
@@ -158,9 +158,13 @@ $(document).on('click', '#tempSubBtn', function(){
 // ====================================
 // ++++++++++++++++++++++++++++++++++++
 
-$(document).on('click', '.temp-selector', function(){
+$(document).on('click', '')
+
+$(document).on('click', '.temp-selector', function(e){
+    e.preventDefault();
 
     let auth = localStorage.getItem("auth");
+<<<<<<< HEAD
     let city = localStorage.getItem('city');
    
 
@@ -171,6 +175,22 @@ $(document).on('click', '.temp-selector', function(){
     $.ajax("/inspect/" + auth, {
         type: "GET",
         // data: obj,
+=======
+    // let city = localStorage.getItem('city');
+    let title = $('#temp-title').text();
+    let template = $(this).attr('id');
+
+
+    let newIns = {
+        insTitle: title,
+        insTemplate: template
+    }
+
+    console.log(newIns);
+    $.ajax("/templates/" + auth, {
+        type: "POST",
+        data: newIns,
+>>>>>>> matt
         headers: { "Authorization": localStorage.getItem("token") }
     }).done((res, err) => {
         err ? console.log(err) : console.log('No error');
@@ -270,6 +290,8 @@ $("#createUnit").on("click", event =>{
         garage: $(".garage:checked").val(),        
     };
     console.log(newUnit);
+
+    let city = localStorage.setItem('city', newUnit.city);
     
     //after addunit insert jwt id to authenticate the user/ manager 
     $.ajax("/addunit",{
@@ -308,8 +330,7 @@ $("#createUser").on("click", event => {
         swal("You have succesfully added a new user");
         console.log("information sent to server for registration");
         console.log(res);
-        // window.location = '/admin';
-        // res.render('/admin');        
+       
     }).fail((errorThrown)=>{
         swal("There was an error in the information provided to create a new user");
     });
