@@ -85,13 +85,17 @@ $(".inspectBTN").on('click', function(){
 
 $(".inCard").on("click", function(){
     let clicked = $(this).data('id');
-    console.log(clicked);
+    console.log("Status ",clicked);
+    let auth = localStorage.getItem("auth");
+    let route = `${auth}/${clicked}`
 
-    $.ajax("/inspectdash/" + clicked,{
+    $.ajax("/inspectdash/" + route,{
         type:"GET",
         headers: { "Authorization": localStorage.getItem("token") }
-    }).then(res =>{
+    }).done(res =>{
             console.log("info grabbed");
+            console.log(res.inspDoc);
+            
             $(".dash-main").empty();
             $('.dash-main').append(res);
               

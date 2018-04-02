@@ -2,58 +2,122 @@ const express = require('express');
 const router = express.Router();
 const mongoose = require('mongoose');
 const checkAuth = require('../auth/check-auth.js');
+const async = require('async');
 
 const Template = require('../models/template.js');
 const Unit = require('../models/addUnit.js');
 const Inspect = require('../models/inspection.js');
 
 let inspDoc = {};
-
+let inspDash = {};
+let completeList;
+let incompleteList;
+let inprogressList;
+let inspect;
+let complete;
+let incomplete;
+let inprogress;
+let total;
 
 router.get('/inspection/:authTok', function (req, res) {
-    const user = req.params.authTok;   
-    
-    inspDoc.route = user;
-
-    Inspect.find().where({manager_U_id: user}).exec().then(doc=>{
+    const user = req.params.authTok;
+     let route = user;
+        Inspect.find().where({
+        manager_U_id: user
+    }).exec().then(doc => {
         inspDoc.inspect = doc;
-
-        let completeFiltered = doc.filter(element =>{
+        let completeFiltered = doc.filter(element => {
             return element.status == "Completed";
         }).length;
-        let inprogressFiltered = doc.filter(element =>{
+        let inprogressFiltered = doc.filter(element => {
             return element.status == "In Progress";
         }).length;
-        let incompleteFiltered = doc.filter(element =>{
+        let incompleteFiltered = doc.filter(element => {
             return element.status == "In Complete";
         }).length;
-
-        // console.log("In pRogress",inprogressFiltered);
-        // console.log("in complete",incompleteFiltered);
-        // console.log("complete",completeFiltered);
-        
+        let total = (completeFiltered + inprogressFiltered + incompleteFiltered);
         inspDoc.complete = completeFiltered;
         inspDoc.incomplete = incompleteFiltered;
         inspDoc.inprogress = inprogressFiltered;
+        inspDoc.total = total;
+        inspDoc.route = user;
         //  console.log(inspDoc);
-        
+        res.render("inspection", inspDoc);
 
-        res.render("inspection",  inspDoc);
-
-    }).catch(err=>{
+    }).catch(err => {
         catchError(err);
     });
 });
+//     async.series([function(callback){
+//         Inspect.find().where({manager_U_id: user}).where({status: 'Completed'}).exec().then((err,comStat)=>{
+//             console.log("This is complete status",comStat);
+//             if(err) return callback(err);
+//             completeList = comStat;
+//             callback(null, comStat);            
+//         })
+//     },function(callback){
+//         Inspect.find().where({ manager_U_id: user }).where({ status: "In Complete" }).exec().then((err, incomStat) => {
+//             console.log(incomStat);
+//             if (err) return callback(err);
+//             incompleteList = incomStat;
+//             callback(null, incomStat);
+//         })
+//     }, function(callback){
+//         Inspect.find().where({ manager_U_id: user }).where({ status: "In Progress" }).exec().then((err, inproStat) => {
+//             console.log(inproStat);
+//             if (err) return callback(err);
+//             inprogressList = inproStat;
+//             callback(null, inproStat);
+//         })
+//     }, function(callback){
+//         Inspect.find().where({manager_U_id:user}).exec().then(doc =>{
+//             inspect = doc;
 
-router.get('/inspectdash/:status', function(req,res){
+//             let completeFiltered = doc.filter(element => {
+//                 return element.status == "Completed";
+//             }).length;
+//             let inprogressFiltered = doc.filter(element => {
+//                 return element.status == "In Progress";
+//             }).length;
+//             let incompleteFiltered = doc.filter(element => {
+//                 return element.status == "In Complete";
+//             }).length;
+//             let total = (completeFiltered + inprogressFiltered + incompleteFiltered);
+//             complete = completeFiltered;
+//             incomplete = incompleteFiltered;
+//             inprogress = inprogressFiltered;
+//             total = total;
+//         })
+//     }
+//     ],function(err){ 
+//         let inspDoc = {
+//              completeList: completeList,incompleteList: incompleteList,inprogressList: inprogressList,
+//             inspect: inspect, complete: complete,incomplete: incomplete,inprogress: inprogress,
+//              total: total,route: route     
+//            }      
+//         console.log(err);
+//         console.log("this is inspect doc:", inspDoc);
+        
+        
+//         res.render("inspection", inspDoc);       
+//     });
+// });
+
+router.get('/inspectdash/:authTok/:status', function (req, res) {
     let status_u = req.params.status;
+    let user = req.params.authTok;
     console.log("This is the status ", status_u);
+    console.log("This is the user", user);
+    
     // let inspections = {};
-    Inspect.find().where({status: `${status_u}`}).exec().then(stat =>{
+    Inspect.find({manager_U_id: user
+    }).exec().then(stat => {
+        // console.log("This is status array",stat);
+        
         inspDoc.status = stat;
     });
     console.log(inspDoc);
-    res.render('inspectDash', inspDoc); 
+    res.render('inspectDash', inspDoc);
 });
 
 router.get('/inspect/:authTok', function(req, res) {
@@ -78,18 +142,21 @@ router.get('/inspect/:authTok', function(req, res) {
             resObj.temp = tempDoc;
             res.render('inspect', resObj)
         })
+<<<<<<< HEAD
 
         res.render('inspect', resObj)
+=======
+>>>>>>> 70b1e9ce907e498bea80e7b91ce12eac9c02d31a
     }).catch((err) => {
         catchError(err);
     });
 
     // res.render('inspect', resObj)
 
-});
+})
 
 // 
-router.get('/inspectstart/:authTok/', (req,res)=>{
+router.get('/inspectstart/:authTok/', (req, res) => {
     res.render('inspect');
 });
 
@@ -130,5 +197,3 @@ function catchError(err) {
 
 
 module.exports = router;
-
-

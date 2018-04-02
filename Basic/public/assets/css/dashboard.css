@@ -271,11 +271,19 @@ html{
 .timeTable{
     margin: 3% 2% 0 0;
 }
+.inspTab-cont{
+    overflow: hidden;
+    overflow: scroll;
+    height: 400px;
+    margin-top: -5px;
+    width: 80%;
+}
 h3{
     color: white;
 }
 .inspectTab{
     margin-left: 10%;
+    font-size: 10px;
 }
 
 /*------------------------------------------------------------
