@@ -1,69 +1,69 @@
-<div class="col-sm-9">
+<div class="container-fluid dashboard">
+    <div class="row main-content">
+        <div class="col-sm-2 letter-color background">
+            <div class="row nav-section">
+                <div class="col-sm-12 logo">
+                    <img src="../../assets/images/logo.png" width="150" height="100" alt="Logo">
+                </div>
+                <div class="col-sm-12 nav-content">
 
+                    <a class="nav-links overview" href="/home/{{route}}">
+                        <img src="../../assets/images/view_icon.png" alt="Overview" class="nav-icon">
+                        <div class="link-name letter-color" style="display:none">Overview</div>
+                    </a>
+                    <a class="nav-links units" href="/units/{{route}}">
+                        <img src="../../assets/images/home_icon.png" alt="Home" class="nav-icon">
+                        <div class="link-name letter-color" style="display:none">Units</div>
+                    </a>
+                    <a class="nav-links inspection" href="/inspection/{{route}}">
+                        <img src="../../assets/images/mag_glass.png" alt="Magnifying Glass" class="nav-icon">
+                        <div class="link-name letter-color" style="display:none">Inspections</div>
+                    </a>
+                    <a class="nav-links template" href="/templates/{{route}}">
+                        <img src="../../assets/images/temp_icon.png" alt="Template" class="nav-icon">
+                        <div class="link-name letter-color" style="display:none">Templates</div>
+                    </a>
+                    <a class="nav-links report" href="/reports/{{route}}">
+                        <img src="../../assets/images/rep_icon.png" alt="Report" class="nav-icon">
+                        <div class="link-name letter-color" style="display:none">Reports</div>
+                    </a>
+                </div>
+                <div class="col-sm-12 company-info">
+                    Hometeam Property Management
+                </div>
+            </div>
+        </div>
 
-{{#each unit}}
-<div>
-    <div>{{street}}</div>
-    <div>{{city}},{{state}} {{zip}}</div>
-</div>
-{{/each}}
+        <div class="col-sm-10 main">
+            <div class="row homeT">
+                <div class="col-sm-9">
+                    {{#each unit}}
+                    <div>
+                        <div>ID: <span>{{unit_id}}</span></div>
+                        <div>ADDRESS: {{street}}</div>
+                        <div>CITY: {{city}} STATE: {{state}} ZIP:{{zip}}</div>
+                    </div>
+                    {{/each}}
 
-{{#each temp}}
-    <div class="inspectDetails">
-        <p>
-            <button id="temp-btn-entry" class="btn" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="true"
-                aria-controls="collapseExample">
-                <img src="./public/assets/images/dropdown.png" alt="#" height="20px" width="20px">
-                <div id="temp-label-entry"> Entry </div>
-            </button>
-        </p>
-        <div class="collapse" id="collapseExample">
-            <div class="card card-body">
-                <div id="temp-card-entry-walls" class="temp-card">
-                    <span>Walls</span>
-                    <div>N</div>
-                    <div>S</div>
-                    <div>D</div>
-                </div>
-                <div id="temp-card-entry-ceiling" class="temp-card">
-                    <span>Ceiling</span>
-                    <div>N</div>
-                    <div>S</div>
-                    <div>D</div>
-                </div>
-                <div id="temp-card-entry-doors" class="temp-card">
-                    <span>Doors</span>
-                    <div>N</div>
-                    <div>S</div>
-                    <div>D</div>
-                </div>
-                <div id="temp-card-entry-flooring" class="temp-card">
-                    <span>Flooring</span>
-                    <div>N</div>
-                    <div>S</div>
-                    <div>D</div>
-                </div>
-                <div id="temp-card-entry-baseboards" class="temp-card">
-                    <span>Baseboards</span>
-                    <div>N</div>
-                    <div>S</div>
-                    <div>D</div>
-                </div>
-                <div id="temp-card-entry-doorbell" class="temp-card">
-                    <span>Doorbell</span>
-                    <div>N</div>
-                    <div>S</div>
-                    <div>D</div>
-                </div>
-                <div id="temp-card-entry-lights" class="temp-card">
-                    <span>Lights</span>
-                    <div>N</div>
-                    <div>S</div>
-                    <div>D</div>
+                        <div class="inspectDetails">
+                            {{#each temp}}
+                            <p>
+                                <button id="temp-btn-entry" class="btn" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="true"
+                                    aria-controls="collapseExample">
+                                    <img src="./public/assets/images/dropdown.png" alt="#" height="20px" width="20px">
+                                    <div id="temp-label-entry"> Entry </div>
+                                </button>
+                            </p>
+                            <div class="collapse" id="collapseExample">
+                                <div class="card card-body">
+                                    
+                                </div>
+                            </div>
+                             {{/each}}
+                        </div>
+    
                 </div>
             </div>
         </div>
     </div>
-{{/each}}
-
 </div>

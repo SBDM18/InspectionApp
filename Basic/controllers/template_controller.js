@@ -65,7 +65,7 @@ router.post('/templates/:authTok', checkAuth, function(req, res){
 
 router.get('/templist/:authTok', function (req, res) {
     const user = req.params.authTok;
-        Template.find().then(doc => {
+    Template.find().where({ manager_U_id: user }).exec().then(doc => {
         var tempObj = {
             templates: doc,
             route: user
