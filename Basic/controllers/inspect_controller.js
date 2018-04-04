@@ -22,7 +22,7 @@ let total;
 router.get('/inspection/:authTok', function (req, res) {
     const user = req.params.authTok;
      let route = user;
-        Inspect.find().where({
+    Inspect.find().where({
         manager_U_id: user
     }).exec().then(doc => {
         inspDoc.inspect = doc;
@@ -110,8 +110,7 @@ router.get('/inspectdash/:authTok/:status', function (req, res) {
     console.log("This is the user", user);
     
     // let inspections = {};
-    Inspect.find({manager_U_id: user
-    }).exec().then(stat => {
+    Inspect.find().where({manager_U_id: user}).exec().then(stat => {
         // console.log("This is status array",stat);
         
         inspDoc.status = stat;
@@ -142,11 +141,6 @@ router.get('/inspect/:authTok', function(req, res) {
             resObj.temp = tempDoc;
             res.render('inspect', resObj)
         })
-<<<<<<< HEAD
-
-        res.render('inspect', resObj)
-=======
->>>>>>> 70b1e9ce907e498bea80e7b91ce12eac9c02d31a
     }).catch((err) => {
         catchError(err);
     });

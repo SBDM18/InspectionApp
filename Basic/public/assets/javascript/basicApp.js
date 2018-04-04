@@ -165,18 +165,8 @@ $(document).on('click', '.temp-selector', function(e){
 
     let auth = localStorage.getItem("auth");
     let city = localStorage.getItem('city');
-   
-
-    // var obj ={
-    //     city: localStorage.getItem('city')
-    // }
-
-    $.ajax("/inspect/" + auth, {
-        type: "GET",
-        // data: obj,
-    // let city = localStorage.getItem('city');
     let title = $('#temp-title').text();
-    let template = $(this).attr('id');
+    let template = $(this).attr('id'); 
 
 
     let newIns = {
