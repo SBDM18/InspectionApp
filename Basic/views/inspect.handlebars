@@ -39,7 +39,7 @@
                 <div class="col-sm-9">
                     {{#each unit}}
                     <div>
-                        <div>ID: <span>{{unit_id}}</span></div>
+                        <div>ID: <span class="">{{unit_id}}</span></div>
                         <div>ADDRESS: {{street}}</div>
                         <div>CITY: {{city}} STATE: {{state}} ZIP:{{zip}}</div>
                     </div>
@@ -48,13 +48,13 @@
                         <div class="inspectDetails">
                             {{#each temp}}
                             <p>
-                                <button id="temp-btn-entry" class="btn" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="true"
+                                <button id="temp-btn-entry" class="btn" type="button" data-toggle="collapse" data-target="#{{title}}" aria-expanded="true"
                                     aria-controls="collapseExample">
                                     <img src="./public/assets/images/dropdown.png" alt="#" height="20px" width="20px">
                                     <div id="temp-label-entry"> Entry </div>
                                 </button>
                             </p>
-                            <div class="collapse" id="collapseExample">
+                            <div class="collapse" id="{{title}}">
                                 <div class="card card-body">
                                     
                                 </div>
