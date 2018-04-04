@@ -158,20 +158,27 @@ $(document).on('click', '#tempSubBtn', function(){
 // ====================================
 // ++++++++++++++++++++++++++++++++++++
 
-$(document).on('click', '')
-
 $(document).on('click', '.temp-selector', function(e){
     e.preventDefault();
 
     let auth = localStorage.getItem("auth");
     let city = localStorage.getItem('city');
+   
+
+    // var obj ={
+    //     city: localStorage.getItem('city')
+    // }  
+        // data: obj,
+    // let city = localStorage.getItem('city');
     let title = $('#temp-title').text();
-    let template = $(this).attr('id'); 
+    let template = $(this).attr('id');
+    let username = localStorage.getItem('username');
 
 
     let newIns = {
         insTitle: title,
-        insTemplate: template
+        insTemplate: template,
+        username: username
     }
 
     console.log(newIns);
@@ -202,6 +209,9 @@ $('#loginBtn').on("click", function(event){
         username: $(".username").val()    
     };
     
+    let username = $(".username").val();
+    localStorage.setItem('username', username);
+
     console.log( newReg);
     $.ajax("/login", {
         type: "POST",

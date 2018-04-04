@@ -8,6 +8,8 @@ const Template = require('../models/template.js');
 const Unit = require('../models/addUnit.js');
 const Inspect = require('../models/inspection.js');
 
+const Fields = require("../models/fields.json");
+
 let inspDoc = {};
 let inspDash = {};
 let completeList;
@@ -121,15 +123,10 @@ router.get('/inspectdash/:authTok/:status', function (req, res) {
 
 router.get('/inspect/:authTok', function(req, res) {
     const user = req.params.authTok;
-    // const u_city = req.params.city;
 
-    console.log('hitting this endpoint');
+    console.log(Fields);
 
-    // var replaced = u_city.split('+').join(' ');
-    console.log(user);
-    // console.log(u_city);
-
-    var resObj = {}
+    var resObj = {};
 
     resObj.route = user;
 
@@ -139,14 +136,12 @@ router.get('/inspect/:authTok', function(req, res) {
 
         Template.find({}).then(tempDoc => {
             resObj.temp = tempDoc;
+            resObj.fields = Fields;
             res.render('inspect', resObj)
         })
     }).catch((err) => {
         catchError(err);
     });
-
-    // res.render('inspect', resObj)
-
 })
 
 // 

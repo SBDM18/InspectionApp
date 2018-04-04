@@ -1,0 +1,671 @@
+{
+    "sections" : 
+    {
+        "entry": {
+            "doors" : {
+                "clean" : null,
+                "undamaged" : null,
+                "working" : null
+            },
+            "walls" : {
+                "clean": null,
+                "undamaged": null,
+                "working": null
+            },
+            "ceiling" : {
+                "clean": null,
+                "undamaged": null,
+                "working": null
+            },
+            "flooring" : {
+                "clean": null,
+                "undamaged": null,
+                "working": null
+            },
+            "windows" : {
+                "clean": null,
+                "undamaged": null,
+                "working": null
+            },
+            "screens" : {
+                "clean": null,
+                "undamaged": null,
+                "working": null
+            },
+            "window coverings" : {
+                "clean": null,
+                "undamaged": null,
+                "working": null
+            },
+            "doorbell" : {
+                "clean": null,
+                "undamaged": null,
+                "working": null
+            }
+        },
+        "bedroom" : {
+            "walls" : {
+                "clean": null,
+                "undamaged": null,
+                "working": null
+            },
+            "doors" : {
+                "clean": null,
+                "undamaged": null,
+                "working": null
+            },
+            "window coverings" : {
+                "clean": null,
+                "undamaged": null,
+                "working": null
+            },
+            "windows" : {
+                "clean": null,
+                "undamaged": null,
+                "working": null
+            },
+            "screens" : {
+                "clean": null,
+                "undamaged": null,
+                "working": null
+            },
+            "flooring" : {
+                "clean": null,
+                "undamaged": null,
+                "working": null
+            },
+            "baseboards" : {
+                "clean": null,
+                "undamaged": null,
+                "working": null
+            },
+            "closet" : {
+                "clean": null,
+                "undamaged": null,
+                "working": null
+            },
+            "power outlets" : {
+                "clean": null,
+                "undamaged": null,
+                "working": null
+            },
+            "smoke alarm" : {
+                "clean": null,
+                "undamaged": null,
+                "working": null
+            }
+        },
+        "bathroom" : {
+            "walls" : {
+                "clean": null,
+                "undamaged": null,
+                "working": null
+            },
+            "ceiling" : {
+                "clean": null,
+                "undamaged": null,
+                "working": null
+            },
+            "doors" : {
+                "clean": null,
+                "undamaged": null,
+                "working": null
+            },
+            "flooring" : {
+                "clean": null,
+                "undamaged": null,
+                "working": null
+            },
+            "baseboards" : {
+                "clean": null,
+                "undamaged": null,
+                "working": null
+            },
+            "lights" : {
+                "clean": null,
+                "undamaged": null,
+                "working": null
+            },
+            "power outlets" : {
+                "clean": null,
+                "undamaged": null,
+                "working": null
+            },
+            "cabinets" : {
+                "clean": null,
+                "undamaged": null,
+                "working": null
+            },
+            "towel rack" : {
+                "clean": null,
+                "undamaged": null,
+                "working": null
+            },
+            "countertop" : {
+                "clean": null,
+                "undamaged": null,
+                "working": null
+            },
+            "shower door" : {
+                "clean": null,
+                "undamaged": null,
+                "working": null
+            },
+            "shower" : {
+                "clean": null,
+                "undamaged": null,
+                "working": null
+            },
+            "mirror" : {
+                "clean": null,
+                "undamaged": null,
+                "working": null
+            },
+            "sink" : {
+                "clean": null,
+                "undamaged": null,
+                "working": null
+            },
+            "faucet" : {
+                "clean": null,
+                "undamaged": null,
+                "working": null
+            },
+            "exhaust fan" : {
+                "clean": null,
+                "undamaged": null,
+                "working": null
+            },
+            "toilet" : {
+                "clean": null,
+                "undamaged": null,
+                "working": null
+            },
+            "toilet tissue dispenser" : {
+                "clean": null,
+                "undamaged": null,
+                "working": null
+            }
+        },
+        "halls" : {
+            "walls" : {
+                "clean": null,
+                "undamaged": null,
+                "working": null
+            },
+            "ceiling" : {
+                "clean": null,
+                "undamaged": null,
+                "working": null
+            },
+            "flooring" : {
+                "clean": null,
+                "undamaged": null,
+                "working": null
+            },
+            "baseboards" : {
+                "clean": null,
+                "undamaged": null,
+                "working": null
+            },
+            "lights" : {
+                "clean": null,
+                "undamaged": null,
+                "working": null
+            },
+            "stairs" : {
+                "clean": null,
+                "undamaged": null,
+                "working": null
+            },
+            "closet" : {
+                "clean": null,
+                "undamaged": null,
+                "working": null
+            },
+            "smoke alarms" : {
+                "clean": null,
+                "undamaged": null,
+                "working": null
+            },
+            "carbon monoxide detector" : {
+                "clean": null,
+                "undamaged": null,
+                "working": null
+            }
+        },
+        "stairs" : {
+            "walls" : {
+                "clean": null,
+                "undamaged": null,
+                "working": null
+            },
+            "ceiling" : {
+                "clean": null,
+                "undamaged": null,
+                "working": null
+            },
+            "flooring" : {
+                "clean": null,
+                "undamaged": null,
+                "working": null
+            },
+            "baseboards" : {
+                "clean": null,
+                "undamaged": null,
+                "working": null
+            },
+            "lights" : {
+                "clean": null,
+                "undamaged": null,
+                "working": null
+            },
+            "steps" : {
+                "clean" : null,
+                "undamaged" : null,
+                "working" : null
+            },
+            "railings" : {
+                "clean": null,
+                "undamaged": null,
+                "working": null
+            },
+            "closet" : {
+                "clean": null,
+                "undamaged": null,
+                "working": null
+            },
+            "smoke alarm" : {
+                "clean": null,
+                "undamaged": null,
+                "working": null
+            },
+            "carbon monoxide detector" : {
+                "clean": null,
+                "undamaged": null,
+                "working": null
+            }
+        },
+        "kitchen" : {
+            "walls" : {
+                "clean": null,
+                "undamaged": null,
+                "working": null
+            },
+            "ceiling" : {
+                "clean": null,
+                "undamaged": null,
+                "working": null
+            },
+            "flooring" : {
+                "clean": null,
+                "undamaged": null,
+                "working": null
+            },
+            "baseboards" : {
+                "clean": null,
+                "undamaged": null,
+                "working": null
+            },
+            "lights" : {
+                "clean": null,
+                "undamaged": null,
+                "working": null
+            },
+            "power outlets" : {
+                "clean": null,
+                "undamaged": null,
+                "working": null
+            },
+            "cupboards" : {
+                "clean": null,
+                "undamaged": null,
+                "working": null
+            },
+            "countertops" : {
+                "clean": null,
+                "undamaged": null,
+                "working": null
+            },
+            "pantry" : {
+                "clean": null,
+                "undamaged": null,
+                "working": null
+            },
+            "refrigerator" : {
+                "clean": null,
+                "undamaged": null,
+                "working": null
+            },
+            "oven" : {
+                "clean": null,
+                "undamaged": null,
+                "working": null
+            },
+            "stove top" : {
+                "clean": null,
+                "undamaged": null,
+                "working": null
+            },
+            "exhaust fan" : {
+                "clean": null,
+                "undamaged": null,
+                "working": null
+            },
+            "sink" : {
+                "clean": null,
+                "undamaged": null,
+                "working": null
+            },
+            "faucet" : {
+                "clean": null,
+                "undamaged": null,
+                "working": null
+            },
+            "garbage disposal" : {
+                "clean": null,
+                "undamaged": null,
+                "working": null
+            },
+            "microwave" : {
+                "clean": null,
+                "undamaged": null,
+                "working": null
+            },
+            "dishwasher" : {
+                "clean": null,
+                "undamaged": null,
+                "working": null
+            }
+        },
+        "livingroom" : {
+            "walls" : {
+                "clean": null,
+                "undamaged": null,
+                "working": null
+            },
+            "ceiling" : {
+                "clean": null,
+                "undamaged": null,
+                "working": null
+            },
+            "flooring" : {
+                "clean": null,
+                "undamaged": null,
+                "working": null
+            },
+            "baseboards" : {
+                "clean": null,
+                "undamaged": null,
+                "working": null
+            },
+            "lights" : {
+                "clean": null,
+                "undamaged": null,
+                "working": null
+            },
+            "power outlets" : {
+                "clean": null,
+                "undamaged": null,
+                "working": null
+            },
+            "windows" : {
+                "clean": null,
+                "undamaged": null,
+                "working": null
+            },
+            "screens" : {
+                "clean": null,
+                "undamaged": null,
+                "working": null
+            }
+        },
+        "laundry" : {
+            "walls" : {
+                "clean": null,
+                "undamaged": null,
+                "working": null
+            },
+            "ceiling" : {
+                "clean": null,
+                "undamaged": null,
+                "working": null
+            },
+            "flooring" : {
+                "clean": null,
+                "undamaged": null,
+                "working": null
+            },
+            "baseboards" : {
+                "clean": null,
+                "undamaged": null,
+                "working": null
+            },
+            "lights" : {
+                "clean": null,
+                "undamaged": null,
+                "working": null
+            },
+            "power outlets" : {
+                "clean": null,
+                "undamaged": null,
+                "working": null
+            },
+            "windows" : {
+                "clean": null,
+                "undamaged": null,
+                "working": null
+            },
+            "screens" : {
+                "clean": null,
+                "undamaged": null,
+                "working": null
+            },
+            "washing machine" : {
+                "clean": null,
+                "undamaged": null,
+                "working": null
+            },
+            "dryer" : {
+                "clean": null,
+                "undamaged": null,
+                "working": null
+            },
+            "vents" : {
+                "clean": null,
+                "undamaged": null,
+                "working": null
+            },
+            "cabinets" : {
+                "clean": null,
+                "undamaged": null,
+                "working": null
+            },
+            "sink" : {
+                "clean": null,
+                "undamaged": null,
+                "working": null
+            },
+            "faucet" : {
+                "clean": null,
+                "undamaged": null,
+                "working": null
+            }
+        },
+        "family room" : {
+            "walls" : {
+                "clean": null,
+                "undamaged": null,
+                "working": null
+            },
+            "ceiling" : {
+                "clean": null,
+                "undamaged": null,
+                "working": null
+            },
+            "flooring" : {
+                "clean": null,
+                "undamaged": null,
+                "working": null
+            },
+            "baseboards" : {
+                "clean": null,
+                "undamaged": null,
+                "working": null
+            },
+            "lights" : {
+                "clean": null,
+                "undamaged": null,
+                "working": null
+            },
+            "power outlets" : {
+                "clean": null,
+                "undamaged": null,
+                "working": null
+            },
+            "windows" : {
+                "clean": null,
+                "undamaged": null,
+                "working": null
+            },
+            "screens" : {
+                "clean": null,
+                "undamaged": null,
+                "working": null
+            },
+            "fireplace" : {
+                "clean": null,
+                "undamaged": null,
+                "working": null
+            }
+        },
+        "garage" : {
+            "walls" : {
+                "clean": null,
+                "undamaged": null,
+                "working": null
+            },
+            "ceiling" : {
+                "clean": null,
+                "undamaged": null,
+                "working": null
+            },
+            "flooring" : {
+                "clean": null,
+                "undamaged": null,
+                "working": null
+            },
+            "baseboards" : {
+                "clean": null,
+                "undamaged": null,
+                "working": null
+            },
+            "lights" : {
+                "clean": null,
+                "undamaged": null,
+                "working": null
+            },
+            "power outlets" : {
+                "clean": null,
+                "undamaged": null,
+                "working": null
+            },
+            "windows" : {
+                "clean": null,
+                "undamaged": null,
+                "working": null
+            },
+            "garage door" : {
+                "clean": null,
+                "undamaged": null,
+                "working": null
+            },
+            "garage motor" : {
+                "clean": null,
+                "undamaged": null,
+                "working": null
+            },
+            "water heater" : {
+                "clean": null,
+                "undamaged": null,
+                "working": null
+            }
+        },
+        "external" : {
+            "roof" : {
+                "clean": null,
+                "undamaged": null,
+                "working": null
+            },
+            "gutters" : {
+                "clean": null,
+                "undamaged": null,
+                "working": null
+            },
+            "eaves" : {
+                "clean": null,
+                "undamaged": null,
+                "working": null
+            },
+            "fascia" : {
+                "clean": null,
+                "undamaged": null,
+                "working": null
+            },
+            "balcony" : {
+                "clean": null,
+                "undamaged": null,
+                "working": null
+            },
+            "patio" : {
+                "clean": null,
+                "undamaged": null,
+                "working": null
+            }
+        },
+        "misc" : {
+            "mailbox" : {
+                "clean": null,
+                "undamaged": null,
+                "working": null
+            },
+            "recycling bin" : {
+                "clean": null,
+                "undamaged": null,
+                "working": null
+            },
+            "garbage bin" : {
+                "clean": null,
+                "undamaged": null,
+                "working": null
+            },
+            "house key" : {
+                "clean": null,
+                "undamaged": null,
+                "working": null
+            },
+            "garage remote" : {
+                "clean": null,
+                "undamaged": null,
+                "working": null
+            },
+            "common area keys" : {
+                "clean": null,
+                "undamaged": null,
+                "working": null
+            }
+        },
+        "equipment" : {
+            "air conditioning" : {
+                "clean": null,
+                "undamaged": null,
+                "working": null
+            },
+            "heating unit" : {
+                "clean": null,
+                "undamaged": null,
+                "working": null
+            }
+        }
+    }
+}
