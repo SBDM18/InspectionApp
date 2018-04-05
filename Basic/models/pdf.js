@@ -1,6 +1,7 @@
+let street = '4212 Poe';
+let city = 'La Mesa, CA 92129';
 
-
-let inspectPDF = {
+let dd = {
    content: [
 
       {
@@ -21,11 +22,11 @@ let inspectPDF = {
                         },
                         {
                            style: 'street',
-                           text: '3668 Quimby St'
+                           text: street
                         },
                         {
                            style: 'city',
-                           text: 'San Diego, CA 92106'
+                           text: city
                         },
                         {
                            style: 'dateTable',
