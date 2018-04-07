@@ -3,10 +3,30 @@ html {
     min-width: 100%;
 }
 
-
 .inspectDetails{
-    width: 20%;
-    height: 20%;
+    display: flex;
+    flex-direction: row;
+
+    /* width: 20%;
+    height: 70%;
+
+    border: 2px;
+    border-style: solid;
+    border-radius: 10px; */
+}
+
+.dropdownBtns {
+    margin-left: 10px;
+    margin-right: 10px;
+
+    display: flex;
+    flex-direction: column;
+
+    width: 200px;
+    height: auto;
+
+    /* width: 20%;
+    height: 70%; */
 
     border: 2px;
     border-style: solid;
@@ -18,7 +38,7 @@ html {
     flex-direction: row;
     justify-content: space-around;
 
-    width: 100%;
+    width: 90%;
     background-color: rgba(39, 60, 44, 0.75) !important;
 }
 
@@ -26,4 +46,10 @@ html {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+}
+
+.detail-icons {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
 }

@@ -62,8 +62,6 @@ router.get('/inspectdash/:status', function(req,res){
 router.get('/inspect/:authTok', function(req, res) {
     const user = req.params.authTok;
 
-    console.log(Fields);
-
     var resObj = {};
 
     resObj.route = user;
@@ -72,9 +70,122 @@ router.get('/inspect/:authTok', function(req, res) {
 
         resObj.unit = unitDoc;
 
-        Template.find({}).then(tempDoc => {
+        let btnObj = {
+            sections : []
+        };
+
+        //garage, yard, bath and bed
+        // depending on data from units we grab the number of bedrooms/baths etc...
+        // this data goes to the field 
+
+        if (unitDoc[0].bathroomTotal > 1) {
+            let obj = {}
+                for (let i = 1; i <= unitDoc[0].bathroomTotal; i++){
+                    let bath = "bathroom";
+                    bath += i;
+                    let fields = {
+                        "walls": {
+                            "clean": null,
+                            "undamaged": null,
+                            "working": null
+                                },
+                        "ceiling": {
+                            "clean": null,
+                            "undamaged": null,
+                            "working": null
+                                },
+                        "doors": {
+                            "clean": null,
+                            "undamaged": null,
+                            "working": null
+                                },
+                        "flooring": {
+                            "clean": null,
+                            "undamaged": null,
+                            "working": null
+                                },
+                        "baseboards": {
+                            "clean": null,
+                            "undamaged": null,
+                            "working": null
+                                },
+                        "lights": {
+                            "clean": null,
+                            "undamaged": null,
+                            "working": null
+                                },
+                        "power outlets": {
+                            "clean": null,
+                            "undamaged": null,
+                            "working": null
+                                },
+                        "cabinets": {
+                            "clean": null,
+                            "undamaged": null,
+                            "working": null
+                                },
+                        "towel rack": {
+                            "clean": null,
+                            "undamaged": null,
+                            "working": null
+                                },
+                        "countertop": {
+                            "clean": null,
+                            "undamaged": null,
+                            "working": null
+                                },
+                        "shower door": {
+                            "clean": null,
+                            "undamaged": null,
+                            "working": null
+                                },
+                        "shower": {
+                            "clean": null,
+                            "undamaged": null,
+                            "working": null
+                                },
+                        "mirror": {
+                            "clean": null,
+                            "undamaged": null,
+                            "working": null
+                                },
+                        "sink": {
+                            "clean": null,
+                            "undamaged": null,
+                            "working": null
+                                },
+                        "faucet": {
+                            "clean": null,
+                            "undamaged": null,
+                            "working": null
+                                },
+                        "exhaust fan": {
+                            "clean": null,
+                            "undamaged": null,
+                            "working": null
+                                },
+                        "toilet": {
+                            "clean": null,
+                            "undamaged": null,
+                            "working": null
+                                },
+                        "toilet tissue dispenser": {
+                            "clean": null,
+                            "undamaged": null,
+                            "working": null
+                                }
+                        }
+                    obj[bath] = fields;
+                }
+                    btnObj.sections.push(obj);
+        }
+        
+        Template.find({man_Id: user}).then(tempDoc => {
             resObj.temp = tempDoc;
+            //depending on what the template has we exclude what we 
+            //don't need from the fields or include multiples
             resObj.fields = Fields;
+            console.log(resObj.fields);
             res.render('inspect', resObj)
         })
     }).catch((err) => {
