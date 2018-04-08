@@ -162,14 +162,7 @@ $(document).on('click', '.temp-selector', function(e){
     e.preventDefault();
 
     let auth = localStorage.getItem("auth");
-    let city = localStorage.getItem('city');
    
-
-    // var obj ={
-    //     city: localStorage.getItem('city')
-    // }  
-        // data: obj,
-    // let city = localStorage.getItem('city');
     let title = $('#temp-title').text();
     let template = $(this).attr('id');
     let username = localStorage.getItem('username');

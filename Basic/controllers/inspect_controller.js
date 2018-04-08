@@ -24,7 +24,7 @@ let total;
 router.get('/inspection/:authTok', function (req, res) {
     const user = req.params.authTok;
      let route = user;
-        Inspect.find().where({
+    Inspect.find().where({
         manager_U_id: user
     }).exec().then(doc => {
         inspDoc.inspect = doc;
@@ -112,8 +112,7 @@ router.get('/inspectdash/:authTok/:status', function (req, res) {
     console.log("This is the user", user);
     
     // let inspections = {};
-    Inspect.find({manager_U_id: user
-    }).exec().then(stat => {
+    Inspect.find().where({manager_U_id: user}).exec().then(stat => {
         // console.log("This is status array",stat);
         
         inspDoc.status = stat;
@@ -132,6 +131,7 @@ router.get('/inspect/:authTok', function(req, res) {
     resObj.route = user;
 
     Unit.find().where({ manager_U_id: user }).exec().then(unitDoc => {
+        unitDoc.bed
 
         resObj.unit = unitDoc;
 
@@ -167,11 +167,11 @@ router.post('/inspectinfo', checkAuth, (req, res, next) => {
         unit_id: "1243dsxv",
         manager_U_id: req.userData.manID,
         user_U_id: req.userData.uID,
-        status: "In Progress",
+        status: "Completed",
         street: "3668 Quimby st.",
         city: "San Diego",
         state: "CA",
-        created: new Date().toLocaleString()
+        created: new Date().toLocaleString('en-US',{weekday:'short',year:'numeric',month:'short',day:'numeric',hour:'numeric',minute:'numeric'})
     });
     newInspect.save().then(result =>{
         console.log(result);

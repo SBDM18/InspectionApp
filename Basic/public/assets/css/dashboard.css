@@ -276,13 +276,13 @@ html{
     overflow: scroll;
     height: 400px;
     margin-top: -5px;
-    width: 80%;
+    width: 100%;
 }
 h3{
     color: white;
 }
 .inspectTab{
-    margin-left: 10%;
+    margin-left: 3%;
     font-size: 10px;
 }
 
