@@ -175,6 +175,7 @@ $(document).on('click', '.temp-selector', function(e){
     }
 
     console.log(newIns);
+<<<<<<< HEAD
     $.ajax("/templates/" + auth, {
         type: "POST",
         data: newIns,
@@ -184,6 +185,20 @@ $(document).on('click', '.temp-selector', function(e){
         window.location = '/inspect/' + auth;
     });
 });
+=======
+        $.ajax("/templates/" + auth, {
+            type: "POST",
+            data: newIns,
+            headers: { "Authorization": localStorage.getItem("token") }
+        }).done((res, err) => {
+            err ? console.log(err) : console.log('No error');
+            window.location = '/inspect/' + auth;
+        });
+       
+
+
+})
+>>>>>>> matt
 
 
 
