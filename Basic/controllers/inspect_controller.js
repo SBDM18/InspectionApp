@@ -162,28 +162,28 @@ function catchError(err) {
 
 // need to create routes to navigate through the handlebar pages can add more detailed information to the routes later
 
-// router.post('/inspectinfo', checkAuth, (req, res, next) => {
-//     const newInspect = new inspect({
-//         unit_id: "1243dsxv",
-//         manager_U_id: req.userData.manID,
-//         user_U_id: req.userData.uID,
-//         status: "In Progress",
-//         street: "3668 Quimby st.",
-//         city: "San Diego",
-//         state: "CA",
-//         created: new Date()
-//     });
-//     newInspect.save().then(result =>{
-//         console.log(result);
-//         res.status(201).json({
-//             message: "New inspection created",
-//             createdInspection: newInspect
-//         });        
-//     }).catch(err =>{
-//         catchError(err);
-//     });
+router.post('/inspectinfo', checkAuth, (req, res, next) => {
+    const newInspect = new Inspect({
+        unit_id: "1243dsxv",
+        manager_U_id: req.userData.manID,
+        user_U_id: req.userData.uID,
+        status: "In Progress",
+        street: "3668 Quimby st.",
+        city: "San Diego",
+        state: "CA",
+        created: new Date().toLocaleString()
+    });
+    newInspect.save().then(result =>{
+        console.log(result);
+        res.status(201).json({
+            message: "New inspection created",
+            createdInspection: newInspect
+        });        
+    }).catch(err =>{
+        catchError(err);
+    });
 
-// });
+});
 
 
 module.exports = router;
