@@ -1,14 +1,22 @@
 let street = '4212 Poe';
 let city = 'La Mesa, CA 92129';
 
+
+
+
+
+
+
+
+
+
 let dd = {
    content: [
-
       {
          table: {
             widths: ['auto', '*'],
             body: [
-               [
+               
                   {
                      image: 'sampleImage.jpg', width: 150, height: 150
                   },
@@ -22,11 +30,11 @@ let dd = {
                         },
                         {
                            style: 'street',
-                           text: street
+                           text: '3668 quimby st'
                         },
                         {
                            style: 'city',
-                           text: city
+                           text: 'san diego ca 92106'
                         },
                         {
                            style: 'dateTable',
@@ -45,7 +53,7 @@ let dd = {
 
                      ]
                   }
-               ]
+               
             ]
          },
          layout: {
