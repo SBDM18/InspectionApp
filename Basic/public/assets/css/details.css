@@ -6,6 +6,10 @@ html {
 .inspectDetails{
     display: flex;
     flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    width: auto;
 
     /* width: 20%;
     height: 70%;
