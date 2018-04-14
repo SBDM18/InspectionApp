@@ -26,7 +26,6 @@ html {
     display: flex;
     flex-direction: column;
 
-    width: 200px;
     height: auto;
 
     /* width: 20%;
@@ -53,7 +52,19 @@ html {
 }
 
 .detail-icons {
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.homeT {
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-around;
+    align-items: flex-end;
+}
+
+.inspectCard {
+    width: 100% !important;
 }
