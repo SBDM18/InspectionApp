@@ -175,20 +175,7 @@ $(document).on('click', '.temp-selector', function(e){
     }
 
     console.log(newIns);
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-    $.ajax("/templates/" + auth, {
-        type: "POST",
-        data: newIns,
-        headers: { "Authorization": localStorage.getItem("token") }
-    }).done((res, err) => {
-        err ? console.log(err) : console.log('No error');
-        window.location = '/inspect/' + auth;
-    });
-});
-=======
->>>>>>> 32f909f2e63e67930c41c8caaa11db69c1eb3c6d
+
         $.ajax("/templates/" + auth, {
             data: newIns,
             type: "POST",
@@ -201,11 +188,7 @@ $(document).on('click', '.temp-selector', function(e){
 
 
 })
-<<<<<<< HEAD
-=======
->>>>>>> matt
 
->>>>>>> 32f909f2e63e67930c41c8caaa11db69c1eb3c6d
 
 
 // ====================================
