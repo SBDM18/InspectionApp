@@ -252,6 +252,7 @@ html{
 [ Inspection Dashboard page ]*/
 .card{
     margin: 5%;
+    width: 400px;
     cursor: pointer;
 }
 .timeline-cont{
@@ -271,9 +272,144 @@ html{
 .timeTable{
     margin: 3% 2% 0 0;
 }
+.inspTab-cont{
+    overflow: hidden;
+    overflow: scroll;
+    height: 400px;
+    margin-top: -5px;
+    width: 100%;
+}
 h3{
     color: white;
 }
+.inspectTab{
+    margin-left: 3%;
+    font-size: 10px;
+}
+
+.TitleBtn{
+
+}
+
+.center {
+    margin: 0 auto;
+    width: 320px;
+}
+
+.center input[type="checkbox"] {
+    position: relative;
+    display: inline-block;
+    min-height: 60px;
+    width: 60px;
+    background: #ebebeb;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -o-appearance: none;
+    appearance: none;
+}
+
+.center input[type="checkbox"]:after {
+    content: '';
+    font-size: 2em;
+    text-align: center;
+    line-height: 29px;
+    color: #555555;
+    position: absolute;
+    margin: auto auto;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    display: block;
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    background-image: none;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: #ffffff;
+    -webkit-transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
+    -ms-transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out;
+}
+
+.center input[type="checkbox"]:before {
+    position: absolute;
+    margin: auto auto;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    content: '';
+    display: block;
+    height: 40px;
+    width: 40px;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    -webkit-transition: all 0.1s ease-in;
+    -moz-transition: all 0.1s ease-in;
+    -ms-transition: all 0.1s ease-in;
+    -o-transition: all 0.1s ease-in;
+    transition: all 0.1s ease-in;
+}
+
+.center input[type="checkbox"]:hover:before {
+    height: 30px;
+    width: 30px;
+}
+
+.center input[type="checkbox"]:checked:before {
+    height: 100%;
+    width: 100%;
+    background: #390ab9;
+    border: none;
+    border-radius: 0;
+}
+
+.center input[type="checkbox"]:focus {
+    outline: none;
+}
+
+.center input[type="checkbox"].c:checked:before {
+    background: #390ab9;
+}
+
+.center input[type="checkbox"].w:checked:before {
+    background: #0ab95f;
+}
+
+.center input[type="checkbox"].u:checked:before {
+    background: #b9b30a;
+}
+
+.center input[type="checkbox"].c:after {
+    content: 'C';
+}
+
+.center input[type="checkbox"].w:after {
+    content: 'W';
+}
+
+.center input[type="checkbox"].u:after {
+    content: 'U';
+}
+
+.center input[type="checkbox"].c:checked:after {
+    content: 'C';
+}
+
+.center input[type="checkbox"].w:checked:after {
+    content: 'W';
+}
+
+.center input[type="checkbox"].u:checked:after {
+    content: 'U';
+}
+
+
+
 /*------------------------------------------------------------
 [ Inspection Card slideshow page ]*/
 @media (min-width: 768px) {

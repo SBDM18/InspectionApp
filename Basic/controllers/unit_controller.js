@@ -16,11 +16,9 @@ router.get('/units/:authTok', (req, res) => {
     const user = req.params.authTok;
     console.log(user);
 
-
     Unit.find().where({
         manager_U_id: user
-    }).exec().then(doc => {
-        console.log(doc);
+    }).exec().then(doc => {       
 
         var citiesFiltered = doc.reduce((accumalator, current) => {
             if (checkIfAlreadyExist(current)) {
@@ -88,18 +86,25 @@ router.get('/temp/:authTok/:unitID',(req,res)=>{
     console.log(user);
     console.log(unitID);
 
+// <<<<<<< HEAD
+// <<<<<<< HEAD
+//     Template.find().where({manager_U_id:user}).then((temp) =>{
+//         console.log("This is the temp doc",temp);
+// =======
+//     Template.find({}).exec().then((err,docs) =>{
+//         console.log("this is the template ", docs);
+// >>>>>>> 70b1e9ce907e498bea80e7b91ce12eac9c02d31a
+// =======
     Template.find().where({ manager_U_id: user }).exec().then((err,docs) =>{
         console.log(docs);
+
         let tempObj = {
-            temp: docs,
-            route: user        }
-        console.log('====================================');
-        console.log(tempObj);
-        console.log('====================================');
+            temp: temp,
+            route: user 
+        };
+        
 
         res.render("unitlist", tempObj);
-    }).catch((err) =>{
-        catchError(err);
     });
 });
 

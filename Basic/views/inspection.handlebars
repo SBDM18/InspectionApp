@@ -67,7 +67,7 @@
                      {{!-- these cards will have general information (completed, in progress, not completed) it will display data pertaining to
                      each of these titles that is pulled from the database inspections collection --}}
                      <div class="card inCard" style="width: 250px;" data-id="Completed">
-                        <div class="card-body" >
+                        <div class="card-body" style="background-color:yellowgreen;" >
                            <h5 class="card-title">Completed</h5>
                            <p class="card-text">Amount of Inspections completed: {{complete}}</p>
                         </div>
@@ -75,7 +75,7 @@
                   </div>
                   <div class="col-sm-6">
                      <div class="card inCard"  style="width: 250px;" data-id="In Complete">
-                        <div class="card-body" >
+                        <div class="card-body" style="background-color:rgb(201, 15, 167);" >
                            <h5 class="card-title">Incomplete</h5>
                            <p class="card-text">Amount of Inspections incomplete: {{incomplete}}</p>
                         </div>
@@ -85,17 +85,17 @@
                <div class="row">
                   <div class="col-sm-6">
                      <div class="card inCard" style="width: 250px;" data-id="In Progress">
-                        <div class="card-body" >
+                        <div class="card-body" style="background-color:red;" >
                            <h5 class="card-title">In Progress</h5>
                            <p class="card-text">Amount of Inspections inprogress: {{inprogress}}</p>
                         </div>
                      </div>
                   </div>
                   <div class="col-sm-6">
-                     <div class="card inCard" style="width: 250px;">
-                        <div class="card-body">
-                           <h5 class="card-title"></h5>
-                           <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                     <div class="card inCard" style="width: 250px;" data-id="Total">
+                        <div class="card-body" style="background-color:aqua;">
+                           <h5 class="card-title">Total</h5>
+                           <p class="card-text">Total number of Inspections: {{total}}</p>
                         </div>
                      </div>
                   </div>
