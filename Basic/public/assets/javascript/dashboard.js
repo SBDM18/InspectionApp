@@ -133,6 +133,29 @@ $("#myCarousel").on("slide.bs.carousel", function (e) {
         }
     }
 });
+$(".inspectSubmit").on('click', function(e){
+    e.preventDefault();
+
+    
+
+        let data ={
+            sections:[
+                {
+                    Entry:[
+                        { title: $(".TitleBtn").val(), clean: $(".c-Walls:checked").val(), undamaged: $(".u-Walls:checked").val(), working: $(".w-Walls:checked").val(), note: '' },
+                        { title: $(".TitleBtn").val(), clean: $(".c-Doors:checked").val(), undamaged: $(".u-Doors:checked").val(), working: $(".w-Doors:checked").val(), note: '' },
+                        { title: $(".TitleBtn").val(), clean: $(".c-Ceiling:checked").val(), undamaged: $(".u-Ceiling:checked").val(), working: $(".w-Ceiling:checked").val(), note: '' },
+                        { title: $(".TitleBtn").val(), clean: $(".c-Flooring:checked").val(), undamaged: $(".u-Flooring:checked").val(), working: $(".w-Flooring:checked").val(), note: '' },
+                        { title: $(".TitleBtn").val(), clean: $(".c-Windows:checked").val(), undamaged: $(".u-Windows:checked").val(), working: $(".w-Windows:checked").val(), note: '' },
+                        { title: $(".TitleBtn").val(), clean: $(".c-Screens:checked").val(), undamaged: $(".u-Screens:checked").val(), working: $(".w-Screens:checked").val(), note: '' },
+                        { title: $(".TitleBtn").val(), clean: $(".c-Window:checked").val(), undamaged: $(".u-Window:checked").val(), working: $(".w-Window:checked").val(), note: '' },
+                        { title: $(".TitleBtn").val(), clean: $(".c-Doorbell:checked").val(), undamaged: $(".u-Doorbell:checked").val(), working: $(".w-Doorbell:checked").val(), note: '' },
+                    ]
+                }
+            ]
+        }
+        console.log(data);
+});
 
 
 // still need to create a back button and a route for home.handlebars unless they are within the 2nd page of units or inspection than it would go back to their respective beginning page (have a this statement check which class was picked and than decide what function to perform within the button click)
