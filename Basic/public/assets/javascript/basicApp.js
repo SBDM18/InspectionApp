@@ -189,6 +189,17 @@ $(document).on('click', '.temp-selector', function(e){
 
 })
 
+let nearby =[];
+
+$(document).on('click', '.inspectSubmit', function(){
+    let narr = new Array();
+    narr = nearby;//a global arr
+    let checked_vals = [];
+    $('.center input:checkbox:checked').each(function (index) {
+        checked_vals.push($(this).attr('id'));
+    });
+    console.log('Checked boxes', checked_vals);
+})
 
 
 // ====================================
