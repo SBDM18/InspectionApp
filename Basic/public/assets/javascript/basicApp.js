@@ -104,7 +104,7 @@ $(document).on('click', '#tempSubBtn', function(e){
         numlr: $('#lr-num').val() ? $('#lr-num').val() : 0
     }
 
-    let city = localStorage.setItem('city');
+    // let city = localStorage.setItem('city');
     let auth = localStorage.getItem("auth");
 
     console.log(newTemp);
@@ -146,8 +146,6 @@ $(document).on('click', '#tempSubBtn', function(){
         var livingroom = 'livingroom';
     }
 
-    console.log('Here is the data: ', title, entry, bedroom, bathroom, halls, stairs, kitchen, livingroom);    
-
 });
 
 
@@ -160,22 +158,33 @@ $(document).on('click', '#tempSubBtn', function(){
 // ====================================
 // ++++++++++++++++++++++++++++++++++++
 
-$(document).on('click', '.temp-selector', function(){
+$(document).on('click', '.temp-selector', function(e){
+    e.preventDefault();
 
     let auth = localStorage.getItem("auth");
+   
+    let title = $('#temp-title').text();
+    let template = $(this).attr('id');
+    let username = localStorage.getItem('username');
 
-    var obj ={
-        city: localStorage.getItem('city')
+
+    let newIns = {
+        insTitle: title,
+        insTemplate: template,
+        username: username
     }
 
-    $.ajax("/inspect/" + auth, {
-        type: "GET",
-        data: obj,
-        headers: { "Authorization": localStorage.getItem("token") }
-    }).done((res, err) => {
-        err ? console.log(err) : console.log('No error');
-        window.location = '/inspect/' + auth + '/' + city;
-    });
+    console.log(newIns);
+
+        $.ajax("/templates/" + auth, {
+            data: newIns,
+            type: "POST",
+            headers: { "Authorization": localStorage.getItem("token") }
+        }).done((res, err) => {
+            err ? console.log(err) : console.log('No error');
+            window.location = '/inspect/' + auth;
+        });
+       
 
 
 })
@@ -197,6 +206,9 @@ $('#loginBtn').on("click", function(event){
         username: $(".username").val()    
     };
     
+    let username = $(".username").val();
+    localStorage.setItem('username', username);
+
     console.log( newReg);
     $.ajax("/login", {
         type: "POST",
@@ -272,6 +284,8 @@ $("#createUnit").on("click", event =>{
         garage: $(".garage:checked").val(),        
     };
     console.log(newUnit);
+
+    let city = localStorage.setItem('city', newUnit.city);
     
     //after addunit insert jwt id to authenticate the user/ manager 
     $.ajax("/addunit",{
@@ -310,8 +324,7 @@ $("#createUser").on("click", event => {
         swal("You have succesfully added a new user");
         console.log("information sent to server for registration");
         console.log(res);
-        // window.location = '/admin';
-        // res.render('/admin');        
+       
     }).fail((errorThrown)=>{
         swal("There was an error in the information provided to create a new user");
     });
@@ -380,25 +393,24 @@ $(document).on("click",".city", function(){
     });
 });
 
-$(document).on("click", ".startIns", function(){
-    let unitID = $(this).data("id");
-    let street = $(this).data("street");    
-    let auth = localStorage.getItem("auth");
+// $(document).on("click", ".startIns", function(){
+//     let unitID = $(this).data("id");
+//     let street = $(this).data("street");    
+//     let auth = localStorage.getItem("auth");
+//     console.log(auth);
+//     console.log(unitID, street);
+    
 
-    $.ajax("/temp/" + auth + "/"+ unitID , {
-        type: "GET",
-        headers: { "Authorization": localStorage.getItem("token") }
-    }).then(res => {
-        console.log("grabbed data from template");
+//     $.ajax("/temp/" + auth + "/"+ unitID , {
+//         type: "GET",
+//         headers: { "Authorization": localStorage.getItem("token") }
+//     }).then(res => {
+//         console.log("grabbed data from template");
         
-    }).fail((errorThrown) => {
-        swal("Error in unit request");
-    });
-});
+//     });
+// });
 
-$("#inspectStart").on("click", function(){
-    console.log("working need to grab data of which template is grabbed");
-});
+
 
 $(document).on("click", ".backBtn", () =>{
     console.log("Working");
@@ -476,21 +488,7 @@ $(".qtyminus").click(function (e) {
    
 /*==================================================================
     [ Validate ]*/
-
-
-    // function validateLogin() {
-    //     let username = $("username").val();
-    //     let password = $("password").val();
-    //     if(username == null || username == " "){
-    //         swal("Please enter a username");
-    //         return false;
-    //     }
-    //     if(password == null || password == " "){
-    //         swal("Please enter a password");
-    //         return false;
-    //     }
-    //     return true;
-    // }
+ 
 
 
   

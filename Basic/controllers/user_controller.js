@@ -74,7 +74,7 @@ router.post('/login', (req,res,next) => {
         console.log(user);
         
         if(user == null){
-            console.log("User does not exist");            
+            console.log("User does not exist");          
         }
          console.log(user.password);
          console.log("password inptted in", req.body.userpass);

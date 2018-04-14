@@ -8,7 +8,7 @@ const cryptoRanString = require('crypto-random-string');
 const Unit = require('../models/addUnit.js');
 const Template = require('../models/template.js');
 
-var Template = require('../models/template.js');
+
 
 
 //Route to unit page
@@ -16,11 +16,9 @@ router.get('/units/:authTok', (req, res) => {
     const user = req.params.authTok;
     console.log(user);
 
-
     Unit.find().where({
         manager_U_id: user
-    }).exec().then(doc => {
-        console.log(doc);
+    }).exec().then(doc => {       
 
         var citiesFiltered = doc.reduce((accumalator, current) => {
             if (checkIfAlreadyExist(current)) {
@@ -55,35 +53,28 @@ router.get('/unitlist/:authTok/:city', (req, res) => {
     const u_city = req.params.city;
 
     var replaced = u_city.split('+').join(' ');
-    console.log(user);
-    console.log(u_city);
 
+    console.log('Here is the authTok');
+    console.log(user);
 
     var resObj = {}
-
-
-    // Template.find().where({ man_Id: user }).exec().then(tempDoc => {
-
-    //     resObj.temp = tempDoc;
-
-    // }).catch((err)=>{
-    //     catchError(err);
-    // });
-
-    Template.find({}).then(tempDoc =>{
-        resObj.temp = tempDoc;
-    })
-
 
     Unit.find().where({ manager_U_id: user, city: replaced}).exec().then(unitDoc => {
 
         resObj.unit = unitDoc;
 
-        console.log('Here is the listObj from unitlist');
+        Template.find().where({ man_Id: user }).exec().then(tempDoc => {
+            console.log('Here is the templates', tempDoc);
 
-        console.log(resObj);
+            resObj.temp = tempDoc;
 
-        res.render("unitlist", resObj);
+            console.log('Here is the listObj from unitlist');
+
+            console.log(resObj);
+
+            res.render("unitlist", resObj);
+        })
+
     }).catch((err) => {
         catchError(err);
     });
@@ -95,18 +86,25 @@ router.get('/temp/:authTok/:unitID',(req,res)=>{
     console.log(user);
     console.log(unitID);
 
-    Template.find().exec().then((err,docs) =>{
+// <<<<<<< HEAD
+// <<<<<<< HEAD
+//     Template.find().where({manager_U_id:user}).then((temp) =>{
+//         console.log("This is the temp doc",temp);
+// =======
+//     Template.find({}).exec().then((err,docs) =>{
+//         console.log("this is the template ", docs);
+// >>>>>>> 70b1e9ce907e498bea80e7b91ce12eac9c02d31a
+// =======
+    Template.find().where({ manager_U_id: user }).exec().then((err,docs) =>{
         console.log(docs);
+
         let tempObj = {
-            temp: docs,
-            route: user        }
-        console.log('====================================');
-        console.log(tempObj);
-        console.log('====================================');
+            temp: temp,
+            route: user 
+        };
+        
 
         res.render("unitlist", tempObj);
-    }).catch((err) =>{
-        catchError(err);
     });
 });
 

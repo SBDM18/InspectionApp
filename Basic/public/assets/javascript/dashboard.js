@@ -70,6 +70,92 @@ function inspectSlideCards(){
     $(".main").html(html);
 }
 
+$(".inspectBTN").on('click', function(){
+        console.log("working");
+        $.ajax('/inspectinfo', {
+            type:"POST",
+            headers: { "Authorization": localStorage.getItem("token") }
+        }).then(res =>{
+            console.log("information sent to server");
+            swal("successfuly added inspection");            
+        }).fail((errorThrown)=>{
+            swal("try again");
+        });
+});
+
+$(".inCard").on("click", function(){
+    let clicked = $(this).data('id');
+    console.log("Status ",clicked);
+    let auth = localStorage.getItem("auth");
+    let route = `${auth}/${clicked}`
+
+    $.ajax("/inspectdash/" + route,{
+        type:"GET",
+        headers: { "Authorization": localStorage.getItem("token") }
+    }).done(res =>{
+            console.log("info grabbed");
+            console.log(res.inspDoc);
+            
+            $(".dash-main").empty();
+            $('.dash-main').append(res);
+              
+    }).fail((errorThrown)=>{
+        swal("error occured");
+    });    
+});
+
+$(".inspecCardD").on("click", function(){
+    let clicked= $(this).data('id');
+    console.log(clicked);
+    
+})
+
+
+$("#myCarousel").on("slide.bs.carousel", function (e) {
+    var $e = $(e.relatedTarget);
+    var idx = $e.index();
+    var itemsPerSlide = 3;
+    var totalItems = $(".carousel-item").length;
+
+    if (idx >= totalItems - (itemsPerSlide - 1)) {
+        var it = itemsPerSlide - (totalItems - idx);
+        for (var i = 0; i < it; i++) {
+            // append slides to end
+            if (e.direction == "left") {
+                $(".carousel-item")
+                    .eq(i)
+                    .appendTo(".carousel-inner");
+            } else {
+                $(".carousel-item")
+                    .eq(0)
+                    .appendTo(".carousel-inner");
+            }
+        }
+    }
+});
+$(".inspectSubmit").on('click', function(e){
+    e.preventDefault();
+
+    
+
+        let data ={
+            sections:[
+                {
+                    Entry:[
+                        { title: 'Walls', clean: $(".c-Walls:checked").val(), undamaged: $(".u-Walls:checked").val(), working: $(".w-Walls:checked").val(), note: '' },
+                        { title: $(".TitleBtn").val(), clean: $(".c-Doors:checked").val(), undamaged: $(".u-Doors:checked").val(), working: $(".w-Doors:checked").val(), note: '' },
+                        { title: $(".TitleBtn").val(), clean: $(".c-Ceiling:checked").val(), undamaged: $(".u-Ceiling:checked").val(), working: $(".w-Ceiling:checked").val(), note: '' },
+                        { title: $(".TitleBtn").val(), clean: $(".c-Flooring:checked").val(), undamaged: $(".u-Flooring:checked").val(), working: $(".w-Flooring:checked").val(), note: '' },
+                        { title: $(".TitleBtn").val(), clean: $(".c-Windows:checked").val(), undamaged: $(".u-Windows:checked").val(), working: $(".w-Windows:checked").val(), note: '' },
+                        { title: $(".TitleBtn").val(), clean: $(".c-Screens:checked").val(), undamaged: $(".u-Screens:checked").val(), working: $(".w-Screens:checked").val(), note: '' },
+                        { title: $(".TitleBtn").val(), clean: $(".c-Window:checked").val(), undamaged: $(".u-Window:checked").val(), working: $(".w-Window:checked").val(), note: '' },
+                        { title: $(".TitleBtn").val(), clean: $(".c-Doorbell:checked").val(), undamaged: $(".u-Doorbell:checked").val(), working: $(".w-Doorbell:checked").val(), note: '' },
+                    ]
+                }
+            ]
+        }
+        console.log(data);
+});
 
 
 // still need to create a back button and a route for home.handlebars unless they are within the 2nd page of units or inspection than it would go back to their respective beginning page (have a this statement check which class was picked and than decide what function to perform within the button click)

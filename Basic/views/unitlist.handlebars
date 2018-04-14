@@ -10,7 +10,7 @@
       <tbody>
          {{#each unit}}
             <tr>            
-                <td>{{street}}<button class="startIns" data-id="unit_id" href="#inspectionModal">Start Inspection</button></td>           
+                <td>{{street}}<button class="startIns" data-id="{{unit_id}}" href="#inspectionModal">Start Inspection</button></td>           
             </tr>
          {{/each}}        
       </tbody>
@@ -38,9 +38,9 @@
 
             <div>
                 Choose a template to start the Inspection
-                <div>
+                <div class="temp-name-btns">
                     {{#each temp}}
-                    <a id="{{title}}" class="temp-selector" href="/inspect/:authTok">{{title}}</a>
+                    <button id="{{title}}" class="temp-selector">{{title}}</button>
                     {{/each}}
                 </div>
             </div>
