@@ -167,7 +167,6 @@ $(document).on('click', '.temp-selector', function(e){
     let template = $(this).attr('id');
     let username = localStorage.getItem('username');
 
-
     let newIns = {
         insTitle: title,
         insTemplate: template,
@@ -184,17 +183,15 @@ $(document).on('click', '.temp-selector', function(e){
             err ? console.log(err) : console.log('No error');
             window.location = '/inspect/' + auth;
         });
-       
+});
 
+var nearby =[];
 
-})
-
-let nearby =[];
-
-$(document).on('click', '.inspectSubmit', function(){
-    let narr = new Array();
+$(document).on('click', '.inspectSubmit', function(e){
+    e.preventDefault();
+    var narr = new Array();
     narr = nearby;//a global arr
-    let checked_vals = [];
+    var checked_vals = [];
     $('.center input:checkbox:checked').each(function (index) {
         checked_vals.push($(this).attr('id'));
     });
