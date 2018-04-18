@@ -7,10 +7,6 @@ const jwt = require('jsonwebtoken');
 
 const newManager = require('../models/user.js');
 
-
-
-
-
 //Route to index page
 router.get('/', function(req,res){
     res.render("index");

@@ -1,10 +1,6 @@
 let street = '4212 Poe';
 let city = 'La Mesa, CA 92129';
 
-<<<<<<< HEAD
-
-
-=======
 let data = {
     headTitle: 'Move Out Inspection',
     street: '4222 Poe St',
@@ -14,7 +10,6 @@ let data = {
     reportDate: 'April 3, 2018 1:30 PM',
             
 };
->>>>>>> e73ae3bd5027fcc951dc49cc7d9ab039795df4c3
 
 function zData(data) {
     //console.log(data.sections);
@@ -28,10 +23,6 @@ function zData(data) {
 
     body.push(header);
 
-<<<<<<< HEAD
-
-
-=======
     let tempArray = [];
     let currentKey = "Entry";
     const sectionLength = data.sections.length;
@@ -53,117 +44,9 @@ function zData(data) {
             let header = [{ text: 'Items', style: 'dataHeader' }, { text: 'Clean', style: 'dataHeader' },
             { text: 'Undamaged', style: 'dataHeader' }, { text: 'Working', style: 'dataHeader' },
             { text: 'Notes', style: 'dataHeader' }];
->>>>>>> e73ae3bd5027fcc951dc49cc7d9ab039795df4c3
 
             body.push(header);
 
-<<<<<<< HEAD
-let dd = {
-   content: [
-      {
-         table: {
-            widths: ['auto', '*'],
-            body: [
-               
-                  {
-                     image: 'sampleImage.jpg', width: 150, height: 150
-                  },
-                  {
-                     width: '*',
-                     alignment: 'left',
-                     stack: [
-                        {
-                           style: 'header',
-                           text: 'Move In Inspection'
-                        },
-                        {
-                           style: 'street',
-                           text: '3668 quimby st'
-                        },
-                        {
-                           style: 'city',
-                           text: 'san diego ca 92106'
-                        },
-                        {
-                           style: 'dateTable',
-                           table: {
-                              body: [
-                                 [
-                                    {
-                                       border: [false, false, false, false],
-                                       fillColor: '#cccccc',
-                                       text: 'Inspected on April 3, 2018 3:31PM   |   Report Created on April 3, 2018 1:30 PM'
-                                    },
-                                 ]
-                              ]
-                           }
-                        }
-
-                     ]
-                  }
-               
-            ]
-         },
-         layout: {
-            hLineWidth: function (line) { return line === 1; },
-            vLineWidth: function () { return 0; },
-            paddingBottom: function () { return 5; }
-         }
-      },
-      { text: 'Entry', style: 'section' },
-      {
-         style: 'sectionTable',
-         table: {
-            headerRows: 1,
-            body: [
-               [{ text: 'Items', style: 'dataHeader' }, { text: 'Clean', style: 'dataHeader' },
-               { text: 'Undamaged', style: 'dataHeader' }, { text: 'Working', style: 'dataHeader' },
-               { text: 'Notes', style: 'dataHeader' }],
-               ['Doors', 'No', 'Yes', 'Yes', 'There was dust and minor stains left on the wall'],
-               ['Walls', '', '', '', ''],
-               ['Ceiling', '', '', '', ''],
-               ['Flooring', '', '', '', ''],
-               ['Windows', '', '', '', ''],
-               ['Screens', '', '', '', ''],
-               ['Window Coverings', '', '', '', ''],
-            ]
-         }
-      },
-      { text: 'Entry Photos', style: 'photoText' },
-      {
-         table: {
-            widths: [125, 125, 125, 125],
-            body: [
-               [
-                  {
-                     image: 'sampleImage.jpg', width: 125, height: 150
-                  },
-                  {
-                     image: 'sampleImage.jpg', width: 125, height: 150
-                  },
-                  {
-                     image: 'sampleImage.jpg', width: 125, height: 150
-                  },
-                  {
-                     image: 'sampleImage.jpg', width: 125, height: 150
-                  },
-               ],
-               [
-                  {
-                     image: 'sampleImage.jpg', width: 125, height: 150
-                  },
-                  {
-                     image: 'sampleImage.jpg', width: 125, height: 150
-                  },
-                  {
-                     image: 'sampleImage.jpg', width: 125, height: 150
-                  },
-                  {
-                     image: 'sampleImage.jpg', width: 125, height: 150
-                  },
-               ]
-            ]
-=======
         }
 
         //console.log(item[key]); //the array for entry livingroom
@@ -179,7 +62,6 @@ let dd = {
             body.push(tempArray);
             tempArray = [];
         });
->>>>>>> e73ae3bd5027fcc951dc49cc7d9ab039795df4c3
 
         if (index === (sectionLength - 1)) {
             //on the last item 
