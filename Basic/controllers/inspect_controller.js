@@ -129,7 +129,8 @@ router.get('/inspect/:authTok', function(req, res) {
     resObj.route = user;
 
     Unit.find().where({ manager_U_id: user }).exec().then(unitDoc => {
-        unitDoc.bed
+        console.log("Here is the unit doc")
+        console.log(unitDoc)
 
         resObj.unit = unitDoc;
 
