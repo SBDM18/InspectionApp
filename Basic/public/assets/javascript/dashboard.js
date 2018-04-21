@@ -143,13 +143,13 @@ $(".inspectSubmit").on('click', function(e){
                 {
                     Entry:[
                         { title: 'Walls', clean: $(".c-Walls:checked").val(), undamaged: $(".u-Walls:checked").val(), working: $(".w-Walls:checked").val(), note: '' },
-                        { title: '', clean: $(".c-Doors:checked").val(), undamaged: $(".u-Doors:checked").val(), working: $(".w-Doors:checked").val(), note: '' },
-                        { title: '', clean: $(".c-Ceiling:checked").val(), undamaged: $(".u-Ceiling:checked").val(), working: $(".w-Ceiling:checked").val(), note: '' },
-                        { title: '', clean: $(".c-Flooring:checked").val(), undamaged: $(".u-Flooring:checked").val(), working: $(".w-Flooring:checked").val(), note: '' },
-                        { title: '', clean: $(".c-Windows:checked").val(), undamaged: $(".u-Windows:checked").val(), working: $(".w-Windows:checked").val(), note: '' },
-                        { title: '', clean: $(".c-Screens:checked").val(), undamaged: $(".u-Screens:checked").val(), working: $(".w-Screens:checked").val(), note: '' },
-                        { title: '', clean: $(".c-Window:checked").val(), undamaged: $(".u-Window:checked").val(), working: $(".w-Window:checked").val(), note: '' },
-                        { title: '', clean: $(".c-Doorbell:checked").val(), undamaged: $(".u-Doorbell:checked").val(), working: $(".w-Doorbell:checked").val(), note: '' }, 
+                        { title: 'Doors', clean: $(".c-Doors:checked").val(), undamaged: $(".u-Doors:checked").val(), working: $(".w-Doors:checked").val(), note: '' },
+                        { title: 'Ceiling', clean: $(".c-Ceiling:checked").val(), undamaged: $(".u-Ceiling:checked").val(), working: $(".w-Ceiling:checked").val(), note: '' },
+                        { title: 'Flooring', clean: $(".c-Flooring:checked").val(), undamaged: $(".u-Flooring:checked").val(), working: $(".w-Flooring:checked").val(), note: '' },
+                        { title: 'Windows', clean: $(".c-Windows:checked").val(), undamaged: $(".u-Windows:checked").val(), working: $(".w-Windows:checked").val(), note: '' },
+                        { title: 'Screens', clean: $(".c-Screens:checked").val(), undamaged: $(".u-Screens:checked").val(), working: $(".w-Screens:checked").val(), note: '' },
+                        { title: 'Window Coverings', clean: $(".c-Window:checked").val(), undamaged: $(".u-Window:checked").val(), working: $(".w-Window:checked").val(), note: '' },
+                        { title: 'Doorbell', clean: $(".c-Doorbell:checked").val(), undamaged: $(".u-Doorbell:checked").val(), working: $(".w-Doorbell:checked").val(), note: '' }, 
                     ]
                 },
                 {
@@ -325,6 +325,7 @@ $(".inspectSubmit").on('click', function(e){
             ]
         }
         console.log(data);
+
 });
 
 
