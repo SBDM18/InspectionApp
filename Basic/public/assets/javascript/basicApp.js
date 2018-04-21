@@ -185,6 +185,14 @@ $(document).on('click', '.temp-selector', function(e){
         });
 });
 
+
+
+$('.dropDownImg').on('click', function(e){
+    e.preventDefault();
+    console.log("this");
+})
+
+
 var nearby =[];
 
 $(document).on('click', '.inspectSubmit', function(e){
@@ -502,20 +510,6 @@ $(".qtyminus").click(function (e) {
   
 
 
-// JAVASCRIPT FOR AJAX ON TEMPLATE PAGE
-//======================================
-//======================================
-$(document).on('click', '.template', function(){
-    window.location = '/template';
-    // $.ajax("/template", {
-    //     type: "GET",
-    // }).then(res => {
-    //     console.log("Going to template page");
-    //     console.log(res);
-    //     window.location = '/template';
-    //     // res.render('/admin');        
-    // });
-});
 
 
 

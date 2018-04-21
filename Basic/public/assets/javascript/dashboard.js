@@ -133,6 +133,17 @@ $("#myCarousel").on("slide.bs.carousel", function (e) {
         }
     }
 });
+
+
+function checked(class) {
+    if ($(class).val() === 'Yes'){
+        return "Yes";
+    } else {
+        return "No";
+    }
+}
+
+
 $(".inspectSubmit").on('click', function(e){
     e.preventDefault();
 
