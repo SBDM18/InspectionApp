@@ -50,17 +50,17 @@
                     <div class="col-sm-12">
                         <div class="inspectDetails">
                             {{#each fields}}
-                                <div class="dropdownBtns" style="min-width: 220px; max-width: 220px;">
+                                <div class="dropdownBtns" style="min-width: 370px; max-width: 370px;">
                                     <p>
                                         <button id="temp-btn-entry" class="btn" type="button" data-toggle="collapse" data-target="#{{title}}" aria-expanded="true"
                                             aria-controls="collapseExample">
-                                            <img src="../public/assets/Images/dropdown.png" alt="#" height="20px" width="20px">
+                                            <img class="dropDownImg" src="https://cdn1.iconfinder.com/data/icons/universal-icons-set-for-web-and-mobile/100/controls_0-12-256.png" alt="#" height="20px" width="20px">
                                             <div id="temp-label-entry"> {{title}} </div>
                                         </button>
                                     </p>
                                     <div class="collapse" style="overflow: auto; max-height: 350px;" id="{{title}}">
                                         {{#each sections}}
-                                        <div class="card card-body inspectCard">                                     
+                                        <div class="card card-body inspectCard" style="max-width:300px; overflow-y:hidden;">                                     
                                             <div><span class="TitleCard">{{title}}</span>
                                                 <div class="center" style="max-width: 190px; margin-left: -10px;">
                                                     <input type="checkbox" name="C" class="c c-{{title}}" id="c-{{title}}" value="Yes" />
