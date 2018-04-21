@@ -324,6 +324,7 @@ $(".inspectSubmit").on('click', function(e){
                 }
             ]
         }
+        
         console.log(data);
 
 });
