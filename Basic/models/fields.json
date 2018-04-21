@@ -17,42 +17,42 @@
                 "working": null
             },
             {
-                "area": "",
+                "area": "ent",
                 "title" : "Ceiling",
                 "clean": null,
                 "undamaged": null,
                 "working": null
             },
             {
-                "area": "",
+                "area": "ent",
                 "title" : "Flooring",
                 "clean": null,
                 "undamaged": null,
                 "working": null
             },
             {
-                "area": "",
+                "area": "ent",
                 "title" : "Windows",
                 "clean": null,
                 "undamaged": null,
                 "working": null
             },
             {
-                "area": "",
+                "area": "ent",
                 "title" : "Screens",
                 "clean": null,
                 "undamaged": null,
                 "working": null
             },
             {
-                "area": "",
+                "area": "ent",
                 "title" : "Window coverings",
                 "clean": null,
                 "undamaged": null,
                 "working": null
             },
             {
-                "area": "",
+                "area": "ent",
                 "title" : "Doorbell",
                 "clean": null,
                 "undamaged": null,
@@ -64,70 +64,70 @@
         "title": "Bedroom",
         "sections" : [
             {
-                "area": "",
+                "area": "bed",
                 "title" : "Walls",
                 "clean": null,
                 "undamaged": null,
                 "working": null
             },
             {
-                "area": "",
+                "area": "bed",
                 "title" : "Doors",
                 "clean": null,
                 "undamaged": null,
                 "working": null
             },
             {
-                "area": "",
+                "area": "bed",
                 "title" : "Window coverings",
                 "clean": null,
                 "undamaged": null,
                 "working": null
             },
             {
-                "area": "",
+                "area": "bed",
                 "title" : "Windows",
                 "clean": null,
                 "undamaged": null,
                 "working": null
             },
             {
-                "area": "",
+                "area": "bed",
                 "title" : "Screens",
                 "clean": null,
                 "undamaged": null,
                 "working": null
             },
             {
-                "area": "",
+                "area": "bed",
                 "title" : "Flooring",
                 "clean": null,
                 "undamaged": null,
                 "working": null
             },
             {
-                "area": "",
+                "area": "bed",
                 "title" : "Baseboards",
                 "clean": null,
                 "undamaged": null,
                 "working": null
             },
             {
-                "area": "",
+                "area": "bed",
                 "title" : "Closet",
                 "clean": null,
                 "undamaged": null,
                 "working": null
             },
             {
-                "area": "",
+                "area": "bed",
                 "title" : "Power outlets",
                 "clean": null,
                 "undamaged": null,
                 "working": null
             },
             {
-                "area": "",
+                "area": "bed",
                 "title" : "Smoke alarm",
                 "clean": null,
                 "undamaged": null,
@@ -139,126 +139,126 @@
         "title": "Bathroom",
         "sections" : [
             {
-                "area": "",
+                "area": "bat",
                 "title" : "Walls",
                 "clean": null,
                 "undamaged": null,
                 "working": null
             },
             {
-                "area": "",
+                "area": "bat",
                 "title" : "Ceiling",
                 "clean": null,
                 "undamaged": null,
                 "working": null
             },
             {
-                "area": "",
+                "area": "bat",
                 "title" : "Doors",
                 "clean": null,
                 "undamaged": null,
                 "working": null
             },
             {
-                "area": "",
+                "area": "bat",
                 "title" : "Flooring",
                 "clean": null,
                 "undamaged": null,
                 "working": null
             },
             {
-                "area": "",
+                "area": "bat",
                 "title" : "Baseboards",
                 "clean": null,
                 "undamaged": null,
                 "working": null
             },
             {
-                "area": "",
+                "area": "bat",
                 "title" : "Lights",
                 "clean": null,
                 "undamaged": null,
                 "working": null
             },
             {
-                "area": "",
+                "area": "bat",
                 "title" : "Power Outlets",
                 "clean": null,
                 "undamaged": null,
                 "working": null
             },
             {
-                "area": "",
+                "area": "bat",
                 "title" : "Cabinets",
                 "clean": null,
                 "undamaged": null,
                 "working": null
             },
             {
-                "area": "",
+                "area": "bat",
                 "title" : "Towel rack",
                 "clean": null,
                 "undamaged": null,
                 "working": null
             },
             {
-                "area": "",
+                "area": "bat",
                 "title" : "Countertop",
                 "clean": null,
                 "undamaged": null,
                 "working": null
             },
             {
-                "area": "",
+                "area": "bat",
                 "title" : "Shower door",
                 "clean": null,
                 "undamaged": null,
                 "working": null
             },
             {
-                "area": "",
+                "area": "bat",
                 "title" : "Shower",
                 "clean": null,
                 "undamaged": null,
                 "working": null
             },
             {
-                "area": "",
+                "area": "bat",
                 "title" : "Mirror",
                 "clean": null,
                 "undamaged": null,
                 "working": null
             },
             {
-                "area": "",
+                "area": "bat",
                 "title" : "Sink",
                 "clean": null,
                 "undamaged": null,
                 "working": null
             },
             {
-                "area": "",
+                "area": "bat",
                 "title" : "Faucet",
                 "clean": null,
                 "undamaged": null,
                 "working": null
             },
             {
-                "area": "",
+                "area": "bat",
                 "title" : "Exhaust fan",
                 "clean": null,
                 "undamaged": null,
                 "working": null
             },
             {
-                "area": "",
+                "area": "bat",
                 "title" : "Toilet",
                 "clean": null,
                 "undamaged": null,
                 "working": null
             },
             {
-                "area": "",
+                "area": "bat",
                 "title" : "Toilet Tissue Dispenser",
                 "clean": null,
                 "undamaged": null,
@@ -268,63 +268,63 @@
             "title": "Halls",
             "sections": [
                 {
-                    "area": "",
+                    "area": "hal",
                     "title": "Walls",
                     "clean": null,
                     "undamaged": null,
                     "working": null
                 },
                 {
-                    "area": "",
+                    "area": "hal",
                     "title":"Ceiling",
                     "clean": null,
                     "undamaged": null,
                     "working": null
                 },
                 {
-                    "area": "",
+                    "area": "hal",
                     "title": "Flooring",
                     "clean": null,
                     "undamaged": null,
                     "working": null
                 },
                 {
-                    "area": "",
+                    "area": "hal",
                     "title":"Baseboards",
                     "clean": null,
                     "undamaged": null,
                     "working": null
                 },
                 {
-                    "area": "",
+                    "area": "hal",
                     "title":"Lights",
                     "clean": null,
                     "undamaged": null,
                     "working": null
                 },
                 {
-                    "area": "",
+                    "area": "hal",
                     "title":"Stairs",
                     "clean": null,
                     "undamaged": null,
                     "working": null
                 },
                 {
-                    "area": "",
+                    "area": "hal",
                     "title":"Closet",
                     "clean": null,
                     "undamaged": null,
                     "working": null
                 },
                 {
-                    "area": "",
+                    "area": "hal",
                     "title":"Smoke alarms",
                     "clean": null,
                     "undamaged": null,
                     "working": null
                 },
                 {
-                    "area": "",
+                    "area": "hal",
                     "title":"Carbon Monoxide Detector",
                     "clean": null,
                     "undamaged": null,
@@ -336,70 +336,70 @@
             "title": "Stairs",
             "sections": [
                 {
-                    "area": "",
+                    "area": "sta",
                     "title":"Walls",
                     "clean": null,
                     "undamaged": null,
                     "working": null
                 },
                 {
-                    "area": "",
+                    "area": "sta",
                     "title":"Ceiling",
                     "clean": null,
                     "undamaged": null,
                     "working": null
                 },
                 {
-                    "area": "",
+                    "area": "sta",
                     "title":"Flooring",
                     "clean": null,
                     "undamaged": null,
                     "working": null
                 },
                 {
-                    "area": "",
+                    "area": "sta",
                     "title":"Baseboards",
                     "clean": null,
                     "undamaged": null,
                     "working": null
                 },
                 {
-                    "area": "",
+                    "area": "sta",
                     "title":"Lights",
                     "clean": null,
                     "undamaged": null,
                     "working": null
                 },
                 {
-                    "area": "",
+                    "area": "sta",
                     "title":"Steps",
                     "clean": null,
                     "undamaged": null,
                     "working": null
                 },
                 {
-                    "area": "",
+                    "area": "sta",
                     "title":"Railings",
                     "clean": null,
                     "undamaged": null,
                     "working": null
                 },
                 {
-                    "area": "",
+                    "area": "sta",
                     "title":"Closet",
                     "clean": null,
                     "undamaged": null,
                     "working": null
                 },
                 {
-                    "area": "",
+                    "area": "sta",
                     "title":"Smoke Alarm",
                     "clean": null,
                     "undamaged": null,
                     "working": null
                 },
                 {
-                    "area": "",
+                    "area": "sta",
                     "title":"Carbon Monoxide Detector",
                     "clean": null,
                     "undamaged": null,
@@ -411,126 +411,126 @@
             "title": "Kitchen",
             "sections": [
                 {
-                    "area": "",
+                    "area": "kit",
                     "title":"Walls",
                     "clean": null,
                     "undamaged": null,
                     "working": null
                 },
                 {
-                    "area": "",
+                    "area": "kit",
                     "title":"Ceiling",
                     "clean": null,
                     "undamaged": null,
                     "working": null
                 },
                 {
-                    "area": "",
+                    "area": "kit",
                     "title":"Flooring",
                     "clean": null,
                     "undamaged": null,
                     "working": null
                 },
                 {
-                    "area": "",
+                    "area": "kit",
                     "title":"Baseboards",
                     "clean": null,
                     "undamaged": null,
                     "working": null
                 },
                 {
-                    "area": "",
+                    "area": "kit",
                     "title":"Lights",
                     "clean": null,
                     "undamaged": null,
                     "working": null
                 },
                 {
-                    "area": "",
+                    "area": "kit",
                     "title":"Power Outlets",
                     "clean": null,
                     "undamaged": null,
                     "working": null
                 },
                 {
-                    "area": "",
+                    "area": "kit",
                     "title":"Cupboards",
                     "clean": null,
                     "undamaged": null,
                     "working": null
                 },
                 {
-                    "area": "",
+                    "area": "kit",
                     "title":"Countertops",
                     "clean": null,
                     "undamaged": null,
                     "working": null
                 },
                 {
-                    "area": "",
+                    "area": "kit",
                     "title":"Pantry",
                     "clean": null,
                     "undamaged": null,
                     "working": null
                 },
                 {
-                    "area": "",
+                    "area": "kit",
                     "title":"Refrigerator",
                     "clean": null,
                     "undamaged": null,
                     "working": null
                 },
                 {
-                    "area": "",
+                    "area": "kit",
                     "title":"Oven",
                     "clean": null,
                     "undamaged": null,
                     "working": null
                 },
                 {
-                    "area": "",
+                    "area": "kit",
                     "title":"Stove Top",
                     "clean": null,
                     "undamaged": null,
                     "working": null
                 },
                 {
-                    "area": "",
+                    "area": "kit",
                     "title":"Exhaust Fan",
                     "clean": null,
                     "undamaged": null,
                     "working": null
                 },
                 {
-                    "area": "",
+                    "area": "kit",
                     "title":"Sink",
                     "clean": null,
                     "undamaged": null,
                     "working": null
                 },
                 {
-                    "area": "",
+                    "area": "kit",
                     "title":"Faucet",
                     "clean": null,
                     "undamaged": null,
                     "working": null
                 },
                 {
-                    "area": "",
+                    "area": "kit",
                     "title":"Garbage Disposal",
                     "clean": null,
                     "undamaged": null,
                     "working": null
                 },
                 {
-                    "area": "",
+                    "area": "kit",
                     "title":"Microwave",
                     "clean": null,
                     "undamaged": null,
                     "working": null
                 },
                 {
-                    "area": "",
+                    "area": "kit",
                     "title":"Dishwasher",
                     "clean": null,
                     "undamaged": null,
@@ -542,56 +542,56 @@
             "title": "Livingroom",
             "sections": [
                 {
-                    "area": "",
+                    "area": "liv",
                     "title":"Walls",
                     "clean": null,
                     "undamaged": null,
                     "working": null
                 },
                 {
-                    "area": "",
+                    "area": "liv",
                     "title":"Ceiling",
                     "clean": null,
                     "undamaged": null,
                     "working": null
                 },
                 {
-                    "area": "",
+                    "area": "liv",
                     "title":"Flooring",
                     "clean": null,
                     "undamaged": null,
                     "working": null
                 },
                 {
-                    "area": "",
+                    "area": "liv",
                     "title":"Baseboards",
                     "clean": null,
                     "undamaged": null,
                     "working": null
                 },
                 {
-                    "area": "",
+                    "area": "liv",
                     "title":"Lights",
                     "clean": null,
                     "undamaged": null,
                     "working": null
                 },
                 {
-                    "area": "",
+                    "area": "liv",
                     "title":"Power Outlets",
                     "clean": null,
                     "undamaged": null,
                     "working": null
                 },
                 {
-                    "area": "",
+                    "area": "liv",
                     "title":"Windows",
                     "clean": null,
                     "undamaged": null,
                     "working": null
                 },
                 {
-                    "area": "",
+                    "area": "liv",
                     "title":"Screens",
                     "clean": null,
                     "undamaged": null,
@@ -603,91 +603,91 @@
             "title": "Laundry",
             "sections": [
                 {
-                    "area": "",
+                    "area": "lau",
                     "title":"Walls",
                     "clean": null,
                     "undamaged": null,
                     "working": null
                 },
                 {
-                    "area": "",
+                    "area": "lau",
                     "title":"Ceiling",
                     "clean": null,
                     "undamaged": null,
                     "working": null
                 },
                 {
-                    "area": "",
+                    "area": "lau",
                     "title":"Flooring",
                     "clean": null,
                     "undamaged": null,
                     "working": null
                 },
                 {
-                    "area": "",
+                    "area": "lau",
                     "title":"Baseboards",
                     "clean": null,
                     "undamaged": null,
                     "working": null
                 },
                 {
-                    "area": "",
+                    "area": "lau",
                     "title":"Lights",
                     "clean": null,
                     "undamaged": null,
                     "working": null
                 },
                 {
-                    "area": "",
+                    "area": "lau",
                     "title":"Power Outlets",
                     "clean": null,
                     "undamaged": null,
                     "working": null
                 },
                 {
-                    "area": "",
+                    "area": "lau",
                     "title":"Windows",
                     "clean": null,
                     "undamaged": null,
                     "working": null
                 },
                 {
-                    "area": "",
+                    "area": "lau",
                     "title":"Screens",
                     "clean": null,
                     "undamaged": null,
                     "working": null
                 },
                 {
-                    "area": "",
+                    "area": "lau",
                     "title":"Washing Machine",
                     "clean": null,
                     "undamaged": null,
                     "working": null
                 },
                 {
-                    "area": "",
+                    "area": "lau",
                     "title":"Dryer",
                     "clean": null,
                     "undamaged": null,
                     "working": null
                 },
                 {
-                    "area": "",
+                    "area": "lau",
                     "title":"Vents",
                     "clean": null,
                     "undamaged": null,
                     "working": null
                 },
                 {
-                    "area": "",
+                    "area": "lau",
                     "title":"Cabinets",
                     "clean": null,
                     "undamaged": null,
                     "working": null
                 },
                 {
-                    "area": "",
+                    "area": "lau",
                     "title":"Sink",
                     "clean": null,
                     "undamaged": null,
