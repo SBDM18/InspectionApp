@@ -133,12 +133,44 @@ $("#myCarousel").on("slide.bs.carousel", function (e) {
         }
     }
 });
+function checkUndefined(data) {
+    let currentKey = "Entry";
+    const sectionLength = data.sections.length;
+    data.sections.map((item, index) => {
+
+        let key = Object.keys(item)[0];
+        console.log("currentKey: ", currentKey, " and key: ", key);
+        // console.log(item[key]);
+        item[key].map(item => {
+            // console.log(item);
+            // console.log("Item object", item.title);
+         
+            if(typeof(item.clean) === 'undefined'){
+                item.clean = "No"
+            }
+            if(typeof(item.working) === 'undefined'){
+                item.working = "No"
+            }
+            if(typeof(item.undamaged) === 'undefined'){
+                item.undamaged = "No"
+            }
+            // console.log("Clean item",item.clean);
+            // console.log("Working item", item.working);
+            // console.log("Undamaged item", item.undamaged);
+
+        })
+    })
+    console.log(data);
+    return data;
+}
+
 $(".inspectSubmit").on('click', function(e){
     e.preventDefault();
 
     
 
         let data ={
+
             sections:[
                 {
                     Entry:[
@@ -324,8 +356,12 @@ $(".inspectSubmit").on('click', function(e){
                 }
             ]
         }
+       
         
-        console.log(data);
+     checkUndefined(data);
+
+    
+        // console.log(data);
 
 });
 
