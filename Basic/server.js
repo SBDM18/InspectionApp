@@ -30,9 +30,9 @@ app.set('view engine', 'handlebars');
 app.use(methodOverride('_method'));
 
 // + process.env.MONGO_ATLAS_PW1 +
-// mongoose.connect('mongodb://dward:sFjbTsUmvzP9O8sP@insightinspect-dev-shard-00-00-hfhtu.mongodb.net:27017,insightinspect-dev-shard-00-01-hfhtu.mongodb.net:27017,insightinspect-dev-shard-00-02-hfhtu.mongodb.net:27017/test?ssl=true&replicaSet=InsightInspect-dev-shard-0&authSource=admin');
+mongoose.connect('mongodb://dward:sFjbTsUmvzP9O8sP@insightinspect-dev-shard-00-00-hfhtu.mongodb.net:27017,insightinspect-dev-shard-00-01-hfhtu.mongodb.net:27017,insightinspect-dev-shard-00-02-hfhtu.mongodb.net:27017/test?ssl=true&replicaSet=InsightInspect-dev-shard-0&authSource=admin');
 
-mongoose.connect("mongodb://localhost:27017/test");
+// mongoose.connect("mongodb://localhost:27017/test");
 var db = mongoose.connection;
     
 //calls routes from controller folder

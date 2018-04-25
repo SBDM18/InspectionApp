@@ -1,5 +1,7 @@
 /*---------------------------------------------*/
-
+h1{
+color: #33658A #D1e5ff #91adc2 #fff8f0 #83b5d1;
+}
 a {
     font-family: Poppins-Regular;
     font-size: 14px;
@@ -26,11 +28,11 @@ a:hover {
     border-radius: 10px;
     overflow: hidden;
     padding: 15px 55px 37px 55px;
-    background: #9152f8;
-    background: -webkit-linear-gradient(top, #7579ff, #b224ef);
-    background: -o-linear-gradient(top, #7579ff, #b224ef);
-    background: -moz-linear-gradient(top, #7579ff, #b224ef);
-    background: linear-gradient(top, #7579ff, #b224ef);
+    background: #83b5d1;
+    background: -webkit-linear-gradient(top, #83b5d1, #91adc2);
+    background: -o-linear-gradient(top, #83b5d1, #91adc2);
+    background: -moz-linear-gradient(top, #83b5d1, #91adc2);
+    background: linear-gradient(top, #83b5d1, #91adc2);
 }
 
 /*------------------------------------------------------------------
@@ -53,14 +55,14 @@ a:hover {
     width: 120px;
     height: 120px;
     border-radius: 50%;
-    background-color: #fff;
+    background-color: #fff8f0;
     margin: 0 auto;
 }
 
 .login100-form-title {
-    font-family: Poppins-Medium;
+    font-family: 'Philosopher', sans-serif;
     font-size: 30px;
-    color: #fff;
+    color: #fff8f0;
     text-align: center;
     text-transform: uppercase;
     display: block;
@@ -75,9 +77,9 @@ a:hover {
     margin-bottom: 30px;
 }
 .input100 {
-    font-family: Poppins-Regular;
+    font-family: 'News Cycle', sans-serif;
     font-size: 16px;
-    color: #fff;
+    color: #fff8f0;
     line-height: 1.2;
     display: block;
     width: 100%;
@@ -110,13 +112,13 @@ a:hover {
     -o-transition: all 0.4s;
     -moz-transition: all 0.4s;
     transition: all 0.4s;
-    background: #fff;
+    background: #fff8f0;
 }
 
 .focus-input100::after {
-    font-family: Material-Design-Iconic-Font;
+    font-family: 'News Cycle', sans-serif;
     font-size: 22px;
-    color: #fff;
+    color: #fff8f0;
     content: attr(data-placeholder);
     display: block;
     width: 100%;
@@ -164,7 +166,7 @@ input {
 }
 
 .login100-form-btn {
-    font-family: Poppins-Medium;
+    font-family: 'News Cycle', sans-serif;
     font-size: 16px;
     color: #555555;
     line-height: 1.2;
@@ -180,10 +182,10 @@ input {
     height: 50px;
     border-radius: 25px;
     background: #9152f8;
-    background: -webkit-linear-gradient(bottom, #7579ff, #b224ef);
-    background: -o-linear-gradient(bottom, #7579ff, #b224ef);
-    background: -moz-linear-gradient(bottom, #7579ff, #b224ef);
-    background: linear-gradient(bottom, #7579ff, #b224ef);
+    background: -webkit-linear-gradient(bottom, #33658A, #83b5d1);
+    background: -o-linear-gradient(bottom, #33658A, #83b5d1);
+    background: -moz-linear-gradient(bottom, #33658A, #83b5d1);
+    background: linear-gradient(bottom, #33658A, #83b5d1);
     position: relative;
     z-index: 1;
     -webkit-transition: all 0.4s;
@@ -200,7 +202,7 @@ input {
     width: 100%;
     height: 100%;
     border-radius: 25px;
-    background-color: #fff;
+    background-color:#fff8f0;
     top: 0;
     left: 0;
     opacity: 1;
@@ -211,7 +213,7 @@ input {
 }
 
 .login100-form-btn:hover {
-    color: #fff;
+    color:#fff8f0;
 }
 
 .login100-form-btn:hover:before {
@@ -304,6 +306,15 @@ button:hover {
 #type{
     width: 100px;
     border-radius: 5px;
+}
+/*----------------------------------------------------------------
+[Temp modal]*/
+.popupContainerTemp{
+    position: absolute;
+    width: 550px;
+    height: auto;
+    left: 45%;
+    top: 60px;
 }
 /*------------------------------------------------------------------
 [ Alert validate ]*/

@@ -1,51 +1,57 @@
-[
-    {
-        "title" : "Entry",
-        "sections": [
-            {
-                "title" : "Walls",
-                "clean" : null,
-                "undamaged" : null,
-                "working" : null
+[{
+        "title": "Entry",
+        "sections": [{
+                "area": "ent",
+                "title": "Walls",
+                "clean": "No",
+                "undamaged": "No",
+                "working": "No"
             },
             {
-                "title" : "Doors",
+                "area": "ent",
+                "title": "Doors",
+                "clean": "No",
+                "undamaged": "No",
+                "working": "No"
+            },
+            {
+                "area": "ent",
+                "title": "Ceiling",
+                "clean": "No",
+                "undamaged": "No",
+                "working": "No"
+            },
+            {
+                "area": "ent",
+                "title": "Flooring",
                 "clean": null,
                 "undamaged": null,
                 "working": null
             },
             {
-                "title" : "Ceiling",
+                "area": "ent",
+                "title": "Windows",
                 "clean": null,
                 "undamaged": null,
                 "working": null
             },
             {
-                "title" : "Flooring",
+                "area": "ent",
+                "title": "Screens",
                 "clean": null,
                 "undamaged": null,
                 "working": null
             },
             {
-                "title" : "Windows",
+                "area": "ent",
+                "title": "Window coverings",
                 "clean": null,
                 "undamaged": null,
                 "working": null
             },
             {
-                "title" : "Screens",
-                "clean": null,
-                "undamaged": null,
-                "working": null
-            },
-            {
-                "title" : "Window coverings",
-                "clean": null,
-                "undamaged": null,
-                "working": null
-            },
-            {
-                "title" : "Doorbell",
+                "area": "ent",
+                "title": "Doorbell",
                 "clean": null,
                 "undamaged": null,
                 "working": null
@@ -54,63 +60,72 @@
     },
     {
         "title": "Bedroom",
-        "sections" : [
+        "sections": [{
+                "area": "bed",
+                "title": "Walls",
+                "clean": "No",
+                "undamaged": "No",
+                "working": "No"
+            },
             {
-                "title" : "Walls",
+                "area": "bed",
+                "title": "Doors",
+                "clean": "No",
+                "undamaged": "No",
+                "working": "No"
+            },
+            {
+                "area": "bed",
+                "title": "Window coverings",
+                "clean": "No",
+                "undamaged": "No",
+                "working": "No"
+            },
+            {
+                "area": "bed",
+                "title": "Windows",
                 "clean": null,
                 "undamaged": null,
                 "working": null
             },
             {
-                "title" : "Doors",
+                "area": "bed",
+                "title": "Screens",
                 "clean": null,
                 "undamaged": null,
                 "working": null
             },
             {
-                "title" : "Window coverings",
+                "area": "bed",
+                "title": "Flooring",
                 "clean": null,
                 "undamaged": null,
                 "working": null
             },
             {
-                "title" : "Windows",
+                "area": "bed",
+                "title": "Baseboards",
                 "clean": null,
                 "undamaged": null,
                 "working": null
             },
             {
-                "title" : "Screens",
+                "area": "bed",
+                "title": "Closet",
                 "clean": null,
                 "undamaged": null,
                 "working": null
             },
             {
-                "title" : "Flooring",
+                "area": "bed",
+                "title": "Power outlets",
                 "clean": null,
                 "undamaged": null,
                 "working": null
             },
             {
-                "title" : "Baseboards",
-                "clean": null,
-                "undamaged": null,
-                "working": null
-            },
-            {
-                "title" : "Closet",
-                "clean": null,
-                "undamaged": null,
-                "working": null
-            },
-            {
-                "title" : "Power outlets",
-                "clean": null,
-                "undamaged": null,
-                "working": null
-            },
-            {
-                "title" : "Smoke alarm",
+                "area": "bed",
+                "title": "Smoke alarm",
                 "clean": null,
                 "undamaged": null,
                 "working": null
@@ -119,717 +134,816 @@
     },
     {
         "title": "Bathroom",
-        "sections" : [
-            {
-                "title" : "Walls",
+        "sections": [{
+                "area": "bat",
+                "title": "Walls",
                 "clean": null,
                 "undamaged": null,
                 "working": null
             },
             {
-                "title" : "Ceiling",
+                "area": "bat",
+                "title": "Ceiling",
                 "clean": null,
                 "undamaged": null,
                 "working": null
             },
             {
-                "title" : "Doors",
+                "area": "bat",
+                "title": "Doors",
                 "clean": null,
                 "undamaged": null,
                 "working": null
             },
             {
-                "title" : "Flooring",
+                "area": "bat",
+                "title": "Flooring",
                 "clean": null,
                 "undamaged": null,
                 "working": null
             },
             {
-                "title" : "Baseboards",
+                "area": "bat",
+                "title": "Baseboards",
                 "clean": null,
                 "undamaged": null,
                 "working": null
             },
             {
-                "title" : "Lights",
+                "area": "bat",
+                "title": "Lights",
                 "clean": null,
                 "undamaged": null,
                 "working": null
             },
             {
-                "title" : "Power Outlets",
+                "area": "bat",
+                "title": "Power Outlets",
                 "clean": null,
                 "undamaged": null,
                 "working": null
             },
             {
-                "title" : "Cabinets",
+                "area": "bat",
+                "title": "Cabinets",
                 "clean": null,
                 "undamaged": null,
                 "working": null
             },
             {
-                "title" : "Towel rack",
+                "area": "bat",
+                "title": "Towel rack",
                 "clean": null,
                 "undamaged": null,
                 "working": null
             },
             {
-                "title" : "Countertop",
+                "area": "bat",
+                "title": "Countertop",
                 "clean": null,
                 "undamaged": null,
                 "working": null
             },
             {
-                "title" : "Shower door",
+                "area": "bat",
+                "title": "Shower door",
                 "clean": null,
                 "undamaged": null,
                 "working": null
             },
             {
-                "title" : "Shower",
+                "area": "bat",
+                "title": "Shower",
                 "clean": null,
                 "undamaged": null,
                 "working": null
             },
             {
-                "title" : "Mirror",
+                "area": "bat",
+                "title": "Mirror",
                 "clean": null,
                 "undamaged": null,
                 "working": null
             },
             {
-                "title" : "Sink",
+                "area": "bat",
+                "title": "Sink",
                 "clean": null,
                 "undamaged": null,
                 "working": null
             },
             {
-                "title" : "Faucet",
+                "area": "bat",
+                "title": "Faucet",
                 "clean": null,
                 "undamaged": null,
                 "working": null
             },
             {
-                "title" : "Exhaust fan",
+                "area": "bat",
+                "title": "Exhaust fan",
                 "clean": null,
                 "undamaged": null,
                 "working": null
             },
             {
-                "title" : "Toilet",
+                "area": "bat",
+                "title": "Toilet",
                 "clean": null,
                 "undamaged": null,
                 "working": null
             },
             {
-                "title" : "Toilet Tissue Dispenser",
+                "area": "bat",
+                "title": "Toilet Tissue Dispenser",
                 "clean": null,
                 "undamaged": null,
                 "working": null
-           },
-        {
-            "title": "Halls",
-            "sections": [
-                {
-                    "title": "Walls",
-                    "clean": null,
-                    "undamaged": null,
-                    "working": null
-                },
-                {
-                    "title":"Ceiling",
-                    "clean": null,
-                    "undamaged": null,
-                    "working": null
-                },
-                {
-                    "title": "Flooring",
-                    "clean": null,
-                    "undamaged": null,
-                    "working": null
-                },
-                {
-                    "title":"Baseboards",
-                    "clean": null,
-                    "undamaged": null,
-                    "working": null
-                },
-                {
-                    "title":"Lights",
-                    "clean": null,
-                    "undamaged": null,
-                    "working": null
-                },
-                {
-                    "title":"Stairs",
-                    "clean": null,
-                    "undamaged": null,
-                    "working": null
-                },
-                {
-                    "title":"Closet",
-                    "clean": null,
-                    "undamaged": null,
-                    "working": null
-                },
-                {
-                    "title":"Smoke alarms",
-                    "clean": null,
-                    "undamaged": null,
-                    "working": null
-                },
-                {
-                    "title":"Carbon Monoxide Detector",
-                    "clean": null,
-                    "undamaged": null,
-                    "working": null
-                }
-            ]
-        },
-        {
-            "title": "Stairs",
-            "sections": [
-                {
-                    "title":"Walls",
-                    "clean": null,
-                    "undamaged": null,
-                    "working": null
-                },
-                {
-                    "title":"Ceiling",
-                    "clean": null,
-                    "undamaged": null,
-                    "working": null
-                },
-                {
-                    "title":"Flooring",
-                    "clean": null,
-                    "undamaged": null,
-                    "working": null
-                },
-                {
-                    "title":"Baseboards",
-                    "clean": null,
-                    "undamaged": null,
-                    "working": null
-                },
-                {
-                    "title":"Lights",
-                    "clean": null,
-                    "undamaged": null,
-                    "working": null
-                },
-                {
-                    "title":"Steps",
-                    "clean": null,
-                    "undamaged": null,
-                    "working": null
-                },
-                {
-                    "title":"Railings",
-                    "clean": null,
-                    "undamaged": null,
-                    "working": null
-                },
-                {
-                    "title":"Closet",
-                    "clean": null,
-                    "undamaged": null,
-                    "working": null
-                },
-                {
-                    "title":"Smoke Alarm",
-                    "clean": null,
-                    "undamaged": null,
-                    "working": null
-                },
-                {
-                    "title":"Carbon Monoxide Detector",
-                    "clean": null,
-                    "undamaged": null,
-                    "working": null
-                }
-            ]
-        },
-        {
-            "title": "Kitchen",
-            "sections": [
-                {
-                    "title":"Walls",
-                    "clean": null,
-                    "undamaged": null,
-                    "working": null
-                },
-                {
-                    "title":"Ceiling",
-                    "clean": null,
-                    "undamaged": null,
-                    "working": null
-                },
-                {
-                    "title":"Flooring",
-                    "clean": null,
-                    "undamaged": null,
-                    "working": null
-                },
-                {
-                    "title":"Baseboards",
-                    "clean": null,
-                    "undamaged": null,
-                    "working": null
-                },
-                {
-                    "title":"Lights",
-                    "clean": null,
-                    "undamaged": null,
-                    "working": null
-                },
-                {
-                    "title":"Power Outlets",
-                    "clean": null,
-                    "undamaged": null,
-                    "working": null
-                },
-                {
-                    "title":"Cupboards",
-                    "clean": null,
-                    "undamaged": null,
-                    "working": null
-                },
-                {
-                    "title":"Countertops",
-                    "clean": null,
-                    "undamaged": null,
-                    "working": null
-                },
-                {
-                    "title":"Pantry",
-                    "clean": null,
-                    "undamaged": null,
-                    "working": null
-                },
-                {
-                    "title":"Refrigerator",
-                    "clean": null,
-                    "undamaged": null,
-                    "working": null
-                },
-                {
-                    "title":"Oven",
-                    "clean": null,
-                    "undamaged": null,
-                    "working": null
-                },
-                {
-                    "title":"Stove Top",
-                    "clean": null,
-                    "undamaged": null,
-                    "working": null
-                },
-                {
-                    "title":"Exhaust Fan",
-                    "clean": null,
-                    "undamaged": null,
-                    "working": null
-                },
-                {
-                    "title":"Sink",
-                    "clean": null,
-                    "undamaged": null,
-                    "working": null
-                },
-                {
-                    "title":"Faucet",
-                    "clean": null,
-                    "undamaged": null,
-                    "working": null
-                },
-                {
-                    "title":"Garbage Disposal",
-                    "clean": null,
-                    "undamaged": null,
-                    "working": null
-                },
-                {
-                    "title":"Microwave",
-                    "clean": null,
-                    "undamaged": null,
-                    "working": null
-                },
-                {
-                    "title":"Dishwasher",
-                    "clean": null,
-                    "undamaged": null,
-                    "working": null
-                }
-            ]
-        },
-        {
-            "title": "Livingroom",
-            "sections": [
-                {
-                    "title":"Walls",
-                    "clean": null,
-                    "undamaged": null,
-                    "working": null
-                },
-                {
-                    "title":"Ceiling",
-                    "clean": null,
-                    "undamaged": null,
-                    "working": null
-                },
-                {
-                    "title":"Flooring",
-                    "clean": null,
-                    "undamaged": null,
-                    "working": null
-                },
-                {
-                    "title":"Baseboards",
-                    "clean": null,
-                    "undamaged": null,
-                    "working": null
-                },
-                {
-                    "title":"Lights",
-                    "clean": null,
-                    "undamaged": null,
-                    "working": null
-                },
-                {
-                    "title":"Power Outlets",
-                    "clean": null,
-                    "undamaged": null,
-                    "working": null
-                },
-                {
-                    "title":"Windows",
-                    "clean": null,
-                    "undamaged": null,
-                    "working": null
-                },
-                {
-                    "title":"Screens",
-                    "clean": null,
-                    "undamaged": null,
-                    "working": null
-                }
-            ]
-        },
-        {
-            "title": "Laundry",
-            "sections": [
-                {
-                    "title":"Walls",
-                    "clean": null,
-                    "undamaged": null,
-                    "working": null
-                },
-                {
-                    "title":"Ceiling",
-                    "clean": null,
-                    "undamaged": null,
-                    "working": null
-                },
-                {
-                    "title":"Flooring",
-                    "clean": null,
-                    "undamaged": null,
-                    "working": null
-                },
-                {
-                    "title":"Baseboards",
-                    "clean": null,
-                    "undamaged": null,
-                    "working": null
-                },
-                {
-                    "title":"Lights",
-                    "clean": null,
-                    "undamaged": null,
-                    "working": null
-                },
-                {
-                    "title":"Power Outlets",
-                    "clean": null,
-                    "undamaged": null,
-                    "working": null
-                },
-                {
-                    "title":"Windows",
-                    "clean": null,
-                    "undamaged": null,
-                    "working": null
-                },
-                {
-                    "title":"Screens",
-                    "clean": null,
-                    "undamaged": null,
-                    "working": null
-                },
-                {
-                    "title":"Washing Machine",
-                    "clean": null,
-                    "undamaged": null,
-                    "working": null
-                },
-                {
-                    "title":"Dryer",
-                    "clean": null,
-                    "undamaged": null,
-                    "working": null
-                },
-                {
-                    "title":"Vents",
-                    "clean": null,
-                    "undamaged": null,
-                    "working": null
-                },
-                {
-                    "title":"Cabinets",
-                    "clean": null,
-                    "undamaged": null,
-                    "working": null
-                },
-                {
-                    "title":"Sink",
-                    "clean": null,
-                    "undamaged": null,
-                    "working": null
-                },
-                {
-                    "title":"Faucet",
-                    "clean": null,
-                    "undamaged": null,
-                    "working": null
-                }
-            ]
-        },
-        {
-            "title": "Family Room",
-            "sections": [
-                {
-                    "title":"Walls",
-                    "clean": null,
-                    "undamaged": null,
-                    "working": null
-                },
-                {
-                    "title":"Ceiling",
-                    "clean": null,
-                    "undamaged": null,
-                    "working": null
-                },
-                {
-                    "title":"Flooring",
-                    "clean": null,
-                    "undamaged": null,
-                    "working": null
-                },
-                {
-                    "title":"Baseboards",
-                    "clean": null,
-                    "undamaged": null,
-                    "working": null
-                },
-                {
-                    "title":"Lights",
-                    "clean": null,
-                    "undamaged": null,
-                    "working": null
-                },
-                {
-                    "title":"Power Outlets",
-                    "clean": null,
-                    "undamaged": null,
-                    "working": null
-                },
-                {
-                    "title":"Windows",
-                    "clean": null,
-                    "undamaged": null,
-                    "working": null
-                },
-                {
-                    "title":"Screens",
-                    "clean": null,
-                    "undamaged": null,
-                    "working": null
-                },
-                {
-                    "title":"Fireplace",
-                    "clean": null,
-                    "undamaged": null,
-                    "working": null
-                }
-            ]
-        },
-        {
-            "title": "Garage",
-            "sections": [
-                {
-                    "title":"Walls",
-                    "clean": null,
-                    "undamaged": null,
-                    "working": null
-                },
-                {
-                    "title":"Ceiling",
-                    "clean": null,
-                    "undamaged": null,
-                    "working": null
-                },
-                {
-                    "title":"Flooring",
-                    "clean": null,
-                    "undamaged": null,
-                    "working": null
-                },
-                {
-                    "title":"Baseboards",
-                    "clean": null,
-                    "undamaged": null,
-                    "working": null
-                },
-                {
-                    "title":"Lights",
-                    "clean": null,
-                    "undamaged": null,
-                    "working": null
-                },
-                {
-                    "title":"Power Outlets",
-                    "clean": null,
-                    "undamaged": null,
-                    "working": null
-                },
-                {
-                    "title":"Windows",
-                    "clean": null,
-                    "undamaged": null,
-                    "working": null
-                },
-                {
-                    "title":"Garage Door",
-                    "clean": null,
-                    "undamaged": null,
-                    "working": null
-                },
-                {
-                    "title":"Garage Motor",
-                    "clean": null,
-                    "undamaged": null,
-                    "working": null
-                },
-                {
-                    "title":"Water Heater",
-                    "clean": null,
-                    "undamaged": null,
-                    "working": null
-                }
-            ]
-        },
-        {
-            "title": "External",
-            "sections": [
-                {
-                    "title":"Roof",
-                    "clean": null,
-                    "undamaged": null,
-                    "working": null
-                },
-                {
-                    "title":"Gutters",
-                    "clean": null,
-                    "undamaged": null,
-                    "working": null
-                },
-                {
-                    "title":"Eaves",
-                    "clean": null,
-                    "undamaged": null,
-                    "working": null
-                },
-                {
-                    "title":"Fascia",
-                    "clean": null,
-                    "undamaged": null,
-                    "working": null
-                },
-                {
-                    "title":"Balcony",
-                    "clean": null,
-                    "undamaged": null,
-                    "working": null
-                },
-                {
-                    "title":"Patio",
-                    "clean": null,
-                    "undamaged": null,
-                    "working": null
-                }
-            ]
-        },
-        {
-            "title": "Misc",
-            "sections": [
-                {
-                    "title":"Mailbox",
-                    "clean": null,
-                    "undamaged": null,
-                    "working": null
-                },
-                {
-                    "title":"Recycling Bin",
-                    "clean": null,
-                    "undamaged": null,
-                    "working": null
-                },
-                {
-                    "title":"Garbage Bin",
-                    "clean": null,
-                    "undamaged": null,
-                    "working": null
-                },
-                {
-                    "title":"House Key",
-                    "clean": null,
-                    "undamaged": null,
-                    "working": null
-                },
-                {
-                    "title":"Garage Remote",
-                    "clean": null,
-                    "undamaged": null,
-                    "working": null
-                },
-                {
-                    "title":"Common Area Keys",
-                    "clean": null,
-                    "undamaged": null,
-                    "working": null
-                }
-            ]
-        },
-        {
-            "title": "Equipment",
-            "sections": [
-                {
-                    "title":"Air Conditioning",
-                    "clean": null,
-                    "undamaged": null,
-                    "working": null
-                },
-                {
-                    "title":"Heating Unit",
-                    "clean": null,
-                    "undamaged": null,
-                    "working": null
-                }
-            ]
-        }
+            }
+        ]
+    },
+    {
+        "title": "Halls",
+        "sections": [{
+                "area": "hal",
+                "title": "Walls",
+                "clean": null,
+                "undamaged": null,
+                "working": null
+            },
+            {
+                "area": "hal",
+                "title": "Ceiling",
+                "clean": null,
+                "undamaged": null,
+                "working": null
+            },
+            {
+                "area": "hal",
+                "title": "Flooring",
+                "clean": null,
+                "undamaged": null,
+                "working": null
+            },
+            {
+                "area": "hal",
+                "title": "Baseboards",
+                "clean": null,
+                "undamaged": null,
+                "working": null
+            },
+            {
+                "area": "hal",
+                "title": "Lights",
+                "clean": null,
+                "undamaged": null,
+                "working": null
+            },
+            {
+                "area": "hal",
+                "title": "Stairs",
+                "clean": null,
+                "undamaged": null,
+                "working": null
+            },
+            {
+                "area": "hal",
+                "title": "Closet",
+                "clean": null,
+                "undamaged": null,
+                "working": null
+            },
+            {
+                "area": "hal",
+                "title": "Smoke alarms",
+                "clean": null,
+                "undamaged": null,
+                "working": null
+            },
+            {
+                "area": "hal",
+                "title": "Carbon Monoxide Detector",
+                "clean": null,
+                "undamaged": null,
+                "working": null
+            }
+        ]
+    },
+    {
+        "title": "Stairs",
+        "sections": [{
+                "area": "sta",
+                "title": "Walls",
+                "clean": null,
+                "undamaged": null,
+                "working": null
+            },
+            {
+                "area": "sta",
+                "title": "Ceiling",
+                "clean": null,
+                "undamaged": null,
+                "working": null
+            },
+            {
+                "area": "sta",
+                "title": "Flooring",
+                "clean": null,
+                "undamaged": null,
+                "working": null
+            },
+            {
+                "area": "sta",
+                "title": "Baseboards",
+                "clean": null,
+                "undamaged": null,
+                "working": null
+            },
+            {
+                "area": "sta",
+                "title": "Lights",
+                "clean": null,
+                "undamaged": null,
+                "working": null
+            },
+            {
+                "area": "sta",
+                "title": "Steps",
+                "clean": null,
+                "undamaged": null,
+                "working": null
+            },
+            {
+                "area": "sta",
+                "title": "Railings",
+                "clean": null,
+                "undamaged": null,
+                "working": null
+            },
+            {
+                "area": "sta",
+                "title": "Closet",
+                "clean": null,
+                "undamaged": null,
+                "working": null
+            },
+            {
+                "area": "sta",
+                "title": "Smoke Alarm",
+                "clean": null,
+                "undamaged": null,
+                "working": null
+            },
+            {
+                "area": "sta",
+                "title": "Carbon Monoxide Detector",
+                "clean": null,
+                "undamaged": null,
+                "working": null
+            }
+        ]
+    },
+    {
+        "title": "Kitchen",
+        "sections": [{
+                "area": "kit",
+                "title": "Walls",
+                "clean": null,
+                "undamaged": null,
+                "working": null
+            },
+            {
+                "area": "kit",
+                "title": "Ceiling",
+                "clean": null,
+                "undamaged": null,
+                "working": null
+            },
+            {
+                "area": "kit",
+                "title": "Flooring",
+                "clean": null,
+                "undamaged": null,
+                "working": null
+            },
+            {
+                "area": "kit",
+                "title": "Baseboards",
+                "clean": null,
+                "undamaged": null,
+                "working": null
+            },
+            {
+                "area": "kit",
+                "title": "Lights",
+                "clean": null,
+                "undamaged": null,
+                "working": null
+            },
+            {
+                "area": "kit",
+                "title": "Power Outlets",
+                "clean": null,
+                "undamaged": null,
+                "working": null
+            },
+            {
+                "area": "kit",
+                "title": "Cupboards",
+                "clean": null,
+                "undamaged": null,
+                "working": null
+            },
+            {
+                "area": "kit",
+                "title": "Countertops",
+                "clean": null,
+                "undamaged": null,
+                "working": null
+            },
+            {
+                "area": "kit",
+                "title": "Pantry",
+                "clean": null,
+                "undamaged": null,
+                "working": null
+            },
+            {
+                "area": "kit",
+                "title": "Refrigerator",
+                "clean": null,
+                "undamaged": null,
+                "working": null
+            },
+            {
+                "area": "kit",
+                "title": "Oven",
+                "clean": null,
+                "undamaged": null,
+                "working": null
+            },
+            {
+                "area": "kit",
+                "title": "Stove Top",
+                "clean": null,
+                "undamaged": null,
+                "working": null
+            },
+            {
+                "area": "kit",
+                "title": "Exhaust Fan",
+                "clean": null,
+                "undamaged": null,
+                "working": null
+            },
+            {
+                "area": "kit",
+                "title": "Sink",
+                "clean": null,
+                "undamaged": null,
+                "working": null
+            },
+            {
+                "area": "kit",
+                "title": "Faucet",
+                "clean": null,
+                "undamaged": null,
+                "working": null
+            },
+            {
+                "area": "kit",
+                "title": "Garbage Disposal",
+                "clean": null,
+                "undamaged": null,
+                "working": null
+            },
+            {
+                "area": "kit",
+                "title": "Microwave",
+                "clean": null,
+                "undamaged": null,
+                "working": null
+            },
+            {
+                "area": "kit",
+                "title": "Dishwasher",
+                "clean": null,
+                "undamaged": null,
+                "working": null
+            }
+        ]
+    },
+    {
+        "title": "Livingroom",
+        "sections": [{
+                "area": "liv",
+                "title": "Walls",
+                "clean": null,
+                "undamaged": null,
+                "working": null
+            },
+            {
+                "area": "liv",
+                "title": "Ceiling",
+                "clean": null,
+                "undamaged": null,
+                "working": null
+            },
+            {
+                "area": "liv",
+                "title": "Flooring",
+                "clean": null,
+                "undamaged": null,
+                "working": null
+            },
+            {
+                "area": "liv",
+                "title": "Baseboards",
+                "clean": null,
+                "undamaged": null,
+                "working": null
+            },
+            {
+                "area": "liv",
+                "title": "Lights",
+                "clean": null,
+                "undamaged": null,
+                "working": null
+            },
+            {
+                "area": "liv",
+                "title": "Power Outlets",
+                "clean": null,
+                "undamaged": null,
+                "working": null
+            },
+            {
+                "area": "liv",
+                "title": "Windows",
+                "clean": null,
+                "undamaged": null,
+                "working": null
+            },
+            {
+                "area": "liv",
+                "title": "Screens",
+                "clean": null,
+                "undamaged": null,
+                "working": null
+            }
+        ]
+    },
+    {
+        "title": "Laundry",
+        "sections": [{
+                "area": "lau",
+                "title": "Walls",
+                "clean": null,
+                "undamaged": null,
+                "working": null
+            },
+            {
+                "area": "lau",
+                "title": "Ceiling",
+                "clean": null,
+                "undamaged": null,
+                "working": null
+            },
+            {
+                "area": "lau",
+                "title": "Flooring",
+                "clean": null,
+                "undamaged": null,
+                "working": null
+            },
+            {
+                "area": "lau",
+                "title": "Baseboards",
+                "clean": null,
+                "undamaged": null,
+                "working": null
+            },
+            {
+                "area": "lau",
+                "title": "Lights",
+                "clean": null,
+                "undamaged": null,
+                "working": null
+            },
+            {
+                "area": "lau",
+                "title": "Power Outlets",
+                "clean": null,
+                "undamaged": null,
+                "working": null
+            },
+            {
+                "area": "lau",
+                "title": "Windows",
+                "clean": null,
+                "undamaged": null,
+                "working": null
+            },
+            {
+                "area": "lau",
+                "title": "Screens",
+                "clean": null,
+                "undamaged": null,
+                "working": null
+            },
+            {
+                "area": "lau",
+                "title": "Washing Machine",
+                "clean": null,
+                "undamaged": null,
+                "working": null
+            },
+            {
+                "area": "lau",
+                "title": "Dryer",
+                "clean": null,
+                "undamaged": null,
+                "working": null
+            },
+            {
+                "area": "lau",
+                "title": "Vents",
+                "clean": null,
+                "undamaged": null,
+                "working": null
+            },
+            {
+                "area": "lau",
+                "title": "Cabinets",
+                "clean": null,
+                "undamaged": null,
+                "working": null
+            },
+            {
+                "area": "lau",
+                "title": "Sink",
+                "clean": null,
+                "undamaged": null,
+                "working": null
+            },
+            {
+                "area": "lau",
+                "title": "Faucet",
+                "clean": null,
+                "undamaged": null,
+                "working": null
+            }
+        ]
+    },
+    {
+        "title": "Family Room",
+        "sections": [{
+                "area": "fam",
+                "title": "Walls",
+                "clean": null,
+                "undamaged": null,
+                "working": null
+            },
+            {
+                "area": "fam",
+                "title": "Ceiling",
+                "clean": null,
+                "undamaged": null,
+                "working": null
+            },
+            {
+                "area": "fam",
+                "title": "Flooring",
+                "clean": null,
+                "undamaged": null,
+                "working": null
+            },
+            {
+                "area": "fam",
+                "title": "Baseboards",
+                "clean": null,
+                "undamaged": null,
+                "working": null
+            },
+            {
+                "area": "fam",
+                "title": "Lights",
+                "clean": null,
+                "undamaged": null,
+                "working": null
+            },
+            {
+                "area": "fam",
+                "title": "Power Outlets",
+                "clean": null,
+                "undamaged": null,
+                "working": null
+            },
+            {
+                "area": "fam",
+                "title": "Windows",
+                "clean": null,
+                "undamaged": null,
+                "working": null
+            },
+            {
+                "area": "fam",
+                "title": "Screens",
+                "clean": null,
+                "undamaged": null,
+                "working": null
+            },
+            {
+                "area": "fam",
+                "title": "Fireplace",
+                "clean": null,
+                "undamaged": null,
+                "working": null
+            }
+        ]
+    },
+    {
+        "title": "Garage",
+        "sections": [{
+                "area": "gar",
+                "title": "Walls",
+                "clean": null,
+                "undamaged": null,
+                "working": null
+            },
+            {
+                "area": "gar",
+                "title": "Ceiling",
+                "clean": null,
+                "undamaged": null,
+                "working": null
+            },
+            {
+                "area": "gar",
+                "title": "Flooring",
+                "clean": null,
+                "undamaged": null,
+                "working": null
+            },
+            {
+                "area": "gar",
+                "title": "Baseboards",
+                "clean": null,
+                "undamaged": null,
+                "working": null
+            },
+            {
+                "area": "gar",
+                "title": "Lights",
+                "clean": null,
+                "undamaged": null,
+                "working": null
+            },
+            {
+                "area": "gar",
+                "title": "Power Outlets",
+                "clean": null,
+                "undamaged": null,
+                "working": null
+            },
+            {
+                "area": "gar",
+                "title": "Windows",
+                "clean": null,
+                "undamaged": null,
+                "working": null
+            },
+            {
+                "area": "gar",
+                "title": "Garage Door",
+                "clean": null,
+                "undamaged": null,
+                "working": null
+            },
+            {
+                "area": "gar",
+                "title": "Garage Motor",
+                "clean": null,
+                "undamaged": null,
+                "working": null
+            },
+            {
+                "area": "gar",
+                "title": "Water Heater",
+                "clean": null,
+                "undamaged": null,
+                "working": null
+            }
+        ]
+    },
+    {
+        "title": "External",
+        "sections": [{
+                "area": "ext",
+                "title": "Roof",
+                "clean": null,
+                "undamaged": null,
+                "working": null
+            },
+            {
+                "area": "ext",
+                "title": "Gutters",
+                "clean": null,
+                "undamaged": null,
+                "working": null
+            },
+            {
+                "area": "ext",
+                "title": "Eaves",
+                "clean": null,
+                "undamaged": null,
+                "working": null
+            },
+            {
+                "area": "ext",
+                "title": "Fascia",
+                "clean": null,
+                "undamaged": null,
+                "working": null
+            },
+            {
+                "area": "ext",
+                "title": "Balcony",
+                "clean": null,
+                "undamaged": null,
+                "working": null
+            },
+            {
+                "area": "ext",
+                "title": "Patio",
+                "clean": null,
+                "undamaged": null,
+                "working": null
+            }
+        ]
+    },
+    {
+        "title": "Misc",
+        "sections": [{
+                "area": "mis",
+                "title": "Mailbox",
+                "clean": null,
+                "undamaged": null,
+                "working": null
+            },
+            {
+                "area": "mis",
+                "title": "Recycling Bin",
+                "clean": null,
+                "undamaged": null,
+                "working": null
+            },
+            {
+                "area": "mis",
+                "title": "Garbage Bin",
+                "clean": null,
+                "undamaged": null,
+                "working": null
+            },
+            {
+                "area": "mis",
+                "title": "House Key",
+                "clean": null,
+                "undamaged": null,
+                "working": null
+            },
+            {
+                "area": "mis",
+                "title": "Garage Remote",
+                "clean": null,
+                "undamaged": null,
+                "working": null
+            },
+            {
+                "area": "mis",
+                "title": "Common Area Keys",
+                "clean": null,
+                "undamaged": null,
+                "working": null
+            }
+        ]
+    },
+    {
+        "title": "Equipment",
+        "sections": [{
+                "area": "equ",
+                "title": "Air Conditioning",
+                "clean": null,
+                "undamaged": null,
+                "working": null
+            },
+            {
+                "area": "equ",
+                "title": "Heating Unit",
+                "clean": null,
+                "undamaged": null,
+                "working": null
+            }
         ]
     }
 ]

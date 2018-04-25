@@ -10,20 +10,20 @@
       <tbody>
          {{#each unit}}
             <tr>            
-                <td>{{street}}<button class="startIns" data-id="{{unit_id}}" href="#inspectionModal">Start Inspection</button></td>           
+                <td style="margin-top:35px;">{{street}}<button class="startIns" data-id="{{unit_id}}" href="#inspectionModal">Start Inspection</button></td>           
             </tr>
          {{/each}}        
       </tbody>
    </table>
 </div>
 
-<div id="inspectionModal" class="popupContainer" style="display:none;">
-    <div class="modal-content-temp">
+<div id="inspectionModal" class="popupContainerTemp" style="display:none;">
+    <div class="modal-content">
         <form class="temp-form validate-form">
             <span class="template-form-title ">Start Inspection</span>
             <div class="wrap-input100 validate-input" data-validate="Enter Inspection Name">
                 <input type="text" class="input100" id="temp-title" name="title" placeholder="Inspection Name">
-                <span class="focus-input100" data-placeholder="&#xf007;"></span>
+                <span class="focus-input100"></span>
             </div>
 
             <div>

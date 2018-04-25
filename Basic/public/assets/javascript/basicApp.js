@@ -167,7 +167,6 @@ $(document).on('click', '.temp-selector', function(e){
     let template = $(this).attr('id');
     let username = localStorage.getItem('username');
 
-
     let newIns = {
         insTitle: title,
         insTemplate: template,
@@ -184,11 +183,20 @@ $(document).on('click', '.temp-selector', function(e){
             err ? console.log(err) : console.log('No error');
             window.location = '/inspect/' + auth;
         });
-       
+});
 
+var nearby =[];
 
+$(document).on('click', '.inspectSubmit', function(e){
+    e.preventDefault();
+    var narr = new Array();
+    narr = nearby;//a global arr
+    var checked_vals = [];
+    $('.center input:checkbox:checked').each(function (index) {
+        checked_vals.push($(this).attr('id'));
+    });
+    console.log('Checked boxes', checked_vals);
 })
-
 
 
 // ====================================
@@ -218,7 +226,7 @@ $('#loginBtn').on("click", function(event){
         localStorage.setItem("token" , res.token);
         localStorage.setItem("auth" , res.authTok);
         localStorage.setItem('type', res.userType);
-        localStorage.getItem('id', res.userId)
+        localStorage.setItem('id', res.userId)
 
         console.log(res.userType);
         console.log(res.authTok);    
@@ -415,12 +423,12 @@ $(document).on("click",".city", function(){
 $(document).on("click", ".backBtn", () =>{
     console.log("Working");
 
-    $.ajax("/back", {
-        type: "GET",
-        data: JSON
-    }).then(res =>{
+    // $.ajax("/back", {
+    //     type: "GET",
+    //     data: JSON
+    // }).then(res =>{
         window.location = '/home/' +localStorage.getItem('auth');
-    });
+    // });
     
 });
 $(document).on("click", ".logOut", () =>{
