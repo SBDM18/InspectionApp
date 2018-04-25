@@ -226,7 +226,7 @@ $('#loginBtn').on("click", function(event){
         localStorage.setItem("token" , res.token);
         localStorage.setItem("auth" , res.authTok);
         localStorage.setItem('type', res.userType);
-        localStorage.getItem('id', res.userId)
+        localStorage.setItem('id', res.userId)
 
         console.log(res.userType);
         console.log(res.authTok);    
@@ -423,12 +423,12 @@ $(document).on("click",".city", function(){
 $(document).on("click", ".backBtn", () =>{
     console.log("Working");
 
-    $.ajax("/back", {
-        type: "GET",
-        data: JSON
-    }).then(res =>{
+    // $.ajax("/back", {
+    //     type: "GET",
+    //     data: JSON
+    // }).then(res =>{
         window.location = '/home/' +localStorage.getItem('auth');
-    });
+    // });
     
 });
 $(document).on("click", ".logOut", () =>{

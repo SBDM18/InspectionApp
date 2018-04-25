@@ -8,6 +8,7 @@ let data = {
     imageHead: 'sampleImage.jpg',
     inspectDate: 'April 3, 2018 3:31 PM',
     reportDate: 'April 3, 2018 1:30 PM',
+    sectons:[]
             
 };
 

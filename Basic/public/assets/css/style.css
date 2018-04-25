@@ -9,11 +9,9 @@
     display: none;
 }
 body {
-    /* height: 100%;
-    width: 100%; */
     height: 100vh;
     width: 100vw;
-     background-image: url('../images/diagmonds_@2x.png'); 
+    background-image: url('../images/diagmonds_@2x.png'); 
 }
 html {
     height: 100vh;
@@ -25,7 +23,7 @@ html {
     display: grid;    
 }
 .frontTitle {
-    font-family: 'Damion', cursive;
+   font-family: 'Philosopher', sans-serif;
     font-size: 40px;
     color: white;
     text-align: center;
@@ -48,58 +46,6 @@ html {
     grid-column: 3/4;
 }
 
-/*modal css front page (login and register)*/
-#lean_overlay{
-    position: fixed;
-    z-index: 100;
-    top: 0px;
-    left: 0px;
-    height: 100%;
-    width: 100%;
-    background: #000;
-    display: none;
-}
-.popupContainer{
-    position: absolute;
-    width: 330px;
-    height: auto;
-    left: 45%;
-    top: 60px;
-}
-.modal-header {
-    background: #F4F4F2;
-    position: relative;
-    padding: 10px 20px;
-    border-bottom: 1px solid #DDD;
-    font-weight: bold;
-    font-size: 16px;
-    text-transform: uppercase;
-}
-.modal-header .close {
-    position: absolute;
-    right: 0;
-    top: 0;
-    padding: 10px 15px;
-    background: #E4E4E2;
-    cursor: pointer;
-    color: #aaa;
-    font-size: 16px;
-}
-.modal-body {
-   padding: 20px;
-}
-	
-.close:hover {
-    background-color: darkgray;
-}
-
-
-
-
-
-
-
-
 .wrapper{
     height: 100vh;
     width: 100vw;
@@ -121,16 +67,14 @@ html {
     margin-top: 10px;
     padding-bottom: 10px;
     margin-bottom: 10px;
-    font-family: 'Damion', cursive;
+    font-family: 'Philosopher', sans-serif;
     font-size: 3vw;
     color: white;
     text-align: center;
-    text-shadow: 0 10px 10px rgba(122, 122, 122);
-    
+    text-shadow: 0 10px 10px rgba(122, 122, 122);    
     border-bottom-style: solid;
     border-bottom-width: 2.5px;
     border-bottom-color: rgba(102, 102, 102, 0.45);
-
 }
 
 .temp-btn {

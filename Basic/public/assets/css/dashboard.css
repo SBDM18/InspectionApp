@@ -2,6 +2,10 @@ html{
     height: 100%;
     width: 100%;
 }
+h1{
+    font-family: 'News Cycle', sans-serif;
+    color: #33658A;
+}
 
 .dashboard, .container-fluid{
     height: 100%;
@@ -12,7 +16,7 @@ html{
     padding: 0px !important;
     margin: 0px !important;
 
-    background-color: rgba(39,60,44,0.75);
+    background-color: #83b5d1;
 }
 
 .main-content{
@@ -23,7 +27,7 @@ html{
 }
 
 .background{
-    background-color: rgba(34,30,34,0.75);
+    background-color: #33658A;
     padding-left: 0px !important;
     padding-right: 0px !important;
     min-height: 100%;
@@ -73,7 +77,6 @@ html{
     padding: 0px !important;
     margin: 0px !important;
 }
-
 .logo{
     display: flex;
     flex-direction: column;
@@ -84,8 +87,8 @@ html{
     border-top: solid;
     border-bottom: solid;
 
-    background-color: rgba(34,30,34,0.70);
-}
+    background-color:rgba(34, 30, 34, 0.70);
+    }
 
 .company-info{
     display: flex;
@@ -108,7 +111,7 @@ html{
     align-items: center;
     justify-content: space-around;
 
-    background-color: rgba(98, 104, 104,0.70);
+    background-color: #33658A;
 }
 
 
@@ -140,6 +143,8 @@ html{
 [ Unit Section on Dashboard and general top half for most of the dashboard]*/
 .dashTitle{
     margin-top: 20px;
+    font-family: 'News Cycle', sans-serif;
+    color: #33658A;
 }
 .search-cont{
     border-top:solid 3px #BFC1D2;
@@ -171,12 +176,17 @@ html{
 .fa-search{
     position: relative;
 }
+.fa-folder{
+    cursor: pointer;
+}
 .fa-sign-out-alt{
     margin-top: 15px;
+    color: #fff8f0;
     cursor: pointer;
 }
 .backBtn{
     cursor: pointer;
+    margin-bottom: 45px;
 }
 .button {
     background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #BFC1D2), color-stop(1, #b3b3b3));
@@ -228,7 +238,10 @@ html{
     flex-direction: column;
 }
 .cityTitle{
-    color: #000000;
+    color: rgb(25, 27, 29);
+    margin-left: 3px;
+    font-family: 'News Cycle', sans-serif;
+
 }
 /*------------------------------------------------------------
 [ Unit section/city specific]*/
@@ -237,15 +250,44 @@ html{
     margin-left: 2%;
 }
 .startIns{
-    margin-left: 450px;
+    margin: -15px 0px 15px 450px;
     height: 40px;
     border-radius: 5px;
-    border:solid 2px mintcream;
-    background-color: wheat;
-    color: limegreen;
+    border:solid 2px #D1e5ff;
+    background-color:#83b5d1;
+    color: #33658A;
+}
+.inspectSubmit{
+     margin-right: 60px;
+     height: 40px;
+     border-radius: 5px;
+     border:solid 2px #D1e5ff;
+     background-color: #33658A;
+     color: #83b5d1;
+}
+.inspectSubmit:hover{
+      background-color:#83b5d1;
+      color: #33658A;
+}
+.startIns:hover{
+    background-color: #33658A;
+    color: #83b5d1;
 }
 .delHead{
     margin-right: 20px;
+}
+.temp-selector{
+    margin-top: 10px;
+    width: 80px;
+    height: 40px;
+    border-radius: 5px;
+    border:solid 2px #D1e5ff;
+    background-color:#83b5d1;
+    color: #33658A;
+}
+.temp-selector:hover{
+    background-color: #33658A;
+     color: #83b5d1;
 }
 
 /*------------------------------------------------------------
@@ -520,11 +562,11 @@ h3{
 /*--------------------------------------------------------------------
 [ Home dashboard page ]*/
 .homeT{
-    border-bottom: solid 4px #A24936;
+    border-bottom: solid 4px #D1e5ff;
 }
 #homeTitle{
-    color: #b3b3b3;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: #33658A;
+   font-family: 'Philosopher', sans-serif;
     margin: 30px 0px 30px 20px;
 }
 
