@@ -121,32 +121,37 @@ router.get('/inspectdash/:authTok/:status', function (req, res) {
     res.render('inspectDash', inspDoc);
 });
 
-router.get('/inspect/:authTok', function(req, res) {
+router.get('/inspect/:authTok:unit_id', function(req, res) {
     const user = req.params.authTok;
+    const unit = req.params.unit_id;
 
     var resObj = {};
 
     resObj.route = user;
 
-    Unit.find().where({ manager_U_id: user }).exec().then(unitDoc => {
+    Unit.find().where({ manager_U_id: user /* unit_id: unit */ }).exec().then(unitDoc => {
         console.log("Here is the unit doc")
         console.log(unitDoc)
 
         resObj.unit = unitDoc;
 
         let btnObj = {
-            sections : []
+            sections: []
         };
 
+        btnObj.unit = resObj.unit;
         //garage, yard, bath and bed
         // depending on data from units we grab the number of bedrooms/baths etc...
         // this data goes to the field 
 
-        if (unitDoc[0].bathroomTotal > 1) {
+        if (unit.bathroomTotal > 1) {
             let obj = {}
-                for (let i = 1; i <= unitDoc[0].bathroomTotal; i++){
-                    let bath = "bathroom";
-                    bath += i;
+                for (let i = 1; i <= unit.bathroomTotal; i++){
+                    let bath = {
+                        title: `Bathroom${i}`,
+                        sections: []
+                    }
+                }
                     let fields = {
                         "walls": {
                             "clean": null,
@@ -237,11 +242,12 @@ router.get('/inspect/:authTok', function(req, res) {
                             "clean": null,
                             "undamaged": null,
                             "working": null
-                                }
                         }
-                    obj[bath] = fields;
-                }
-                    btnObj.sections.push(obj);
+                    }
+            // console.log('Here is the bath obj: ', bath);
+            //         bath.sections.push(fields);
+            //         resObj.fields = Fields;
+            //         resObj.fields.sections = bath;
         }
         
         Template.find({man_Id: user}).then(tempDoc => {
@@ -249,7 +255,7 @@ router.get('/inspect/:authTok', function(req, res) {
             //depending on what the template has we exclude what we 
             //don't need from the fields or include multiples
             resObj.fields = Fields;
-            console.log(resObj.fields);
+            console.log('Here is the resObj: ', resObj.fields);
             res.render('inspect', resObj)
         })
     }).catch((err) => {
