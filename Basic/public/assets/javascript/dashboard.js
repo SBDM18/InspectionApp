@@ -569,6 +569,7 @@ $(".inspectSubmit").on('click', function(e){
                     ]
                 }
             ];
+            console.log(sections);
             let data = {
                 headTitle: 'Move Out Inspection',
                 street: '4222 Poe St',
