@@ -59,7 +59,7 @@
                                     </p>
                                     <div class="collapse" style="overflow: auto; max-height: 350px;width:260px;" id="{{title}}">
                                         {{#each sections}}
-                                        <div class="card card-body inspectCard">                                     
+                                        <div class="card card-body inspectCard" style="max-width:300px; overflow-y:hidden;">                                     
                                             <div><span class="TitleCard">{{title}}</span>
                                                 <div class="center" style="max-width: 190px; margin-left: -10px;">
                                                     <input type="checkbox" name="C" class="c c-{{area}}{{title}}" id="c-{{title}}" value="Yes" />
@@ -67,8 +67,10 @@
                                                     <input type="checkbox" name="U" class="u u-{{area}}{{title}}" id="u-{{title}}" value="Yes" />
                                                 </div>
                                                 <div class="detail-icons">
-                                                    <input id="image" type="file" alt="inputPicture" src="http://www.clker.com/cliparts/i/l/9/W/l/m/camera-icon-hi.png" style="max-width:100px;max-height:40px;"
-                                                        accept="image/gif, image/jpeg, image/png">
+                                                    {{!-- #each for each picture allowed. Some may be 4 some may be more than that... --}}
+                                                    <input id="image-{{area}}-{{title}}" type="file" alt="inputPicture" src="http://www.clker.com/cliparts/i/l/9/W/l/m/camera-icon-hi.png" style="max-width:40px;max-height:40px;"
+                                                        accept="image/gif, image/jpeg, image/png" multiple>
+                                                    {{!-- /each (end of the each statement) --}}
                                                     <img src="http://www.free-icons-download.net/images/save-a-web-page-button-73094.png" alt="save" style="width:30px;height:40px;">
                                                 </div>
                                             </div>                                                                    
