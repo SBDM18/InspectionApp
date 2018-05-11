@@ -57,34 +57,6 @@ function createAlbum(albumName) {
 
 
 
-//Creating an album within aws
-function createAlbum(albumName) {
-    albumName = albumName.trim();
-    if (!albumName) {
-        return alert('Album names must contain at least one non-space character.');
-    }
-    if (albumName.indexOf('/') !== -1) {
-        return alert('Album names cannot contain slashes.');
-    }
-    var albumKey = encodeURIComponent(albumName) + '/';
-    s3.headObject({ Key: albumKey }, function (err, data) {
-        if (!err) {
-            return alert('Album already exists.');
-        }
-        if (err.code !== 'NotFound') {
-            return alert('There was an error creating your album: ' + err.message);
-        }
-        s3.putObject({ Key: albumKey }, function (err, data) {
-            if (err) {
-                return alert('There was an error creating your album: ' + err.message);
-            }
-            alert('Successfully created album.');
-            viewAlbum(albumName);
-        });
-    });
-}
-
-
 //Adding photos to the album
 function addPhoto(albumName) {
     var files = document.getElementById('photoupload').files;
@@ -105,6 +77,6 @@ function addPhoto(albumName) {
             return alert('There was an error uploading your photo: ', err.message);
         }
         alert('Successfully uploaded photo.');
-        viewAlbum(albumName);
+       
     });
 }

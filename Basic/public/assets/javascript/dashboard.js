@@ -142,7 +142,7 @@ function checkUndefined(sections) {
         console.log("currentKey: ", currentKey, " and key: ", key);
         // console.log(item[key]);
         item[key].map(item => {
-            // console.log(item);
+             console.log(item);
             // console.log("Item object", item.title);
          
             if(typeof(item.clean) === 'undefined'){
@@ -153,6 +153,9 @@ function checkUndefined(sections) {
             }
             if(typeof(item.undamaged) === 'undefined'){
                 item.undamaged = "No"
+            }
+            if(typeof(item.note) === 'undefined'){
+                item.note = ' '
             }
             // console.log("Clean item",item.clean);
             // console.log("Working item", item.working);
@@ -360,7 +363,7 @@ function buildHeadTable(data) {
 function tableHead(data) {
     return {
         table: {
-            widths: ['auto', '*'],
+            widths: ['100', '*'],
             body: [
                 buildHeadTable(data)
             ]
@@ -388,27 +391,27 @@ $(".inspectSubmit").on('click', function(e){
         let  sections = [
                 {
                     Entry:[
-                        { title: 'Walls', clean: $(".c-entWalls:checked").val(), undamaged: $(".u-entWalls:checked").val(), working: $(".w-entWalls:checked").val(), note: '' },
-                        { title: 'Doors', clean: $(".c-entDoors:checked").val(), undamaged: $(".u-entDoors:checked").val(), working: $(".w-entDoors:checked").val(), note: '' },
-                        { title: 'Ceiling', clean: $(".c-entCeiling:checked").val(), undamaged: $(".u-entCeiling:checked").val(), working: $(".w-entCeiling:checked").val(), note: '' },
-                        { title: 'Flooring', clean: $(".c-entFlooring:checked").val(), undamaged: $(".u-entFlooring:checked").val(), working: $(".w-entFlooring:checked").val(), note: '' },
-                        { title: 'Windows', clean: $(".c-entWindows:checked").val(), undamaged: $(".u-entWindows:checked").val(), working: $(".w-entWindows:checked").val(), note: '' },
-                        { title: 'Screens', clean: $(".c-entScreens:checked").val(), undamaged: $(".u-entScreens:checked").val(), working: $(".w-entScreens:checked").val(), note: '' },
-                        { title: 'Window Coverings', clean: $(".c-entWindow:checked").val(), undamaged: $(".u-entWindow:checked").val(), working: $(".w-entWindow:checked").val(), note: '' },
-                        { title: 'Doorbell', clean: $(".c-entDoorbell:checked").val(), undamaged: $(".u-entDoorbell:checked").val(), working: $(".w-entDoorbell:checked").val(), note: '' }, 
+                        { title: 'Walls', clean: $(".c-entWalls:checked").val(), undamaged: $(".u-entWalls:checked").val(), working: $(".w-entWalls:checked").val(), note: $(".n-entWalls").val() },
+                        { title: 'Doors', clean: $(".c-entDoors:checked").val(), undamaged: $(".u-entDoors:checked").val(), working: $(".w-entDoors:checked").val(), note: $(".n-entDoors").val() },
+                        { title: 'Ceiling', clean: $(".c-entCeiling:checked").val(), undamaged: $(".u-entCeiling:checked").val(), working: $(".w-entCeiling:checked").val(), note: $(".n-entCeiling").val() },
+                        { title: 'Flooring', clean: $(".c-entFlooring:checked").val(), undamaged: $(".u-entFlooring:checked").val(), working: $(".w-entFlooring:checked").val(), note: $(".n-entFlooring").val() },
+                        { title: 'Windows', clean: $(".c-entWindows:checked").val(), undamaged: $(".u-entWindows:checked").val(), working: $(".w-entWindows:checked").val(), note: $(".n-entWindows").val() },
+                        { title: 'Screens', clean: $(".c-entScreens:checked").val(), undamaged: $(".u-entScreens:checked").val(), working: $(".w-entScreens:checked").val(), note: $(".n-entScreens").val() },
+                        { title: 'Window Coverings', clean: $(".c-entWindow:checked").val(), undamaged: $(".u-entWindow:checked").val(), working: $(".w-entWindow:checked").val(), note: $(".n-entWindow").val() },
+                        { title: 'Doorbell', clean: $(".c-entDoorbell:checked").val(), undamaged: $(".u-entDoorbell:checked").val(), working: $(".w-entDoorbell:checked").val(), note: $(".n-entDoorbell").val() }, 
                     ]
                 },
                 {
                     Halls:[
-                        { title: 'Walls', clean: $(".c-halWalls:checked").val(), undamaged: $(".u-halWalls:checked").val(), working: $(".w-halWalls:checked").val(), note: '' },
-                        { title: 'Ceiling', clean: $(".c-halCeiling:checked").val(), undamaged: $(".u-halCeiling:checked").val(), working: $(".w-halCeiling:checked").val(), note: '' },
-                        { title: 'Flooring', clean: $(".c-halFlooring:checked").val(), undamaged: $(".u-halFlooring:checked").val(), working: $(".w-halFlooring:checked").val(), note: '' },
-                        { title: 'Baseboards', clean: $(".c-halBaseboards:checked").val(), undamaged: $(".u-halBaseboards:checked").val(), working: $(".w-halBaseboards:checked").val(), note: '' },
-                        { title: 'Lights', clean: $(".c-halLights:checked").val(), undamaged: $(".u-halLights:checked").val(), working: $(".w-halLights:checked").val(), note: '' },
-                        { title: 'Stairs', clean: $(".c-halStairs:checked").val(), undamaged: $(".u-halStairs:checked").val(), working: $(".w-halStairs:checked").val(), note: '' },
-                        { title: 'Closet', clean: $(".c-halCloset:checked").val(), undamaged: $(".u-halCloset:checked").val(), working: $(".w-halCloset:checked").val(), note: '' },
-                        { title: 'Smoke Alarms', clean: $(".c-halSmoke:checked").val(), undamaged: $(".u-halSmoke:checked").val(), working: $(".w-halSmoke:checked").val(), note: '' },
-                        { title: 'CO2 Detector', clean: $(".c-halCO2:checked").val(), undamaged: $(".u-halCO2:checked").val(), working: $(".w-halCO2:checked").val(), note: '' },
+                        { title: 'Walls', clean: $(".c-halWalls:checked").val(), undamaged: $(".u-halWalls:checked").val(), working: $(".w-halWalls:checked").val(), note: $(".n-halWalls").val() },
+                        { title: 'Ceiling', clean: $(".c-halCeiling:checked").val(), undamaged: $(".u-halCeiling:checked").val(), working: $(".w-halCeiling:checked").val(), note: $(".n-halCeiling").val() },
+                        { title: 'Flooring', clean: $(".c-halFlooring:checked").val(), undamaged: $(".u-halFlooring:checked").val(), working: $(".w-halFlooring:checked").val(), note:  $(".n-halFlooring").val() },
+                        { title: 'Baseboards', clean: $(".c-halBaseboards:checked").val(), undamaged: $(".u-halBaseboards:checked").val(), working: $(".w-halBaseboards:checked").val(), note:  $(".n-entwalls").val() },
+                        { title: 'Lights', clean: $(".c-halLights:checked").val(), undamaged: $(".u-halLights:checked").val(), working: $(".w-halLights:checked").val(), note: $(".n-entwalls").val() },
+                        { title: 'Stairs', clean: $(".c-halStairs:checked").val(), undamaged: $(".u-halStairs:checked").val(), working: $(".w-halStairs:checked").val(), note: $(".n-entwalls").val() },
+                        { title: 'Closet', clean: $(".c-halCloset:checked").val(), undamaged: $(".u-halCloset:checked").val(), working: $(".w-halCloset:checked").val(), note: $(".n-entwalls").val() },
+                        { title: 'Smoke Alarms', clean: $(".c-halSmoke:checked").val(), undamaged: $(".u-halSmoke:checked").val(), working: $(".w-halSmoke:checked").val(), note: $(".n-entwalls").val() },
+                        { title: 'CO2 Detector', clean: $(".c-halCO2:checked").val(), undamaged: $(".u-halCO2:checked").val(), working: $(".w-halCO2:checked").val(), note: $(".n-entwalls").val() },
                     ]
                 },
                 {
@@ -554,18 +557,18 @@ $(".inspectSubmit").on('click', function(e){
                 },
                 {
                     Misc:[
-                        { title: 'Mailbox', clean: $(".c-misMailbox:checked").val(), undamaged: $(".u-misMailbox:checked").val(), working: $(".w-misMailbox:checked").val(), note: '' },
-                        { title: 'Recycling Bin', clean: $(".c-misRecycling:checked").val(), undamaged: $(".u-misRecycling:checked").val(), working: $(".w-misRecycling:checked").val(), note: '' },
-                        { title: 'Garbage Bin', clean: $(".c-misGarbage:checked").val(), undamaged: $(".u-misGarbage:checked").val(), working: $(".w-misGarbage:checked").val(), note: '' },
-                        { title: 'House Key', clean: $(".c-misHouse:checked").val(), undamaged: $(".u-misHouse:checked").val(), working: $(".w-misHouse:checked").val(), note: '' },
-                        { title: 'Garage Remote', clean: $(".c-misGarage:checked").val(), undamaged: $(".u-misGarage:checked").val(), working: $(".w-misGarage:checked").val(), note: '' },
-                        { title: 'Common Area Keys', clean: $(".c-misCommon:checked").val(), undamaged: $(".u-misCommon:checked").val(), working: $(".w-misCommon:checked").val(), note: '' },
+                        { title: 'Mailbox', clean: $(".c-misMailbox:checked").val(), undamaged: $(".u-misMailbox:checked").val(), working: $(".w-misMailbox:checked").val(), note: $('.n-misMailbox').val() },
+                        { title: 'Recycling Bin', clean: $(".c-misRecycling:checked").val(), undamaged: $(".u-misRecycling:checked").val(), working: $(".w-misRecycling:checked").val(), note: $('.n-misRecycling').val() },
+                        { title: 'Garbage Bin', clean: $(".c-misGarbage:checked").val(), undamaged: $(".u-misGarbage:checked").val(), working: $(".w-misGarbage:checked").val(), note: $('.n-misGarbage').val() },
+                        { title: 'House Key', clean: $(".c-misHouse:checked").val(), undamaged: $(".u-misHouse:checked").val(), working: $(".w-misHouse:checked").val(), note: $('.n-misHouse').val() },
+                        { title: 'Garage Remote', clean: $(".c-misGarage:checked").val(), undamaged: $(".u-misGarage:checked").val(), working: $(".w-misGarage:checked").val(), note: $('.n-misGarage').val() },
+                        { title: 'Common Area Keys', clean: $(".c-misCommon:checked").val(), undamaged: $(".u-misCommon:checked").val(), working: $(".w-misCommon:checked").val(), note: $('.n-misCommon').val() },
                     ]
                 },
                 {
                     Equipment:[
-                        { title: 'Air Conditioning', clean: $(".c-equAir:checked").val(), undamaged: $(".u-equAir:checked").val(), working: $(".w-equAir:checked").val(), note: '' },
-                        { title: 'Heating Unit', clean: $(".c-equHeating:checked").val(), undamaged: $(".u-equHeating:checked").val(), working: $(".w-equHeating:checked").val(), note: '' },
+                        { title: 'Air Conditioning', clean: $(".c-equAir:checked").val(), undamaged: $(".u-equAir:checked").val(), working: $(".w-equAir:checked").val(), note: $('.n-equAir').val() },
+                        { title: 'Heating Unit', clean: $(".c-equHeating:checked").val(), undamaged: $(".u-equHeating:checked").val(), working: $(".w-equHeating:checked").val(), note: $('.n-equHeating').val() },
                     ]
                 }
             ];
@@ -628,14 +631,14 @@ var dd = {
         },
         line: {
             margin: [0, 30, 0, 30]
-        }
+        },
     },
     defaultStyle: {
     }
 }
         
 console.log(dd);
-    pdfMake.createPdf(dd).open();
+    pdfMake.createPdf(dd).download('optionalName.pdf');
 
 });
 

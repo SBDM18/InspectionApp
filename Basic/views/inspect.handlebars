@@ -36,12 +36,7 @@
 
         <div class="col-sm-10 main">
             <div class="row homeT">
-                {{#each unit}}
-                    <div>
-                        <div>ADDRESS: {{street}}</div>
-                        <div>CITY: {{city}} STATE: {{state}} ZIP:{{zip}}</div>
-                    </div>
-                {{/each}}
+                
                 <div class="col-sm-1">
                     <button class="inspectSubmit ">Submit</button>
                 </div>
@@ -57,22 +52,24 @@
                                             <div id="temp-label-entry"> {{title}} </div>
                                         </button>
                                     </p>
-                                    <div class="collapse" style="overflow: auto; max-height: 350px;width:260px;" id="{{title}}">
+                                    <div class="collapse" style="overflow: auto; max-height: 1000px;width:300px;" id="{{title}}">
                                         {{#each sections}}
                                         <div class="card card-body inspectCard" style="max-width:300px; overflow-y:hidden;">                                     
                                             <div><span class="TitleCard">{{title}}</span>
-                                                <div class="center" style="max-width: 190px; margin-left: -10px;">
+                                                <div class="center" style="max-width: 200px; margin-left: 10px;">
                                                     <input type="checkbox" name="C" class="c c-{{area}}{{title}}" id="c-{{title}}" value="Yes" />
                                                     <input type="checkbox" name="W" class="w w-{{area}}{{title}}" id="w-{{title}}" value="Yes" />
                                                     <input type="checkbox" name="U" class="u u-{{area}}{{title}}" id="u-{{title}}" value="Yes" />
                                                 </div>
                                                 <div class="detail-icons">
                                                     {{!-- #each for each picture allowed. Some may be 4 some may be more than that... --}}
-                                                    <input id="image-{{area}}-{{title}}" type="file" alt="inputPicture" src="http://www.clker.com/cliparts/i/l/9/W/l/m/camera-icon-hi.png" style="max-width:40px;max-height:40px;"
-                                                        accept="image/gif, image/jpeg, image/png" multiple>
-                                                    {{!-- /each (end of the each statement) --}}
+                                                    <input id="image-{{area}}-{{title}}" type="file" alt="inputPicture" id='photoupload'src="http://www.clker.com/cliparts/i/l/9/W/l/m/camera-icon-hi.png" style="max-width:220px;max-height:40px;"
+                                                        accept="image/gif, image/jpeg, image/png" multiple>                                                   
+                                                     {{!-- /each (end of the each statement) --}}
                                                     <img src="http://www.free-icons-download.net/images/save-a-web-page-button-73094.png" alt="save" style="width:30px;height:40px;">
+                                                    <textarea placeholder="Notes" style="width:200px; height:30px;" class="n-{{area}}{{title}}"></textarea>
                                                 </div>
+
                                             </div>                                                                    
                                         </div>
                                         {{/each}}
