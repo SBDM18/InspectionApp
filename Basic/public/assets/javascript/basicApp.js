@@ -164,6 +164,8 @@ $(document).on('click', '.temp-selector', function(e){
     let auth = localStorage.getItem("auth");
    
     let title = $('#temp-title').text();
+    let unit = $('.startIns').attr('data-id');
+    console.log('Here is the Unit ID pulled from .startIns: ', unit)
     let template = $(this).attr('id');
     let username = localStorage.getItem('username');
 
@@ -181,9 +183,17 @@ $(document).on('click', '.temp-selector', function(e){
             headers: { "Authorization": localStorage.getItem("token") }
         }).done((res, err) => {
             err ? console.log(err) : console.log('No error');
-            window.location = '/inspect/' + auth;
+            window.location = '/inspect/' + auth + unit;
         });
 });
+
+
+
+$('.dropDownImg').on('click', function(e){
+    e.preventDefault();
+    console.log("this");
+})
+
 
 var nearby =[];
 
@@ -502,20 +512,6 @@ $(".qtyminus").click(function (e) {
   
 
 
-// JAVASCRIPT FOR AJAX ON TEMPLATE PAGE
-//======================================
-//======================================
-$(document).on('click', '.template', function(){
-    window.location = '/template';
-    // $.ajax("/template", {
-    //     type: "GET",
-    // }).then(res => {
-    //     console.log("Going to template page");
-    //     console.log(res);
-    //     window.location = '/template';
-    //     // res.render('/admin');        
-    // });
-});
 
 
 

@@ -64,7 +64,7 @@ router.get('/unitlist/:authTok/:city', (req, res) => {
         resObj.unit = unitDoc;
 
         Template.find().where({ man_Id: user }).exec().then(tempDoc => {
-            console.log('Here is the templates', tempDoc);
+            // console.log('Here is the templates', tempDoc);
 
             resObj.temp = tempDoc;
 
@@ -96,7 +96,7 @@ router.get('/temp/:authTok/:unitID',(req,res)=>{
 // >>>>>>> 70b1e9ce907e498bea80e7b91ce12eac9c02d31a
 // =======
     Template.find().where({ manager_U_id: user }).exec().then((err,docs) =>{
-        console.log(docs);
+        console.log("Here are the docs",docs);
 
         let tempObj = {
             temp: temp,
